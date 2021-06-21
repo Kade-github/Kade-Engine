@@ -728,6 +728,190 @@ class PlayState extends MusicBeatState
 	
 						add(stageCurtains);
 				}
+			case 'wocky':
+			{
+					defaultCamZoom = 0.9;
+					curStage = 'stage';
+					var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('kapi/stageback'));
+					bg.antialiasing = true;
+					bg.scrollFactor.set(0.9, 0.9);
+					bg.active = false;
+					add(bg);
+
+					var stageFront:FlxSprite = new FlxSprite(-650, 600).loadGraphic(Paths.image('kapi/stagefront'));
+					stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
+					stageFront.updateHitbox();
+					stageFront.antialiasing = true;
+					stageFront.scrollFactor.set(0.9, 0.9);
+					stageFront.active = false;
+					add(stageFront);
+
+					var stageCurtains:FlxSprite = new FlxSprite(-500, -300).loadGraphic(Paths.image('kapi/stagecurtains'));
+					stageCurtains.setGraphicSize(Std.int(stageCurtains.width * 0.9));
+					stageCurtains.updateHitbox();
+					stageCurtains.antialiasing = true;
+					stageCurtains.scrollFactor.set(1.3, 1.3);
+					stageCurtains.active = false;
+
+					add(stageCurtains);
+					
+					phillyCityLights = new FlxTypedGroup<FlxSprite>();
+					add(phillyCityLights);
+
+					for (i in 0...4)
+					{
+							var light:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('kapi/philly/win' + i));
+							light.scrollFactor.set(0.9, 0.9);
+							light.visible = false;
+							light.updateHitbox();
+							light.antialiasing = true;
+							phillyCityLights.add(light);
+					
+					}
+					// var cityLights:FlxSprite = new FlxSprite().loadGraphic(AssetPaths.win0.png);
+
+			}
+			case 'beathoven':
+			{
+					defaultCamZoom = 0.9;
+					curStage = 'stage';
+					var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('kapi/stageback'));
+					bg.antialiasing = true;
+					bg.scrollFactor.set(0.9, 0.9);
+					bg.active = false;
+					add(bg);
+
+					var stageFront:FlxSprite = new FlxSprite(-650, 600).loadGraphic(Paths.image('kapi/stagefront'));
+					stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
+					stageFront.updateHitbox();
+					stageFront.antialiasing = true;
+					stageFront.scrollFactor.set(0.9, 0.9);
+					stageFront.active = false;
+					add(stageFront);
+
+					var stageCurtains:FlxSprite = new FlxSprite(-500, -300).loadGraphic(Paths.image('kapi/stagecurtains'));
+					stageCurtains.setGraphicSize(Std.int(stageCurtains.width * 0.9));
+					stageCurtains.updateHitbox();
+					stageCurtains.antialiasing = true;
+					stageCurtains.scrollFactor.set(1.3, 1.3);
+					stageCurtains.active = false;
+
+					add(stageCurtains);
+					
+					phillyCityLights = new FlxTypedGroup<FlxSprite>();
+					add(phillyCityLights);
+
+					for (i in 0...4)
+					{
+							var light:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('kapi/philly/win' + i));
+							light.scrollFactor.set(0.9, 0.9);
+							light.visible = false;
+							light.updateHitbox();
+							light.antialiasing = true;
+							phillyCityLights.add(light);
+					
+					}
+					// var cityLights:FlxSprite = new FlxSprite().loadGraphic(AssetPaths.win0.png);
+
+			}
+			case 'nyaw':
+			{
+					curStage = 'stageclosed';
+
+					defaultCamZoom = 0.9;
+					curStage = 'stage';
+					var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('kapi/closed'));
+					bg.antialiasing = true;
+					bg.scrollFactor.set(0.9, 0.9);
+					bg.active = false;
+					add(bg);
+
+					bottomBoppers = new FlxSprite(-600, -200);
+		                	 bottomBoppers.frames = Paths.getSparrowAtlas('kapi/christmas/bgFreaks');
+		                	  bottomBoppers.animation.addByPrefix('bop', 'Bottom Level Boppers', 24, false);
+		                	  bottomBoppers.antialiasing = true;
+	                        	  bottomBoppers.scrollFactor.set(0.92, 0.92);
+ 						bottomBoppers.setGraphicSize(Std.int(bottomBoppers.width * 1));
+		                 	 bottomBoppers.updateHitbox();
+		               	 	  add(bottomBoppers);
+
+					var stageFront:FlxSprite = new FlxSprite(-650, 600).loadGraphic(Paths.image('kapi/stagefront'));
+					stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
+					stageFront.updateHitbox();
+					stageFront.antialiasing = true;
+					stageFront.scrollFactor.set(0.9, 0.9);
+					stageFront.active = false;
+					add(stageFront);
+
+					phillyCityLights = new FlxTypedGroup<FlxSprite>();
+					add(phillyCityLights);
+
+					for (i in 0...4)
+					{
+							var light:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('kapi/philly/win' + i));
+							light.scrollFactor.set(0.9, 0.9);
+							light.visible = false;
+							light.updateHitbox();
+							light.antialiasing = true;
+							phillyCityLights.add(light);
+					
+					}
+					// var cityLights:FlxSprite = new FlxSprite().loadGraphic(AssetPaths.win0.png);
+
+				upperBoppers = new FlxSprite(-600, -200);
+		                  upperBoppers.frames = Paths.getSparrowAtlas('kapi/christmas/upperBop');
+		                  upperBoppers.animation.addByPrefix('bop', "Upper Crowd Bob", 24, false);
+		                  upperBoppers.antialiasing = true;
+		                  upperBoppers.scrollFactor.set(1.05, 1.05);
+		                  upperBoppers.setGraphicSize(Std.int(upperBoppers.width * 1));
+		                  upperBoppers.updateHitbox();
+		                  add(upperBoppers);
+ 				
+				
+			}
+			case 'hairball':
+			{
+
+					defaultCamZoom = 0.9;
+					curStage = 'stage';
+					var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('kapi/sunset'));
+					bg.antialiasing = true;
+					bg.scrollFactor.set(0.9, 0.9);
+					bg.active = false;
+					add(bg);
+
+					var stageFront:FlxSprite = new FlxSprite(-650, 600).loadGraphic(Paths.image('kapi/stagefront'));
+					stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
+					stageFront.updateHitbox();
+					stageFront.antialiasing = true;
+					stageFront.scrollFactor.set(0.9, 0.9);
+					stageFront.active = false;
+					add(stageFront);
+
+					phillyCityLights = new FlxTypedGroup<FlxSprite>();
+					add(phillyCityLights);
+
+					for (i in 0...4)
+					{
+							var light:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('kapi/philly/win' + i));
+							light.scrollFactor.set(0.9, 0.9);
+							light.visible = false;
+							light.updateHitbox();
+							light.antialiasing = true;
+							phillyCityLights.add(light);
+					
+					}
+					// var cityLights:FlxSprite = new FlxSprite().loadGraphic(AssetPaths.win0.png);
+
+					upperBoppers = new FlxSprite(-600, -200);
+					upperBoppers.frames = Paths.getSparrowAtlas('kapi/christmas/upperBop');
+		                  upperBoppers.animation.addByPrefix('bop', "Upper Crowd Bob", 24, false);
+		                  upperBoppers.antialiasing = true;
+		                  upperBoppers.scrollFactor.set(1.05, 1.05);
+		                  upperBoppers.setGraphicSize(Std.int(upperBoppers.width * 1));
+		                  upperBoppers.updateHitbox();
+		                  add(upperBoppers);
+			}
 			default:
 			{
 					defaultCamZoom = 0.9;

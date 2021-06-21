@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="bottomBop.png">
+	<!-- Created with Adobe Animate version 20.0.0.17400 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Upper Crowd Bob0000" x="0" y="0" width="2560" height="1400"/>
+	<SubTexture name="Upper Crowd Bob0001" x="2560" y="0" width="2560" height="1400"/>
+	<SubTexture name="Upper Crowd Bob0002" x="2560" y="0" width="2560" height="1400"/>
+	<SubTexture name="Upper Crowd Bob0003" x="0" y="1400" width="2560" height="1400"/>
+	<SubTexture name="Upper Crowd Bob0004" x="0" y="1400" width="2560" height="1400"/>
+	<SubTexture name="Upper Crowd Bob0005" x="0" y="1400" width="2560" height="1400"/>
+	<SubTexture name="Upper Crowd Bob0006" x="2560" y="1400" width="2560" height="1400"/>
+	<SubTexture name="Upper Crowd Bob0007" x="2560" y="1400" width="2560" height="1400"/>
+	<SubTexture name="Upper Crowd Bob0008" x="2560" y="1400" width="2560" height="1400"/>
+</TextureAtlas>

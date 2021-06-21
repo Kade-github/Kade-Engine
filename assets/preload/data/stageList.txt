@@ -6,3 +6,7 @@ mall
 mallEvil
 school
 schoolEvil
+wocky
+beathoven
+nyaw
+hairball
