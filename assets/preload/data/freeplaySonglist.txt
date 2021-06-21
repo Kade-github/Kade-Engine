@@ -19,7 +19,7 @@ Roses:senpai:6
 Thorns:spirit:6
 Wocky:kapi:1
 Beathoven:kapi:1
-Hairball:senpai:6
+Hairball:kapi-mad:6
 Nyaw:kapi:1
 Flatzone:spooky:2
 Tutorial-Starcatcher:gf:1

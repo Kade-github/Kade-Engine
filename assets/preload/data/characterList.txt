@@ -16,4 +16,5 @@ senpai
 senpai-angry
 spirit
 kapi
+kapi-mad
 bf-kapi
