@@ -522,26 +522,26 @@ class Character extends FlxSprite
 				playAnim('idle');
 
 			case 'kapi-mad':
-					// DADMAD ANIMATION LOADING CODE
-					tex = Paths.getSparrowAtlas('characters/KAPI_ANGRY');
-					frames = tex;
-					animation.addByIndices('idle', 'Dad idle dance', [2, 4, 6, 8, 10, 0], "", 12, false);
-					animation.addByPrefix('singUP', 'Dad Sing Note UP', 24);
-					animation.addByPrefix('singRIGHT', 'Dad Sing Note RIGHT', 24);
-					animation.addByPrefix('singDOWN', 'Dad Sing Note DOWN', 24);
-					animation.addByPrefix('singLEFT', 'Dad Sing Note LEFT', 24);
-					animation.addByPrefix('meow', 'Dad meow', 24, false);
-		
-						
-					addOffset('idle');
-						
-					addOffset("singUP", -6, 50);
-					addOffset("singRIGHT", 0, 27);
-					addOffset("singLEFT", -10, 10);
-					addOffset("singDOWN", 0, -30);
-		
-					addOffset("meow");
-					playAnim('idle');
+				// DADMAD ANIMATION LOADING CODE
+				tex = Paths.getSparrowAtlas('characters/KAPI_ANGRY');
+				frames = tex;
+				animation.addByIndices('idle', 'Dad idle dance', [2, 4, 6, 8, 10, 0], "", 12, false);
+				animation.addByPrefix('singUP', 'Dad Sing Note UP', 24);
+				animation.addByPrefix('singRIGHT', 'Dad Sing Note RIGHT', 24);
+				animation.addByPrefix('singDOWN', 'Dad Sing Note DOWN', 24);
+				animation.addByPrefix('singLEFT', 'Dad Sing Note LEFT', 24);
+				animation.addByPrefix('meow', 'Dad meow', 24, false);
+				
+					
+				addOffset('idle');
+					
+				addOffset("singUP", -6, 50);
+				addOffset("singRIGHT", 0, 27);
+				addOffset("singLEFT", -10, 10);
+				addOffset("singDOWN", 0, -30);
+				
+				addOffset("meow");
+				playAnim('idle');
 					
 			case 'bf-kapi':
 				var tex = Paths.getSparrowAtlas('kapi/BOYFRIEND');

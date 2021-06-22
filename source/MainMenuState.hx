@@ -55,6 +55,7 @@ class MainMenuState extends MusicBeatState
 
 		if (!FlxG.sound.music.playing)
 		{
+			// Try to random other mod menu music
 			FlxG.sound.playMusic(Paths.music('freakyMenu'));
 		}
 
@@ -165,7 +166,7 @@ class MainMenuState extends MusicBeatState
 			{
 				if (optionShit[curSelected] == 'donate')
 				{
-					fancyOpenURL("https://www.kickstarter.com/projects/funkin/friday-night-funkin-the-full-ass-game");
+					fancyOpenURL("https://www.youtube.com/channel/UC_M0SHcjuPgzntt4WfEzoew");
 				}
 				else
 				{
