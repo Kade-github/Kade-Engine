@@ -158,4 +158,18 @@
 	<SubTexture name="spooky dance idle BLACK LINES0013" x="2164" y="3066" width="357" height="484" frameX="-79" frameY="-61" frameWidth="492" frameHeight="549"/>
 	<SubTexture name="spooky dance idle BLACK LINES0014" x="2531" y="3066" width="354" height="494" frameX="-78" frameY="-52" frameWidth="492" frameHeight="549"/>
 	<SubTexture name="spooky dance idle BLACK LINES0015" x="2531" y="3066" width="354" height="494" frameX="-78" frameY="-52" frameWidth="492" frameHeight="549"/>
+	<SubTexture name="KAPI0000" x="3915" y="3051" width="1905" height="685"/>
+	<SubTexture name="KAPI0001" x="3915" y="3051" width="1905" height="685"/>
+	<SubTexture name="KAPI0002" x="3915" y="3051" width="1905" height="685"/>
+	<SubTexture name="KAPI0003" x="3915" y="3051" width="1905" height="685"/>
+	<SubTexture name="KAPI0004" x="3915" y="3051" width="1905" height="685"/>
+	<SubTexture name="KAPI0005" x="3915" y="3051" width="1905" height="685"/>
+	<SubTexture name="KAPI0006" x="3915" y="3051" width="1905" height="685"/>
+	<SubTexture name="KAPI0007" x="3915" y="3051" width="1905" height="685"/>
+	<SubTexture name="KAPI0008" x="3915" y="3051" width="1905" height="685"/>
+	<SubTexture name="KAPI0009" x="3915" y="3051" width="1905" height="685"/>
+	<SubTexture name="KAPI0010" x="3915" y="3051" width="1905" height="685"/>
+	<SubTexture name="KAPI0011" x="3915" y="3051" width="1905" height="685"/>
+	<SubTexture name="KAPI0012" x="3915" y="3051" width="1905" height="685"/>
+	<SubTexture name="KAPI0013" x="3915" y="3051" width="1905" height="685"/>
 </TextureAtlas>
