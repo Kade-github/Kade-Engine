@@ -87,6 +87,12 @@ class KadeEngineData
 		if (FlxG.save.data.scoreScreen == null)
 			FlxG.save.data.scoreScreen = true;
 
+		if (FlxG.save.data.inputShow == null)
+			FlxG.save.data.inputShow = false;
+
+		if (FlxG.save.data.optimize == null)
+			FlxG.save.data.optimize = false;
+
 		Conductor.recalculateTimings();
 		PlayerSettings.player1.controls.loadKeyBinds();
 		KeyBinds.keyCheck();
