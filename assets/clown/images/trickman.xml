@@ -1,0 +1,522 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="whatDoYouWantFromMe.png">
+	<!-- Created with Adobe Animate version 21.0.3.38773 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Cutscene 10000" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10001" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10002" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10003" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10004" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10005" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10006" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10007" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10008" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10009" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10010" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10011" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10012" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10013" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10014" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10015" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10016" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10017" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10018" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10019" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10020" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10021" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10022" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10023" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10024" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10025" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10026" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10027" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10028" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10029" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10030" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10031" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10032" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10033" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10034" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10035" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10036" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10037" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10038" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10039" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10040" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10041" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10042" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10043" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10044" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10045" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10046" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10047" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10048" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10049" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10050" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10051" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10052" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10053" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10054" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10055" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10056" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10057" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10058" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10059" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10060" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10061" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10062" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10063" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10064" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10065" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10066" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10067" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10068" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10069" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10070" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10071" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10072" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10073" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10074" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10075" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10076" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10077" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10078" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10079" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10080" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10081" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10082" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10083" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10084" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10085" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10086" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10087" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10088" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10089" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10090" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10091" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10092" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10093" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10094" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10095" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10096" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10097" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10098" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10099" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10100" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10101" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10102" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10103" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10104" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10105" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10106" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10107" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10108" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10109" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10110" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10111" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10112" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10113" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10114" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10115" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10116" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10117" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10118" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10119" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10120" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10121" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10122" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10123" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10124" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10125" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10126" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10127" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10128" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10129" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10130" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10131" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10132" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10133" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10134" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10135" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10136" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10137" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10138" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10139" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10140" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10141" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10142" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10143" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10144" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10145" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10146" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10147" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10148" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10149" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10150" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10151" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10152" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10153" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10154" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10155" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10156" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10157" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10158" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10159" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10160" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10161" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10162" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10163" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10164" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10165" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10166" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10167" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10168" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10169" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10170" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10171" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10172" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10173" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10174" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10175" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10176" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10177" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10178" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10179" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10180" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10181" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10182" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10183" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10184" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10185" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10186" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10187" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10188" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10189" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10190" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10191" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10192" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10193" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10194" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10195" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10196" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10197" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10198" x="640" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10199" x="852" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10200" x="2" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 10201" x="215" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 10202" x="427" y="2" width="207" height="228" frameX="0" frameY="-4" frameWidth="207" frameHeight="232"/>
+	<SubTexture name="Cutscene 20000" x="1065" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 30000" x="1277" y="2" width="207" height="232"/>
+	<SubTexture name="Cutscene 40000" x="1490" y="2" width="240" height="230"/>
+	<SubTexture name="Cutscene 40001" x="1735" y="2" width="233" height="227" frameX="-7" frameY="-3" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40002" x="2" y="240" width="233" height="226" frameX="-7" frameY="-4" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40003" x="241" y="240" width="233" height="226" frameX="-7" frameY="-4" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40004" x="479" y="240" width="230" height="226" frameX="-10" frameY="-4" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40005" x="715" y="240" width="227" height="225" frameX="-13" frameY="-5" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40006" x="947" y="240" width="225" height="225" frameX="-15" frameY="-5" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40007" x="1177" y="240" width="222" height="225" frameX="-18" frameY="-5" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40008" x="1405" y="240" width="221" height="224" frameX="-19" frameY="-6" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40009" x="1631" y="240" width="219" height="224" frameX="-21" frameY="-6" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40010" x="2" y="471" width="217" height="223" frameX="-23" frameY="-7" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40011" x="225" y="471" width="216" height="223" frameX="-24" frameY="-7" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40012" x="446" y="471" width="215" height="222" frameX="-25" frameY="-8" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40013" x="667" y="471" width="215" height="221" frameX="-25" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40014" x="887" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40015" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40016" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40017" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40018" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40019" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40020" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40021" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40022" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40023" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40024" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40025" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40026" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40027" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40028" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40029" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40030" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40031" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40032" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40033" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40034" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40035" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40036" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40037" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40038" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40039" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40040" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40041" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40042" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40043" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40044" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40045" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40046" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40047" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40048" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40049" x="1106" y="471" width="214" height="221" frameX="-26" frameY="-9" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40050" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40051" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40052" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40053" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40054" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40055" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40056" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40057" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40058" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40059" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40060" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40061" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40062" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40063" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40064" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40065" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40066" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40067" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40068" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40069" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40070" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40071" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40072" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40073" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40074" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40075" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40076" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40077" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40078" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40079" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40080" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40081" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40082" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40083" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40084" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40085" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40086" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40087" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40088" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40089" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40090" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40091" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40092" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40093" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40094" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40095" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40096" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40097" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40098" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40099" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40100" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40101" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40102" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40103" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40104" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40105" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40106" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40107" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40108" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40109" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40110" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40111" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40112" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40113" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40114" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40115" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40116" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40117" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40118" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40119" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40120" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40121" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40122" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40123" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40124" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40125" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40126" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40127" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40128" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40129" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40130" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40131" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40132" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40133" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40134" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40135" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40136" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40137" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40138" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40139" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40140" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40141" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40142" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40143" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40144" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40145" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40146" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40147" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40148" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40149" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40150" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40151" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40152" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40153" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40154" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40155" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40156" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40157" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40158" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40159" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40160" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40161" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40162" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40163" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40164" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40165" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40166" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40167" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40168" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40169" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40170" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40171" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40172" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40173" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40174" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40175" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40176" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40177" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40178" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40179" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40180" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40181" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40182" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40183" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40184" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40185" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40186" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40187" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40188" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40189" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40190" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40191" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40192" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40193" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40194" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40195" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40196" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40197" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40198" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40199" x="1326" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Cutscene 40200" x="1331" y="471" width="0" height="0" frameX="21" frameY="131" frameWidth="240" frameHeight="230"/>
+	<SubTexture name="Pillar Beam Tricky0000" x="1336" y="471" width="212" height="213" frameX="-99" frameY="-237" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0001" x="1553" y="471" width="218" height="210" frameX="-93" frameY="-241" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0002" x="1777" y="471" width="211" height="324" frameX="-101" frameY="-127" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0003" x="2" y="800" width="337" height="428" frameX="0" frameY="-22" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0004" x="344" y="800" width="326" height="442" frameX="-34" frameY="-8" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0005" x="675" y="800" width="321" height="451" frameX="-30" frameY="0" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0006" x="1001" y="800" width="318" height="445" frameX="-49" frameY="-5" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0007" x="2" y="800" width="337" height="428" frameX="0" frameY="-22" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0008" x="344" y="800" width="326" height="442" frameX="-34" frameY="-8" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0009" x="675" y="800" width="321" height="451" frameX="-30" frameY="0" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0010" x="1001" y="800" width="318" height="445" frameX="-49" frameY="-5" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0011" x="2" y="800" width="337" height="428" frameX="0" frameY="-22" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0012" x="344" y="800" width="326" height="442" frameX="-34" frameY="-8" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0013" x="675" y="800" width="321" height="451" frameX="-30" frameY="0" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0014" x="1001" y="800" width="318" height="445" frameX="-49" frameY="-5" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0015" x="2" y="800" width="337" height="428" frameX="0" frameY="-22" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0016" x="344" y="800" width="326" height="442" frameX="-34" frameY="-8" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0017" x="675" y="800" width="321" height="451" frameX="-30" frameY="0" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0018" x="1001" y="800" width="318" height="445" frameX="-49" frameY="-5" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0019" x="2" y="800" width="337" height="428" frameX="0" frameY="-22" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0020" x="344" y="800" width="326" height="442" frameX="-34" frameY="-8" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0021" x="675" y="800" width="321" height="451" frameX="-30" frameY="0" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0022" x="1001" y="800" width="318" height="445" frameX="-49" frameY="-5" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0023" x="2" y="800" width="337" height="428" frameX="0" frameY="-22" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0024" x="344" y="800" width="326" height="442" frameX="-34" frameY="-8" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0025" x="675" y="800" width="321" height="451" frameX="-30" frameY="0" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0026" x="1001" y="800" width="318" height="445" frameX="-49" frameY="-5" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0027" x="2" y="800" width="337" height="428" frameX="0" frameY="-22" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0028" x="344" y="800" width="326" height="442" frameX="-34" frameY="-8" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0029" x="675" y="800" width="321" height="451" frameX="-30" frameY="0" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0030" x="1001" y="800" width="318" height="445" frameX="-49" frameY="-5" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0031" x="2" y="800" width="337" height="428" frameX="0" frameY="-22" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0032" x="344" y="800" width="326" height="442" frameX="-34" frameY="-8" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0033" x="675" y="800" width="321" height="451" frameX="-30" frameY="0" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0034" x="1001" y="800" width="318" height="445" frameX="-49" frameY="-5" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0035" x="2" y="800" width="337" height="428" frameX="0" frameY="-22" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0036" x="344" y="800" width="326" height="442" frameX="-34" frameY="-8" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0037" x="675" y="800" width="321" height="451" frameX="-30" frameY="0" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0038" x="1001" y="800" width="318" height="445" frameX="-49" frameY="-5" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0039" x="2" y="800" width="337" height="428" frameX="0" frameY="-22" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0040" x="344" y="800" width="326" height="442" frameX="-34" frameY="-8" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0041" x="675" y="800" width="321" height="451" frameX="-30" frameY="0" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0042" x="1001" y="800" width="318" height="445" frameX="-49" frameY="-5" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0043" x="2" y="800" width="337" height="428" frameX="0" frameY="-22" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0044" x="344" y="800" width="326" height="442" frameX="-34" frameY="-8" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0045" x="675" y="800" width="321" height="451" frameX="-30" frameY="0" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0046" x="1001" y="800" width="318" height="445" frameX="-49" frameY="-5" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0047" x="2" y="800" width="337" height="428" frameX="0" frameY="-22" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0048" x="344" y="800" width="326" height="442" frameX="-34" frameY="-8" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0049" x="675" y="800" width="321" height="451" frameX="-30" frameY="0" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0050" x="1001" y="800" width="318" height="445" frameX="-49" frameY="-5" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0051" x="2" y="800" width="337" height="428" frameX="0" frameY="-22" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0052" x="344" y="800" width="326" height="442" frameX="-34" frameY="-8" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0053" x="675" y="800" width="321" height="451" frameX="-30" frameY="0" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0054" x="1001" y="800" width="318" height="445" frameX="-49" frameY="-5" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0055" x="2" y="800" width="337" height="428" frameX="0" frameY="-22" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0056" x="344" y="800" width="326" height="442" frameX="-34" frameY="-8" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0057" x="675" y="800" width="321" height="451" frameX="-30" frameY="0" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0058" x="1001" y="800" width="318" height="445" frameX="-49" frameY="-5" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0059" x="2" y="800" width="337" height="428" frameX="0" frameY="-22" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0060" x="344" y="800" width="326" height="442" frameX="-34" frameY="-8" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0061" x="675" y="800" width="321" height="451" frameX="-30" frameY="0" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0062" x="1001" y="800" width="318" height="445" frameX="-49" frameY="-5" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0063" x="2" y="800" width="337" height="428" frameX="0" frameY="-22" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0064" x="344" y="800" width="326" height="442" frameX="-34" frameY="-8" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0065" x="675" y="800" width="321" height="451" frameX="-30" frameY="0" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0066" x="1001" y="800" width="318" height="445" frameX="-49" frameY="-5" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0067" x="2" y="800" width="337" height="428" frameX="0" frameY="-22" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0068" x="344" y="800" width="326" height="442" frameX="-34" frameY="-8" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0069" x="675" y="800" width="321" height="451" frameX="-30" frameY="0" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0070" x="1001" y="800" width="318" height="445" frameX="-49" frameY="-5" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0071" x="2" y="800" width="337" height="428" frameX="0" frameY="-22" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0072" x="344" y="800" width="326" height="442" frameX="-34" frameY="-8" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0073" x="675" y="800" width="321" height="451" frameX="-30" frameY="0" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0074" x="1001" y="800" width="318" height="445" frameX="-49" frameY="-5" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0075" x="2" y="800" width="337" height="428" frameX="0" frameY="-22" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0076" x="344" y="800" width="326" height="442" frameX="-34" frameY="-8" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0077" x="675" y="800" width="321" height="451" frameX="-30" frameY="0" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0078" x="1001" y="800" width="318" height="445" frameX="-49" frameY="-5" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0079" x="2" y="800" width="337" height="428" frameX="0" frameY="-22" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0080" x="344" y="800" width="326" height="442" frameX="-34" frameY="-8" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0081" x="675" y="800" width="321" height="451" frameX="-30" frameY="0" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0082" x="1001" y="800" width="318" height="445" frameX="-49" frameY="-5" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0083" x="2" y="800" width="337" height="428" frameX="0" frameY="-22" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0084" x="344" y="800" width="326" height="442" frameX="-34" frameY="-8" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0085" x="675" y="800" width="321" height="451" frameX="-30" frameY="0" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0086" x="1001" y="800" width="318" height="445" frameX="-49" frameY="-5" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0087" x="2" y="800" width="337" height="428" frameX="0" frameY="-22" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0088" x="344" y="800" width="326" height="442" frameX="-34" frameY="-8" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0089" x="675" y="800" width="321" height="451" frameX="-30" frameY="0" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0090" x="1001" y="800" width="318" height="445" frameX="-49" frameY="-5" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0091" x="2" y="800" width="337" height="428" frameX="0" frameY="-22" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0092" x="344" y="800" width="326" height="442" frameX="-34" frameY="-8" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0093" x="675" y="800" width="321" height="451" frameX="-30" frameY="0" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0094" x="1001" y="800" width="318" height="445" frameX="-49" frameY="-5" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0095" x="2" y="800" width="337" height="428" frameX="0" frameY="-22" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0096" x="344" y="800" width="326" height="442" frameX="-34" frameY="-8" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0097" x="675" y="800" width="321" height="451" frameX="-30" frameY="0" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0098" x="1001" y="800" width="318" height="445" frameX="-49" frameY="-5" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0099" x="1325" y="800" width="337" height="428" frameX="0" frameY="-22" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0100" x="1667" y="800" width="326" height="442" frameX="-34" frameY="-8" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0101" x="2" y="1256" width="321" height="451" frameX="-30" frameY="0" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0102" x="328" y="1256" width="318" height="445" frameX="-49" frameY="-5" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0103" x="652" y="1256" width="337" height="428" frameX="0" frameY="-22" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0104" x="994" y="1256" width="326" height="442" frameX="-34" frameY="-8" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0105" x="1325" y="1256" width="321" height="451" frameX="-30" frameY="0" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0106" x="328" y="1256" width="318" height="445" frameX="-49" frameY="-5" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0107" x="652" y="1256" width="337" height="428" frameX="0" frameY="-22" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0108" x="994" y="1256" width="326" height="442" frameX="-34" frameY="-8" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0109" x="1325" y="1256" width="321" height="451" frameX="-30" frameY="0" frameWidth="368" frameHeight="451"/>
+	<SubTexture name="Pillar Beam Tricky0110" x="328" y="1256" width="318" height="445" frameX="-49" frameY="-5" frameWidth="368" frameHeight="451"/>
+</TextureAtlas>

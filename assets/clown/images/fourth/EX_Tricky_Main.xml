@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="EX_Tricky_Main.png">
+<!-- Created with Kades Custom Converter -->
+<SubTexture name="EX Tricky DOWN.png" x="1" y="1" width="4096" height="2048" frameX="-0" frameY="-0" frameWidth="4096" frameHeight="2048"/>
+<SubTexture name="EX Tricky Idle.png" x="4099" y="1" width="4096" height="2048" frameX="-0" frameY="-0" frameWidth="4096" frameHeight="2048"/>
+<SubTexture name="EX Tricky LEFT.png" x="1" y="2051" width="4096" height="2048" frameX="-0" frameY="-0" frameWidth="4096" frameHeight="2048"/>
+<SubTexture name="EX Tricky RIGHT.png" x="4099" y="2051" width="4096" height="2048" frameX="-0" frameY="-0" frameWidth="4096" frameHeight="2048"/>
+<SubTexture name="EX Tricky UP.png" x="1" y="4101" width="4096" height="2048" frameX="-0" frameY="-0" frameWidth="4096" frameHeight="2048"/>
+<SubTexture name="HANK pose.png" x="4099" y="4101" width="3135" height="2748" frameX="-0" frameY="-0" frameWidth="3135" frameHeight="2748"/>
+<SubTexture name="SPAWN animation.png" x="8197" y="1" width="8192" height="4096" frameX="-0" frameY="-0" frameWidth="8192" frameHeight="4096"/>
+<SubTexture name="Spawnhole BACK.png" x="8197" y="4099" width="1024" height="128" frameX="-0" frameY="-0" frameWidth="1024" frameHeight="128"/>
+<SubTexture name="Spawnhole COVER.png" x="9223" y="4099" width="1024" height="256" frameX="-0" frameY="-0" frameWidth="1024" frameHeight="256"/>
+</TextureAtlas>

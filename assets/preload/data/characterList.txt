@@ -18,3 +18,10 @@ spirit
 kapi
 kapi-mad
 bf-kapi
+tricky
+trickyMask
+trickyH
+trickyEx
+bf-hell
+gf-hell
+gf-tied

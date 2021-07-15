@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="MenuTricky.png">
+<!-- Created with Kades Custom Converter -->
+<SubTexture name="menutricky0001.png" x="1" y="1" width="626" height="645" frameX="-0" frameY="-0" frameWidth="626" frameHeight="645"/>
+<SubTexture name="menutricky0002.png" x="629" y="1" width="626" height="645" frameX="-0" frameY="-0" frameWidth="626" frameHeight="645"/>
+<SubTexture name="menutricky0003.png" x="1" y="648" width="626" height="645" frameX="-0" frameY="-0" frameWidth="626" frameHeight="645"/>
+<SubTexture name="menutricky0004.png" x="629" y="648" width="626" height="645" frameX="-0" frameY="-0" frameWidth="626" frameHeight="645"/>
+<SubTexture name="menutricky0005.png" x="1257" y="1" width="626" height="645" frameX="-0" frameY="-0" frameWidth="626" frameHeight="645"/>
+</TextureAtlas>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Alphabet.png">
+<!-- Created with Kades Custom Converter -->
+<SubTexture name="&0000" x="0" y="0" width="82" height="119" frameX="-0" frameY="-0" frameWidth="82" frameHeight="119"/>
+<SubTexture name="& CONFIRM0000" x="83" y="0" width="82" height="119" frameX="-0" frameY="-0" frameWidth="82" frameHeight="119"/>
+<SubTexture name="10000" x="166" y="0" width="67" height="119" frameX="-0" frameY="-0" frameWidth="67" frameHeight="119"/>
+<SubTexture name="1 CONFIRM0000" x="234" y="0" width="67" height="119" frameX="-0" frameY="-0" frameWidth="67" frameHeight="119"/>
+<SubTexture name="20000" x="302" y="0" width="68" height="119" frameX="-0" frameY="-0" frameWidth="68" frameHeight="119"/>
+<SubTexture name="2 CONFIRM0000" x="371" y="0" width="68" height="119" frameX="-0" frameY="-0" frameWidth="68" frameHeight="119"/>
+<SubTexture name="30000" x="440" y="0" width="68" height="119" frameX="-0" frameY="-0" frameWidth="68" frameHeight="119"/>
+<SubTexture name="3 CONFIRM0000" x="509" y="0" width="68" height="119" frameX="-0" frameY="-0" frameWidth="68" frameHeight="119"/>
+<SubTexture name="40000" x="578" y="0" width="68" height="119" frameX="-0" frameY="-0" frameWidth="68" frameHeight="119"/>
+<SubTexture name="4 CONFIRM0000" x="647" y="0" width="68" height="119" frameX="-0" frameY="-0" frameWidth="68" frameHeight="119"/>
+<SubTexture name="50000" x="716" y="0" width="68" height="119" frameX="-0" frameY="-0" frameWidth="68" frameHeight="119"/>
+<SubTexture name="5 CONFIRM0000" x="785" y="0" width="68" height="119" frameX="-0" frameY="-0" frameWidth="68" frameHeight="119"/>
+<SubTexture name="60000" x="854" y="0" width="68" height="119" frameX="-0" frameY="-0" frameWidth="68" frameHeight="119"/>
+<SubTexture name="6 CONFIRM0000" x="923" y="0" width="68" height="119" frameX="-0" frameY="-0" frameWidth="68" frameHeight="119"/>
+<SubTexture name="70000" x="0" y="120" width="68" height="119" frameX="-0" frameY="-0" frameWidth="68" frameHeight="119"/>
+<SubTexture name="7 CONFIRM0000" x="69" y="120" width="68" height="119" frameX="-0" frameY="-0" frameWidth="68" frameHeight="119"/>
+<SubTexture name="80000" x="138" y="120" width="68" height="119" frameX="-0" frameY="-0" frameWidth="68" frameHeight="119"/>
+<SubTexture name="8 CONFIRM0000" x="207" y="120" width="68" height="119" frameX="-0" frameY="-0" frameWidth="68" frameHeight="119"/>
+<SubTexture name="90000" x="276" y="120" width="68" height="119" frameX="-0" frameY="-0" frameWidth="68" frameHeight="119"/>
+<SubTexture name="9 CONFIRM0000" x="345" y="120" width="68" height="119" frameX="-0" frameY="-0" frameWidth="68" frameHeight="119"/>
+<SubTexture name="?0000" x="414" y="120" width="62" height="119" frameX="-0" frameY="-0" frameWidth="62" frameHeight="119"/>
+<SubTexture name="? CONFIRM0000" x="477" y="120" width="62" height="119" frameX="-0" frameY="-0" frameWidth="62" frameHeight="119"/>
+<SubTexture name="A0000" x="540" y="120" width="73" height="119" frameX="-0" frameY="-0" frameWidth="73" frameHeight="119"/>
+<SubTexture name="A CONFIRM0000" x="614" y="120" width="73" height="119" frameX="-0" frameY="-0" frameWidth="73" frameHeight="119"/>
+<SubTexture name="B0000" x="688" y="120" width="71" height="119" frameX="-0" frameY="-0" frameWidth="71" frameHeight="119"/>
+<SubTexture name="B CONFIRM0000" x="760" y="120" width="71" height="119" frameX="-0" frameY="-0" frameWidth="71" frameHeight="119"/>
+<SubTexture name="C0000" x="832" y="120" width="71" height="119" frameX="-0" frameY="-0" frameWidth="71" frameHeight="119"/>
+<SubTexture name="C CONFIRM0000" x="904" y="120" width="71" height="119" frameX="-0" frameY="-0" frameWidth="71" frameHeight="119"/>
+<SubTexture name="D0000" x="0" y="240" width="77" height="119" frameX="-0" frameY="-0" frameWidth="77" frameHeight="119"/>
+<SubTexture name="D CONFIRM0000" x="78" y="240" width="77" height="119" frameX="-0" frameY="-0" frameWidth="77" frameHeight="119"/>
+<SubTexture name="E0000" x="156" y="240" width="64" height="119" frameX="-0" frameY="-0" frameWidth="64" frameHeight="119"/>
+<SubTexture name="E CONFIRM0000" x="221" y="240" width="64" height="119" frameX="-0" frameY="-0" frameWidth="64" frameHeight="119"/>
+<SubTexture name="F0000" x="286" y="240" width="62" height="119" frameX="-0" frameY="-0" frameWidth="62" frameHeight="119"/>
+<SubTexture name="F CONFIRM0000" x="349" y="240" width="62" height="119" frameX="-0" frameY="-0" frameWidth="62" frameHeight="119"/>
+<SubTexture name="G0000" x="412" y="240" width="77" height="119" frameX="-0" frameY="-0" frameWidth="77" frameHeight="119"/>
+<SubTexture name="G CONFIRM0000" x="490" y="240" width="77" height="119" frameX="-0" frameY="-0" frameWidth="77" frameHeight="119"/>
+<SubTexture name="H0000" x="568" y="240" width="81" height="119" frameX="-0" frameY="-0" frameWidth="81" frameHeight="119"/>
+<SubTexture name="H CONFIRM0000" x="650" y="240" width="81" height="119" frameX="-0" frameY="-0" frameWidth="81" frameHeight="119"/>
+<SubTexture name="I0000" x="732" y="240" width="53" height="119" frameX="-0" frameY="-0" frameWidth="53" frameHeight="119"/>
+<SubTexture name="I CONFIRM0000" x="786" y="240" width="53" height="119" frameX="-0" frameY="-0" frameWidth="53" frameHeight="119"/>
+<SubTexture name="J0000" x="840" y="240" width="56" height="119" frameX="-0" frameY="-0" frameWidth="56" frameHeight="119"/>
+<SubTexture name="J CONFIRM0000" x="897" y="240" width="56" height="119" frameX="-0" frameY="-0" frameWidth="56" frameHeight="119"/>
+<SubTexture name="K0000" x="0" y="360" width="72" height="119" frameX="-0" frameY="-0" frameWidth="72" frameHeight="119"/>
+<SubTexture name="K CONFIRM0000" x="73" y="360" width="72" height="119" frameX="-0" frameY="-0" frameWidth="72" frameHeight="119"/>
+<SubTexture name="L0000" x="146" y="360" width="63" height="119" frameX="-0" frameY="-0" frameWidth="63" frameHeight="119"/>
+<SubTexture name="L CONFIRM0000" x="210" y="360" width="63" height="119" frameX="-0" frameY="-0" frameWidth="63" frameHeight="119"/>
+<SubTexture name="M0000" x="274" y="360" width="91" height="119" frameX="-0" frameY="-0" frameWidth="91" frameHeight="119"/>
+<SubTexture name="M CONFIRM0000" x="366" y="360" width="91" height="119" frameX="-0" frameY="-0" frameWidth="91" frameHeight="119"/>
+<SubTexture name="N0000" x="458" y="360" width="81" height="119" frameX="-0" frameY="-0" frameWidth="81" frameHeight="119"/>
+<SubTexture name="N CONFIRM0000" x="540" y="360" width="81" height="119" frameX="-0" frameY="-0" frameWidth="81" frameHeight="119"/>
+<SubTexture name="O0000" x="622" y="360" width="80" height="119" frameX="-0" frameY="-0" frameWidth="80" frameHeight="119"/>
+<SubTexture name="O CONFIRM0000" x="703" y="360" width="80" height="119" frameX="-0" frameY="-0" frameWidth="80" frameHeight="119"/>
+<SubTexture name="P0000" x="784" y="360" width="70" height="119" frameX="-0" frameY="-0" frameWidth="70" frameHeight="119"/>
+<SubTexture name="P CONFIRM0000" x="855" y="360" width="70" height="119" frameX="-0" frameY="-0" frameWidth="70" frameHeight="119"/>
+<SubTexture name="Q0000" x="926" y="360" width="80" height="119" frameX="-0" frameY="-0" frameWidth="80" frameHeight="119"/>
+<SubTexture name="Q CONFIRM0000" x="0" y="480" width="80" height="119" frameX="-0" frameY="-0" frameWidth="80" frameHeight="119"/>
+<SubTexture name="R0000" x="81" y="480" width="75" height="119" frameX="-0" frameY="-0" frameWidth="75" frameHeight="119"/>
+<SubTexture name="R CONFIRM0000" x="157" y="480" width="75" height="119" frameX="-0" frameY="-0" frameWidth="75" frameHeight="119"/>
+<SubTexture name="S0000" x="233" y="480" width="68" height="119" frameX="-0" frameY="-0" frameWidth="68" frameHeight="119"/>
+<SubTexture name="S CONFIRM0000" x="302" y="480" width="68" height="119" frameX="-0" frameY="-0" frameWidth="68" frameHeight="119"/>
+<SubTexture name="T0000" x="371" y="480" width="65" height="119" frameX="-0" frameY="-0" frameWidth="65" frameHeight="119"/>
+<SubTexture name="T CONFIRM0000" x="437" y="480" width="65" height="119" frameX="-0" frameY="-0" frameWidth="65" frameHeight="119"/>
+<SubTexture name="U0000" x="503" y="480" width="78" height="119" frameX="-0" frameY="-0" frameWidth="78" frameHeight="119"/>
+<SubTexture name="U CONFIRM0000" x="582" y="480" width="78" height="119" frameX="-0" frameY="-0" frameWidth="78" frameHeight="119"/>
+<SubTexture name="V0000" x="661" y="480" width="72" height="119" frameX="-0" frameY="-0" frameWidth="72" frameHeight="119"/>
+<SubTexture name="V CONFIRM0000" x="734" y="480" width="72" height="119" frameX="-0" frameY="-0" frameWidth="72" frameHeight="119"/>
+<SubTexture name="W0000" x="807" y="480" width="105" height="119" frameX="-0" frameY="-0" frameWidth="105" frameHeight="119"/>
+<SubTexture name="W CONFIRM0000" x="913" y="480" width="105" height="119" frameX="-0" frameY="-0" frameWidth="105" frameHeight="119"/>
+<SubTexture name="X0000" x="0" y="600" width="73" height="119" frameX="-0" frameY="-0" frameWidth="73" frameHeight="119"/>
+<SubTexture name="X CONFIRM0000" x="74" y="600" width="73" height="119" frameX="-0" frameY="-0" frameWidth="73" frameHeight="119"/>
+<SubTexture name="Y0000" x="148" y="600" width="70" height="119" frameX="-0" frameY="-0" frameWidth="70" frameHeight="119"/>
+<SubTexture name="Y CONFIRM0000" x="219" y="600" width="70" height="119" frameX="-0" frameY="-0" frameWidth="70" frameHeight="119"/>
+<SubTexture name="Z0000" x="290" y="600" width="67" height="119" frameX="-0" frameY="-0" frameWidth="67" frameHeight="119"/>
+<SubTexture name="Z CONFIRM0000" x="358" y="600" width="67" height="119" frameX="-0" frameY="-0" frameWidth="67" frameHeight="119"/>
+</TextureAtlas>

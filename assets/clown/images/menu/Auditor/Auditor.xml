@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Auditor.png">
+<!-- Created with Kades Custom Converter -->
+<SubTexture name="Auditor0000" x="0" y="0" width="577" height="770" frameX="-0" frameY="-0" frameWidth="577" frameHeight="770"/>
+<SubTexture name="Auditor0001" x="577" y="0" width="577" height="770" frameX="-0" frameY="-0" frameWidth="577" frameHeight="770"/>
+<SubTexture name="Auditor0002" x="1154" y="0" width="577" height="770" frameX="-0" frameY="-0" frameWidth="577" frameHeight="770"/>
+<SubTexture name="Auditor0003" x="1731" y="0" width="577" height="770" frameX="-0" frameY="-0" frameWidth="577" frameHeight="770"/>
+<SubTexture name="Auditor0004" x="2308" y="0" width="577" height="770" frameX="-0" frameY="-0" frameWidth="577" frameHeight="770"/>
+<SubTexture name="Auditor0005" x="2885" y="0" width="577" height="770" frameX="-0" frameY="-0" frameWidth="577" frameHeight="770"/>
+<SubTexture name="Auditor0006" x="3462" y="0" width="577" height="770" frameX="-0" frameY="-0" frameWidth="577" frameHeight="770"/>
+<SubTexture name="Auditor0007" x="0" y="770" width="577" height="770" frameX="-0" frameY="-0" frameWidth="577" frameHeight="770"/>
+<SubTexture name="Auditor0008" x="577" y="770" width="577" height="770" frameX="-0" frameY="-0" frameWidth="577" frameHeight="770"/>
+<SubTexture name="Auditor0009" x="1154" y="770" width="577" height="770" frameX="-0" frameY="-0" frameWidth="577" frameHeight="770"/>
+<SubTexture name="Auditor0010" x="1731" y="770" width="577" height="770" frameX="-0" frameY="-0" frameWidth="577" frameHeight="770"/>
+<SubTexture name="Auditor0011" x="2308" y="770" width="577" height="770" frameX="-0" frameY="-0" frameWidth="577" frameHeight="770"/>
+<SubTexture name="Auditor0012" x="2885" y="770" width="577" height="770" frameX="-0" frameY="-0" frameWidth="577" frameHeight="770"/>
+<SubTexture name="Auditor0013" x="3462" y="770" width="577" height="770" frameX="-0" frameY="-0" frameWidth="577" frameHeight="770"/>
+<SubTexture name="Auditor0014" x="0" y="1540" width="577" height="770" frameX="-0" frameY="-0" frameWidth="577" frameHeight="770"/>
+<SubTexture name="Auditor0015" x="577" y="1540" width="577" height="770" frameX="-0" frameY="-0" frameWidth="577" frameHeight="770"/>
+<SubTexture name="Auditor0016" x="1154" y="1540" width="577" height="770" frameX="-0" frameY="-0" frameWidth="577" frameHeight="770"/>
+<SubTexture name="Auditor0017" x="1731" y="1540" width="577" height="770" frameX="-0" frameY="-0" frameWidth="577" frameHeight="770"/>
+<SubTexture name="Auditor0018" x="2308" y="1540" width="577" height="770" frameX="-0" frameY="-0" frameWidth="577" frameHeight="770"/>
+<SubTexture name="Auditor0019" x="2885" y="1540" width="577" height="770" frameX="-0" frameY="-0" frameWidth="577" frameHeight="770"/>
+<SubTexture name="Auditor0020" x="3462" y="1540" width="577" height="770" frameX="-0" frameY="-0" frameWidth="577" frameHeight="770"/>
+<SubTexture name="Auditor0021" x="0" y="2310" width="577" height="770" frameX="-0" frameY="-0" frameWidth="577" frameHeight="770"/>
+<SubTexture name="Auditor0022" x="577" y="2310" width="577" height="770" frameX="-0" frameY="-0" frameWidth="577" frameHeight="770"/>
+<SubTexture name="Auditor0023" x="1154" y="2310" width="577" height="770" frameX="-0" frameY="-0" frameWidth="577" frameHeight="770"/>
+<SubTexture name="Auditor0024" x="1731" y="2310" width="577" height="770" frameX="-0" frameY="-0" frameWidth="577" frameHeight="770"/>
+<SubTexture name="Auditor0025" x="2308" y="2310" width="577" height="770" frameX="-0" frameY="-0" frameWidth="577" frameHeight="770"/>
+<SubTexture name="Auditor0026" x="2885" y="2310" width="577" height="770" frameX="-0" frameY="-0" frameWidth="577" frameHeight="770"/>
+<SubTexture name="Auditor0027" x="3462" y="2310" width="577" height="770" frameX="-0" frameY="-0" frameWidth="577" frameHeight="770"/>
+<SubTexture name="Auditor0028" x="0" y="3080" width="577" height="770" frameX="-0" frameY="-0" frameWidth="577" frameHeight="770"/>
+<SubTexture name="Auditor0029" x="577" y="3080" width="577" height="770" frameX="-0" frameY="-0" frameWidth="577" frameHeight="770"/>
+</TextureAtlas>

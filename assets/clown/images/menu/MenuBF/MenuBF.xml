@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="MenuBF.png">
+<!-- Created with Kades Custom Converter -->
+<SubTexture name="BF idle menu0001.png" x="1" y="1" width="370" height="412" frameX="-0" frameY="-0" frameWidth="370" frameHeight="412"/>
+<SubTexture name="BF idle menu0002.png" x="373" y="1" width="370" height="412" frameX="-0" frameY="-0" frameWidth="370" frameHeight="412"/>
+<SubTexture name="BF idle menu0003.png" x="745" y="1" width="370" height="412" frameX="-0" frameY="-0" frameWidth="370" frameHeight="412"/>
+<SubTexture name="BF idle menu0004.png" x="1" y="415" width="370" height="412" frameX="-0" frameY="-0" frameWidth="370" frameHeight="412"/>
+<SubTexture name="BF idle menu0005.png" x="373" y="415" width="370" height="412" frameX="-0" frameY="-0" frameWidth="370" frameHeight="412"/>
+<SubTexture name="BF idle menu0006.png" x="745" y="415" width="370" height="412" frameX="-0" frameY="-0" frameWidth="370" frameHeight="412"/>
+<SubTexture name="BF idle menu0007.png" x="1" y="829" width="370" height="412" frameX="-0" frameY="-0" frameWidth="370" frameHeight="412"/>
+<SubTexture name="BF idle menu0008.png" x="373" y="829" width="370" height="412" frameX="-0" frameY="-0" frameWidth="370" frameHeight="412"/>
+<SubTexture name="BF idle menu0009.png" x="745" y="829" width="370" height="412" frameX="-0" frameY="-0" frameWidth="370" frameHeight="412"/>
+<SubTexture name="BF idle menu0010.png" x="1117" y="1" width="370" height="412" frameX="-0" frameY="-0" frameWidth="370" frameHeight="412"/>
+<SubTexture name="BF idle menu0011.png" x="1117" y="415" width="370" height="412" frameX="-0" frameY="-0" frameWidth="370" frameHeight="412"/>
+<SubTexture name="BF idle menu0012.png" x="1117" y="829" width="370" height="412" frameX="-0" frameY="-0" frameWidth="370" frameHeight="412"/>
+<SubTexture name="BF idle menu0013.png" x="1" y="1243" width="370" height="412" frameX="-0" frameY="-0" frameWidth="370" frameHeight="412"/>
+<SubTexture name="BF idle menu0014.png" x="373" y="1243" width="370" height="412" frameX="-0" frameY="-0" frameWidth="370" frameHeight="412"/>
+</TextureAtlas>

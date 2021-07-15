@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="right.png">
+<!-- Created with Kades Custom Converter -->
+<SubTexture name="Proper Right0000" x="0" y="0" width="2227" height="2427" frameX="-19" frameY="-36" frameWidth="2246" frameHeight="2463"/>
+<SubTexture name="Proper Right0001" x="2277" y="0" width="2097" height="2459" frameX="-87" frameY="-3" frameWidth="2246" frameHeight="2463"/>
+<SubTexture name="Proper Right0002" x="4424" y="0" width="2062" height="2344" frameX="-88" frameY="-116" frameWidth="2246" frameHeight="2463"/>
+<SubTexture name="Proper Right0003" x="0" y="2509" width="2059" height="2395" frameX="-80" frameY="-65" frameWidth="2246" frameHeight="2463"/>
+<SubTexture name="Proper Right0004" x="2109" y="2509" width="2139" height="2448" frameX="-0" frameY="-12" frameWidth="2246" frameHeight="2463"/>
+<SubTexture name="Proper Right0005" x="4298" y="2509" width="2045" height="2460" frameX="-94" frameY="-0" frameWidth="2246" frameHeight="2463"/>
+</TextureAtlas>

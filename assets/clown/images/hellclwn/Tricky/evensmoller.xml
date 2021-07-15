@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="evensmoller.png">
+<!-- Created with Kades Custom Converter -->
+<SubTexture name="Phase 3 Tricky Idle0001" x="0" y="0" width="243" height="339" frameX="-0" frameY="-0" frameWidth="243" frameHeight="339"/>
+<SubTexture name="Phase 3 Tricky Idle0002" x="244" y="0" width="243" height="339" frameX="-0" frameY="-0" frameWidth="243" frameHeight="339"/>
+<SubTexture name="Phase 3 Tricky Idle0003" x="487" y="0" width="243" height="339" frameX="-0" frameY="-0" frameWidth="243" frameHeight="339"/>
+<SubTexture name="Phase 3 Tricky Idle0004" x="731" y="0" width="243" height="339" frameX="-0" frameY="-0" frameWidth="243" frameHeight="339"/>
+<SubTexture name="Phase 3 Tricky Idle0005" x="975" y="0" width="243" height="339" frameX="-0" frameY="-0" frameWidth="243" frameHeight="339"/>
+<SubTexture name="Phase 3 Tricky Idle0006" x="0" y="339" width="243" height="339" frameX="-0" frameY="-0" frameWidth="243" frameHeight="339"/>
+<SubTexture name="Phase 3 Tricky Idle0007" x="244" y="339" width="243" height="339" frameX="-0" frameY="-0" frameWidth="243" frameHeight="339"/>
+<SubTexture name="Phase 3 Tricky Idle0008" x="487" y="339" width="243" height="339" frameX="-0" frameY="-0" frameWidth="243" frameHeight="339"/>
+<SubTexture name="Phase 3 Tricky Idle0009" x="731" y="339" width="243" height="339" frameX="-0" frameY="-0" frameWidth="243" frameHeight="339"/>
+<SubTexture name="Phase 3 Tricky Idle0010" x="975" y="339" width="243" height="339" frameX="-0" frameY="-0" frameWidth="243" frameHeight="339"/>
+<SubTexture name="Phase 3 Tricky Idle0011" x="0" y="679" width="243" height="339" frameX="-0" frameY="-0" frameWidth="243" frameHeight="339"/>
+<SubTexture name="Phase 3 Tricky Idle0012" x="244" y="679" width="243" height="339" frameX="-0" frameY="-0" frameWidth="243" frameHeight="339"/>
+<SubTexture name="Phase 3 Tricky Idle0013" x="487" y="679" width="243" height="339" frameX="-0" frameY="-0" frameWidth="243" frameHeight="339"/>
+<SubTexture name="Phase 3 Tricky Idle0014" x="731" y="679" width="243" height="339" frameX="-0" frameY="-0" frameWidth="243" frameHeight="339"/>
+<SubTexture name="Phase 3 Tricky Idle0015" x="975" y="679" width="243" height="339" frameX="-0" frameY="-0" frameWidth="243" frameHeight="339"/>
+<SubTexture name="Phase 3 Tricky Idle0016" x="1219" y="0" width="243" height="339" frameX="-0" frameY="-0" frameWidth="243" frameHeight="339"/>
+<SubTexture name="Phase 3 Tricky Idle0017" x="1219" y="339" width="243" height="339" frameX="-0" frameY="-0" frameWidth="243" frameHeight="339"/>
+<SubTexture name="Phase 3 Tricky Idle0018" x="1219" y="679" width="243" height="339" frameX="-0" frameY="-0" frameWidth="243" frameHeight="339"/>
+<SubTexture name="Phase 3 Tricky Idle0019" x="0" y="1018" width="243" height="339" frameX="-0" frameY="-0" frameWidth="243" frameHeight="339"/>
+<SubTexture name="Phase 3 Tricky Idle0020" x="244" y="1018" width="243" height="339" frameX="-0" frameY="-0" frameWidth="243" frameHeight="339"/>
+<SubTexture name="Phase 3 Tricky Idle0021" x="487" y="1018" width="243" height="339" frameX="-0" frameY="-0" frameWidth="243" frameHeight="339"/>
+<SubTexture name="Phase 3 Tricky Idle0022" x="731" y="1018" width="243" height="339" frameX="-0" frameY="-0" frameWidth="243" frameHeight="339"/>
+<SubTexture name="Proper Left0000" x="1463" y="0" width="253" height="357" frameX="-0" frameY="-1" frameWidth="263" frameHeight="358"/>
+<SubTexture name="Proper Left0001" x="1720" y="0" width="252" height="350" frameX="-4" frameY="-0" frameWidth="263" frameHeight="358"/>
+<SubTexture name="Proper Left0002" x="1976" y="0" width="242" height="332" frameX="-18" frameY="-13" frameWidth="263" frameHeight="358"/>
+<SubTexture name="Proper Left0003" x="2221" y="0" width="249" height="336" frameX="-12" frameY="-7" frameWidth="263" frameHeight="358"/>
+<SubTexture name="Proper Left0004" x="1463" y="360" width="237" height="343" frameX="-25" frameY="-3" frameWidth="263" frameHeight="358"/>
+<SubTexture name="Proper Left0005" x="1703" y="360" width="243" height="340" frameX="-19" frameY="-1" frameWidth="263" frameHeight="358"/>
+<SubTexture name="Proper Right0000" x="2487" y="0" width="278" height="303" frameX="-2" frameY="-4" frameWidth="280" frameHeight="307"/>
+<SubTexture name="Proper Right0001" x="2771" y="0" width="262" height="307" frameX="-10" frameY="-0" frameWidth="280" frameHeight="307"/>
+<SubTexture name="Proper Right0002" x="3040" y="0" width="257" height="293" frameX="-11" frameY="-14" frameWidth="280" frameHeight="307"/>
+<SubTexture name="Proper Right0003" x="2487" y="313" width="257" height="299" frameX="-10" frameY="-8" frameWidth="280" frameHeight="307"/>
+<SubTexture name="Proper Right0004" x="2750" y="313" width="267" height="306" frameX="-0" frameY="-1" frameWidth="280" frameHeight="307"/>
+<SubTexture name="Proper Right0005" x="3024" y="313" width="255" height="307" frameX="-11" frameY="-0" frameWidth="280" frameHeight="307"/>
+<SubTexture name="Proper Up0000" x="2487" y="650" width="276" height="324" frameX="-7" frameY="-0" frameWidth="283" frameHeight="324"/>
+<SubTexture name="Proper Up0001" x="2766" y="650" width="281" height="317" frameX="-0" frameY="-4" frameWidth="283" frameHeight="324"/>
+<SubTexture name="Proper Up0002" x="3051" y="650" width="271" height="313" frameX="-7" frameY="-6" frameWidth="283" frameHeight="324"/>
+<SubTexture name="Proper Up0003" x="2487" y="978" width="274" height="302" frameX="-4" frameY="-17" frameWidth="283" frameHeight="324"/>
+<SubTexture name="Proper Up0004" x="2764" y="978" width="278" height="315" frameX="-0" frameY="-4" frameWidth="283" frameHeight="324"/>
+<SubTexture name="Proper Up0005" x="3046" y="978" width="275" height="311" frameX="-3" frameY="-8" frameWidth="283" frameHeight="324"/>
+<SubTexture name="Proper Down0000" x="1463" y="750" width="257" height="280" frameX="-6" frameY="-17" frameWidth="276" frameHeight="298"/>
+<SubTexture name="Proper Down0001" x="1723" y="750" width="256" height="277" frameX="-8" frameY="-8" frameWidth="276" frameHeight="298"/>
+<SubTexture name="Proper Down0002" x="1983" y="750" width="258" height="261" frameX="-13" frameY="-17" frameWidth="276" frameHeight="298"/>
+<SubTexture name="Proper Down0003" x="1463" y="1033" width="276" height="266" frameX="-0" frameY="-11" frameWidth="276" frameHeight="298"/>
+<SubTexture name="Proper Down0004" x="1743" y="1033" width="248" height="277" frameX="-10" frameY="-0" frameWidth="276" frameHeight="298"/>
+<SubTexture name="Proper Down0005" x="1994" y="1033" width="253" height="275" frameX="-8" frameY="-0" frameWidth="276" frameHeight="298"/>
+</TextureAtlas>

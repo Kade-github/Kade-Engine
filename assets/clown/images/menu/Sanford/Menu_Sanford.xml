@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Menu_Sanford.png">
+<!-- Created with Kades Custom Converter -->
+<SubTexture name="Sanford0000" x="0" y="0" width="766" height="592" frameX="-27" frameY="-9" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0001" x="776" y="0" width="776" height="588" frameX="-22" frameY="-12" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0002" x="1562" y="0" width="795" height="591" frameX="-19" frameY="-11" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0003" x="2367" y="0" width="821" height="597" frameX="-11" frameY="-7" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0004" x="3198" y="0" width="834" height="601" frameX="-6" frameY="-4" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0005" x="4042" y="0" width="845" height="605" frameX="-2" frameY="-2" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0006" x="4897" y="0" width="848" height="607" frameX="-1" frameY="-0" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0007" x="5755" y="0" width="850" height="607" frameX="-0" frameY="-0" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0008" x="5755" y="0" width="850" height="607" frameX="-0" frameY="-0" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0009" x="6615" y="0" width="849" height="607" frameX="-1" frameY="-0" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0010" x="0" y="617" width="846" height="606" frameX="-2" frameY="-1" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0011" x="856" y="617" width="842" height="603" frameX="-4" frameY="-3" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0012" x="1708" y="617" width="837" height="600" frameX="-6" frameY="-5" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0013" x="2555" y="617" width="828" height="597" frameX="-10" frameY="-7" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0014" x="3393" y="617" width="818" height="592" frameX="-15" frameY="-11" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0015" x="4221" y="617" width="805" height="589" frameX="-20" frameY="-13" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0016" x="5036" y="617" width="774" height="581" frameX="-33" frameY="-20" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0017" x="5820" y="617" width="760" height="579" frameX="-39" frameY="-22" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0018" x="6590" y="617" width="727" height="573" frameX="-52" frameY="-28" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0019" x="7327" y="617" width="709" height="571" frameX="-60" frameY="-33" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0020" x="0" y="1233" width="655" height="565" frameX="-82" frameY="-43" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0021" x="665" y="1233" width="622" height="564" frameX="-101" frameY="-46" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0022" x="1297" y="1233" width="544" height="565" frameX="-146" frameY="-48" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0023" x="1851" y="1233" width="501" height="568" frameX="-170" frameY="-50" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0024" x="2362" y="1233" width="464" height="568" frameX="-190" frameY="-50" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0025" x="2836" y="1233" width="452" height="574" frameX="-199" frameY="-48" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0026" x="3298" y="1233" width="454" height="575" frameX="-201" frameY="-48" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0027" x="3762" y="1233" width="456" height="575" frameX="-202" frameY="-48" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0028" x="3762" y="1233" width="456" height="575" frameX="-202" frameY="-48" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0029" x="4228" y="1233" width="457" height="574" frameX="-202" frameY="-48" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0030" x="4695" y="1233" width="457" height="574" frameX="-201" frameY="-48" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0031" x="5162" y="1233" width="459" height="572" frameX="-199" frameY="-50" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0032" x="5631" y="1233" width="461" height="571" frameX="-195" frameY="-50" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0033" x="6102" y="1233" width="470" height="568" frameX="-182" frameY="-50" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0034" x="6582" y="1233" width="489" height="570" frameX="-164" frameY="-47" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0035" x="7081" y="1233" width="508" height="569" frameX="-152" frameY="-47" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0036" x="7599" y="1233" width="550" height="575" frameX="-121" frameY="-38" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0037" x="0" y="1818" width="576" height="575" frameX="-108" frameY="-36" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0038" x="586" y="1818" width="607" height="580" frameX="-97" frameY="-28" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0039" x="1203" y="1818" width="678" height="589" frameX="-63" frameY="-15" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0040" x="1891" y="1818" width="707" height="593" frameX="-48" frameY="-12" frameWidth="850" frameHeight="623"/>
+<SubTexture name="Sanford0041" x="2608" y="1818" width="734" height="596" frameX="-37" frameY="-9" frameWidth="850" frameHeight="623"/>
+</TextureAtlas>

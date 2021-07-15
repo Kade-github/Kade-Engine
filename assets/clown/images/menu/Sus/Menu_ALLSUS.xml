@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Menu_ALLSUS.png">
+<!-- Created with Kades Custom Converter -->
+<SubTexture name="AMONG DEATH0000" x="0" y="0" width="349" height="358" frameX="-8" frameY="-3" frameWidth="362" frameHeight="361"/>
+<SubTexture name="AMONG DEATH0001" x="399" y="0" width="362" height="361" frameX="-0" frameY="-0" frameWidth="362" frameHeight="361"/>
+<SubTexture name="AMONG DEATH0002" x="811" y="0" width="311" height="244" frameX="-16" frameY="-117" frameWidth="362" frameHeight="361"/>
+<SubTexture name="AMONG DEATH0003" x="1172" y="0" width="304" height="242" frameX="-20" frameY="-119" frameWidth="362" frameHeight="361"/>
+<SubTexture name="AMONG DEATH0004" x="1526" y="0" width="257" height="234" frameX="-47" frameY="-127" frameWidth="362" frameHeight="361"/>
+<SubTexture name="AMONG DEATH0005" x="1833" y="0" width="230" height="227" frameX="-66" frameY="-134" frameWidth="362" frameHeight="361"/>
+<SubTexture name="AMONG DEATH0006" x="1526" y="0" width="257" height="234" frameX="-47" frameY="-127" frameWidth="362" frameHeight="361"/>
+<SubTexture name="AmongUs NuhUh0000" x="2113" y="0" width="262" height="330" frameX="-9" frameY="-0" frameWidth="298" frameHeight="330"/>
+<SubTexture name="AmongUs NuhUh0001" x="2425" y="0" width="253" height="330" frameX="-10" frameY="-0" frameWidth="298" frameHeight="330"/>
+<SubTexture name="AmongUs NuhUh0002" x="2728" y="0" width="252" height="330" frameX="-11" frameY="-0" frameWidth="298" frameHeight="330"/>
+<SubTexture name="AmongUs NuhUh0003" x="3030" y="0" width="250" height="330" frameX="-13" frameY="-0" frameWidth="298" frameHeight="330"/>
+<SubTexture name="AmongUs NuhUh0004" x="3330" y="0" width="249" height="330" frameX="-14" frameY="-0" frameWidth="298" frameHeight="330"/>
+<SubTexture name="AmongUs NuhUh0005" x="3629" y="0" width="248" height="330" frameX="-15" frameY="-0" frameWidth="298" frameHeight="330"/>
+<SubTexture name="AmongUs NuhUh0006" x="0" y="411" width="247" height="330" frameX="-16" frameY="-0" frameWidth="298" frameHeight="330"/>
+<SubTexture name="AmongUs NuhUh0007" x="297" y="411" width="246" height="330" frameX="-17" frameY="-0" frameWidth="298" frameHeight="330"/>
+<SubTexture name="AmongUs NuhUh0008" x="593" y="411" width="248" height="330" frameX="-15" frameY="-0" frameWidth="298" frameHeight="330"/>
+<SubTexture name="AmongUs NuhUh0009" x="891" y="411" width="249" height="330" frameX="-14" frameY="-0" frameWidth="298" frameHeight="330"/>
+<SubTexture name="AmongUs NuhUh0010" x="1190" y="411" width="251" height="330" frameX="-12" frameY="-0" frameWidth="298" frameHeight="330"/>
+<SubTexture name="AmongUs NuhUh0011" x="1491" y="411" width="261" height="330" frameX="-10" frameY="-0" frameWidth="298" frameHeight="330"/>
+<SubTexture name="AmongUs NuhUh0012" x="1802" y="411" width="281" height="330" frameX="-9" frameY="-0" frameWidth="298" frameHeight="330"/>
+<SubTexture name="AmongUs NuhUh0013" x="2133" y="411" width="287" height="330" frameX="-6" frameY="-0" frameWidth="298" frameHeight="330"/>
+<SubTexture name="AmongUs NuhUh0014" x="2470" y="411" width="296" height="330" frameX="-2" frameY="-0" frameWidth="298" frameHeight="330"/>
+<SubTexture name="AmongUs NuhUh0015" x="2816" y="411" width="298" height="330" frameX="-0" frameY="-0" frameWidth="298" frameHeight="330"/>
+<SubTexture name="AmongUs NuhUh0016" x="3164" y="411" width="296" height="330" frameX="-2" frameY="-0" frameWidth="298" frameHeight="330"/>
+<SubTexture name="AmongUs NuhUh0017" x="3510" y="411" width="287" height="330" frameX="-6" frameY="-0" frameWidth="298" frameHeight="330"/>
+<SubTexture name="AmongUs NuhUh0018" x="0" y="791" width="281" height="330" frameX="-9" frameY="-0" frameWidth="298" frameHeight="330"/>
+<SubTexture name="AmongUsIDLE0000" x="331" y="791" width="273" height="330" frameX="-15" frameY="-1" frameWidth="300" frameHeight="331"/>
+<SubTexture name="AmongUsIDLE0001" x="654" y="791" width="277" height="324" frameX="-13" frameY="-7" frameWidth="300" frameHeight="331"/>
+<SubTexture name="AmongUsIDLE0002" x="981" y="791" width="284" height="322" frameX="-9" frameY="-9" frameWidth="300" frameHeight="331"/>
+<SubTexture name="AmongUsIDLE0003" x="1315" y="791" width="287" height="320" frameX="-7" frameY="-11" frameWidth="300" frameHeight="331"/>
+<SubTexture name="AmongUsIDLE0004" x="1652" y="791" width="292" height="319" frameX="-4" frameY="-12" frameWidth="300" frameHeight="331"/>
+<SubTexture name="AmongUsIDLE0005" x="1994" y="791" width="294" height="317" frameX="-3" frameY="-14" frameWidth="300" frameHeight="331"/>
+<SubTexture name="AmongUsIDLE0006" x="2338" y="791" width="298" height="316" frameX="-1" frameY="-15" frameWidth="300" frameHeight="331"/>
+<SubTexture name="AmongUsIDLE0007" x="2686" y="791" width="300" height="316" frameX="-0" frameY="-15" frameWidth="300" frameHeight="331"/>
+<SubTexture name="AmongUsIDLE0008" x="2686" y="791" width="300" height="316" frameX="-0" frameY="-15" frameWidth="300" frameHeight="331"/>
+<SubTexture name="AmongUsIDLE0009" x="2686" y="791" width="300" height="316" frameX="-0" frameY="-15" frameWidth="300" frameHeight="331"/>
+<SubTexture name="AmongUsIDLE0010" x="2686" y="791" width="300" height="316" frameX="-0" frameY="-15" frameWidth="300" frameHeight="331"/>
+<SubTexture name="AmongUsIDLE0011" x="2686" y="791" width="300" height="316" frameX="-0" frameY="-15" frameWidth="300" frameHeight="331"/>
+<SubTexture name="AmongUsIDLE0012" x="2338" y="791" width="298" height="316" frameX="-1" frameY="-15" frameWidth="300" frameHeight="331"/>
+<SubTexture name="AmongUsIDLE0013" x="1994" y="791" width="294" height="317" frameX="-3" frameY="-14" frameWidth="300" frameHeight="331"/>
+<SubTexture name="AmongUsIDLE0014" x="1652" y="791" width="292" height="319" frameX="-4" frameY="-12" frameWidth="300" frameHeight="331"/>
+<SubTexture name="AmongUsIDLE0015" x="1315" y="791" width="287" height="320" frameX="-7" frameY="-11" frameWidth="300" frameHeight="331"/>
+<SubTexture name="AmongUsIDLE0016" x="981" y="791" width="284" height="322" frameX="-9" frameY="-9" frameWidth="300" frameHeight="331"/>
+<SubTexture name="AmongUsIDLE0017" x="654" y="791" width="277" height="324" frameX="-13" frameY="-7" frameWidth="300" frameHeight="331"/>
+<SubTexture name="AmongUsIDLE0018" x="331" y="791" width="273" height="330" frameX="-15" frameY="-1" frameWidth="300" frameHeight="331"/>
+<SubTexture name="AmongUsIDLE0019" x="3036" y="791" width="271" height="330" frameX="-16" frameY="-1" frameWidth="300" frameHeight="331"/>
+<SubTexture name="AmongUsIDLE0020" x="3357" y="791" width="269" height="331" frameX="-17" frameY="-0" frameWidth="300" frameHeight="331"/>
+<SubTexture name="AmongUsIDLE0021" x="3357" y="791" width="269" height="331" frameX="-17" frameY="-0" frameWidth="300" frameHeight="331"/>
+<SubTexture name="AmongUsIDLE0022" x="3036" y="791" width="271" height="330" frameX="-16" frameY="-1" frameWidth="300" frameHeight="331"/>
+<SubTexture name="AmongUsIDLE0023" x="331" y="791" width="273" height="330" frameX="-15" frameY="-1" frameWidth="300" frameHeight="331"/>
+</TextureAtlas>

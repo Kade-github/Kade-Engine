@@ -1,0 +1,187 @@
+﻿{"frames": {
+
+"mixtape0000":
+{
+	"frame": {"x":0,"y":0,"w":1170,"h":721},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":64,"w":1170,"h":785},
+	"sourceSize": {"w":1170,"h":785}
+},
+"mixtape0001":
+{
+	"frame": {"x":1171,"y":0,"w":1134,"h":724},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":18,"y":55,"w":1170,"h":785},
+	"sourceSize": {"w":1170,"h":785}
+},
+"mixtape0002":
+{
+	"frame": {"x":2306,"y":0,"w":1101,"h":741},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":35,"y":36,"w":1170,"h":785},
+	"sourceSize": {"w":1170,"h":785}
+},
+"mixtape0003":
+{
+	"frame": {"x":3408,"y":0,"w":1101,"h":759},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":35,"y":18,"w":1170,"h":785},
+	"sourceSize": {"w":1170,"h":785}
+},
+"mixtape0004":
+{
+	"frame": {"x":4510,"y":0,"w":1101,"h":764},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":35,"y":13,"w":1170,"h":785},
+	"sourceSize": {"w":1170,"h":785}
+},
+"mixtape0005":
+{
+	"frame": {"x":5612,"y":0,"w":1101,"h":769},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":35,"y":8,"w":1170,"h":785},
+	"sourceSize": {"w":1170,"h":785}
+},
+"mixtape0006":
+{
+	"frame": {"x":6714,"y":0,"w":1101,"h":774},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":35,"y":3,"w":1170,"h":785},
+	"sourceSize": {"w":1170,"h":785}
+},
+"mixtape0007":
+{
+	"frame": {"x":0,"y":775,"w":1101,"h":777},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":35,"y":0,"w":1170,"h":785},
+	"sourceSize": {"w":1170,"h":785}
+},
+"mixtape0008":
+{
+	"frame": {"x":1102,"y":775,"w":1101,"h":772},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":35,"y":5,"w":1170,"h":785},
+	"sourceSize": {"w":1170,"h":785}
+},
+"mixtape0009":
+{
+	"frame": {"x":2204,"y":775,"w":1101,"h":766},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":35,"y":11,"w":1170,"h":785},
+	"sourceSize": {"w":1170,"h":785}
+},
+"mixtape0010":
+{
+	"frame": {"x":3306,"y":775,"w":1101,"h":732},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":35,"y":45,"w":1170,"h":785},
+	"sourceSize": {"w":1170,"h":785}
+},
+"mixtape0011":
+{
+	"frame": {"x":4408,"y":775,"w":1170,"h":721},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":64,"w":1170,"h":785},
+	"sourceSize": {"w":1170,"h":785}
+},
+"mixtape0012":
+{
+	"frame": {"x":5579,"y":775,"w":1134,"h":724},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":18,"y":55,"w":1170,"h":785},
+	"sourceSize": {"w":1170,"h":785}
+},
+"mixtape0013":
+{
+	"frame": {"x":6714,"y":775,"w":1101,"h":741},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":35,"y":36,"w":1170,"h":785},
+	"sourceSize": {"w":1170,"h":785}
+},
+"mixtape0014":
+{
+	"frame": {"x":0,"y":1553,"w":1101,"h":759},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":35,"y":18,"w":1170,"h":785},
+	"sourceSize": {"w":1170,"h":785}
+},
+"mixtape0015":
+{
+	"frame": {"x":1102,"y":1553,"w":1101,"h":764},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":35,"y":13,"w":1170,"h":785},
+	"sourceSize": {"w":1170,"h":785}
+},
+"mixtape0016":
+{
+	"frame": {"x":2204,"y":1553,"w":1101,"h":769},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":35,"y":8,"w":1170,"h":785},
+	"sourceSize": {"w":1170,"h":785}
+},
+"mixtape0017":
+{
+	"frame": {"x":3306,"y":1553,"w":1101,"h":774},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":35,"y":3,"w":1170,"h":785},
+	"sourceSize": {"w":1170,"h":785}
+},
+"mixtape0018":
+{
+	"frame": {"x":4408,"y":1553,"w":1101,"h":777},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":35,"y":0,"w":1170,"h":785},
+	"sourceSize": {"w":1170,"h":785}
+},
+"mixtape0019":
+{
+	"frame": {"x":5510,"y":1553,"w":1101,"h":772},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":35,"y":5,"w":1170,"h":785},
+	"sourceSize": {"w":1170,"h":785}
+},
+"mixtape0020":
+{
+	"frame": {"x":6612,"y":1553,"w":1101,"h":766},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":35,"y":11,"w":1170,"h":785},
+	"sourceSize": {"w":1170,"h":785}
+},
+"mixtape0021":
+{
+	"frame": {"x":0,"y":2331,"w":1101,"h":732},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":35,"y":45,"w":1170,"h":785},
+	"sourceSize": {"w":1170,"h":785}
+}},
+"meta": {
+	"app": "Adobe Animate",
+	"version": "21.0.6.41649",
+	"image": "DJ_Tricky.png",
+	"format": "RGBA8888",
+	"size": {"w":8192,"h":4096},
+	"scale": "1"
+}
+}

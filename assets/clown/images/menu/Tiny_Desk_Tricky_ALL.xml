@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Tiny_Desk_Tricky_ALL.png">
+<!-- Created with Kades Custom Converter -->
+<SubTexture name="Tiny Desk Tricky Idle0000" x="0" y="0" width="335" height="391" frameX="-53" frameY="-13" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0001" x="345" y="0" width="342" height="370" frameX="-50" frameY="-32" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0002" x="697" y="0" width="333" height="390" frameX="-50" frameY="-14" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0003" x="1040" y="0" width="344" height="375" frameX="-45" frameY="-29" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0004" x="1394" y="0" width="326" height="375" frameX="-49" frameY="-29" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0005" x="1730" y="0" width="325" height="384" frameX="-49" frameY="-21" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0006" x="2065" y="0" width="334" height="385" frameX="-53" frameY="-19" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0007" x="2409" y="0" width="343" height="367" frameX="-50" frameY="-35" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0008" x="2762" y="0" width="335" height="389" frameX="-51" frameY="-15" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0009" x="3107" y="0" width="345" height="377" frameX="-48" frameY="-27" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0010" x="3462" y="0" width="326" height="379" frameX="-49" frameY="-25" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0011" x="0" y="401" width="325" height="390" frameX="-49" frameY="-15" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0012" x="335" y="401" width="335" height="390" frameX="-53" frameY="-13" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0013" x="680" y="401" width="341" height="370" frameX="-50" frameY="-32" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0014" x="1031" y="401" width="334" height="390" frameX="-48" frameY="-13" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0015" x="1375" y="401" width="344" height="377" frameX="-42" frameY="-27" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0016" x="1729" y="401" width="327" height="377" frameX="-48" frameY="-27" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0017" x="2066" y="401" width="325" height="386" frameX="-49" frameY="-18" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0018" x="2401" y="401" width="334" height="386" frameX="-47" frameY="-17" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0019" x="2745" y="401" width="335" height="367" frameX="-50" frameY="-35" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0020" x="3090" y="401" width="333" height="386" frameX="-44" frameY="-17" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0021" x="3433" y="401" width="344" height="373" frameX="-39" frameY="-31" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0022" x="0" y="801" width="331" height="374" frameX="-44" frameY="-30" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0023" x="341" y="801" width="325" height="383" frameX="-49" frameY="-21" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0024" x="676" y="801" width="334" height="383" frameX="-44" frameY="-20" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0025" x="1020" y="801" width="335" height="365" frameX="-49" frameY="-37" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0026" x="1365" y="801" width="333" height="385" frameX="-43" frameY="-18" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0027" x="1708" y="801" width="343" height="374" frameX="-40" frameY="-30" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0028" x="2061" y="801" width="329" height="375" frameX="-46" frameY="-29" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0029" x="2400" y="801" width="325" height="385" frameX="-49" frameY="-19" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0030" x="2735" y="801" width="335" height="386" frameX="-47" frameY="-17" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0031" x="3080" y="801" width="337" height="369" frameX="-50" frameY="-33" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0032" x="3427" y="801" width="332" height="389" frameX="-47" frameY="-14" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0033" x="0" y="1200" width="344" height="378" frameX="-46" frameY="-26" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0034" x="354" y="1200" width="326" height="381" frameX="-49" frameY="-23" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0035" x="690" y="1200" width="325" height="390" frameX="-49" frameY="-14" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0036" x="335" y="401" width="335" height="390" frameX="-53" frameY="-13" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0037" x="1025" y="1200" width="333" height="361" frameX="-38" frameY="-43" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0038" x="1368" y="1200" width="359" height="404" frameX="-16" frameY="-0" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0039" x="1737" y="1200" width="334" height="400" frameX="-41" frameY="-4" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0040" x="2081" y="1200" width="354" height="390" frameX="-22" frameY="-13" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0041" x="2445" y="1200" width="354" height="386" frameX="-24" frameY="-16" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0042" x="2809" y="1200" width="350" height="401" frameX="-26" frameY="-3" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0043" x="3169" y="1200" width="386" height="392" frameX="-0" frameY="-12" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0044" x="3565" y="1200" width="361" height="399" frameX="-14" frameY="-5" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0045" x="0" y="1614" width="339" height="393" frameX="-36" frameY="-11" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0046" x="349" y="1614" width="353" height="388" frameX="-23" frameY="-15" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0047" x="712" y="1614" width="353" height="385" frameX="-25" frameY="-17" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0048" x="2809" y="1200" width="350" height="401" frameX="-26" frameY="-3" frameWidth="393" frameHeight="405"/>
+<SubTexture name="Tiny Desk Tricky Idle0049" x="1025" y="1200" width="333" height="361" frameX="-38" frameY="-43" frameWidth="393" frameHeight="405"/>
+</TextureAtlas>

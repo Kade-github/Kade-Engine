@@ -1,0 +1,107 @@
+﻿{"frames": {
+
+"smoke0000":
+{
+	"frame": {"x":0,"y":0,"w":103,"h":112},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":88,"y":105,"w":314,"h":343},
+	"sourceSize": {"w":314,"h":343}
+},
+"smoke0001":
+{
+	"frame": {"x":153,"y":0,"w":134,"h":149},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":73,"y":88,"w":314,"h":343},
+	"sourceSize": {"w":314,"h":343}
+},
+"smoke0002":
+{
+	"frame": {"x":337,"y":0,"w":158,"h":174},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":65,"y":78,"w":314,"h":343},
+	"sourceSize": {"w":314,"h":343}
+},
+"smoke0003":
+{
+	"frame": {"x":545,"y":0,"w":191,"h":213},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":53,"y":57,"w":314,"h":343},
+	"sourceSize": {"w":314,"h":343}
+},
+"smoke0004":
+{
+	"frame": {"x":786,"y":0,"w":208,"h":246},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":44,"y":43,"w":314,"h":343},
+	"sourceSize": {"w":314,"h":343}
+},
+"smoke0005":
+{
+	"frame": {"x":1044,"y":0,"w":225,"h":271},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":36,"y":30,"w":314,"h":343},
+	"sourceSize": {"w":314,"h":343}
+},
+"smoke0006":
+{
+	"frame": {"x":1319,"y":0,"w":255,"h":279},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":30,"y":26,"w":314,"h":343},
+	"sourceSize": {"w":314,"h":343}
+},
+"smoke0007":
+{
+	"frame": {"x":1624,"y":0,"w":275,"h":297},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":21,"y":17,"w":314,"h":343},
+	"sourceSize": {"w":314,"h":343}
+},
+"smoke0008":
+{
+	"frame": {"x":0,"y":347,"w":292,"h":318},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":12,"y":9,"w":314,"h":343},
+	"sourceSize": {"w":314,"h":343}
+},
+"smoke0009":
+{
+	"frame": {"x":342,"y":347,"w":308,"h":333},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":4,"w":314,"h":343},
+	"sourceSize": {"w":314,"h":343}
+},
+"smoke0010":
+{
+	"frame": {"x":700,"y":347,"w":314,"h":343},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":314,"h":343},
+	"sourceSize": {"w":314,"h":343}
+},
+"smoke0011":
+{
+	"frame": {"x":1064,"y":347,"w":0,"h":0},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":88,"y":105,"w":314,"h":343},
+	"sourceSize": {"w":314,"h":343}
+}},
+"meta": {
+	"app": "Adobe Animate",
+	"version": "21.0.5.40714",
+	"image": "Smoke.png",
+	"format": "RGBA8888",
+	"size": {"w":2048,"h":1024},
+	"scale": "1"
+}
+}

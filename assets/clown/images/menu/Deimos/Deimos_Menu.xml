@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Deimos_Menu.png">
+<!-- Created with Kades Custom Converter -->
+<SubTexture name="Deimos0000" x="0" y="0" width="505" height="536" frameX="-37" frameY="-3" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0001" x="515" y="0" width="506" height="536" frameX="-35" frameY="-2" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0002" x="1031" y="0" width="512" height="536" frameX="-29" frameY="-2" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0003" x="1553" y="0" width="515" height="536" frameX="-25" frameY="-2" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0004" x="2078" y="0" width="519" height="536" frameX="-21" frameY="-2" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0005" x="2607" y="0" width="523" height="537" frameX="-17" frameY="-1" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0006" x="3140" y="0" width="526" height="538" frameX="-13" frameY="-0" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0007" x="0" y="548" width="529" height="538" frameX="-10" frameY="-0" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0008" x="539" y="548" width="531" height="538" frameX="-8" frameY="-0" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0009" x="1080" y="548" width="532" height="538" frameX="-7" frameY="-0" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0010" x="1622" y="548" width="533" height="538" frameX="-6" frameY="-0" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0011" x="2165" y="548" width="535" height="539" frameX="-4" frameY="-0" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0012" x="2710" y="548" width="536" height="539" frameX="-2" frameY="-0" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0013" x="3256" y="548" width="537" height="539" frameX="-1" frameY="-0" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0014" x="0" y="1097" width="538" height="538" frameX="-0" frameY="-1" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0015" x="0" y="1097" width="538" height="538" frameX="-0" frameY="-1" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0016" x="0" y="1097" width="538" height="538" frameX="-0" frameY="-1" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0017" x="0" y="1097" width="538" height="538" frameX="-0" frameY="-1" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0018" x="0" y="1097" width="538" height="538" frameX="-0" frameY="-1" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0019" x="548" y="1097" width="538" height="538" frameX="-0" frameY="-1" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0020" x="1096" y="1097" width="537" height="539" frameX="-1" frameY="-0" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0021" x="1643" y="1097" width="536" height="539" frameX="-2" frameY="-0" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0022" x="2189" y="1097" width="535" height="539" frameX="-4" frameY="-0" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0023" x="2734" y="1097" width="534" height="539" frameX="-5" frameY="-0" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0024" x="3278" y="1097" width="533" height="539" frameX="-6" frameY="-0" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0025" x="0" y="1646" width="531" height="539" frameX="-8" frameY="-0" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0026" x="541" y="1646" width="529" height="539" frameX="-10" frameY="-0" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0027" x="1080" y="1646" width="526" height="538" frameX="-14" frameY="-1" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0028" x="1616" y="1646" width="523" height="538" frameX="-17" frameY="-1" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0029" x="2149" y="1646" width="520" height="537" frameX="-21" frameY="-2" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0030" x="2679" y="1646" width="515" height="535" frameX="-26" frameY="-4" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0031" x="3204" y="1646" width="513" height="534" frameX="-29" frameY="-5" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0032" x="0" y="2195" width="509" height="534" frameX="-33" frameY="-5" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0033" x="519" y="2195" width="504" height="535" frameX="-38" frameY="-4" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0034" x="1033" y="2195" width="501" height="534" frameX="-41" frameY="-5" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0035" x="1544" y="2195" width="501" height="534" frameX="-42" frameY="-5" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0036" x="2055" y="2195" width="496" height="533" frameX="-47" frameY="-6" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0037" x="2055" y="2195" width="496" height="533" frameX="-47" frameY="-6" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0038" x="2055" y="2195" width="496" height="533" frameX="-47" frameY="-6" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0039" x="2561" y="2195" width="500" height="534" frameX="-43" frameY="-5" frameWidth="543" frameHeight="539"/>
+<SubTexture name="Deimos0040" x="3071" y="2195" width="504" height="534" frameX="-38" frameY="-5" frameWidth="543" frameHeight="539"/>
+</TextureAtlas>
