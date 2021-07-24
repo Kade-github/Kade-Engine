@@ -37,7 +37,9 @@ class OptionsMenu extends MusicBeatState
 			new AccuracyDOption("Change how accuracy is calculated. (Accurate = Simple, Complex = Milisecond Based)"),
 			new ResetButtonOption("Toggle pressing R to gameover."),
 			// new OffsetMenu("Get a note offset based off of your inputs!"),
-			new CustomizeGameplay("Drag and drop gameplay modules to your prefered positions!")
+			new CustomizeGameplay("Drag and drop gameplay modules to your prefered positions!"),
+			new FreeplayCutsceneOption("Toggle cutscene skip while on Freeplay"),
+			new StoryCutsceneOption("Toggle cutscene skip while on Story")
 		]),
 		new OptionCategory("Appearance", [
 			new EditorRes("Not showing the editor grid will greatly increase editor performance"),

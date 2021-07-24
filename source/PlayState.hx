@@ -1245,7 +1245,10 @@ class PlayState extends MusicBeatState
 
 		trace('starting');
 
-		if (isStoryMode)
+		var storyskipthing = isStoryMode && FlxG.save.data.storycut;
+		var freeplayskipthing = !isStoryMode && FlxG.save.data.freeplaycut;
+
+		if (storyskipthing || freeplayskipthing)
 		{
 			switch (StringTools.replace(curSong, " ", "-").toLowerCase())
 			{

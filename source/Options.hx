@@ -186,6 +186,48 @@ class DownscrollOption extends Option
 	}
 }
 
+class FreeplayCutsceneOption extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		FlxG.save.data.freeplaycut = !FlxG.save.data.freeplaycut;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return FlxG.save.data.freeplaycut ? "Dont Skip On Freeplay" : "Skip Cut On Freeplay";
+	}
+}
+
+class StoryCutsceneOption extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		FlxG.save.data.storycut = !FlxG.save.data.storycut;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return FlxG.save.data.storycut ? "Don't Skip On Story" : "Skip Cut On Story";
+	}
+}
+
 class GhostTapOption extends Option
 {
 	public function new(desc:String)
@@ -894,6 +936,8 @@ class ResetSettings extends Option
 		FlxG.save.data.weekUnlocked = null;
 		FlxG.save.data.newInput = null;
 		FlxG.save.data.downscroll = null;
+		FlxG.save.data.freeplaycut = null;
+		FlxG.save.data.storycut = null;
 		FlxG.save.data.dfjk = null;
 		FlxG.save.data.accuracyDisplay = null;
 		FlxG.save.data.offset = null;
