@@ -2423,7 +2423,7 @@ class PlayState extends MusicBeatState
 
 		scoreTxt.x = (originalX - (lengthInPx / 2)) + 335;
 
-		if (controls.PAUSE && startedCountdown && canPause)
+		if (controls.PAUSE && startedCountdown && canPause && !cannotDie)
 		{
 			persistentUpdate = false;
 			persistentDraw = true;
@@ -4452,10 +4452,15 @@ class PlayState extends MusicBeatState
 
 		if (curSong == 'Tutorial' && dad.curCharacter == 'gf')
 		{
-			if (curBeat % 2 == 1 && dad.animOffsets.exists('danceLeft'))
-				dad.playAnim('danceLeft');
-			if (curBeat % 2 == 0 && dad.animOffsets.exists('danceRight'))
-				dad.playAnim('danceRight');
+			if (curStep < 64 || SONG.notes[Math.floor(curStep / 16)].mustHitSection)
+				dad.dance();
+			else
+			{
+				if (curStep % 2 == 0 && dad.animOffsets.exists('danceLeft'))
+					dad.playAnim('danceLeft', true);
+				else if (curStep % 2 == 1 && dad.animOffsets.exists('danceRight'))
+					dad.playAnim('danceRight', true);
+			}
 		}
 
 		if (SONG.notes[Math.floor(curStep / 16)] != null)
