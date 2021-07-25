@@ -39,7 +39,8 @@ class OptionsMenu extends MusicBeatState
 			// new OffsetMenu("Get a note offset based off of your inputs!"),
 			new CustomizeGameplay("Drag and drop gameplay modules to your prefered positions!"),
 			new FreeplayCutsceneOption("Toggle cutscene skip while on Freeplay"),
-			new StoryCutsceneOption("Toggle cutscene skip while on Story")
+			new StoryCutsceneOption("Toggle cutscene skip while on Story"),
+			new CountdownOption("Toggle countdown skip at the start of songs")
 		]),
 		new OptionCategory("Appearance", [
 			new EditorRes("Not showing the editor grid will greatly increase editor performance"),

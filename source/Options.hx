@@ -228,6 +228,27 @@ class StoryCutsceneOption extends Option
 	}
 }
 
+class CountdownOption extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		FlxG.save.data.countdown = !FlxG.save.data.countdown;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return FlxG.save.data.countdown ? "Skip Countdown" : "Don't Skip Countdown";
+	}
+}
+
 class GhostTapOption extends Option
 {
 	public function new(desc:String)
@@ -938,6 +959,7 @@ class ResetSettings extends Option
 		FlxG.save.data.downscroll = null;
 		FlxG.save.data.freeplaycut = null;
 		FlxG.save.data.storycut = null;
+		FlxG.save.data.countdown = null;
 		FlxG.save.data.dfjk = null;
 		FlxG.save.data.accuracyDisplay = null;
 		FlxG.save.data.offset = null;
