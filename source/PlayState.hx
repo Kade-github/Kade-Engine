@@ -1460,7 +1460,7 @@ class PlayState extends MusicBeatState
 		}
 		if (FlxG.save.data.countdown)
 		{
-			Conductor.songPosition = -400;
+			Conductor.songPosition = -1000;
 		}
 
 		var swagCounter:Int = 0;
