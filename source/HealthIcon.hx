@@ -14,8 +14,6 @@ class HealthIcon extends FlxSprite
 		super();
 		switch(char)
 		{
-			case 'bf-pixel' | 'senpai' | 'senpai-angry' | 'spirit' | 'gf-pixel':
-				antialiasing = false;
 			case 'trickyMask' | 'tricky':
 				loadGraphic(Paths.image('IconGridTricky','clown'), true, 150, 150);
 

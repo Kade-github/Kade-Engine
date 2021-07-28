@@ -17,10 +17,10 @@ Winter Horrorland:monster-christmas:5
 Senpai:senpai:6
 Roses:senpai:6
 Thorns:spirit:6
-Improbable-Outset:tricky:7
+Improbable-Outset:trickyMask:7
 Madness:tricky:7
-Hellclown:tricky:7
-Expurgation:tricky:7
+Hellclown:trickyH:7
+Expurgation:exTricky:7
 Wocky:kapi:1
 Beathoven:kapi:1
 Hairball:kapi-mad:6
