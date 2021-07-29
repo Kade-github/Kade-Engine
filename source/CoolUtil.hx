@@ -27,7 +27,7 @@ class CoolUtil
 
 	public static function coolTextShit(path:String):Array<Array<String>>
 	{
-		var firstArray:Array<String> = path.trim().split('\n');
+		var firstArray:Array<String> = Assets.getText(path).trim().split('\n');
 		var swagGoodArray:Array<Array<String>> = [];
 		
 		for (i in firstArray)
