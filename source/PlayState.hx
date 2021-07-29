@@ -1,5 +1,6 @@
 package;
 
+
 import Song.Event;
 import openfl.media.Sound;
 #if sys
@@ -178,6 +179,8 @@ class PlayState extends MusicBeatState
 	public var iconP1:HealthIcon; // making these public again because i may be stupid
 	public var iconP2:HealthIcon; // what could go wrong?
 	public var camHUD:FlxCamera;
+	public var camSustains:FlxCamera;
+	public var camNotes:FlxCamera;
 
 	private var camGame:FlxCamera;
 	public var cannotDie = false;
@@ -323,6 +326,8 @@ class PlayState extends MusicBeatState
 
 		#if windows
 		executeModchart = FileSystem.exists(Paths.lua(songLowercase + "/modchart"));
+		if (isSM)
+			executeModchart = FileSystem.exists(pathToSm + "/modchart.lua");
 		if (executeModchart)
 			PlayStateChangeables.Optimize = false;
 		#end
@@ -382,9 +387,15 @@ class PlayState extends MusicBeatState
 		camGame = new FlxCamera();
 		camHUD = new FlxCamera();
 		camHUD.bgColor.alpha = 0;
+		camSustains = new FlxCamera();
+		camSustains.bgColor.alpha = 0;
+		camNotes = new FlxCamera();
+		camNotes.bgColor.alpha = 0;
 
 		FlxG.cameras.reset(camGame);
 		FlxG.cameras.add(camHUD);
+		FlxG.cameras.add(camSustains);
+		FlxG.cameras.add(camNotes);
 
 		FlxCamera.defaultCameras = [camGame];
 
@@ -2334,13 +2345,14 @@ class PlayState extends MusicBeatState
 		{
 			luaModchart.setVar('songPos', Conductor.songPosition);
 			luaModchart.setVar('hudZoom', camHUD.zoom);
+			luaModchart.setVar('curBeat', HelperFunctions.truncateFloat(curDecimalBeat,3));
 			luaModchart.setVar('cameraZoom', FlxG.camera.zoom);
 			luaModchart.executeState('update', [elapsed]);
 
-			for (i in luaWiggles)
+			for (key => value in luaModchart.luaWiggles) 
 			{
 				trace('wiggle le gaming');
-				i.update(elapsed);
+				value.update(elapsed);
 			}
 
 			/*for (i in 0...strumLineNotes.length) {
@@ -2914,6 +2926,10 @@ class PlayState extends MusicBeatState
 			{
 				var dunceNote:Note = unspawnNotes[0];
 				notes.add(dunceNote);
+				if (!dunceNote.isSustainNote)
+					dunceNote.cameras = [camNotes];
+				else
+					dunceNote.cameras = [camSustains];
 
 				var index:Int = unspawnNotes.indexOf(dunceNote);
 				unspawnNotes.splice(index, 1);
@@ -3996,7 +4012,7 @@ class PlayState extends MusicBeatState
 		FlxG.stage.window.onFocusIn.add(focusIn);
 
 		var ourSource:String = "assets/videos/daWeirdVid/dontDelete.webm";
-		WebmPlayer.SKIP_STEP_LIMIT = 90;
+		//WebmPlayer.SKIP_STEP_LIMIT = 90;
 		var str1:String = "WEBM SHIT";
 		webmHandler = new WebmHandler();
 		webmHandler.source(ourSource);
@@ -4452,20 +4468,19 @@ class PlayState extends MusicBeatState
 		#if windows
 		if (executeModchart && luaModchart != null)
 		{
-			luaModchart.setVar('curBeat', curBeat);
 			luaModchart.executeState('beatHit', [curBeat]);
 		}
 		#end
 
 		if (curSong == 'Tutorial' && dad.curCharacter == 'gf')
 		{
-			if (curStep < 64 || SONG.notes[Math.floor(curStep / 16)].mustHitSection)
+			if (SONG.notes[Math.floor(curStep / 16)].mustHitSection)
 				dad.dance();
 			else
 			{
-				if (curStep % 2 == 0 && dad.animOffsets.exists('danceLeft'))
+				if (curBeat == 73 || curBeat % 4 == 0 || curBeat % 4 == 1)
 					dad.playAnim('danceLeft', true);
-				else if (curStep % 2 == 1 && dad.animOffsets.exists('danceRight'))
+				else
 					dad.playAnim('danceRight', true);
 			}
 		}
@@ -4477,7 +4492,7 @@ class PlayState extends MusicBeatState
 
 			// Dad doesnt interupt his own notes
 			if ((SONG.notes[Math.floor(curStep / 16)].mustHitSection || !dad.animation.curAnim.name.startsWith("sing")) && dad.curCharacter != 'gf')
-				if (curBeat % idleBeat == 0 || dad.curCharacter == "spooky")
+				if ((curBeat % idleBeat == 0 || !idleToBeat) || dad.curCharacter == "spooky")
 					dad.dance(idleToBeat);
 		}
 		// FlxG.log.add('change bpm' + SONG.notes[Std.int(curStep / 16)].changeBPM);
@@ -4510,7 +4525,7 @@ class PlayState extends MusicBeatState
 			gf.dance();
 		}
 
-		if (!boyfriend.animation.curAnim.name.startsWith("sing") && curBeat % idleBeat == 0)
+		if (!boyfriend.animation.curAnim.name.startsWith("sing") && (curBeat % idleBeat == 0 || !idleToBeat))
 		{
 			boyfriend.playAnim('idle', idleToBeat);
 		}
