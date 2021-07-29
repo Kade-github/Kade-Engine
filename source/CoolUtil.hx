@@ -24,18 +24,31 @@ class CoolUtil
 
 		return daList;
 	}
-	
-	public static function coolStringFile(path:String):Array<String>
+
+	public static function coolTextShit(path:String):Array<Array<String>>
+	{
+		var firstArray:Array<String> = path.trim().split('\n');
+		var swagGoodArray:Array<Array<String>> = [];
+		
+		for (i in firstArray)
 		{
-			var daList:Array<String> = path.trim().split('\n');
-	
-			for (i in 0...daList.length)
-			{
-				daList[i] = daList[i].trim();
-			}
-	
-			return daList;
+			swagGoodArray.push(i.split(':'));
 		}
+		
+		return swagGoodArray;
+	}
+
+	public static function coolStringFile(path:String):Array<String>
+	{
+		var daList:Array<String> = path.trim().split('\n');
+	
+		for (i in 0...daList.length)
+		{
+			daList[i] = daList[i].trim();
+		}
+	
+		return daList;
+	}
 
 	public static function numberArray(max:Int, ?min = 0):Array<Int>
 	{
