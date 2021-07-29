@@ -36,6 +36,9 @@ class LoadReplayState extends MusicBeatState
 	private var grpControls:FlxTypedGroup<Alphabet>;
 	var versionShit:FlxText;
 	var poggerDetails:FlxText;
+
+	var weekSongs:Array<Dynamic> = CoolUtil.coolTextShit(Paths.txt('data/weekSongs'));
+
 	override function create()
 	{
 		var menuBG:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
@@ -46,14 +49,14 @@ class LoadReplayState extends MusicBeatState
 
         controlsStrings.sort(Reflect.compare);
 
-        addWeek(['Bopeebo', 'Fresh', 'Dadbattle'], 1, ['dad']);
-        addWeek(['Spookeez', 'South', 'Monster'], 2, ['spooky']);
-        addWeek(['Pico', 'Philly', 'Blammed'], 3, ['pico']);
+        addWeek(weekSongs[0], 1, ['dad']);
+        addWeek(weekSongs[1], 2, ['spooky']);
+        addWeek(weekSongs[2], 3, ['pico']);
 
-        addWeek(['Satin-Panties', 'High', 'Milf'], 4, ['mom']);
-        addWeek(['Cocoa', 'Eggnog', 'Winter-Horrorland'], 5, ['parents-christmas', 'parents-christmas', 'monster-christmas']);
+        addWeek(weekSongs[3], 4, ['mom']);
+        addWeek(weekSongs[4], 5, ['parents-christmas', 'parents-christmas', 'monster-christmas']);
         
-        addWeek(['Senpai', 'Roses', 'Thorns'], 6, ['senpai', 'senpai', 'spirit']);
+        addWeek(weekSongs[5], 6, ['senpai', 'senpai', 'spirit']);
 
 
         for(i in 0...controlsStrings.length)
