@@ -117,6 +117,10 @@ class AnimationDebug extends FlxState
 			FlxG.camera.zoom += 0.25;
 		if (FlxG.keys.justPressed.Q)
 			FlxG.camera.zoom -= 0.25;
+			
+		// Got tired of having to close the program every time I used this. Added this bit to go back to the main menu by pressing Enter.
+		if (FlxG.keys.justPressed.ENTER)
+			FlxG.switchState(new MainMenuState());
 
 		if (FlxG.keys.justPressed.F)
 			char.flipX = !char.flipX;
