@@ -49,6 +49,7 @@ class OptionsMenu extends MusicBeatState
 			new NPSDisplayOption("Shows your current Notes Per Second on the info bar."),
 			new RainbowFPSOption("Make the FPS Counter flicker through rainbow colors."),
 			new CpuStrums("Toggle the CPU's strumline lighting up when it hits a note."),
+			new SkipCut("Pick when to skip cutscenes.")
 		]),
 		
 		new OptionCategory("Misc", [
@@ -61,7 +62,7 @@ class OptionsMenu extends MusicBeatState
 			new ShowInput("Display every single input on the score screen."),
 			new Optimization("No characters or backgrounds. Just a usual rhythm game layout."),
 			new GraphicLoading("On startup, cache every character. Significantly decrease load times. (HIGH MEMORY)"),
-			new BotPlay("Showcase your charts and mods with autoplay.")
+			new BotPlay("Showcase your charts and mods with autoplay."),
 		]),
 		
 		new OptionCategory("Saves and Data", [

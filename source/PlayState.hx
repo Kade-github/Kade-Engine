@@ -1081,12 +1081,6 @@ class PlayState extends MusicBeatState
 
 		trace("SF CALC: " + Math.floor((PlayStateChangeables.safeFrames / 60) * 1000));
 
-		var doof:DialogueBox = new DialogueBox(false, dialogue);
-		// doof.x += 70;
-		// doof.y = FlxG.height * 0.5;
-		doof.scrollFactor.set();
-		doof.finishThing = startCountdown;
-
 		Conductor.songPosition = -5000;
 
 		strumLine = new FlxSprite(0, 50).makeGraphic(FlxG.width, 10);
@@ -1237,7 +1231,6 @@ class PlayState extends MusicBeatState
 		iconP1.cameras = [camHUD];
 		iconP2.cameras = [camHUD];
 		scoreTxt.cameras = [camHUD];
-		doof.cameras = [camHUD];
 		if (FlxG.save.data.songPosition)
 		{
 			songPosBG.cameras = [camHUD];
@@ -1256,8 +1249,16 @@ class PlayState extends MusicBeatState
 
 		trace('starting');
 
-		if (isStoryMode)
+		if (FlxG.save.data.skipCut == 0 || (FlxG.save.data.skipCut == 2 && isStoryMode) || (FlxG.save.data.skipCut == 3 && !isStoryMode))
 		{
+			// I'll just put all of this here
+			var doof:DialogueBox = new DialogueBox(false, dialogue);
+			// doof.x += 70;
+			// doof.y = FlxG.height * 0.5;
+			doof.scrollFactor.set();
+			doof.finishThing = startCountdown;
+			doof.cameras = [camHUD];
+
 			switch (StringTools.replace(curSong, " ", "-").toLowerCase())
 			{
 				case "winter-horrorland":

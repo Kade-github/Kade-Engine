@@ -925,6 +925,7 @@ class ResetSettings extends Option
 		FlxG.save.data.optimize = null;
 		FlxG.save.data.cacheImages = null;
 		FlxG.save.data.editor = null;
+		FlxG.save.data.skipCut = 0;
 
 		KadeEngineData.initSave();
 		confirm = false;
@@ -936,5 +937,40 @@ class ResetSettings extends Option
 	private override function updateDisplay():String
 	{
 		return confirm ? "Confirm Settings Reset" : "Reset Settings";
+	}
+}
+
+class SkipCut extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		FlxG.save.data.skipCut++;
+		if (FlxG.save.data.skipCut == 4) FlxG.save.data.skipCut = 0;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		var text:String = "";
+		switch (FlxG.save.data.skipCut)
+		{
+			case 0:
+				text = "Never";
+			case 1:
+				text = "Always";
+			case 2:
+				text = "Story mode";
+			case 3:
+				text = "Free play";
+		}
+
+		return text + " skip cutscenes";
 	}
 }
