@@ -176,6 +176,27 @@ class DialogueBox extends FlxSpriteGroup
 			startDialogue();
 			dialogueStarted = true;
 		}
+		if (FlxG.save.data.cutscenes && PlayerSettings.player1.controls.BACK)
+		{
+			remove(dialogue);
+			isEnding = true;
+			FlxG.sound.music.fadeOut(0.1, 0);
+			new FlxTimer().start(0.2, function(tmr:FlxTimer)
+			{
+				box.alpha -= 1 / 5;
+				bgFade.alpha -= 1 / 5 * 0.7;
+				portraitLeft.visible = false;
+				portraitRight.visible = false;
+				swagDialogue.alpha -= 1 / 5;
+				dropText.alpha = swagDialogue.alpha;
+			}, 5);
+
+			new FlxTimer().start(1.2, function(tmr:FlxTimer)
+			{
+				finishThing();
+				kill();
+			});
+		}
 
 		if (PlayerSettings.player1.controls.ACCEPT && dialogueStarted == true)
 		{
