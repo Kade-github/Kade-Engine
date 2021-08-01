@@ -185,7 +185,26 @@ class DownscrollOption extends Option
 		return FlxG.save.data.downscroll ? "Downscroll" : "Upscroll";
 	}
 }
+class SkipCutsceneOption extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
 
+	public override function press():Bool
+	{
+		FlxG.save.data.cutscenes = !FlxG.save.data.cutscenes;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return FlxG.save.data.cutscenes ? "Skip Button Enabled" : "Skip Button Disabled";
+	}
+}
 class GhostTapOption extends Option
 {
 	public function new(desc:String)
@@ -897,6 +916,7 @@ class ResetSettings extends Option
 		FlxG.save.data.downscroll = null;
 		FlxG.save.data.antialiasing = null;
 		FlxG.save.data.missSounds = null;
+		FlxG.save.data.cutscenes = null;
 		FlxG.save.data.dfjk = null;
 		FlxG.save.data.accuracyDisplay = null;
 		FlxG.save.data.offset = null;
