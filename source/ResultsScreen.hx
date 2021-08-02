@@ -259,7 +259,7 @@ class ResultsScreen extends FlxSubState
                     }
                     catch(e:Exception)
                     {
-                        Application.current.window.alert('Make sure that the SM file is called ' + PlayState.pathToSm + '/' + StringTools.replace(PlayState.rep.replay.songName, ' ', '_') + '.sm!n\'As I couldn\'t read it.', 'SM Replays');
+                        Application.current.window.alert('Make sure that the SM file is called ' + PlayState.pathToSm + '/' + StringTools.replace(PlayState.rep.replay.songName, ' ', '_') + '.sm!\nAs I couldn\'t read it.', 'SM Replays');
                         return;
                     }
             }
