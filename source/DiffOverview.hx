@@ -84,7 +84,7 @@ class DiffOverview extends FlxSubState
 			// FlxG.log.add(i);
 			var babyArrow:FlxSprite = new FlxSprite(0, strumLine.y);
 
-			babyArrow.frames = Paths.getSparrowAtlas('NOTE_assets','shared');
+			babyArrow.frames = Paths.getSparrowAtlas('NOTE_assets', 'shared');
 			babyArrow.animation.addByPrefix('green', 'arrowUP');
 			babyArrow.animation.addByPrefix('blue', 'arrowDOWN');
 			babyArrow.animation.addByPrefix('purple', 'arrowLEFT');
@@ -136,7 +136,7 @@ class DiffOverview extends FlxSubState
 
         add(playerStrums);
 
-		generateSong("assItch");
+		generateSong('assItch');
 
         playerStrums.cameras = [camHUD];
         notes.cameras = [camHUD];
@@ -155,8 +155,8 @@ class DiffOverview extends FlxSubState
         blackBox.y -= 100;
         blackBox.x -= 100;
 
-        offset = new FlxText(10,FlxG.height - 40,0,"Offset: " + HelperFunctions.truncateFloat(FlxG.save.data.offset,0) + " (LEFT/RIGHT to decrease/increase)",16);
-        offset.setBorderStyle(FlxTextBorderStyle.OUTLINE,FlxColor.BLACK,4,1);
+        offset = new FlxText(10, FlxG.height - 40, 0, 'Offset: ' + HelperFunctions.truncateFloat(FlxG.save.data.offset, 0) + ' (LEFT/RIGHT to decrease/increase)', 16);
+        offset.setBorderStyle(FlxTextBorderStyle.OUTLINE, FlxColor.BLACK, 4, 1);
         offset.color = FlxColor.WHITE;
         offset.scrollFactor.set();
         //add(offset);
@@ -211,7 +211,7 @@ class DiffOverview extends FlxSubState
         {
             if (FlxG.sound.music.time > Conductor.songPosition + 20 || FlxG.sound.music.time < Conductor.songPosition - 20)
             {
-                trace("resync");
+                trace('resync');
                 resyncVocals();
             }
             oldStep = currentStep;
@@ -292,7 +292,7 @@ class DiffOverview extends FlxSubState
         }
 
 
-        offset.text = "Offset: " + HelperFunctions.truncateFloat(FlxG.save.data.offset,0) + " (LEFT/RIGHT to decrease/increase, SHIFT to go faster) - Time: " + HelperFunctions.truncateFloat(Conductor.songPosition / 1000,0) + "s - Step: " + currentStep;
+        offset.text = 'Offset: ' + HelperFunctions.truncateFloat(FlxG.save.data.offset, 0) + ' (LEFT/RIGHT to decrease/increase, SHIFT to go faster) - Time: ' + HelperFunctions.truncateFloat(Conductor.songPosition / 1000, 0) + 's - Step: ' + currentStep;
         */
 
         if (vocals != null)
@@ -441,7 +441,7 @@ class DiffOverview extends FlxSubState
 				else
 					oldNote = null;
 
-				var swagNote:Note = new Note(daStrumTime, daNoteData, oldNote,false, true);
+				var swagNote:Note = new Note(daStrumTime, daNoteData, oldNote, false, true);
 
                 
 				if (!gottaHitNote)

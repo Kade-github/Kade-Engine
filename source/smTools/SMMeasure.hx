@@ -21,7 +21,7 @@ class SMMeasure
         {
             for (ii in 0...i.length)
             {
-                notes.push(new SMNote(i.split('')[ii],ii));
+                notes.push(new SMNote(i.split('')[ii], ii));
             }
         }
     }

@@ -79,7 +79,7 @@ class MusicBeatState extends FlxUIState
 			{
 				var data = TimingStruct.getTimingAtTimestamp(Conductor.songPosition);
 
-				FlxG.watch.addQuick("Current Conductor Timing Seg", data.bpm);
+				FlxG.watch.addQuick('Current Conductor Timing Seg', data.bpm);
 
 				Conductor.crochet = ((60 / data.bpm) * 1000);
 
@@ -149,7 +149,7 @@ class MusicBeatState extends FlxUIState
 	public function fancyOpenURL(schmancy:String)
 	{
 		#if linux
-		Sys.command('/usr/bin/xdg-open', [schmancy, "&"]);
+		Sys.command('/usr/bin/xdg-open', [schmancy, '&']);
 		#else
 		FlxG.openURL(schmancy);
 		#end

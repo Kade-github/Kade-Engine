@@ -5,7 +5,7 @@ import flixel.FlxG;
 using StringTools;
 class Highscore
 {
-	#if (haxe >= "4.0.0")
+	#if (haxe >= '4.0.0')
 	public static var songScores:Map<String, Int> = new Map();
 	public static var songCombos:Map<String, String> = new Map();
 	#else
@@ -56,7 +56,7 @@ class Highscore
 	{
 
 		#if !switch
-		NGio.postScore(score, "Week " + week);
+		NGio.postScore(score, 'Week ' + week);
 		#end
 
 		if(!FlxG.save.data.botplay)

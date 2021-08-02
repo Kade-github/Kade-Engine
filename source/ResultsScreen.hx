@@ -55,7 +55,7 @@ class ResultsScreen extends FlxSubState
 
 	override function create()
 	{	
-        background = new FlxSprite(0,0).makeGraphic(FlxG.width,FlxG.height,FlxColor.BLACK);
+        background = new FlxSprite(0, 0).makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
         background.scrollFactor.set();
         add(background);
 
@@ -69,9 +69,9 @@ class ResultsScreen extends FlxSubState
 
         background.alpha = 0;
 
-        text = new FlxText(20,-55,0,"Song Cleared!");
+        text = new FlxText(20, -55, 0, 'Song Cleared!');
         text.size = 34;
-        text.setBorderStyle(FlxTextBorderStyle.OUTLINE,FlxColor.BLACK,4,1);
+        text.setBorderStyle(FlxTextBorderStyle.OUTLINE, FlxColor.BLACK, 4, 1);
         text.color = FlxColor.WHITE;
         text.scrollFactor.set();
         add(text);
@@ -80,33 +80,33 @@ class ResultsScreen extends FlxSubState
         if (PlayState.isStoryMode)
         {
             score = PlayState.campaignScore;
-            text.text = "Week Cleared!";
+            text.text = 'Week Cleared!';
         }
 
-        comboText = new FlxText(20,-75,0,'Judgements:\nSicks - ${PlayState.sicks}\nGoods - ${PlayState.goods}\nBads - ${PlayState.bads}\n\nCombo Breaks: ${(PlayState.isStoryMode ? PlayState.campaignMisses : PlayState.misses)}\nHighest Combo: ${PlayState.highestCombo + 1}\nScore: ${PlayState.instance.songScore}\nAccuracy: ${HelperFunctions.truncateFloat(PlayState.instance.accuracy,2)}%\n\n${Ratings.GenerateLetterRank(PlayState.instance.accuracy)}\n\n${!PlayState.loadRep ? "F1 - View replay\nF2 - Replay song" : ""}
+        comboText = new FlxText(20, -75, 0, 'Judgements:\nSicks - ${PlayState.sicks}\nGoods - ${PlayState.goods}\nBads - ${PlayState.bads}\n\nCombo Breaks: ${(PlayState.isStoryMode ? PlayState.campaignMisses : PlayState.misses)}\nHighest Combo: ${PlayState.highestCombo + 1}\nScore: ${PlayState.instance.songScore}\nAccuracy: ${HelperFunctions.truncateFloat(PlayState.instance.accuracy, 2)}%\n\n${Ratings.GenerateLetterRank(PlayState.instance.accuracy)}\n\n${!PlayState.loadRep ? 'F1 - View replay\nF2 - Replay song' : ''}
         ');
         comboText.size = 28;
-        comboText.setBorderStyle(FlxTextBorderStyle.OUTLINE,FlxColor.BLACK,4,1);
+        comboText.setBorderStyle(FlxTextBorderStyle.OUTLINE, FlxColor.BLACK, 4, 1);
         comboText.color = FlxColor.WHITE;
         comboText.scrollFactor.set();
         add(comboText);
 
-        contText = new FlxText(FlxG.width - 475,FlxG.height + 50,0,'Press ${KeyBinds.gamepad ? 'A' : 'ENTER'} to continue.');
+        contText = new FlxText(FlxG.width - 475, FlxG.height + 50, 0, 'Press ${KeyBinds.gamepad ? 'A' : 'ENTER'} to continue.');
         contText.size = 28;
-        contText.setBorderStyle(FlxTextBorderStyle.OUTLINE,FlxColor.BLACK,4,1);
+        contText.setBorderStyle(FlxTextBorderStyle.OUTLINE, FlxColor.BLACK, 4, 1);
         contText.color = FlxColor.WHITE;
         contText.scrollFactor.set();
         add(contText);
 
-        anotherBackground = new FlxSprite(FlxG.width - 500,45).makeGraphic(450,240,FlxColor.BLACK);
+        anotherBackground = new FlxSprite(FlxG.width - 500, 45).makeGraphic(450, 240, FlxColor.BLACK);
         anotherBackground.scrollFactor.set();
         anotherBackground.alpha = 0;
         add(anotherBackground);
         
-        graph = new HitGraph(FlxG.width - 500,45,495,240);
+        graph = new HitGraph(FlxG.width - 500, 45, 495, 240);
         graph.alpha = 0;
 
-        graphSprite = new OFLSprite(FlxG.width - 510,45,460,240,graph);
+        graphSprite = new OFLSprite(FlxG.width - 510, 45, 460, 240, graph);
 
         graphSprite.scrollFactor.set();
         graphSprite.alpha = 0;
@@ -114,8 +114,8 @@ class ResultsScreen extends FlxSubState
         add(graphSprite);
 
 
-        var sicks = HelperFunctions.truncateFloat(PlayState.sicks / PlayState.goods,1);
-        var goods = HelperFunctions.truncateFloat(PlayState.goods / PlayState.bads,1);
+        var sicks = HelperFunctions.truncateFloat(PlayState.sicks / PlayState.goods, 1);
+        var goods = HelperFunctions.truncateFloat(PlayState.goods / PlayState.bads, 1);
 
         if (sicks == Math.POSITIVE_INFINITY)
             sicks = 0;
@@ -147,24 +147,24 @@ class ResultsScreen extends FlxSubState
 
         graph.update();
 
-        mean = HelperFunctions.truncateFloat(mean / PlayState.rep.replay.songNotes.length,2);
+        mean = HelperFunctions.truncateFloat(mean / PlayState.rep.replay.songNotes.length, 2);
 
-        settingsText = new FlxText(20,FlxG.height + 50,0,'SF: ${PlayState.rep.replay.sf} | Ratio (SA/GA): ${Math.round(sicks)}:1 ${Math.round(goods)}:1 | Mean: ${mean}ms | Played on ${PlayState.SONG.song} ${CoolUtil.difficultyFromInt(PlayState.storyDifficulty).toUpperCase()}');
+        settingsText = new FlxText(20, FlxG.height + 50,0, 'SF: ${PlayState.rep.replay.sf} | Ratio (SA/GA): ${Math.round(sicks)}:1 ${Math.round(goods)}:1 | Mean: ${mean}ms | Played on ${PlayState.SONG.song} ${CoolUtil.difficultyFromInt(PlayState.storyDifficulty).toUpperCase()}');
         settingsText.size = 16;
-        settingsText.setBorderStyle(FlxTextBorderStyle.OUTLINE,FlxColor.BLACK,2,1);
+        settingsText.setBorderStyle(FlxTextBorderStyle.OUTLINE, FlxColor.BLACK, 2, 1);
         settingsText.color = FlxColor.WHITE;
         settingsText.scrollFactor.set();
         add(settingsText);
 
 
-        FlxTween.tween(background, {alpha: 0.5},0.5);
-        FlxTween.tween(text, {y:20},0.5,{ease: FlxEase.expoInOut});
-        FlxTween.tween(comboText, {y:145},0.5,{ease: FlxEase.expoInOut});
-        FlxTween.tween(contText, {y:FlxG.height - 45},0.5,{ease: FlxEase.expoInOut});
-        FlxTween.tween(settingsText, {y:FlxG.height - 35},0.5,{ease: FlxEase.expoInOut});
-        FlxTween.tween(anotherBackground, {alpha: 0.6},0.5, {onUpdate: function(tween:FlxTween) {
-            graph.alpha = FlxMath.lerp(0,1,tween.percent);
-            graphSprite.alpha = FlxMath.lerp(0,1,tween.percent);
+        FlxTween.tween(background, {alpha: 0.5}, 0.5);
+        FlxTween.tween(text, {y:20}, 0.5, {ease: FlxEase.expoInOut});
+        FlxTween.tween(comboText, {y:145}, 0.5, {ease: FlxEase.expoInOut});
+        FlxTween.tween(contText, {y:FlxG.height - 45}, 0.5, {ease: FlxEase.expoInOut});
+        FlxTween.tween(settingsText, {y:FlxG.height - 35}, 0.5, {ease: FlxEase.expoInOut});
+        FlxTween.tween(anotherBackground, {alpha: 0.6}, 0.5, {onUpdate: function(tween:FlxTween) {
+            graph.alpha = FlxMath.lerp(0, 1, tween.percent);
+            graphSprite.alpha = FlxMath.lerp(0, 1, tween.percent);
         }});
 
         cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
@@ -189,7 +189,7 @@ class ResultsScreen extends FlxSubState
             PlayState.loadRep = false;
             PlayState.rep = null;
 
-			var songHighscore = StringTools.replace(PlayState.SONG.song, " ", "-");
+			var songHighscore = StringTools.replace(PlayState.SONG.song, ' ', '-');
 			switch (songHighscore) {
 				case 'Dad-Battle': songHighscore = 'Dadbattle';
 				case 'Philly-Nice': songHighscore = 'Philly';
@@ -218,7 +218,7 @@ class ResultsScreen extends FlxSubState
             PlayState.loadRep = true;
             PlayState.isSM = PlayState.rep.replay.sm;
 
-            var songFormat = StringTools.replace(PlayState.rep.replay.songName, " ", "-");
+            var songFormat = StringTools.replace(PlayState.rep.replay.songName, ' ', '-');
             switch (songFormat) {
                 case 'Dad-Battle': songFormat = 'Dadbattle';
                 case 'Philly-Nice': songFormat = 'Philly';
@@ -227,7 +227,7 @@ class ResultsScreen extends FlxSubState
                 case 'philly-nice': songFormat = 'Philly';
             }
 
-			var songHighscore = StringTools.replace(PlayState.SONG.song, " ", "-");
+			var songHighscore = StringTools.replace(PlayState.SONG.song, ' ', '-');
 			switch (songHighscore) {
 				case 'Dad-Battle': songHighscore = 'Dadbattle';
 				case 'Philly-Nice': songHighscore = 'Philly';
@@ -235,19 +235,19 @@ class ResultsScreen extends FlxSubState
 
 			#if !switch
 			Highscore.saveScore(songHighscore, Math.round(PlayState.instance.songScore), PlayState.storyDifficulty);
-			Highscore.saveCombo(songHighscore, Ratings.GenerateLetterRank(PlayState.instance.accuracy),PlayState.storyDifficulty);
+			Highscore.saveCombo(songHighscore, Ratings.GenerateLetterRank(PlayState.instance.accuracy), PlayState.storyDifficulty);
 			#end
 
             #if sys
             if (PlayState.rep.replay.sm)
-                if (!FileSystem.exists(StringTools.replace(PlayState.rep.replay.chartPath,"converted.json","")))
+                if (!FileSystem.exists(StringTools.replace(PlayState.rep.replay.chartPath, 'converted.json', '')))
                 {
-                    Application.current.window.alert("The SM file in this replay does not exist!","SM Replays");
+                    Application.current.window.alert('The SM file in this replay does not exist!', 'SM Replays');
                     return;
                 }
             #end
 
-            var poop = "";
+            var poop = '';
 
             #if sys
             if (PlayState.isSM)
@@ -255,11 +255,11 @@ class ResultsScreen extends FlxSubState
                 poop = File.getContent(PlayState.rep.replay.chartPath);
                 try
                     {
-                PlayState.sm = SMFile.loadFile(PlayState.pathToSm + "/" + StringTools.replace(PlayState.rep.replay.songName," ", "_") + ".sm");
+                PlayState.sm = SMFile.loadFile(PlayState.pathToSm + '/' + StringTools.replace(PlayState.rep.replay.songName, ' ', '_') + '.sm');
                     }
                     catch(e:Exception)
                     {
-                        Application.current.window.alert("Make sure that the SM file is called " + PlayState.pathToSm + "/" + StringTools.replace(PlayState.rep.replay.songName," ", "_") + ".sm!\nAs I couldn't read it.","SM Replays");
+                        Application.current.window.alert('Make sure that the SM file is called ' + PlayState.pathToSm + '/' + StringTools.replace(PlayState.rep.replay.songName, ' ', '_') + '.sm!n\As I couldn\'t read it.', 'SM Replays');
                         return;
                     }
             }
@@ -286,7 +286,7 @@ class ResultsScreen extends FlxSubState
 
             PlayState.loadRep = false;
 
-			var songHighscore = StringTools.replace(PlayState.SONG.song, " ", "-");
+			var songHighscore = StringTools.replace(PlayState.SONG.song, ' ', '-');
 			switch (songHighscore) {
 				case 'Dad-Battle': songHighscore = 'Dadbattle';
 				case 'Philly-Nice': songHighscore = 'Philly';
@@ -294,10 +294,10 @@ class ResultsScreen extends FlxSubState
 
 			#if !switch
 			Highscore.saveScore(songHighscore, Math.round(PlayState.instance.songScore), PlayState.storyDifficulty);
-			Highscore.saveCombo(songHighscore, Ratings.GenerateLetterRank(PlayState.instance.accuracy),PlayState.storyDifficulty);
+			Highscore.saveCombo(songHighscore, Ratings.GenerateLetterRank(PlayState.instance.accuracy), PlayState.storyDifficulty);
 			#end
 
-            var songFormat = StringTools.replace(PlayState.SONG.song, " ", "-");
+            var songFormat = StringTools.replace(PlayState.SONG.song, ' ', '-');
             switch (songFormat) {
                 case 'Dad-Battle': songFormat = 'Dadbattle';
                 case 'Philly-Nice': songFormat = 'Philly';

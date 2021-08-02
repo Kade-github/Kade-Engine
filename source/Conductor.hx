@@ -65,14 +65,14 @@ class Conductor
 			totalSteps += deltaSteps;
 			totalPos += ((60 / curBPM) * 1000 / 4) * deltaSteps;
 		}
-		trace("new BPM map BUDDY " + bpmChangeMap);
+		trace('new BPM map BUDDY ' + bpmChangeMap);
 	}
 
 	public static function recalculateTimingStruct(SONG:Song)
 	{
 		for(i in SONG.eventObjects)
 		{
-			/*TimingStruct.addTiming(beat,bpm,endBeat, Std.parseFloat(OFFSET));
+			/*TimingStruct.addTiming(beat, bpm, endBeat, Std.parseFloat(OFFSET));
 
             if (changeEvents.length != 0)
             {

@@ -18,7 +18,7 @@ class Ana
 	public var hit:Bool;
 	public var hitJudge:String;
 	public var key:Int;
-	public function new(_hitTime:Float,_nearestNote:Array<Dynamic>,_hit:Bool,_hitJudge:String, _key:Int) {
+	public function new(_hitTime:Float, _nearestNote:Array<Dynamic>, _hit:Bool, _hitJudge:String, _key:Int) {
 		hitTime = _hitTime;
 		nearestNote = _nearestNote;
 		hit = _hit;
@@ -54,21 +54,21 @@ typedef ReplayJSON =
 
 class Replay
 {
-	public static var version:String = "1.2"; // replay file version
+	public static var version:String = '1.2'; // replay file version
 
-	public var path:String = "";
+	public var path:String = '';
 	public var replay:ReplayJSON;
 	public function new(path:String)
 	{
 		this.path = path;
 		replay = {
-			songName: "No Song Found", 
+			songName: 'No Song Found', 
 			songDiff: 1,
 			noteSpeed: 1.5,
 			isDownscroll: false,
 			songNotes: [],
 			replayGameVer: version,
-			chartPath: "",
+			chartPath: '',
 			sm: false,
 			timestamp: Date.now(),
 			sf: Conductor.safeFrames,
@@ -91,34 +91,34 @@ class Replay
 	public function SaveReplay(notearray:Array<Dynamic>, judge:Array<String>, ana:Analysis)
 	{
 		#if sys
-		var chartPath = PlayState.isSM ? PlayState.pathToSm + "/converted.json" : "";
+		var chartPath = PlayState.isSM ? PlayState.pathToSm + '/converted.json' : '';
 		#else
-		var chartPath = "";
+		var chartPath = '';
 		#end
 		
 		var json = {
-			"songName": PlayState.SONG.song,
-			"songDiff": PlayState.storyDifficulty,
-			"chartPath": chartPath,
-			"sm": PlayState.isSM,
-			"timestamp": Date.now(),
-			"replayGameVer": version,
-			"sf": Conductor.safeFrames,
-			"noteSpeed": (FlxG.save.data.scrollSpeed > 1 ? FlxG.save.data.scrollSpeed : PlayState.SONG.speed),
-			"isDownscroll": FlxG.save.data.downscroll,
-			"songNotes": notearray,
-			"songJudgements": judge,
-			"ana": ana
+			'songName': PlayState.SONG.song,
+			'songDiff': PlayState.storyDifficulty,
+			'chartPath': chartPath,
+			'sm': PlayState.isSM,
+			'timestamp': Date.now(),
+			'replayGameVer': version,
+			'sf': Conductor.safeFrames,
+			'noteSpeed': (FlxG.save.data.scrollSpeed > 1 ? FlxG.save.data.scrollSpeed : PlayState.SONG.speed),
+			'isDownscroll': FlxG.save.data.downscroll,
+			'songNotes': notearray,
+			'songJudgements': judge,
+			'ana': ana
 		};
 
-		var data:String = Json.stringify(json, null, "");
+		var data:String = Json.stringify(json, null, '');
 		
 		var time = Date.now().getTime();
 
 		#if sys
-		File.saveContent("assets/replays/replay-" + PlayState.SONG.song + "-time" + time + ".kadeReplay", data);
+		File.saveContent('assets/replays/replay-' + PlayState.SONG.song + '-time' + time + '.kadeReplay', data);
 
-		path = "replay-" + PlayState.SONG.song + "-time" + time + ".kadeReplay"; // for score screen shit
+		path = 'replay-' + PlayState.SONG.song + '-time' + time + '.kadeReplay'; // for score screen shit
 
 		LoadFromJSON();
 
@@ -132,7 +132,7 @@ class Replay
 		trace('loading ' + Sys.getCwd() + 'assets/replays/' + path + ' replay...');
 		try
 		{
-			var repl:ReplayJSON = cast Json.parse(File.getContent(Sys.getCwd() + "assets/replays/" + path));
+			var repl:ReplayJSON = cast Json.parse(File.getContent(Sys.getCwd() + 'assets/replays/' + path));
 			replay = repl;
 		}
 		catch(e)

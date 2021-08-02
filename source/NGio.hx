@@ -29,14 +29,14 @@ class NGio
 	public static var ngDataLoaded(default, null):FlxSignal = new FlxSignal();
 	public static var ngScoresLoaded(default, null):FlxSignal = new FlxSignal();
 
-	public static var GAME_VER:String = "";
+	public static var GAME_VER:String = '';
 	public static var GAME_VER_NUMS:String = '';
 	public static var gotOnlineVer:Bool = false;
 
 	public static function noLogin(api:String)
 	{
 		trace('INIT NOLOGIN');
-		GAME_VER = "v" + Application.current.meta.get('version');
+		GAME_VER = 'v' + Application.current.meta.get('version');
 
 		if (api.length != 0)
 		{
@@ -47,7 +47,7 @@ class NGio
 				var call = NG.core.calls.app.getCurrentVersion(GAME_VER).addDataHandler(function(response:Response<GetCurrentVersionResult>)
 				{
 					GAME_VER = response.result.data.currentVersion;
-					GAME_VER_NUMS = GAME_VER.split(" ")[0].trim();
+					GAME_VER_NUMS = GAME_VER.split(' ')[0].trim();
 					trace('CURRENT NG VERSION: ' + GAME_VER);
 					trace('CURRENT NG VERSION: ' + GAME_VER_NUMS);
 					gotOnlineVer = true;
@@ -60,7 +60,7 @@ class NGio
 
 	public function new(api:String, encKey:String, ?sessionId:String)
 	{
-		trace("connecting to newgrounds");
+		trace('connecting to newgrounds');
 
 		NG.createAndCheckSession(api, sessionId);
 
@@ -75,7 +75,7 @@ class NGio
 			/* a session_id was found in the loadervars, this means the user is playing on newgrounds.com
 			 * and we should login shortly. lets wait for that to happen
 			 */
-			trace("attempting login");
+			trace('attempting login');
 			NG.core.onLogin.add(onNGLogin);
 		}
 		else
@@ -140,7 +140,7 @@ class NGio
 
 		// add an update listener so we know when we get the new scores
 		// board.onUpdate.add(onNGScoresFetch);
-		trace("shoulda got score by NOW!");
+		trace('shoulda got score by NOW!');
 		// board.requestScores(20);// get the best 10 scores ever logged
 		// more info on scores --- http://www.newgrounds.io/help/components/#scoreboard-getscores
 	}
@@ -155,7 +155,7 @@ class NGio
 
 				if (song == board.name)
 				{
-					board.postScore(score, "Uhh meow?");
+					board.postScore(score, 'Uhh meow?');
 				}
 
 				// trace('loaded scoreboard id:$id, name:${board.name}');

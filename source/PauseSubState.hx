@@ -36,7 +36,7 @@ class PauseSubState extends MusicBeatSubstate
 
 		if (PlayState.instance.useVideo)
 		{
-			menuItems.remove("Resume");
+			menuItems.remove('Resume');
 			if (GlobalVideo.get().playing)
 				GlobalVideo.get().pause();
 		}
@@ -52,14 +52,14 @@ class PauseSubState extends MusicBeatSubstate
 		bg.scrollFactor.set();
 		add(bg);
 
-		var levelInfo:FlxText = new FlxText(20, 15, 0, "", 32);
+		var levelInfo:FlxText = new FlxText(20, 15, 0, '', 32);
 		levelInfo.text += PlayState.SONG.song;
 		levelInfo.scrollFactor.set();
-		levelInfo.setFormat(Paths.font("vcr.ttf"), 32);
+		levelInfo.setFormat(Paths.font('vcr.ttf'), 32);
 		levelInfo.updateHitbox();
 		add(levelInfo);
 
-		var levelDifficulty:FlxText = new FlxText(20, 15 + 32, 0, "", 32);
+		var levelDifficulty:FlxText = new FlxText(20, 15 + 32, 0, '', 32);
 		levelDifficulty.text += CoolUtil.difficultyFromInt(PlayState.storyDifficulty).toUpperCase();
 		levelDifficulty.scrollFactor.set();
 		levelDifficulty.setFormat(Paths.font('vcr.ttf'), 32);
@@ -78,9 +78,9 @@ class PauseSubState extends MusicBeatSubstate
 
 		grpMenuShit = new FlxTypedGroup<Alphabet>();
 		add(grpMenuShit);
-		perSongOffset = new FlxText(5, FlxG.height - 18, 0, "Additive Offset (Left, Right): " + PlayState.songOffset + " - Description - " + 'Adds value to global offset, per song.', 12);
+		perSongOffset = new FlxText(5, FlxG.height - 18, 0, 'Additive Offset (Left, Right): ' + PlayState.songOffset + ' - Description - ' + 'Adds value to global offset, per song.', 12);
 		perSongOffset.scrollFactor.set();
-		perSongOffset.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		perSongOffset.setFormat('VCR OSD Mono', 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		
 		#if cpp
 			add(perSongOffset);
@@ -126,7 +126,7 @@ class PauseSubState extends MusicBeatSubstate
 		}
 
 		// pre lowercasing the song name (update)
-		var songLowercase = StringTools.replace(PlayState.SONG.song, " ", "-").toLowerCase();
+		var songLowercase = StringTools.replace(PlayState.SONG.song, ' ', '-').toLowerCase();
 		switch (songLowercase) {
 			case 'dad-battle': songLowercase = 'dadbattle';
 			case 'philly-nice': songLowercase = 'philly';
@@ -154,7 +154,7 @@ class PauseSubState extends MusicBeatSubstate
 				oldOffset = PlayState.songOffset;
 				PlayState.songOffset -= 1;
 				sys.FileSystem.rename(songPath + oldOffset + '.offset', songPath + PlayState.songOffset + '.offset');
-				perSongOffset.text = "Additive Offset (Left, Right): " + PlayState.songOffset + " - Description - " + 'Adds value to global offset, per song.';
+				perSongOffset.text = 'Additive Offset (Left, Right): ' + PlayState.songOffset + ' - Description - ' + 'Adds value to global offset, per song.';
 
 				// Prevent loop from happening every single time the offset changes
 				if(!offsetChanged)
@@ -182,7 +182,7 @@ class PauseSubState extends MusicBeatSubstate
 				oldOffset = PlayState.songOffset;
 				PlayState.songOffset += 1;
 				sys.FileSystem.rename(songPath + oldOffset + '.offset', songPath + PlayState.songOffset + '.offset');
-				perSongOffset.text = "Additive Offset (Left, Right): " + PlayState.songOffset + " - Description - " + 'Adds value to global offset, per song.';
+				perSongOffset.text = 'Additive Offset (Left, Right): ' + PlayState.songOffset + ' - Description - ' + 'Adds value to global offset, per song.';
 				if(!offsetChanged)
 				{
 					grpMenuShit.clear();
@@ -205,15 +205,15 @@ class PauseSubState extends MusicBeatSubstate
 			}
 		#end
 
-		if (controls.ACCEPT && !FlxG.keys.pressed.ALT)
+		if (controls.ACCEPT)
 		{
 			var daSelected:String = menuItems[curSelected];
 
 			switch (daSelected)
 			{
-				case "Resume":
+				case 'Resume':
 					close();
-				case "Restart Song":
+				case 'Restart Song':
 					PlayState.startTime = 0;
 					if (PlayState.instance.useVideo)
 					{
@@ -222,7 +222,7 @@ class PauseSubState extends MusicBeatSubstate
 						PlayState.instance.removedVideo = true;
 					}
 					FlxG.resetState();
-				case "Exit to menu":
+				case 'Exit to menu':
 					PlayState.startTime = 0;
 					if (PlayState.instance.useVideo)
 					{

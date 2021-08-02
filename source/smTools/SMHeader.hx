@@ -5,17 +5,17 @@ class SMHeader
 {
     private var _header:Array<String>;
 
-    public var TITLE = "";
-    public var SUBTITLE = "";
-    public var ARTIST = "";
-    public var GENRE = "";
-    public var CREDIT = "";
-    public var MUSIC = "";
-    public var BANNER = "";
-    public var BACKGROUND = "";
-    public var CDTITLE = "";
-    public var OFFSET = "";
-    public var BPMS = ""; // time=bpm 
+    public var TITLE = '';
+    public var SUBTITLE = '';
+    public var ARTIST = '';
+    public var GENRE = '';
+    public var CREDIT = '';
+    public var MUSIC = '';
+    public var BANNER = '';
+    public var BACKGROUND = '';
+    public var CDTITLE = '';
+    public var OFFSET = '';
+    public var BPMS = ''; // time=bpm 
 
     public var changeEvents:Array<Song.Event>;
 
@@ -30,11 +30,11 @@ class SMHeader
 
         trace(BPMS);
 
-        MUSIC = StringTools.replace(MUSIC," ", "_");
+        MUSIC = StringTools.replace(MUSIC, ' ', '_');
 
         changeEvents = [];
 
-        getBPM(0,true);
+        getBPM(0, true);
     }
 
     public function getBeatFromBPMIndex(index):Float
@@ -44,7 +44,7 @@ class SMHeader
         for(ii in 0...bpmSplit.length)
         {
             if (ii == index)
-                return Std.parseFloat(StringTools.replace(bpmSplit[ii].split('=')[0],",",""));
+                return Std.parseFloat(StringTools.replace(bpmSplit[ii].split('=')[0], ',', ''));
         }
         return 0.0;
     }
@@ -59,11 +59,11 @@ class SMHeader
             for(i in bpmSplit)
             {
                 var bpm:Float = Std.parseFloat(i.split('=')[1]);
-                var beat:Float = Std.parseFloat(StringTools.replace(i.split('=')[0],",",""));
+                var beat:Float = Std.parseFloat(StringTools.replace(i.split('=')[0], ',', ''));
 
                 var endBeat:Float = Math.POSITIVE_INFINITY;
 
-                TimingStruct.addTiming(beat,bpm,endBeat, -Std.parseFloat(OFFSET));
+                TimingStruct.addTiming(beat, bpm, endBeat, -Std.parseFloat(OFFSET));
 
                 if (changeEvents.length != 0)
                 {
@@ -73,21 +73,21 @@ class SMHeader
                     TimingStruct.AllTimings[currentIndex].startTime = data.startTime + data.length;
                 }
 
-                changeEvents.push(new Song.Event(HelperFunctions.truncateFloat(beat,0) + "SM",beat,bpm,"BPM Change"));
+                changeEvents.push(new Song.Event(HelperFunctions.truncateFloat(beat, 0) + 'SM', beat, bpm, 'BPM Change'));
 
                 if (bpmSplit.length == 1)
                     break;
                 currentIndex++;
             }
 
-            trace(changeEvents.length + " - BPM CHANGES");
+            trace(changeEvents.length + ' - BPM CHANGES');
             return 0.0;
         }
         var returningBPM = Std.parseFloat(bpmSplit[0].split('=')[1]);
         for(i in bpmSplit)
         {
             var bpm:Float = Std.parseFloat(i.split('=')[1]);
-            var beatt:Float = Std.parseFloat(StringTools.replace(i.split('=')[0],",",""));
+            var beatt:Float = Std.parseFloat(StringTools.replace(i.split('=')[0], ',', ''));
             if (beatt <= beat)
                 returningBPM = bpm;
         }
@@ -98,11 +98,11 @@ class SMHeader
     {
         var propName = line.split('#')[1].split(':')[0];
         var value = line.split(':')[1].split(';')[0];
-        var prop = Reflect.getProperty(this,propName);
+        var prop = Reflect.getProperty(this, propName);
 
         if (prop != null)
         {
-            Reflect.setProperty(this,propName,value);
+            Reflect.setProperty(this, propName, value);
         }
     }
 }

@@ -14,7 +14,7 @@ class Event
 	public var value:Dynamic;
 	public var type:String;
 
-	public function new(name:String,pos:Float,value:Dynamic,type:String)
+	public function new(name:String, pos:Float, value:Dynamic, type:String)
 	{
 		this.name = name;
 		this.position = pos;
@@ -66,7 +66,7 @@ class Song
 
 	public static function loadFromJsonRAW(rawJson:String)
 	{
-		while (!rawJson.endsWith("}"))
+		while (!rawJson.endsWith('}'))
 		{
 			rawJson = rawJson.substr(0, rawJson.length - 1);
 			// LOL GOING THROUGH THE BULLSHIT TO CLEAN IDK WHATS STRANGE
@@ -78,7 +78,7 @@ class Song
 	public static function loadFromJson(jsonInput:String, ?folder:String):SwagSong
 	{
 		// pre lowercasing the folder name
-		var folderLowercase = StringTools.replace(folder, " ", "-").toLowerCase();
+		var folderLowercase = StringTools.replace(folder, ' ', '-').toLowerCase();
 		switch (folderLowercase) {
 			case 'dad-battle': folderLowercase = 'dadbattle';
 			case 'philly-nice': folderLowercase = 'philly';
@@ -88,7 +88,7 @@ class Song
 
 		var rawJson = Assets.getText(Paths.json(folderLowercase + '/' + jsonInput.toLowerCase())).trim();
 
-		while (!rawJson.endsWith("}"))
+		while (!rawJson.endsWith('}'))
 		{
 			rawJson = rawJson.substr(0, rawJson.length - 1);
 			// LOL GOING THROUGH THE BULLSHIT TO CLEAN IDK WHATS STRANGE

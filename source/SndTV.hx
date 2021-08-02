@@ -34,7 +34,7 @@ class TweenV {
 	    speed:Float	 ,
 	    from:Float	 ,
 	    to:Float	 ,
-	    type:h2d.Tweenie.TType ,
+	    type:h2d.Tweenie.TType,
 	    plays		 ,
 	    onUpdate	 ,
 	    onEnd		 
@@ -103,7 +103,7 @@ class TweenV {
 				parent.volume = val;
 				#if debug
 				if( isDebug )
-				trace("tv:" + val);
+				trace('tv:' + val);
 				#end
 			}
 			case TVVPan: 	parent.pan = val;
@@ -156,12 +156,12 @@ class SndTV {
 	
 	public var pool : hxd.Stack<TweenV> = new hxd.Stack();
 
-	function create_(p:Snd, vartype:TVVar,to:Float, ?tp:h2d.Tweenie.TType, ?duration_ms:Float) : TweenV{
+	function create_(p:Snd, vartype:TVVar, to:Float, ?tp:h2d.Tweenie.TType, ?duration_ms:Float) : TweenV{
 		if ( duration_ms==null )
 			duration_ms = DEFAULT_DURATION;
 
 		#if debug
-		if ( p == null ) trace("tween2 creation failed to:"+to+" tp:"+tp);
+		if ( p == null ) trace('tween2 creation failed to:' + to + ' tp:' + tp);
 		#end
 			
 		if ( tp==null ) tp = TEase;
@@ -232,7 +232,7 @@ class SndTV {
 	}
 
 	public static inline 
-	function bezier(t:Float, p0:Float, p1:Float,p2:Float, p3:Float) {
+	function bezier(t:Float, p0:Float, p1:Float, p2:Float, p3:Float) {
 		return
 			fastPow3(1-t)*p0 +
 			3*( t*fastPow2(1-t)*p1 + fastPow2(t)*(1-t)*p2 ) +

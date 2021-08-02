@@ -4,7 +4,7 @@ class LuaShader extends FlxShader
 {
     // SHADER SHIT FOR LUA CODE
 
-    public function new(frag,vert)
+    public function new(frag, vert)
     {   
         glFragmentSource = '
         #pragma header

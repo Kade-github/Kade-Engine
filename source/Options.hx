@@ -27,7 +27,7 @@ class OptionCategory
 		_options.remove(opt);
 	}
 
-	private var _name:String = "New Category";
+	private var _name:String = 'New Category';
 	public final function getName() {
 		return _name;
 	}
@@ -45,7 +45,7 @@ class Option
 	{
 		display = updateDisplay();
 	}
-	private var description:String = "";
+	private var description:String = '';
 	private var display:String;
 	private var acceptValues:Bool = false;
 	public final function getDisplay():String
@@ -63,13 +63,13 @@ class Option
 		return description;
 	}
 
-	public function getValue():String { return throw "stub!"; };
+	public function getValue():String { return throw 'stub!'; };
 	
 	// Returns whether the label is to be updated.
-	public function press():Bool { return throw "stub!"; }
-	private function updateDisplay():String { return throw "stub!"; }
-	public function left():Bool { return throw "stub!"; }
-	public function right():Bool { return throw "stub!"; }
+	public function press():Bool { return throw 'stub!'; }
+	private function updateDisplay():String { return throw 'stub!'; }
+	public function left():Bool { return throw 'stub!'; }
+	public function right():Bool { return throw 'stub!'; }
 }
 
 
@@ -92,7 +92,7 @@ class DFJKOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Key Bindings";
+		return 'Key Bindings';
 	}
 }
 
@@ -114,7 +114,7 @@ class CpuStrums extends Option
 
 	private override function updateDisplay():String
 	{
-		return  FlxG.save.data.cpuStrums ? "Light CPU Strums" : "CPU Strums stay static";
+		return  FlxG.save.data.cpuStrums ? 'Light CPU Strums' : 'CPU Strums stay static';
 	}
 
 }
@@ -137,30 +137,7 @@ class GraphicLoading extends Option
 
 	private override function updateDisplay():String
 	{
-		return  FlxG.save.data.cacheImages ? "Preload Characters" : "Do not Preload Characters";
-	}
-
-}
-
-class EditorRes extends Option
-{
-	public function new(desc:String)
-	{
-		super();
-		description = desc;
-	}
-
-	public override function press():Bool
-	{
-		FlxG.save.data.editor = !FlxG.save.data.editor;
-		
-		display = updateDisplay();
-		return true;
-	}
-
-	private override function updateDisplay():String
-	{
-		return  FlxG.save.data.editor ? "Show Editor Grid" : "Do not Show Editor Grid";
+		return  FlxG.save.data.cacheImages ? 'Preload Characters' : 'Do not Preload Characters';
 	}
 
 }
@@ -182,7 +159,7 @@ class DownscrollOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return FlxG.save.data.downscroll ? "Downscroll" : "Upscroll";
+		return FlxG.save.data.downscroll ? 'Downscroll' : 'Upscroll';
 	}
 }
 
@@ -203,7 +180,7 @@ class GhostTapOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return FlxG.save.data.ghost ? "Ghost Tapping" : "No Ghost Tapping";
+		return FlxG.save.data.ghost ? 'Ghost Tapping' : 'No Ghost Tapping';
 	}
 }
 
@@ -223,7 +200,7 @@ class AccuracyOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Accuracy " + (!FlxG.save.data.accuracyDisplay ? "off" : "on");
+		return 'Accuracy ' + (!FlxG.save.data.accuracyDisplay ? 'off' : 'on');
 	}
 }
 
@@ -243,7 +220,7 @@ class SongPositionOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Song Position " + (!FlxG.save.data.songPosition ? "off" : "on");
+		return 'Song Position ' + (!FlxG.save.data.songPosition ? 'off' : 'on');
 	}
 }
 
@@ -263,7 +240,7 @@ class DistractionsAndEffectsOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Distractions " + (!FlxG.save.data.distractions ? "off" : "on");
+		return 'Distractions ' + (!FlxG.save.data.distractions ? 'off' : 'on');
 	}
 }
 
@@ -283,7 +260,7 @@ class StepManiaOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Colors by quantization " + (!FlxG.save.data.stepMania ? "off" : "on");
+		return 'Colors by quantization ' + (!FlxG.save.data.stepMania ? 'off' : 'on');
 	}
 }
 
@@ -303,7 +280,7 @@ class ResetButtonOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Reset Button " + (!FlxG.save.data.resetButton ? "off" : "on");
+		return 'Reset Button ' + (!FlxG.save.data.resetButton ? 'off' : 'on');
 	}
 }
 
@@ -323,7 +300,7 @@ class FlashingLightsOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Flashing Lights " + (!FlxG.save.data.flashing ? "off" : "on");
+		return 'Flashing Lights ' + (!FlxG.save.data.flashing ? 'off' : 'on');
 	}
 }
 
@@ -343,7 +320,7 @@ class AntialiasingOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Antialiasing " + (!FlxG.save.data.antialiasing ? "off" : "on");
+		return 'Antialiasing ' + (!FlxG.save.data.antialiasing ? 'off' : 'on');
 	}
 }
 
@@ -363,7 +340,7 @@ class MissSoundsOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Miss Sounds " + (!FlxG.save.data.missSounds ? "off" : "on");
+		return 'Miss Sounds ' + (!FlxG.save.data.missSounds ? 'off' : 'on');
 	}
 }
 
@@ -383,7 +360,7 @@ class ShowInput extends Option
 
 	private override function updateDisplay():String
 	{
-		return (FlxG.save.data.inputShow ? "Extended Score Info" : "Minimalized Info");
+		return (FlxG.save.data.inputShow ? 'Extended Score Info' : 'Minimalized Info');
 	}
 }
 
@@ -406,7 +383,7 @@ class Judgement extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Safe Frames";
+		return 'Safe Frames';
 	}
 
 	override function left():Bool {
@@ -422,12 +399,12 @@ class Judgement extends Option
 	}
 
 	override function getValue():String {
-		return "Safe Frames: " + Conductor.safeFrames +
-		" - SIK: " + HelperFunctions.truncateFloat(45 * Conductor.timeScale, 0) +
-		"ms GD: " + HelperFunctions.truncateFloat(90 * Conductor.timeScale, 0) +
-		"ms BD: " + HelperFunctions.truncateFloat(135 * Conductor.timeScale, 0) + 
-		"ms SHT: " + HelperFunctions.truncateFloat(166 * Conductor.timeScale, 0) +
-		"ms TOTAL: " + HelperFunctions.truncateFloat(Conductor.safeZoneOffset,0) + "ms";
+		return 'Safe Frames: ' + Conductor.safeFrames +
+		' - SIK: ' + HelperFunctions.truncateFloat(45 * Conductor.timeScale, 0) +
+		'ms GD: ' + HelperFunctions.truncateFloat(90 * Conductor.timeScale, 0) +
+		'ms BD: ' + HelperFunctions.truncateFloat(135 * Conductor.timeScale, 0) + 
+		'ms SHT: ' + HelperFunctions.truncateFloat(166 * Conductor.timeScale, 0) +
+		'ms TOTAL: ' + HelperFunctions.truncateFloat(Conductor.safeZoneOffset, 0) + 'ms';
 	}
 
 	override function right():Bool {
@@ -461,7 +438,7 @@ class FPSOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return "FPS Counter " + (!FlxG.save.data.fps ? "off" : "on");
+		return 'FPS Counter ' + (!FlxG.save.data.fps ? 'off' : 'on');
 	}
 }
 
@@ -482,7 +459,7 @@ class ScoreScreen extends Option
 
 	private override function updateDisplay():String
 	{
-		return (FlxG.save.data.scoreScreen ? "Show Score Screen" : "No Score Screen");
+		return (FlxG.save.data.scoreScreen ? 'Show Score Screen' : 'No Score Screen');
 	}
 }
 
@@ -505,7 +482,7 @@ class FPSCapOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return "FPS Cap";
+		return 'FPS Cap';
 	}
 	
 	override function right():Bool {
@@ -534,8 +511,8 @@ class FPSCapOption extends Option
 
 	override function getValue():String
 	{
-		return "Current FPS Cap: " + FlxG.save.data.fpsCap + 
-		(FlxG.save.data.fpsCap == Application.current.window.displayMode.refreshRate ? "Hz (Refresh Rate)" : "");
+		return 'Current FPS Cap: ' + FlxG.save.data.fpsCap + 
+		(FlxG.save.data.fpsCap == Application.current.window.displayMode.refreshRate ? 'Hz (Refresh Rate)' : '');
 	}
 }
 
@@ -556,7 +533,7 @@ class ScrollSpeedOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Scroll Speed";
+		return 'Scroll Speed';
 	}
 
 	override function right():Bool {
@@ -571,7 +548,7 @@ class ScrollSpeedOption extends Option
 	}
 
 	override function getValue():String {
-		return "Current Scroll Speed: " + HelperFunctions.truncateFloat(FlxG.save.data.scrollSpeed,1);
+		return 'Current Scroll Speed: ' + HelperFunctions.truncateFloat(FlxG.save.data.scrollSpeed, 1);
 	}
 
 	override function left():Bool {
@@ -606,7 +583,7 @@ class RainbowFPSOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return "FPS Rainbow " + (!FlxG.save.data.fpsRain ? "off" : "on");
+		return 'FPS Rainbow ' + (!FlxG.save.data.fpsRain ? 'off' : 'on');
 	}
 }
 
@@ -627,7 +604,7 @@ class Optimization extends Option
 	
 		private override function updateDisplay():String
 		{
-			return "Optimization " + (FlxG.save.data.optimize ? "ON" : "OFF");
+			return 'Optimization ' + (FlxG.save.data.optimize ? 'ON' : 'OFF');
 		}
 }
 
@@ -648,7 +625,7 @@ class NPSDisplayOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return "NPS Display " + (!FlxG.save.data.npsDisplay ? "off" : "on");
+		return 'NPS Display ' + (!FlxG.save.data.npsDisplay ? 'off' : 'on');
 	}
 }
 
@@ -662,14 +639,14 @@ class ReplayOption extends Option
 	
 	public override function press():Bool
 	{
-		trace("switch");
+		trace('switch');
 		FlxG.switchState(new LoadReplayState());
 		return false;
 	}
 
 	private override function updateDisplay():String
 	{
-		return "Load replays";
+		return 'Load replays';
 	}
 }
 
@@ -690,7 +667,7 @@ class AccuracyDOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Accuracy Mode: " + (FlxG.save.data.accuracyMod == 0 ? "Accurate" : "Complex");
+		return 'Accuracy Mode: ' + (FlxG.save.data.accuracyMod == 0 ? 'Accurate' : 'Complex');
 	}
 }
 
@@ -704,14 +681,14 @@ class CustomizeGameplay extends Option
 
 	public override function press():Bool
 	{
-		trace("switch");
+		trace('switch');
 		FlxG.switchState(new GameplayCustomizeState());
 		return false;
 	}
 
 	private override function updateDisplay():String
 	{
-		return "Customize Gameplay";
+		return 'Customize Gameplay';
 	}
 }
 
@@ -733,7 +710,7 @@ class WatermarkOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Watermarks " + (Main.watermarks ? "on" : "off");
+		return 'Watermarks ' + (Main.watermarks ? 'on' : 'off');
 	}
 }
 
@@ -747,10 +724,10 @@ class OffsetMenu extends Option
 
 	public override function press():Bool
 	{
-		trace("switch");
-		var poop:String = Highscore.formatSong("Tutorial", 1);
+		trace('switch');
+		var poop:String = Highscore.formatSong('Tutorial', 1);
 
-		PlayState.SONG = Song.loadFromJson(poop, "Tutorial");
+		PlayState.SONG = Song.loadFromJson(poop, 'Tutorial');
 		PlayState.isStoryMode = false;
 		PlayState.storyDifficulty = 0;
 		PlayState.storyWeek = 0;
@@ -762,7 +739,7 @@ class OffsetMenu extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Time your offset";
+		return 'Time your offset';
 	}
 }
 class BotPlay extends Option
@@ -782,7 +759,7 @@ class BotPlay extends Option
 	}
 	
 	private override function updateDisplay():String
-		return "BotPlay " + (FlxG.save.data.botplay ? "on" : "off");
+		return 'BotPlay ' + (FlxG.save.data.botplay ? 'on' : 'off');
 }
 
 class CamZoomOption extends Option
@@ -801,7 +778,7 @@ class CamZoomOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Camera Zoom " + (!FlxG.save.data.camzoom ? "off" : "on");
+		return 'Camera Zoom ' + (!FlxG.save.data.camzoom ? 'off' : 'on');
 	}
 }
 
@@ -831,7 +808,7 @@ class LockWeeksOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return confirm ? "Confirm Story Reset" : "Reset Story Progress";
+		return confirm ? 'Confirm Story Reset' : 'Reset Story Progress';
 	}
 }
 
@@ -870,7 +847,7 @@ class ResetScoreOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return confirm ? "Confirm Score Reset" : "Reset Score";
+		return confirm ? 'Confirm Score Reset' : 'Reset Score';
 	}
 }
 
@@ -926,6 +903,6 @@ class ResetSettings extends Option
 
 	private override function updateDisplay():String
 	{
-		return confirm ? "Confirm Settings Reset" : "Reset Settings";
+		return confirm ? 'Confirm Settings Reset' : 'Reset Settings';
 	}
 }

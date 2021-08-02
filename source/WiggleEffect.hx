@@ -63,7 +63,7 @@ class WiggleShader extends FlxShader
 {
 	@:glFragmentSource('
 		#pragma header
-		//uniform float tx, ty; // x,y waves phase
+		//uniform float tx, ty; // x, y waves phase
 		uniform float uTime;
 		
 		const int EFFECT_TYPE_DREAMY = 0;

@@ -15,13 +15,13 @@ import flixel.util.FlxColor;
 class AnimationDebug extends FlxState
 {
 	var bf:Boyfriend;
-	var dad:Character;
+	var p2:Character;
 	var char:Character;
 	var textAnim:FlxText;
 	var dumbTexts:FlxTypedGroup<FlxText>;
 	var animList:Array<String> = [];
 	var curAnim:Int = 0;
-	var isDad:Bool = true;
+	var isP2:Bool = true;
 	var daAnim:String = 'spooky';
 	var camFollow:FlxObject;
 
@@ -40,17 +40,17 @@ class AnimationDebug extends FlxState
 		add(gridBG);
 
 		if (daAnim == 'bf')
-			isDad = false;
+			isP2 = false;
 
-		if (isDad)
+		if (isP2)
 		{
-			dad = new Character(0, 0, daAnim);
-			dad.screenCenter();
-			dad.debugMode = true;
-			add(dad);
+			p2 = new Character(0, 0, daAnim);
+			p2.screenCenter();
+			p2.debugMode = true;
+			add(p2);
 
-			char = dad;
-			dad.flipX = false;
+			char = p2;
+			p2.flipX = false;
 		}
 		else
 		{
@@ -88,7 +88,7 @@ class AnimationDebug extends FlxState
 
 		for (anim => offsets in char.animOffsets)
 		{
-			var text:FlxText = new FlxText(10, 20 + (18 * daLoop), 0, anim + ": " + offsets, 15);
+			var text:FlxText = new FlxText(10, 20 + (18 * daLoop), 0, anim + ': ' + offsets, 15);
 			text.scrollFactor.set();
 			text.color = FlxColor.BLUE;
 			dumbTexts.add(text);

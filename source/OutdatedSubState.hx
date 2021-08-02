@@ -14,8 +14,8 @@ class OutdatedSubState extends MusicBeatState
 {
 	public static var leftState:Bool = false;
 
-	public static var needVer:String = "IDFK LOL";
-	public static var currChanges:String = "dk";
+	public static var needVer:String = 'IDFK LOL';
+	public static var currChanges:String = 'dk';
 	
 	private var bgColors:Array<String> = [
 		'#314d7f',
@@ -51,23 +51,23 @@ class OutdatedSubState extends MusicBeatState
 		add(kadeLogo);
 		
 		var txt:FlxText = new FlxText(0, 0, FlxG.width,
-			"Your Kade Engine is outdated!\nYou are on "
+			'Your Kade Engine is outdated!\nYou are on '
 			+ MainMenuState.kadeEngineVer
-			+ "\nwhile the most recent version is " + needVer + "."
-			+ "\n\nWhat's new:\n\n"
+			+ '\nwhile the most recent version is ' + needVer + '.'
+			+ '\n\nWhat\'s new:\n\n'
 			+ currChanges
-			+ "\n& more changes and bugfixes in the full changelog"
-			+ "\n\nPress Space to view the full changelog and update\nor ESCAPE to ignore this",
+			+ '\n& more changes and bugfixes in the full changelog'
+			+ '\n\nPress Space to view the full changelog and update\nor ESCAPE to ignore this',
 			32);
 
-		if (MainMenuState.nightly != "")
+		if (MainMenuState.nightly != '')
 			txt.text = 
-			"You are on\n"
+			'You are on\n'
 			+ MainMenuState.kadeEngineVer
-			+ "\nWhich is a PRE-RELEASE BUILD!"
-			+ "\n\nReport all bugs to the author of the pre-release.\nSpace/Escape ignores this.";
+			+ '\nWhich is a PRE-RELEASE BUILD!'
+			+ '\n\nReport all bugs to the author of the pre-release.\nSpace/Escape ignores this.';
 		
-		txt.setFormat("VCR OSD Mono", 32, FlxColor.fromRGB(200, 200, 200), CENTER);
+		txt.setFormat('VCR OSD Mono', 32, FlxColor.fromRGB(200, 200, 200), CENTER);
 		txt.borderColor = FlxColor.BLACK;
 		txt.borderSize = 3;
 		txt.borderStyle = FlxTextBorderStyle.OUTLINE;
@@ -99,9 +99,9 @@ class OutdatedSubState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
-		if (controls.ACCEPT && MainMenuState.nightly == "")
+		if (controls.ACCEPT && MainMenuState.nightly == '')
 		{
-			fancyOpenURL("https://kadedev.github.io/Kade-Engine/changelogs/changelog-" + needVer);
+			fancyOpenURL('https://kadedev.github.io/Kade-Engine/changelogs/changelog-' + needVer);
 		}
 		else if (controls.ACCEPT)
 		{

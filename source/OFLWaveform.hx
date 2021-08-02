@@ -12,7 +12,7 @@ class OFLWaveform extends Sprite
 
     public var _sound:String;
 
-    function new(x,y,musicLength, data:String)
+    function new(x, y, musicLength, data:String)
     {    
         super();
         

@@ -10,7 +10,7 @@ import openfl.utils.Assets as OpenFlAssets;
 
 class Paths
 {
-	inline public static var SOUND_EXT = #if web "mp3" #else "ogg" #end;
+	inline public static var SOUND_EXT = #if web 'mp3' #else 'ogg' #end;
 
 	static var currentLevel:String;
 
@@ -30,7 +30,7 @@ class Paths
 			if (OpenFlAssets.exists(levelPath, type))
 				return levelPath;
 
-			levelPath = getLibraryPathForce(file, "shared");
+			levelPath = getLibraryPathForce(file, 'shared');
 			if (OpenFlAssets.exists(levelPath, type))
 				return levelPath;
 		}
@@ -38,9 +38,9 @@ class Paths
 		return getPreloadPath(file);
 	}
 
-	static public function getLibraryPath(file:String, library = "preload")
+	static public function getLibraryPath(file:String, library = 'preload')
 	{
-		return if (library == "preload" || library == "default") getPreloadPath(file); else getLibraryPathForce(file, library);
+		return if (library == 'preload' || library == 'default') getPreloadPath(file); else getLibraryPathForce(file, library);
 	}
 
 	inline static function getLibraryPathForce(file:String, library:String)
@@ -58,7 +58,7 @@ class Paths
 		return getPath(file, type, library);
 	}
 
-	inline static public function lua(key:String,?library:String)
+	inline static public function lua(key:String, ?library:String)
 	{
 		return getPath('data/$key.lua', TEXT, library);
 	}
@@ -100,7 +100,7 @@ class Paths
 
 	inline static public function voices(song:String)
 	{
-		var songLowercase = StringTools.replace(song, " ", "-").toLowerCase();
+		var songLowercase = StringTools.replace(song, ' ', '-').toLowerCase();
 			switch (songLowercase) {
 				case 'dad-battle': songLowercase = 'dadbattle';
 				case 'philly-nice': songLowercase = 'philly';
@@ -110,7 +110,7 @@ class Paths
 
 	inline static public function inst(song:String)
 	{
-		var songLowercase = StringTools.replace(song, " ", "-").toLowerCase();
+		var songLowercase = StringTools.replace(song, ' ', '-').toLowerCase();
 			switch (songLowercase) {
 				case 'dad-battle': songLowercase = 'dadbattle';
 				case 'philly-nice': songLowercase = 'philly';
@@ -164,7 +164,7 @@ class Paths
 		if (isCharacter)
 			if (usecahce)
 				#if cpp
-				return FlxAtlasFrames.fromSpriteSheetPacker(imageCached(key), file('images/characters/$key.txt', library));
+				return FlxAtlasFrames.fromSpriteSheetPacker(imageCached(key), file('images/$key.txt', library));
 				#else
 				return null;
 				#end

@@ -50,7 +50,7 @@ class GlobalVideo
 		var width:Float = GameDimensions.width;
 		var height:Float = GameDimensions.height;
 		
-		//trace("AH: " + stageWidth);
+		//trace('AH: ' + stageWidth);
 		//trace(width);
 		
 		var ratioX:Float = height / width;

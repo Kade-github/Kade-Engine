@@ -9,13 +9,13 @@ class ChartParser
 	static public function parse(songName:String, section:Int):Array<Dynamic>
 	{
 		var IMG_WIDTH:Int = 8;
-		var regex:EReg = new EReg("[ \t]*((\r\n)|\r|\n)[ \t]*", "g");
+		var regex:EReg = new EReg('[ \t]*((\r\n)|\r|\n)[ \t]*', 'g');
 
 		var csvData = FlxStringUtil.imageToCSV(Paths.file('data/' + songName + '/' + songName + '_section' + section + '.png'));
 
 		var lines:Array<String> = regex.split(csvData);
-		var rows:Array<String> = lines.filter(function(line) return line != "");
-		csvData.replace("\n", ',');
+		var rows:Array<String> = lines.filter(function(line) return line != '');
+		csvData.replace('\n', ',');
 
 		var heightInTiles = rows.length;
 		var widthInTiles = 0;
@@ -28,9 +28,9 @@ class ChartParser
 		while (row < heightInTiles)
 		{
 			var rowString = rows[row];
-			if (rowString.endsWith(","))
+			if (rowString.endsWith(','))
 				rowString = rowString.substr(0, rowString.length - 1);
-			var columns = rowString.split(",");
+			var columns = rowString.split(',');
 
 			if (columns.length == 0)
 			{

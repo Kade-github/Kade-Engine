@@ -38,10 +38,10 @@ class MainMenuState extends MusicBeatState
 	var newGaming2:FlxText;
 	public static var firstStart:Bool = true;
 
-	public static var nightly:String = "";
+	public static var nightly:String = '';
 
-	public static var kadeEngineVer:String = "1.6" + nightly;
-	public static var gameVer:String = "0.2.7.1";
+	public static var kadeEngineVer:String = '1.6' + nightly;
+	public static var gameVer:String = '0.2.7.1';
 
 	var magenta:FlxSprite;
 	var camFollow:FlxObject;
@@ -51,7 +51,7 @@ class MainMenuState extends MusicBeatState
 	{
 		#if windows
 		// Updating Discord Rich Presence
-		DiscordClient.changePresence("In the Menus", null);
+		DiscordClient.changePresence('In the Menus', null);
 		#end
 
 		if (!FlxG.sound.music.playing)
@@ -100,8 +100,8 @@ class MainMenuState extends MusicBeatState
 		{
 			var menuItem:FlxSprite = new FlxSprite(0, FlxG.height * 1.6);
 			menuItem.frames = tex;
-			menuItem.animation.addByPrefix('idle', optionShit[i] + " basic", 24);
-			menuItem.animation.addByPrefix('selected', optionShit[i] + " white", 24);
+			menuItem.animation.addByPrefix('idle', optionShit[i] + ' basic', 24);
+			menuItem.animation.addByPrefix('selected', optionShit[i] + ' white', 24);
 			menuItem.animation.play('idle');
 			menuItem.ID = i;
 			menuItem.screenCenter(X);
@@ -112,7 +112,7 @@ class MainMenuState extends MusicBeatState
 					menuItem.antialiasing = true;
 				}
 			if (firstStart)
-				FlxTween.tween(menuItem,{y: 60 + (i * 160)},1 + (i * 0.25) ,{ease: FlxEase.expoInOut, onComplete: function(flxTween:FlxTween) 
+				FlxTween.tween(menuItem, {y: 60 + (i * 160)}, 1 + (i * 0.25), {ease: FlxEase.expoInOut, onComplete: function(flxTween:FlxTween) 
 					{ 
 						finishedFunnyMove = true; 
 						changeItem();
@@ -125,9 +125,9 @@ class MainMenuState extends MusicBeatState
 
 		FlxG.camera.follow(camFollow, null, 0.60 * (60 / FlxG.save.data.fpsCap));
 
-		var versionShit:FlxText = new FlxText(5, FlxG.height - 18, 0, gameVer +  (Main.watermarks ? " FNF - " + kadeEngineVer + " Kade Engine" : ""), 12);
+		var versionShit:FlxText = new FlxText(5, FlxG.height - 18, 0, gameVer +  (Main.watermarks ? ' FNF - ' + kadeEngineVer + ' Kade Engine' : ''), 12);
 		versionShit.scrollFactor.set();
-		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		versionShit.setFormat('VCR OSD Mono', 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
 
 		// NG.core.calls.event.logEvent('swag').send();
@@ -191,7 +191,7 @@ class MainMenuState extends MusicBeatState
 			{
 				if (optionShit[curSelected] == 'donate')
 				{
-					fancyOpenURL("https://ninja-muffin24.itch.io/funkin");
+					fancyOpenURL('https://ninja-muffin24.itch.io/funkin');
 				}
 				else
 				{
@@ -251,11 +251,11 @@ class MainMenuState extends MusicBeatState
 		{
 			case 'story mode':
 				FlxG.switchState(new StoryMenuState());
-				trace("Story Menu Selected");
+				trace('Story Menu Selected');
 			case 'freeplay':
 				FlxG.switchState(new FreeplayState());
 
-				trace("Freeplay Menu Selected");
+				trace('Freeplay Menu Selected');
 
 			case 'options':
 				FlxG.switchState(new OptionsMenu());
