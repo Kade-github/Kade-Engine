@@ -46,7 +46,7 @@ class GameplayCustomizeState extends MusicBeatState
 		DiscordClient.changePresence('Customizing Gameplay Modules', null);
 		#end
 
-        sick = new FlxSprite().loadGraphic(Paths.image('sick','shared'));
+        sick = new FlxSprite().loadGraphic(Paths.image('sick', 'shared'));
         sick.scrollFactor.set();
         background = new FlxSprite(-600, -200).loadGraphic(Paths.image('stageback', 'shared'));
         curt = new FlxSprite(-500, -300).loadGraphic(Paths.image('stagecurtains', 'shared'));
@@ -138,8 +138,7 @@ class GameplayCustomizeState extends MusicBeatState
 
         sick.x = FlxG.save.data.changedHitX;
         sick.y = FlxG.save.data.changedHitY;
-
-
+	
         FlxG.mouse.visible = true;
 
     }

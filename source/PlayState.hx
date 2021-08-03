@@ -178,6 +178,8 @@ class PlayState extends MusicBeatState
 	public var iconP1:HealthIcon; // making these public again because i may be stupid
 	public var iconP2:HealthIcon; // what could go wrong?
 	public var camHUD:FlxCamera;
+	public var camSustains:FlxCamera;
+	public var camNotes:FlxCamera;
 
 	private var camGame:FlxCamera;
 	public var cannotDie = false;
@@ -323,6 +325,8 @@ class PlayState extends MusicBeatState
 
 		#if windows
 		executeModchart = FileSystem.exists(Paths.lua(songLowercase + '/modchart'));
+		if (isSM)
+			executeModchart = FileSystem.exists(pathToSm + '/modchart.lua');
 		if (executeModchart)
 			PlayStateChangeables.Optimize = false;
 		#end
@@ -382,9 +386,15 @@ class PlayState extends MusicBeatState
 		camGame = new FlxCamera();
 		camHUD  = new FlxCamera();
 		camHUD.bgColor.alpha = 0;
+		camSustains = new FlxCamera();
+		camSustains.bgColor.alpha = 0;
+		camNotes = new FlxCamera();
+		camNotes.bgColor.alpha = 0;
 
 		FlxG.cameras.reset(camGame);
 		FlxG.cameras.add(camHUD);
+		FlxG.cameras.add(camSustains);
+		FlxG.cameras.add(camNotes);
 
 		FlxCamera.defaultCameras = [camGame];
 
@@ -402,7 +412,6 @@ class PlayState extends MusicBeatState
 				SONG.eventObjects = [new Song.Event('Init BPM', 0, SONG.bpm, 'BPM Change')];
 			}
 	
-
 		TimingStruct.clearTimings();
 
 		var convertedStuff:Array<Song.Event> = [];
@@ -957,7 +966,6 @@ class PlayState extends MusicBeatState
 		gf.scrollFactor.set(0.95, 0.95);
 
 		p2 = new Character(100, 100, SONG.player2);
-
 		var camPos:FlxPoint = new FlxPoint(p2.getGraphicMidpoint().x, p2.getGraphicMidpoint().y);
 
 		switch (SONG.player2)
@@ -1743,7 +1751,7 @@ class PlayState extends MusicBeatState
 			FlxG.sound.playMusic(Paths.inst(PlayState.SONG.song), 1, false);
 			#end
 		}
-
+	
 		FlxG.sound.music.onComplete = endSong;
 		vocals.play();
 
@@ -1977,9 +1985,7 @@ class PlayState extends MusicBeatState
 
 		// trace(unspawnNotes.length);
 		// playerCounter += 1;
-
 		unspawnNotes.sort(sortByShit);
-
 		generatedMusic = true;
 	}
 
@@ -2151,7 +2157,6 @@ class PlayState extends MusicBeatState
 			if (!startTimer.finished)
 				startTimer.active = false;
 		}
-
 		super.openSubState(SubState);
 	}
 
@@ -2324,13 +2329,14 @@ class PlayState extends MusicBeatState
 		{
 			luaModchart.setVar('songPos', Conductor.songPosition);
 			luaModchart.setVar('hudZoom', camHUD.zoom);
+			luaModchart.setVar('curBeat', HelperFunctions.truncateFloat(curDecimalBeat, 3));
 			luaModchart.setVar('cameraZoom', FlxG.camera.zoom);
 			luaModchart.executeState('update', [elapsed]);
 
-			for (i in luaWiggles)
+			for (key => value in luaModchart.luaWiggles)
 			{
 				trace('wiggle le gaming');
-				i.update(elapsed);
+				value.update(elapsed);
 			}
 
 			/*for (i in 0...strumLineNotes.length) {
@@ -2394,12 +2400,7 @@ class PlayState extends MusicBeatState
 		}
 
 		if (FlxG.keys.justPressed.NINE)
-		{
-			if (iconP1.animation.curAnim.name == 'bf-old')
-				iconP1.animation.play(SONG.player1);
-			else
-				iconP1.animation.play('bf-old');
-		}
+			iconP1.swapOldIcon();
 
 		switch (curStage)
 		{
@@ -2425,7 +2426,7 @@ class PlayState extends MusicBeatState
 
 		scoreTxt.x = (originalX - (lengthInPx / 2)) + 335;
 
-		if (controls.PAUSE && startedCountdown && canPause)
+		if (controls.PAUSE && startedCountdown && canPause && !cannotDie)
 		{
 			persistentUpdate = false;
 			persistentDraw = true;
@@ -2802,6 +2803,12 @@ class PlayState extends MusicBeatState
 		FlxG.watch.addQuick('beatShit', curBeat);
 		FlxG.watch.addQuick('stepShit', curStep);
 
+		if (Std.int(curStep / 16) > 0)
+		{
+			FlxG.watch.removeQuick('SONG.notes[${(Std.int(curStep / 16)) - 1}]');
+		}
+		FlxG.watch.addQuick('SONG.notes[${Std.int(curStep / 16)}]', SONG.notes[Std.int(curStep / 16)]);
+
 		if (curSong == 'Fresh')
 		{
 			switch (curBeat)
@@ -2909,6 +2916,10 @@ class PlayState extends MusicBeatState
 			{
 				var dunceNote:Note = unspawnNotes[0];
 				notes.add(dunceNote);
+				if (!dunceNote.isSustainNote)
+					dunceNote.cameras = [camNotes];
+				else
+					dunceNote.cameras = [camSustains];
 
 				var index:Int = unspawnNotes.indexOf(dunceNote);
 				unspawnNotes.splice(index, 1);
@@ -3726,24 +3737,24 @@ class PlayState extends MusicBeatState
 		var holdArray:Array<Bool>    = [controls.LEFT, controls.DOWN, controls.UP, controls.RIGHT];
 		var pressArray:Array<Bool>   = [controls.LEFT_P, controls.DOWN_P, controls.UP_P, controls.RIGHT_P];
 		var releaseArray:Array<Bool> = [controls.LEFT_R, controls.DOWN_R, controls.UP_R, controls.RIGHT_R];
+		var keynameArray:Array<String> = ['left', 'down', 'up', 'right'];
 		#if windows
 		if (luaModchart != null)
 		{
-			if (controls.LEFT_P)
+			for (i in 0...pressArray.length) 
 			{
-				luaModchart.executeState('keyPressed', ['left']);
+				if (pressArray[i] == true) 
+				{
+					luaModchart.executeState('keyPressed', [keynameArray[i]]);
+				}
 			};
-			if (controls.DOWN_P)
+
+			for (i in 0...releaseArray.length) 
 			{
-				luaModchart.executeState('keyPressed', ['down']);
-			};
-			if (controls.UP_P)
-			{
-				luaModchart.executeState('keyPressed', ['up']);
-			};
-			if (controls.RIGHT_P)
-			{
-				luaModchart.executeState('keyPressed', ['right']);
+				if (releaseArray[i] == true) 
+				{
+					luaModchart.executeState('keyReleased', [keynameArray[i]]);
+				}
 			};
 		};
 		#end
@@ -3991,7 +4002,7 @@ class PlayState extends MusicBeatState
 		FlxG.stage.window.onFocusIn.add(focusIn);
 
 		var ourSource:String = 'assets/videos/daWeirdVid/dontDelete.webm';
-		WebmPlayer.SKIP_STEP_LIMIT = 90;
+		//WebmPlayer.SKIP_STEP_LIMIT = 90;
 		var str1:String = 'WEBM SHIT';
 		webmHandler = new WebmHandler();
 		
@@ -4449,17 +4460,21 @@ class PlayState extends MusicBeatState
 		#if windows
 		if (executeModchart && luaModchart != null)
 		{
-			luaModchart.setVar('curBeat', curBeat);
 			luaModchart.executeState('beatHit', [curBeat]);
 		}
 		#end
 
 		if (curSong == 'Tutorial' && p2.curCharacter == 'gf')
 		{
-			if (curBeat % 2 == 1 && p2.animOffsets.exists('danceLeft'))
-				p2.playAnim('danceLeft');
-			if (curBeat % 2 == 0 && p2.animOffsets.exists('danceRight'))
-				p2.playAnim('danceRight');
+			if (Math.floor(curStep / 16) < 27 && SONG.notes[Math.floor(curStep / 16)].mustHitSection)
+				p2.dance();
+			else
+			{
+				if (curBeat == 73 || curBeat % 4 == 0 || curBeat % 4 == 1)
+					p2.playAnim('danceLeft', true);
+				else
+					p2.playAnim('danceRight', true);
+			}
 		}
 
 		if (SONG.notes[Math.floor(curStep / 16)] != null)
@@ -4469,7 +4484,7 @@ class PlayState extends MusicBeatState
 
 			// p2 doesnt interupt their own notes
 			if ((SONG.notes[Math.floor(curStep / 16)].mustHitSection || !p2.animation.curAnim.name.startsWith('sing')) && p2.curCharacter != 'gf')
-				if (curBeat % idleBeat == 0 || p2.curCharacter == 'spooky')
+				if ((curBeat % idleBeat == 0 || !idleToBeat) || p2.curCharacter == 'spooky')
 					p2.dance(idleToBeat);
 		}
 		// FlxG.log.add('change bpm' + SONG.notes[Std.int(curStep / 16)].changeBPM);
@@ -4502,7 +4517,7 @@ class PlayState extends MusicBeatState
 			gf.dance();
 		}
 
-		if (!boyfriend.animation.curAnim.name.startsWith('sing') && curBeat % idleBeat == 0)
+		if (!boyfriend.animation.curAnim.name.startsWith('sing') && (curBeat % idleBeat == 0 || !idleToBeat))
 		{
 			boyfriend.playAnim('idle', idleToBeat);
 		}

@@ -14,7 +14,7 @@ import openfl.Assets;
 import openfl.Lib;
 import openfl.display.FPS;
 import openfl.display.Sprite;
-import openfl.events.Event;
+import openfl.events.Event;	
 
 class Main extends Sprite
 {
