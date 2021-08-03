@@ -343,7 +343,7 @@ class Character extends FlxSprite
 				antialiasing = false;
 
 			case 'spirit':
-				frames = Paths.getPackerAtlas('spirit','shared',true);
+				frames = Paths.getPackerAtlas('spirit','shared',false);
 				animation.addByPrefix('idle', "idle spirit_", 24, false);
 				animation.addByPrefix('singUP', "up_", 24, false);
 				animation.addByPrefix('singRIGHT', "right_", 24, false);
@@ -737,14 +737,15 @@ class Character extends FlxSprite
 		}
 	}
 
-	public function addOtherFrames()
+	public function loadOffsetFile(character:String, library:String = 'shared')
 	{
-		
-		for (i in otherFrames)
-			{
-				PlayState.staticVar.add(i);
-				i.visible = false;
-			}
+		var offset:Array<String> = CoolUtil.coolTextFile(Paths.txt('images/characters/' + character + "Offsets", library));
+
+		for (i in 0...offset.length)
+		{
+			var data:Array<String> = offset[i].split(' ');
+			addOffset(data[0], Std.parseInt(data[1]), Std.parseInt(data[2]));
+		}
 	}
 
 	override function update(elapsed:Float)
