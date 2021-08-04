@@ -12,6 +12,9 @@ class KadeEngineData
 		if (FlxG.save.data.newInput == null)
 			FlxG.save.data.newInput = true;
 
+		if (FlxG.save.data.susHoldHealth == null)
+			FlxG.save.data.susHoldHealth = true;
+
 		if (FlxG.save.data.downscroll == null)
 			FlxG.save.data.downscroll = false;
 

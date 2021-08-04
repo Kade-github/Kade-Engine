@@ -2358,7 +2358,7 @@ class PlayState extends MusicBeatState
 		}
 
 		if (FlxG.keys.justPressed.NINE)
-				iconP1.swapOldIcon();
+			iconP1.swapOldIcon();
 
 		switch (curStage)
 		{
@@ -4199,6 +4199,11 @@ class PlayState extends MusicBeatState
 			}
 			else
 				totalNotesHit += 1;
+
+			if(note.isSustainNote && FlxG.save.data.susHoldHealth)
+			{
+				health += 0.004;
+			}
 
 			switch (note.noteData)
 			{
