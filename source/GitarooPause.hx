@@ -28,16 +28,16 @@ class GitarooPause extends MusicBeatState
 			}
 		add(bg);
 
-		var bf:FlxSprite = new FlxSprite(0, 30);
-		bf.frames = Paths.getSparrowAtlas('pauseAlt/bfLol');
-		bf.animation.addByPrefix('lol', 'funnyThing', 13);
-		bf.animation.play('lol');
+		var bfGitaroo:FlxSprite = new FlxSprite(0, 30);
+		bfGitaroo.frames = Paths.getSparrowAtlas('pauseAlt/bfLol');
+		bfGitaroo.animation.addByPrefix('lol', 'funnyThing', 13);
+		bfGitaroo.animation.play('lol');
 		if(FlxG.save.data.antialiasing)
 			{
-				bf.antialiasing = true;
+				bfGitaroo.antialiasing = true;
 			}
-		add(bf);
-		bf.screenCenter(X);
+		add(bfGitaroo);
+		bfGitaroo.screenCenter(X);
 
 		replayButton = new FlxSprite(FlxG.width * 0.28, FlxG.height * 0.7);
 		replayButton.frames = Paths.getSparrowAtlas('pauseAlt/pauseUI');

@@ -31,7 +31,7 @@ class GameplayCustomizeState extends MusicBeatState
     var text:FlxText;
     var blackBorder:FlxSprite;
 
-    var bf:Boyfriend;
+    var p1:Player;
     var dad:Character;
     var gf:Character;
 
@@ -73,7 +73,7 @@ class GameplayCustomizeState extends MusicBeatState
 
 		dad = new Character(100, 100, 'dad');
 
-        bf = new Boyfriend(770, 450, 'bf');
+        p1 = new Player(770, 450, 'bf');
 
         gf = new Character(400, 130, 'gf');
 		gf.scrollFactor.set(0.95, 0.95);
@@ -83,7 +83,7 @@ class GameplayCustomizeState extends MusicBeatState
 		camFollow.setPosition(camPos.x, camPos.y);
 
         add(gf);
-        add(bf);
+        add(p1);
         add(dad);
 
         add(sick);
@@ -192,7 +192,7 @@ class GameplayCustomizeState extends MusicBeatState
     {
         super.beatHit();
 
-        bf.playAnim('idle', true);
+        p1.playAnim('idle', true);
         dad.dance(true);
         gf.dance();
 

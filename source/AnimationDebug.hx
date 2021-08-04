@@ -14,7 +14,7 @@ import flixel.util.FlxColor;
  */
 class AnimationDebug extends FlxState
 {
-	var bf:Boyfriend;
+	var p1:Player;
 	var p2:Character;
 	var char:Character;
 	var textAnim:FlxText;
@@ -54,13 +54,13 @@ class AnimationDebug extends FlxState
 		}
 		else
 		{
-			bf = new Boyfriend(0, 0);
-			bf.screenCenter();
-			bf.debugMode = true;
-			add(bf);
+			p1 = new Player(0, 0);
+			p1.screenCenter();
+			p1.debugMode = true;
+			add(p1);
 
-			char = bf;
-			bf.flipX = false;
+			char = p1;
+			p1.flipX = false;
 		}
 
 		dumbTexts = new FlxTypedGroup<FlxText>();

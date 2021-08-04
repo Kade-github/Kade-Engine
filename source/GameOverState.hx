@@ -10,15 +10,15 @@ import flixel.tweens.FlxTween;
 
 class GameOverState extends FlxTransitionableState
 {
-	var bfX:Float = 0;
-	var bfY:Float = 0;
+	var p1X:Float = 0;
+	var p1Y:Float = 0;
 
 	public function new(x:Float, y:Float)
 	{
 		super();
 
-		bfX = x;
-		bfY = y;
+		p1X = x;
+		p1Y = y;
 	}
 
 	override function create()
@@ -30,12 +30,12 @@ class GameOverState extends FlxTransitionableState
 			loser.animation.play('lose');
 			add(loser);
 
-		var bf:Boyfriend = new Boyfriend(bfX, bfY);
-		// bf.scrollFactor.set();
-		add(bf);
-		bf.playAnim('firstDeath');
+		var p1:Player = new Player(p1X, p1Y);
+		// p1.scrollFactor.set();
+		add(p1);
+		p1.playAnim('firstDeath');
 
-		FlxG.camera.follow(bf, LOCKON, 0.001);
+		FlxG.camera.follow(p1, LOCKON, 0.001);
 		
 			var restart:FlxSprite = new FlxSprite(500, 50).loadGraphic(Paths.image('restart'));
 			restart.setGraphicSize(Std.int(restart.width * 0.6));

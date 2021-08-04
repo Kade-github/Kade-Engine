@@ -208,9 +208,9 @@ class ModchartState
 		// pre defined names
 		switch(id)
 		{
-			case 'boyfriend':
+			case 'p1':
                 @:privateAccess
-				return PlayState.boyfriend;
+				return PlayState.p1;
 			case 'girlfriend':
                 @:privateAccess
 				return PlayState.gf;
@@ -244,12 +244,12 @@ class ModchartState
 					PlayState.instance.iconP2.changeIcon(id);
 	}
 
-	function changeBoyfriendCharacter(id:String)
-	{				var oldboyfriendx = PlayState.boyfriend.x;
-					var oldboyfriendy = PlayState.boyfriend.y;
-					PlayState.instance.removeObject(PlayState.boyfriend);
-					PlayState.boyfriend = new Boyfriend(oldboyfriendx, oldboyfriendy, id);
-					PlayState.instance.addObject(PlayState.boyfriend);
+	function changep1Character(id:String)
+	{				var oldp1x = PlayState.p1.x;
+					var oldp1y = PlayState.p1.y;
+					PlayState.instance.removeObject(PlayState.p1);
+					PlayState.p1 = new Player(oldp1x, oldp1y, id);
+					PlayState.instance.addObject(PlayState.p1);
 					PlayState.instance.iconP1.changeIcon(id);
 	}
 
@@ -332,14 +332,14 @@ class ModchartState
             if (drawBehind)
             {
                 PlayState.instance.removeObject(PlayState.gf);
-                PlayState.instance.removeObject(PlayState.boyfriend);
+                PlayState.instance.removeObject(PlayState.p1);
                 PlayState.instance.removeObject(PlayState.p2);
             }
             PlayState.instance.addObject(sprite);
             if (drawBehind)
             {
                 PlayState.instance.addObject(PlayState.gf);
-                PlayState.instance.addObject(PlayState.boyfriend);
+                PlayState.instance.addObject(PlayState.p1);
 				PlayState.instance.addObject(PlayState.p2);
             }
         }
@@ -435,7 +435,7 @@ class ModchartState
 				
 				Lua_helper.add_callback(lua, 'changep2Character', changep2Character);
 
-				Lua_helper.add_callback(lua, 'changeBoyfriendCharacter', changeBoyfriendCharacter);
+				Lua_helper.add_callback(lua, 'changep1Character', changep1Character);
 	
 				Lua_helper.add_callback(lua, 'getProperty', getPropertyByName);
 
