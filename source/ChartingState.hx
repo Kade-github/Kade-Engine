@@ -1,6 +1,7 @@
 package;
 
 import openfl.system.System;
+import lime.app.Application;
 #if sys
 import sys.io.File;
 #end
@@ -130,6 +131,8 @@ class ChartingState extends MusicBeatState
 
 	var camFollow:FlxObject;
 
+	public var waveform:Waveform;
+
 	public static var latestChartVersion = "2";
 
 	override function create()
@@ -242,6 +245,8 @@ class ChartingState extends MusicBeatState
                     var data = TimingStruct.AllTimings[currentIndex - 1];
                     data.endBeat = beat;
                     data.length = (data.endBeat - data.startBeat) / (data.bpm / 60);
+					var step = ((60 / data.bpm) * 1000) / 4;
+					TimingStruct.AllTimings[currentIndex].startStep = Math.floor(((data.endBeat / (data.bpm / 60)) * 1000) / step);
 					TimingStruct.AllTimings[currentIndex].startTime = data.startTime + data.length;
                 }
 
@@ -309,6 +314,7 @@ class ChartingState extends MusicBeatState
 			add(sectionicon);
 			height = Math.floor(renderer.y);
 		}
+
 
 		
 
@@ -382,6 +388,23 @@ class ChartingState extends MusicBeatState
 		
 
 		add(sectionRenderes);
+
+		// fuckin stupid ass bitch ass fucking waveform
+		/*if (PlayState.isSM)
+		{
+			waveform = new Waveform(0,0,PlayState.pathToSm + "/" + PlayState.sm.header.MUSIC,height);
+		}
+		else
+		{
+			if (_song.needsVoices)
+				waveform = new Waveform(0,0,Paths.voices(_song.song),height);
+			else
+				waveform = new Waveform(0,0,Paths.inst(_song.song),height);
+		}
+
+		waveform.drawWaveform();
+		add(waveform);
+		*/
 		add(dummyArrow);
 		add(strumLine);
 		add(lines);
@@ -417,6 +440,8 @@ class ChartingState extends MusicBeatState
                     var data = TimingStruct.AllTimings[currentIndex - 1];
                     data.endBeat = beat;
                     data.length = (data.endBeat - data.startBeat) / (data.bpm / 60);
+					var step = ((60 / data.bpm) * 1000) / 4;
+					TimingStruct.AllTimings[currentIndex].startStep = Math.floor(((data.endBeat / (data.bpm / 60)) * 1000) / step);
 					TimingStruct.AllTimings[currentIndex].startTime = data.startTime + data.length;
                 }
 
@@ -610,6 +635,8 @@ class ChartingState extends MusicBeatState
 								var data = TimingStruct.AllTimings[currentIndex - 1];
 								data.endBeat = beat;
 								data.length = (data.endBeat - data.startBeat) / (data.bpm / 60);
+								var step = ((60 / data.bpm) * 1000) / 4;
+								TimingStruct.AllTimings[currentIndex].startStep = Math.floor(((data.endBeat / (data.bpm / 60)) * 1000) / step);
 								TimingStruct.AllTimings[currentIndex].startTime = data.startTime + data.length;
 							}
 
@@ -695,6 +722,8 @@ class ChartingState extends MusicBeatState
 								var data = TimingStruct.AllTimings[currentIndex - 1];
 								data.endBeat = beat;
 								data.length = (data.endBeat - data.startBeat) / (data.bpm / 60);
+								var step = ((60 / data.bpm) * 1000) / 4;
+								TimingStruct.AllTimings[currentIndex].startStep = Math.floor(((data.endBeat / (data.bpm / 60)) * 1000) / step);
 								TimingStruct.AllTimings[currentIndex].startTime = data.startTime + data.length;
 							}
 
@@ -743,7 +772,7 @@ class ChartingState extends MusicBeatState
 				currentEventPosition = firstEvent.position;
 
 				savedType = firstEvent.type;
-				savedValue = firstEvent.value + "";
+				savedValue = firstEvent.value + '';
 
 				var listofnames = [];
 	
@@ -779,6 +808,8 @@ class ChartingState extends MusicBeatState
 								var data = TimingStruct.AllTimings[currentIndex - 1];
 								data.endBeat = beat;
 								data.length = (data.endBeat - data.startBeat) / (data.bpm / 60);
+								var step = ((60 / data.bpm) * 1000) / 4;
+								TimingStruct.AllTimings[currentIndex].startStep = Math.floor(((data.endBeat / (data.bpm / 60)) * 1000) / step);
 								TimingStruct.AllTimings[currentIndex].startTime = data.startTime + data.length;
 							}
 
@@ -1161,14 +1192,6 @@ class ChartingState extends MusicBeatState
 		});
 
 		var clearSectionButton:FlxButton = new FlxButton(10, 150, "Clear Section", clearSection);
-		var startSection:FlxButton = new FlxButton(10, 85, "Play Here", function() {
-			PlayState.SONG = _song;
-			FlxG.sound.music.stop();
-			if (!PlayState.isSM)
-			vocals.stop();
-			PlayState.startTime = lastUpdatedSection.startTime;
-			LoadingState.loadAndSwitchState(new PlayState());
-		});
 
 		var swapSection:FlxButton = new FlxButton(10, 170, "Swap Section", function()
 		{
@@ -1233,7 +1256,17 @@ class ChartingState extends MusicBeatState
 			check_altAnim.checked = section.altAnim;
 		});
 
+		var startSection:FlxButton = new FlxButton(10, 85, "Play Here", function() {
+			PlayState.SONG = _song;
+			FlxG.sound.music.stop();
+			if (!PlayState.isSM)
+			vocals.stop();
+			PlayState.startTime = lastUpdatedSection.startTime;
+			LoadingState.loadAndSwitchState(new PlayState());
+		});
+
 		tab_group_section.add(refresh);
+		tab_group_section.add(startSection);
 		tab_group_section.add(stepperCopy);
 		tab_group_section.add(stepperCopyLabel);
 		tab_group_section.add(check_mustHitSection);
@@ -1241,7 +1274,6 @@ class ChartingState extends MusicBeatState
 		tab_group_section.add(copyButton);
 		tab_group_section.add(clearSectionButton);
 		tab_group_section.add(swapSection);
-		tab_group_section.add(startSection);
 
 		UI_box.addGroup(tab_group_section);
 	}
@@ -1491,21 +1523,6 @@ class ChartingState extends MusicBeatState
 		updateHeads();
 
 		for(i in sectionRenderes)
-		{
-			var diff = i.y - strumLine.y;
-			if (diff < 4000 && diff >= -4000)
-			{
-				i.active = true;
-				i.visible = true;
-			}
-			else
-			{
-				i.active = false;
-				i.visible = false;
-			}
-		}
-
-		for(i in curRenderedNotes)
 			{
 				var diff = i.y - strumLine.y;
 				if (diff < 4000 && diff >= -4000)
@@ -1519,8 +1536,22 @@ class ChartingState extends MusicBeatState
 					i.visible = false;
 				}
 			}
+	
+			for(i in curRenderedNotes)
+				{
+					var diff = i.y - strumLine.y;
+					if (diff < 4000 && diff >= -4000)
+					{
+						i.active = true;
+						i.visible = true;
+					}
+					else
+					{
+						i.active = false;
+						i.visible = false;
+					}
+				}	
 
-			
 		var doInput = true;
 
 		for (i in Typeables)
@@ -1629,6 +1660,8 @@ class ChartingState extends MusicBeatState
 							var data = TimingStruct.AllTimings[currentIndex - 1];
 							data.endBeat = beat;
 							data.length = (data.endBeat - data.startBeat) / (data.bpm / 60);
+							var step = ((60 / data.bpm) * 1000) / 4;
+							TimingStruct.AllTimings[currentIndex].startStep = Math.floor(((data.endBeat / (data.bpm / 60)) * 1000) / step);
 							TimingStruct.AllTimings[currentIndex].startTime = data.startTime + data.length;
 						}
 
@@ -1722,6 +1755,8 @@ class ChartingState extends MusicBeatState
 		+ currentBPM
 		+ "\nCurBeat: " 
 		+ HelperFunctions.truncateFloat(curDecimalBeat,3)
+		+ "\nCurStep: "
+		+ curStep
 		+ "\nZoom: "
 		+ zoomFactor;
 
@@ -2138,13 +2173,13 @@ class ChartingState extends MusicBeatState
 	{
 		if (check_mustHitSection.checked)
 		{
-			leftIcon.changeIcon(_song.player1);
-			rightIcon.changeIcon(_song.player2);
+			leftIcon.animation.play(_song.player1);
+			rightIcon.animation.play(_song.player2);
 		}
 		else
 		{
-			leftIcon.changeIcon(_song.player2);
-			rightIcon.changeIcon(_song.player1);
+			leftIcon.animation.play(_song.player2);
+			rightIcon.animation.play(_song.player1);
 		}
 	}
 
@@ -2579,12 +2614,13 @@ class ChartingState extends MusicBeatState
 
 	function loadJson(song:String):Void
 	{
+		var difficultyArray:Array<String> = ["-easy", "", "-hard"];
 		var format = StringTools.replace(PlayState.SONG.song.toLowerCase(), " ", "-");
 		switch (format) {
 			case 'Dad-Battle': format = 'Dadbattle';
 			case 'Philly-Nice': format = 'Philly';
 		}
-		PlayState.SONG = Song.loadFromJson(format, format);
+		PlayState.SONG = Song.loadFromJson(format + difficultyArray[PlayState.storyDifficulty], format);
 		LoadingState.loadAndSwitchState(new ChartingState());
 	}
 
@@ -2604,6 +2640,7 @@ class ChartingState extends MusicBeatState
 
 	private function saveLevel()
 	{
+		var difficultyArray:Array<String> = ["-easy", "", "-hard"];
 		var json = {
 			"song": _song
 		};
@@ -2616,7 +2653,7 @@ class ChartingState extends MusicBeatState
 			_file.addEventListener(Event.COMPLETE, onSaveComplete);
 			_file.addEventListener(Event.CANCEL, onSaveCancel);
 			_file.addEventListener(IOErrorEvent.IO_ERROR, onSaveError);
-			_file.save(data.trim(), _song.song.toLowerCase() + ".json");
+			_file.save(data.trim(), _song.song.toLowerCase() + difficultyArray[PlayState.storyDifficulty] + ".json");
 		}
 	}
 

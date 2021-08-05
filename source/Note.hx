@@ -83,12 +83,15 @@ class Note extends FlxSprite
 		else
 		{
 			this.strumTime = strumTime;
-			rStrumTime = strumTime - (FlxG.save.data.offset + PlayState.songOffset);
 			#if sys
 			if (PlayState.isSM)
 			{
-				rStrumTime = Math.round(rStrumTime + Std.parseFloat(PlayState.sm.header.OFFSET));
+				rStrumTime = strumTime;
 			}
+			else
+				rStrumTime = (strumTime - FlxG.save.data.offset + PlayState.songOffset);
+			#else
+			rStrumTime = (strumTime - FlxG.save.data.offset + PlayState.songOffset);
 			#end
 		}
 
@@ -116,10 +119,7 @@ class Note extends FlxSprite
 
 			setGraphicSize(Std.int(width * 0.7));
 			updateHitbox();
-			if(FlxG.save.data.antialiasing)
-				{
-					antialiasing = true;
-				}
+			antialiasing = FlxG.save.data.antialiasing;
 		}
 		else
 		{
@@ -156,10 +156,7 @@ class Note extends FlxSprite
 					setGraphicSize(Std.int(width * 0.7));
 					updateHitbox();
 					
-					if(FlxG.save.data.antialiasing)
-						{
-							antialiasing = true;
-						}
+					antialiasing = FlxG.save.data.antialiasing;
 			}
 		}
 
@@ -190,6 +187,7 @@ class Note extends FlxSprite
 		// and flip it so it doesn't look weird.
 		// THIS DOESN'T FUCKING FLIP THE NOTE, CONTRIBUTERS DON'T JUST COMMENT THIS OUT JESUS
 		// then what is this lol
+		// BRO IT LITERALLY SAYS IT FLIPS IF ITS A TRAIL AND ITS DOWNSCROLL
 		if (FlxG.save.data.downscroll && sustainNote) 
 			flipY = true;
 
@@ -245,25 +243,23 @@ class Note extends FlxSprite
 
 		if (mustPress)
 		{
-			// ass
 			if (isSustainNote)
 			{
-				if (strumTime > Conductor.songPosition - (Conductor.safeZoneOffset * 1.5)
-					&& strumTime < Conductor.songPosition + (Conductor.safeZoneOffset * 0.5))
+				if (strumTime - Conductor.songPosition <= ((166 * Conductor.timeScale) * 0.5)
+					&& strumTime - Conductor.songPosition >= (-166 * Conductor.timeScale))
 					canBeHit = true;
 				else
 					canBeHit = false;
 			}
 			else
 			{
-				if (strumTime > Conductor.songPosition - Conductor.safeZoneOffset
-					&& strumTime < Conductor.songPosition + Conductor.safeZoneOffset)
+				if (strumTime - Conductor.songPosition <= (166 * Conductor.timeScale)
+					&& strumTime - Conductor.songPosition >= (-166 * Conductor.timeScale))
 					canBeHit = true;
 				else
 					canBeHit = false;
 			}
-
-			if (strumTime < Conductor.songPosition - Conductor.safeZoneOffset * Conductor.timeScale && !wasGoodHit)
+			if (strumTime - Conductor.songPosition < -166 && !wasGoodHit)
 				tooLate = true;
 		}
 		else
@@ -274,7 +270,7 @@ class Note extends FlxSprite
 				wasGoodHit = true;
 		}
 
-		if (tooLate)
+		if (tooLate && !wasGoodHit)
 		{
 			if (alpha > 0.3)
 				alpha = 0.3;
