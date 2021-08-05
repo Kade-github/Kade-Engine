@@ -22,20 +22,14 @@ class GitarooPause extends MusicBeatState
 			FlxG.sound.music.stop();
 
 		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('pauseAlt/pauseBG'));
-		if(FlxG.save.data.antialiasing)
-			{
-				bg.antialiasing = true;
-			}
+		bg.antialiasing = FlxG.save.data.antialiasing;
 		add(bg);
 
 		var bfGitaroo:FlxSprite = new FlxSprite(0, 30);
 		bfGitaroo.frames = Paths.getSparrowAtlas('pauseAlt/bfLol');
 		bfGitaroo.animation.addByPrefix('lol', 'funnyThing', 13);
 		bfGitaroo.animation.play('lol');
-		if(FlxG.save.data.antialiasing)
-			{
-				bfGitaroo.antialiasing = true;
-			}
+  	bfGitaroo.antialiasing = FlxG.save.data.antialiasing;
 		add(bfGitaroo);
 		bfGitaroo.screenCenter(X);
 
@@ -44,10 +38,7 @@ class GitarooPause extends MusicBeatState
 		replayButton.animation.addByPrefix('selected', 'bluereplay', 0, false);
 		replayButton.animation.appendByPrefix('selected', 'yellowreplay');
 		replayButton.animation.play('selected');
-		if(FlxG.save.data.antialiasing)
-			{
-				replayButton.antialiasing = true;
-			}
+		replayButton.antialiasing = FlxG.save.data.antialiasing;
 		add(replayButton);
 
 		cancelButton = new FlxSprite(FlxG.width * 0.58, replayButton.y);
@@ -55,10 +46,7 @@ class GitarooPause extends MusicBeatState
 		cancelButton.animation.addByPrefix('selected', 'bluecancel', 0, false);
 		cancelButton.animation.appendByPrefix('selected', 'cancelyellow');
 		cancelButton.animation.play('selected');
-		if(FlxG.save.data.antialiasing)
-			{
-				cancelButton.antialiasing = true;
-			}
+		cancelButton.antialiasing = FlxG.save.data.antialiasing;
 		add(cancelButton);
 
 		changeThing();

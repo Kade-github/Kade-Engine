@@ -46,12 +46,15 @@ class GameplayCustomizeState extends MusicBeatState
 		DiscordClient.changePresence('Customizing Gameplay Modules', null);
 		#end
 
-        sick = new FlxSprite().loadGraphic(Paths.image('sick', 'shared'));
-        sick.scrollFactor.set();
-        background = new FlxSprite(-600, -200).loadGraphic(Paths.image('stageback', 'shared'));
-        curt = new FlxSprite(-500, -300).loadGraphic(Paths.image('stagecurtains', 'shared'));
-        front = new FlxSprite(-650, 600).loadGraphic(Paths.image('stagefront', 'shared'));
-
+    sick = new FlxSprite().loadGraphic(Paths.image('sick','shared'));
+    sick.antialiasing = FlxG.save.data.antialiasing;
+    sick.scrollFactor.set();
+    background = new FlxSprite(-600, -200).loadGraphic(Paths.image('stageback','shared'));
+    curt = new FlxSprite(-500, -300).loadGraphic(Paths.image('stagecurtains','shared'));
+    front = new FlxSprite(-650, 600).loadGraphic(Paths.image('stagefront','shared'));
+    background.antialiasing = FlxG.save.data.antialiasing;
+    curt.antialiasing = FlxG.save.data.antialiasing;
+    front.antialiasing = FlxG.save.data.antialiasing;
 		//Conductor.changeBPM(102);
 		persistentUpdate = true;
 
@@ -61,13 +64,14 @@ class GameplayCustomizeState extends MusicBeatState
 		camHUD.bgColor.alpha = 0;
         FlxG.cameras.add(camHUD);
 
-        background.scrollFactor.set(0.9, 0.9);
-        curt.scrollFactor.set(0.9, 0.9);
-        front.scrollFactor.set(0.9, 0.9);
+    camHUD.zoom = FlxG.save.data.zoom;
+    background.scrollFactor.set(0.9, 0.9);
+    curt.scrollFactor.set(0.9, 0.9);
+    front.scrollFactor.set(0.9, 0.9);
 
-        add(background);
-        add(front);
-        add(curt);
+    add(background);
+    add(front);
+    add(curt);
 
 		var camFollow = new FlxObject(0, 0, 1, 1);
 
@@ -109,18 +113,18 @@ class GameplayCustomizeState extends MusicBeatState
 
 		playerStrums = new FlxTypedGroup<FlxSprite>();
 
-        sick.cameras = [camHUD];
-        strumLine.cameras = [camHUD];
-        playerStrums.cameras = [camHUD];
+    sick.cameras = [camHUD];
+    strumLine.cameras = [camHUD];
+    playerStrums.cameras = [camHUD];
         
 		generateStaticArrows(0);
 		generateStaticArrows(1);
 
-        text = new FlxText(5, FlxG.height + 40, 0, 'Click and drag around gameplay elements to customize their positions.\nPress R to reset.\nPress Escape to go back.', 12);
+    text = new FlxText(5, FlxG.height + 40, 0, 'Click and drag around gameplay elements to customize their positions.\nPress R to reset. +/- to change zoom.\nPress Escape to go back.', 12);
 		text.scrollFactor.set();
 		text.setFormat('VCR OSD Mono', 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
         
-        blackBorder = new FlxSprite(-30, FlxG.height + 40).makeGraphic((Std.int(text.width + 900)), Std.int(text.height + 600), FlxColor.BLACK);
+    blackBorder = new FlxSprite(-30, FlxG.height + 40).makeGraphic((Std.int(text.width + 900)), Std.int(text.height + 600), FlxColor.BLACK);
 		blackBorder.alpha = 0.5;
 
 		add(blackBorder);
@@ -162,6 +166,18 @@ class GameplayCustomizeState extends MusicBeatState
             i.y = strumLine.y;
         for (i in strumLineNotes)
             i.y = strumLine.y;
+
+        if (FlxG.keys.pressed.PLUS)
+        {
+            FlxG.save.data.zoom += 0.1;
+            camHUD.zoom = FlxG.save.data.zoom;
+        }
+
+        if (FlxG.keys.pressed.MINUS)
+        {
+            FlxG.save.data.zoom -= 0.1;
+            camHUD.zoom = FlxG.save.data.zoom;
+        }
 
         if (FlxG.mouse.overlaps(sick) && FlxG.mouse.justReleased)
         {
@@ -217,7 +233,7 @@ class GameplayCustomizeState extends MusicBeatState
                 babyArrow.animation.addByPrefix('blue', 'arrowDOWN');
                 babyArrow.animation.addByPrefix('purple', 'arrowLEFT');
                 babyArrow.animation.addByPrefix('red', 'arrowRIGHT');
-                babyArrow.antialiasing = true;
+                babyArrow.antialiasing = FlxG.save.data.antialiasing;
                 babyArrow.setGraphicSize(Std.int(babyArrow.width * 0.7));
                 switch (Math.abs(i))
                 {

@@ -23,7 +23,6 @@ class DiffCalc
 
     public static function CalculateDiff(song:SwagSong, ?accuracy:Float = .93)
     {
-        trace('calcuilafjwaf');
         // cleaned notes
         var cleanedNotes:Array<SmallNote> = [];
 
@@ -38,10 +37,10 @@ class DiffCalc
         {
             for (ii in i.sectionNotes) // notes
             {
-				if (ii[1] > 3 && !i.mustHitSection)
-					cleanedNotes.push(new SmallNote(ii[0], Math.floor(Math.abs(ii[1]))));
-                else if (ii[1] < 4 && i.mustHitSection)
-                    cleanedNotes.push(new SmallNote(ii[0], Math.floor(Math.abs(ii[1]))));
+			      	if (ii[1] > 3 && !i.mustHitSection)
+					      cleanedNotes.push(new SmallNote(ii[0], Math.floor(Math.abs(ii[1]))));
+              else if (ii[1] < 4 && i.mustHitSection)
+                cleanedNotes.push(new SmallNote(ii[0], Math.floor(Math.abs(ii[1]))));
             }
         }
 

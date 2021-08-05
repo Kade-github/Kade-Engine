@@ -23,12 +23,13 @@ class GameOverState extends FlxTransitionableState
 
 	override function create()
 	{
-			var loser:FlxSprite = new FlxSprite(100, 100);
-			var loseTex = Paths.getSparrowAtlas('lose');
-			loser.frames = loseTex;
-			loser.animation.addByPrefix('lose', 'lose', 24, false);
-			loser.animation.play('lose');
-			add(loser);
+		var loser:FlxSprite = new FlxSprite(100, 100);
+		var loseTex = Paths.getSparrowAtlas('lose');
+		loser.frames = loseTex;
+		loser.animation.addByPrefix('lose', 'lose', 24, false);
+		loser.animation.play('lose');
+		loser.antialiasing = FlxG.save.data.antialiasing;
+		add(loser);
 
 		var p1:Player = new Player(p1X, p1Y);
 		// p1.scrollFactor.set();
@@ -37,15 +38,12 @@ class GameOverState extends FlxTransitionableState
 
 		FlxG.camera.follow(p1, LOCKON, 0.001);
 		
-			var restart:FlxSprite = new FlxSprite(500, 50).loadGraphic(Paths.image('restart'));
-			restart.setGraphicSize(Std.int(restart.width * 0.6));
-			restart.updateHitbox();
-			restart.alpha = 0;
-			if(FlxG.save.data.antialiasing)
-				{
-					restart.antialiasing = true;
-				}
-			add(restart);
+		var restart:FlxSprite = new FlxSprite(500, 50).loadGraphic(Paths.image('restart'));
+		restart.setGraphicSize(Std.int(restart.width * 0.6));
+		restart.updateHitbox();
+		restart.alpha = 0;
+		restart.antialiasing = FlxG.save.data.antialiasing;
+		add(restart);
 
 		FlxG.sound.music.fadeOut(2, FlxG.sound.music.volume * 0.6);
 
