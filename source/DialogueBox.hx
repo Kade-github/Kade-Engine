@@ -176,7 +176,7 @@ class DialogueBox extends FlxSpriteGroup
 			startDialogue();
 			dialogueStarted = true;
 		}
-		if (FlxG.save.data.cutscenes && PlayerSettings.player1.controls.BACK)
+		if (FlxG.save.data.cutscenes && PlayerSettings.player1.controls.BACK && isEnding != true)
 		{
 			remove(dialogue);
 			isEnding = true;
