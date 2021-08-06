@@ -25,6 +25,7 @@ class DialogueBox extends FlxSpriteGroup
 	var swagDialogue:FlxTypeText;
 
 	var dropText:FlxText;
+	var skipText:FlxText;
 
 	public var finishThing:Void->Void;
 
@@ -119,7 +120,13 @@ class DialogueBox extends FlxSpriteGroup
 
 		box.screenCenter(X);
 		portraitLeft.screenCenter(X);
-
+		
+		skipText = new FlxText(10, 10, Std.int(FlxG.width * 0.6), "", 32);
+		skipText.font = 'Pixel Arial 11 Bold';
+		skipText.color = 0x000000;
+		skipText.text = 'press backspace or escape to skip';
+		if (FlxG.save.data.cutscenes)
+			add(skipText);
 		handSelect = new FlxSprite(FlxG.width * 0.9, FlxG.height * 0.9).loadGraphic(Paths.image('weeb/pixelUI/hand_textbox'));
 		add(handSelect);
 
