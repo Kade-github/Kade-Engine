@@ -14,14 +14,14 @@ import flixel.util.FlxColor;
  */
 class AnimationDebug extends FlxState
 {
-	var p1:Player;
-	var p2:Character;
+	var player:Player;
+	var opponent:Character;
 	var char:Character;
 	var textAnim:FlxText;
 	var dumbTexts:FlxTypedGroup<FlxText>;
 	var animList:Array<String> = [];
 	var curAnim:Int = 0;
-	var isP2:Bool = true;
+	var isOpponent:Bool = true;
 	var daAnim:String = 'spooky';
 	var camFollow:FlxObject;
 
@@ -40,27 +40,27 @@ class AnimationDebug extends FlxState
 		add(gridBG);
 
 		if (daAnim == 'bf')
-			isP2 = false;
+			isOpponent = false;
 
-		if (isP2)
+		if (isOpponent)
 		{
-			p2 = new Character(0, 0, daAnim);
-			p2.screenCenter();
-			p2.debugMode = true;
-			add(p2);
+			opponent = new Character(0, 0, daAnim);
+			opponent.screenCenter();
+			opponent.debugMode = true;
+			add(opponent);
 
-			char = p2;
-			p2.flipX = false;
+			char = opponent;
+			opponent.flipX = false;
 		}
 		else
 		{
-			p1 = new Player(0, 0);
-			p1.screenCenter();
-			p1.debugMode = true;
-			add(p1);
+			player = new Player(0, 0);
+			player.screenCenter();
+			player.debugMode = true;
+			add(player);
 
-			char = p1;
-			p1.flipX = false;
+			char = player;
+			player.flipX = false;
 		}
 
 		dumbTexts = new FlxTypedGroup<FlxText>();

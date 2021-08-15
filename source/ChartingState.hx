@@ -1219,7 +1219,7 @@ class ChartingState extends MusicBeatState
 				updateGrid();
 			}
 		});
-		check_mustHitSection = new FlxUICheckBox(10, 30, null, null, 'Camera Points to P1?', 100, null, function() {
+		check_mustHitSection = new FlxUICheckBox(10, 30, null, null, 'Camera points to player?', 100, null, function() {
 			var sect = lastUpdatedSection;
 
 			trace(sect);

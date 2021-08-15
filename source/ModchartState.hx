@@ -208,15 +208,15 @@ class ModchartState
 		// pre defined names
 		switch(id)
 		{
-			case 'p1':
+			case 'player':
                 @:privateAccess
-				return PlayState.p1;
+				return PlayState.player;
 			case 'girlfriend':
                 @:privateAccess
 				return PlayState.gf;
-			case 'p2':
+			case 'opponent':
 				@:privateAccess
-				return PlayState.p2;
+				return PlayState.opponent;
 		}
 		// lua objects or what ever
 		if (luaSprites.get(id) == null)
@@ -235,22 +235,22 @@ class ModchartState
 
 	public static var luaSprites:Map<String, FlxSprite> = [];
 
-	function changep2Character(id:String)
-	{				var oldp2x = PlayState.p2.x;
-					var oldp2y = PlayState.p2.y;
-					PlayState.instance.removeObject(PlayState.p2);
-					PlayState.p2 = new Character(oldp2x, oldp2y, id);
-					PlayState.instance.addObject(PlayState.p2);
-					PlayState.instance.iconP2.changeIcon(id);
+	function changeOpponentCharacter(id:String)
+	{				var oldOpponentX = PlayState.opponent.x;
+					var oldOpponentY = PlayState.opponent.y;
+					PlayState.instance.removeObject(PlayState.opponent);
+					PlayState.opponent = new Character(oldOpponentX, oldOpponentY, id);
+					PlayState.instance.addObject(PlayState.opponent);
+					PlayState.instance.iconOpponent.changeIcon(id);
 	}
 
-	function changep1Character(id:String)
-	{				var oldp1x = PlayState.p1.x;
-					var oldp1y = PlayState.p1.y;
-					PlayState.instance.removeObject(PlayState.p1);
-					PlayState.p1 = new Player(oldp1x, oldp1y, id);
-					PlayState.instance.addObject(PlayState.p1);
-					PlayState.instance.iconP1.changeIcon(id);
+	function changePlayerCharacter(id:String)
+	{				var oldPlayerX = PlayState.player.x;
+					var oldPlayerY = PlayState.player.y;
+					PlayState.instance.removeObject(PlayState.player);
+					PlayState.player = new Player(oldPlayerX, oldPlayerY, id);
+					PlayState.instance.addObject(PlayState.player);
+					PlayState.instance.iconPlayer.changeIcon(id);
 	}
 
 	function makeAnimatedLuaSprite(spritePath:String, names:Array<String>, prefixes:Array<String>, startAnim:String, id:String)
@@ -332,15 +332,15 @@ class ModchartState
             if (drawBehind)
             {
                 PlayState.instance.removeObject(PlayState.gf);
-                PlayState.instance.removeObject(PlayState.p1);
-                PlayState.instance.removeObject(PlayState.p2);
+                PlayState.instance.removeObject(PlayState.player);
+                PlayState.instance.removeObject(PlayState.opponent);
             }
             PlayState.instance.addObject(sprite);
             if (drawBehind)
             {
                 PlayState.instance.addObject(PlayState.gf);
-                PlayState.instance.addObject(PlayState.p1);
-				PlayState.instance.addObject(PlayState.p2);
+                PlayState.instance.addObject(PlayState.player);
+				PlayState.instance.addObject(PlayState.opponent);
             }
         }
 		#end
@@ -433,9 +433,9 @@ class ModchartState
 	
 				Lua_helper.add_callback(lua, 'makeSprite', makeLuaSprite);
 				
-				Lua_helper.add_callback(lua, 'changep2Character', changep2Character);
+				Lua_helper.add_callback(lua, 'changeOpponentCharacter', changeOpponentCharacter);
 
-				Lua_helper.add_callback(lua, 'changep1Character', changep1Character);
+				Lua_helper.add_callback(lua, 'changePlayerCharacter', changePlayerCharacter);
 	
 				Lua_helper.add_callback(lua, 'getProperty', getPropertyByName);
 

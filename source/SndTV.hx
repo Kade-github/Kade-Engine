@@ -232,10 +232,10 @@ class SndTV {
 	}
 
 	public static inline 
-	function bezier(t:Float, p0:Float, p1:Float, p2:Float, p3:Float) {
+	function bezier(t:Float, p0:Float, player:Float, opponent:Float, p3:Float) {
 		return
 			fastPow3(1-t)*p0 +
-			3*( t*fastPow2(1-t)*p1 + fastPow2(t)*(1-t)*p2 ) +
+			3*( t*fastPow2(1-t)*player + fastPow2(t)*(1-t)*opponent ) +
 			fastPow3(t)*p3;
 	}
 	
