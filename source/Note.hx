@@ -18,6 +18,8 @@ class Note extends FlxSprite
 	public var strumTime:Float = 0;
 	public var baseStrum:Float = 0;
 	
+	public var charterSelected:Bool = false;
+
 	public var rStrumTime:Float = 0;
 
 	public var mustPress:Bool = false;
@@ -32,6 +34,8 @@ class Note extends FlxSprite
 	public var isSustainNote:Bool = false;
 	public var originColor:Int = 0; // The sustain note's original note's color
 	public var noteSection:Int = 0;
+
+	public var isAlt:Bool = false;
 
 	public var noteCharterObject:FlxSprite;
 
@@ -49,6 +53,7 @@ class Note extends FlxSprite
 
 	public var modAngle:Float = 0; // The angle set by modcharts
 	public var localAngle:Float = 0; // The angle to be edited inside Note.hx
+	public var originAngle:Float = 0; // The angle the OG note of the sus note had (?)
 
 	public var dataColor:Array<String> = ['purple', 'blue', 'green', 'red'];
 	public var quantityColor:Array<Int> = [RED_NOTE, 2, BLUE_NOTE, 2, PURP_NOTE, 2, BLUE_NOTE, 2];
@@ -61,12 +66,14 @@ class Note extends FlxSprite
 
 	public var children:Array<Note> = [];
 
-	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false, ?inCharter:Bool = false)
+	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false, ?inCharter:Bool = false, ?isAlt:Bool = false)
 	{
 		super();
 
 		if (prevNote == null)
 			prevNote = this;
+
+		this.isAlt = isAlt;
 
 		this.prevNote = prevNote;
 		isSustainNote = sustainNote;
@@ -180,6 +187,7 @@ class Note extends FlxSprite
 			animation.play(dataColor[col] + 'Scroll');
 			localAngle -= arrowAngles[col];
 			localAngle += arrowAngles[noteData];
+			originAngle = localAngle;
 			originColor = col;
 		}
 		
@@ -201,6 +209,7 @@ class Note extends FlxSprite
 			x += width / 2;
 
 			originColor = prevNote.originColor; 
+			originAngle = prevNote.originAngle;
 
 			animation.play(dataColor[originColor] + 'holdend'); // This works both for normal colors and quantization colors
 			updateHitbox();

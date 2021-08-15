@@ -49,7 +49,7 @@ class GameplayCustomizeState extends MusicBeatState
         sick = new FlxSprite().loadGraphic(Paths.image('sick','shared'));
         sick.antialiasing = FlxG.save.data.antialiasing;
         sick.scrollFactor.set();
-        background = new FlxSprite(-600, -200).loadGraphic(Paths.image('stageback','shared'));
+        background = new FlxSprite(-1000, -200).loadGraphic(Paths.image('stageback','shared'));
         curt = new FlxSprite(-500, -300).loadGraphic(Paths.image('stagecurtains','shared'));
         front = new FlxSprite(-650, 600).loadGraphic(Paths.image('stagefront','shared'));
         background.antialiasing = FlxG.save.data.antialiasing;
@@ -122,12 +122,18 @@ class GameplayCustomizeState extends MusicBeatState
 		generateStaticArrows(0);
 		generateStaticArrows(1);
 
-        text = new FlxText(5, FlxG.height + 40, 0, "Click and drag around gameplay elements to customize their positions.\nPress R to reset. +/- to change zoom.\nPress Escape to go back.", 12);
+        text = new FlxText(5, FlxG.height + 40, 0, "Click and drag around gameplay elements to customize their positions. Press R to reset. Q/E to change zoom. Press Escape to go back.", 12);
 		text.scrollFactor.set();
 		text.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
         
         blackBorder = new FlxSprite(-30,FlxG.height + 40).makeGraphic((Std.int(text.width + 900)),Std.int(text.height + 600),FlxColor.BLACK);
 		blackBorder.alpha = 0.5;
+
+        background.cameras = [camHUD];
+        text.cameras = [camHUD];
+
+        text.scrollFactor.set();
+        background.scrollFactor.set();
 
 		add(blackBorder);
 
@@ -156,13 +162,19 @@ class GameplayCustomizeState extends MusicBeatState
 
         super.update(elapsed);
 
+        if (FlxG.save.data.zoom < 0.8)
+            FlxG.save.data.zoom = 0.8;
+
+        if (FlxG.save.data.zoom > 1.2)
+            FlxG.save.data.zoom = 1.2;
+
         FlxG.camera.zoom = FlxMath.lerp(0.9, FlxG.camera.zoom, 0.95);
-        camHUD.zoom = FlxMath.lerp(1, camHUD.zoom, 0.95);
+        camHUD.zoom = FlxMath.lerp(FlxG.save.data.zoom, camHUD.zoom, 0.95);
 
         if (FlxG.mouse.overlaps(sick) && FlxG.mouse.pressed)
         {
-            sick.x = FlxG.mouse.x - sick.width / 2;
-            sick.y = FlxG.mouse.y - sick.height;
+            sick.x = (FlxG.mouse.x - sick.width / 2) - 60;
+            sick.y = (FlxG.mouse.y - sick.height) - 60;
         }
 
         for (i in playerStrums)
@@ -170,17 +182,18 @@ class GameplayCustomizeState extends MusicBeatState
         for (i in strumLineNotes)
             i.y = strumLine.y;
 
-        if (FlxG.keys.pressed.PLUS)
+        if (FlxG.keys.justPressed.Q)
         {
-            FlxG.save.data.zoom += 0.1;
+            FlxG.save.data.zoom += 0.02;
             camHUD.zoom = FlxG.save.data.zoom;
         }
 
-        if (FlxG.keys.pressed.MINUS)
+        if (FlxG.keys.justPressed.E)
         {
-            FlxG.save.data.zoom -= 0.1;
+            FlxG.save.data.zoom -= 0.02;
             camHUD.zoom = FlxG.save.data.zoom;
         }
+
 
         if (FlxG.mouse.overlaps(sick) && FlxG.mouse.justReleased)
         {
@@ -193,6 +206,8 @@ class GameplayCustomizeState extends MusicBeatState
         {
             sick.x = defaultX;
             sick.y = defaultY;
+            FlxG.save.data.zoom = 1;
+            camHUD.zoom = FlxG.save.data.zoom;
             FlxG.save.data.changedHitX = sick.x;
             FlxG.save.data.changedHitY = sick.y;
             FlxG.save.data.changedHit = false;

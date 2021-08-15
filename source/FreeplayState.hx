@@ -67,6 +67,7 @@ class FreeplayState extends MusicBeatState
 
 	override function create()
 	{
+		clean();
 		var initSonglist = CoolUtil.coolTextFile(Paths.txt('data/freeplaySonglist'));
 
 		//var diffList = "";
@@ -379,7 +380,8 @@ class FreeplayState extends MusicBeatState
 			}
 
 
-			PlayState.SONG = hmm;
+
+			PlayState.SONG = Song.conversionChecks(hmm);
 			PlayState.isStoryMode = false;
 			PlayState.storyDifficulty = curDifficulty;
 			PlayState.storyWeek = songs[curSelected].week;
@@ -397,6 +399,7 @@ class FreeplayState extends MusicBeatState
 			PlayState.isSM = false;
 			#end
 			LoadingState.loadAndSwitchState(new PlayState());
+			clean();
 		}
 	}
 

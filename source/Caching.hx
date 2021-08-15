@@ -80,6 +80,8 @@ class Caching extends MusicBeatState
 		
 		kadeLogo.alpha = 0;
 
+		FlxGraphic.defaultPersist = FlxG.save.data.cacheImages;
+
 		#if cpp
 		if (FlxG.save.data.cacheImages)
 		{
@@ -150,6 +152,7 @@ class Caching extends MusicBeatState
 
 	function cache()
 	{
+		#if !linux
 		trace("LOADING: " + toBeDone + " OBJECTS.");
 
 		for (i in images)
@@ -179,6 +182,7 @@ class Caching extends MusicBeatState
 
 		trace(Assets.cache.hasBitmapData('GF_assets'));
 
+		#end
 		FlxG.switchState(new TitleState());
 	}
 
