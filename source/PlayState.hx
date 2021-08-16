@@ -4680,13 +4680,13 @@ class PlayState extends MusicBeatState
 
 			if (curBeat % 8 == 7 && curSong == 'Bopeebo')
 			{
-				boyfriend.playAnim('hey', true);
+				player.playAnim('hey', true);
 			}
 
-			if (curBeat % 16 == 15 && SONG.song == 'Tutorial' && dad.curCharacter == 'gf' && curBeat > 16 && curBeat < 48)
+			if (curBeat % 16 == 15 && SONG.song == 'Tutorial' && opponent.curCharacter == 'gf' && curBeat > 16 && curBeat < 48)
 			{
-				boyfriend.playAnim('hey', true);
-				dad.playAnim('cheer', true);
+				player.playAnim('hey', true);
+				opponent.playAnim('cheer', true);
 			}
 
 			switch (curStage)
