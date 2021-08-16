@@ -1394,12 +1394,12 @@ class ChartingState extends MusicBeatState
 					{
 						trace('new strum ' + strum + ' - at section ' + section);
 						// alright we're in this section lets paste the note here.
-						var newData = [strum, i[1], i[2]];
+						var newData = [strum, i[1], i[2], i[3], i[4]];
 						ii.sectionNotes.push(newData);
 
 						var thing = ii.sectionNotes[ii.sectionNotes.length - 1];
 
-						var note:Note = new Note(strum, Math.floor(i[1] % 4), null, false, true, i[4]);
+						var note:Note = new Note(strum, Math.floor(i[1] % 4), null, false, true, i[3], i[4]);
 
 						note.rawNoteData = i[1];
 						note.sustainLength = i[2];
@@ -1654,10 +1654,8 @@ class ChartingState extends MusicBeatState
 			i.strumTime = TimingStruct.getTimeFromBeat(i.beat);
 			i.y = Math.floor(getYfromStrum(i.strumTime) * zoomFactor);
 			if (i.noteCharterObject != null)
-			{
 				i.noteCharterObject.y = i.y + 40;
-				i.noteCharterObject.makeGraphic(8,Math.floor((getYfromStrum(i.strumTime + i.sustainLength) * zoomFactor) - i.y),FlxColor.WHITE);
-			}
+			
 		}
 
 		trace("FUCK YOU BITCH FUCKER CUCK SUCK BITCH " + _song.notes.length);
@@ -1956,7 +1954,7 @@ class ChartingState extends MusicBeatState
 					{
 						copiedNotes = [];
 						for(i in selectedBoxes.members)
-							copiedNotes.push([i.connectedNote.strumTime, i.connectedNote.rawNoteData, i.connectedNote.sustainLength, i.connectedNote.isAlt]);
+							copiedNotes.push([i.connectedNote.strumTime, i.connectedNote.rawNoteData, i.connectedNote.sustainLength, i.connectedNote.isAlt, i.connectedNote.beat]);
 
 						var firstNote = copiedNotes[0][0];
 

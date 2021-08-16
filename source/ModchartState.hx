@@ -571,7 +571,7 @@ class ModchartState
 				// actors
 				
 				Lua_helper.add_callback(lua, 'getRenderedNotes', function() {
-					return PlayState.instance.notes.length;
+					return PlayState.instance.notes.members.length;
 				});
 	
 				Lua_helper.add_callback(lua, 'getRenderedNoteX', function(id:Int) {
@@ -585,7 +585,6 @@ class ModchartState
 				Lua_helper.add_callback(lua, 'getRenderedNoteType', function(id:Int) {
 					return PlayState.instance.notes.members[id].noteData;
 				});
-
 				Lua_helper.add_callback(lua, 'isSustain', function(id:Int) {
 					return PlayState.instance.notes.members[id].isSustainNote;
 				});
@@ -593,7 +592,26 @@ class ModchartState
 				Lua_helper.add_callback(lua, 'isParentSustain', function(id:Int) {
 					return PlayState.instance.notes.members[id].prevNote.isSustainNote;
 				});
+				
+				Lua_helper.add_callback(lua,"isSustainHead", function(id:Int) {
+					return PlayState.instance.notes.members[id].isParent;
+				});
 
+				Lua_helper.add_callback(lua,"getSustainSpot", function(id:Int) {
+					return PlayState.instance.notes.members[id].spotInLine;
+				});
+
+				Lua_helper.add_callback(lua,"getSustainObjectsLength", function(id:Int) {
+					return PlayState.instance.notes.members[id].children.length;
+				});
+
+				Lua_helper.add_callback(lua,"setSustainObjectX", function(idParent:Int, index:Int,x:Int) {
+					return PlayState.instance.notes.members[idParent].children[index].x = x;
+				});
+
+				Lua_helper.add_callback(lua,"setSustainObjectY", function(idParent:Int, index:Int,y:Int) {
+					return PlayState.instance.notes.members[idParent].children[index].y = y;
+				});
 				
 				Lua_helper.add_callback(lua, 'getRenderedNoteParentX', function(id:Int) {
 					return PlayState.instance.notes.members[id].prevNote.x;
