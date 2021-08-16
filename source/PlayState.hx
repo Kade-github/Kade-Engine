@@ -1533,7 +1533,7 @@ class PlayState extends MusicBeatState
 	private function releaseInput(evt:KeyboardEvent):Void // handles releases
 	{
 		@:privateAccess
-		var key = FlxKey.toStringMap.get(Keyboard.__convertKeyCode(evt.keyCode));
+		var key = FlxKey.toStringMap.get(evt.keyCode);
 
 		var binds:Array<String> = [
 			FlxG.save.data.leftBind,
@@ -1582,7 +1582,7 @@ class PlayState extends MusicBeatState
 		// this makes it work for special characters
 
 		@:privateAccess
-		var key = FlxKey.toStringMap.get(Keyboard.__convertKeyCode(evt.keyCode));
+		var key = FlxKey.toStringMap.get(evt.keyCode);
 
 		var binds:Array<String> = [
 			FlxG.save.data.leftBind,
@@ -1877,7 +1877,7 @@ class PlayState extends MusicBeatState
 
 			for (songNotes in section.sectionNotes)
 			{
-				var daStrumTime:Float = songNotes[0] + FlxG.save.data.offset + songOffset;
+				var daStrumTime:Float = songNotes[0];
 				if (daStrumTime < 0)
 					daStrumTime = 0;
 				var daNoteData:Int = Std.int(songNotes[1] % 4);
@@ -1895,7 +1895,7 @@ class PlayState extends MusicBeatState
 				else
 					oldNote = null;
 
-				var swagNote:Note = new Note(daStrumTime, daNoteData, oldNote);
+				var swagNote:Note = new Note(daStrumTime, daNoteData, oldNote,false,false,false,songNotes[4]);
 
 				if (!gottaHitNote && PlayStateChangeables.Optimize)
 					continue;
@@ -4661,94 +4661,97 @@ class PlayState extends MusicBeatState
 		iconPlayer.updateHitbox();
 		iconOpponent.updateHitbox();
 
-		if (curBeat % gfSpeed == 0)
+		if (!endingSong)
 		{
-			gf.dance();
-		}
+			if (curBeat % gfSpeed == 0)
+			{
+				gf.dance();
+			}
 
-		if (!player.animation.curAnim.name.startsWith('sing') && (curBeat % idleBeat == 0 || !idleToBeat))
-		{
-			player.playAnim('idle' + ((SONG.notes[Math.floor(curStep / 16)].p2AltAnim && player.animation.getByName('idle-alt') != null) ? '-alt' : ''), idleToBeat);
-		}
+			if (!player.animation.curAnim.name.startsWith("sing") && (curBeat % idleBeat == 0 || !idleToBeat))
+			{
+				player.playAnim('idle' + ((SONG.notes[Math.floor(curStep / 16)].p2AltAnim && player.animation.getByName('idle-alt') != null) ? '-alt' : ''), idleToBeat);
+			}
 
-		/*if (!opponent.animation.curAnim.name.startsWith('sing'))
-		{
-			opponent.dance();
-		}*/
+			/*if (!opponent.animation.curAnim.name.startsWith("sing"))
+			{
+				opponent.dance();
+			}*/
 
-		if (curBeat % 8 == 7 && curSong == 'Bopeebo')
-		{
-			player.playAnim('hey', true);
-		}
+			if (curBeat % 8 == 7 && curSong == 'Bopeebo')
+			{
+				boyfriend.playAnim('hey', true);
+			}
 
-		if (curBeat % 16 == 15 && SONG.song == 'Tutorial' && opponent.curCharacter == 'gf' && curBeat > 16 && curBeat < 48)
-		{
-			player.playAnim('hey', true);
-			opponent.playAnim('cheer', true);
-		}
+			if (curBeat % 16 == 15 && SONG.song == 'Tutorial' && dad.curCharacter == 'gf' && curBeat > 16 && curBeat < 48)
+			{
+				boyfriend.playAnim('hey', true);
+				dad.playAnim('cheer', true);
+			}
 
-		switch (curStage)
-		{
-			case 'school':
-				if (FlxG.save.data.distractions)
-				{
-					bgGirls.dance();
-				}
-
-			case 'mall':
-				if (FlxG.save.data.distractions)
-				{
-					upperBoppers.animation.play('bop', true);
-					bottomBoppers.animation.play('bop', true);
-					santa.animation.play('idle', true);
-				}
-
-			case 'limo':
-				if (FlxG.save.data.distractions)
-				{
-					grpLimoDancers.forEach(function(dancer:BackgroundDancer)
-					{
-						dancer.dance();
-					});
-
-					if (FlxG.random.bool(10) && fastCarCanDrive)
-						fastCarDrive();
-				}
-			case 'philly':
-				if (FlxG.save.data.distractions)
-				{
-					if (!trainMoving)
-						trainCooldown += 1;
-
-					if (curBeat % 4 == 0)
-					{
-						phillyCityLights.forEach(function(light:FlxSprite)
-						{
-							light.visible = false;
-						});
-
-						curLight = FlxG.random.int(0, phillyCityLights.length - 1);
-
-						phillyCityLights.members[curLight].visible = true;
-						// phillyCityLights.members[curLight].alpha = 1;
-					}
-				}
-
-				if (curBeat % 8 == 4 && FlxG.random.bool(30) && !trainMoving && trainCooldown > 8)
-				{
+			switch (curStage)
+			{
+				case 'school':
 					if (FlxG.save.data.distractions)
 					{
-						trainCooldown = FlxG.random.int(-4, 0);
-						trainStart();
+						bgGirls.dance();
 					}
-				}
-		}
 
-		if (isHalloween && FlxG.random.bool(10) && curBeat > lightningStrikeBeat + lightningOffset)
-		{
-			if (FlxG.save.data.distractions)
+				case 'mall':
+					if (FlxG.save.data.distractions)
+					{
+						upperBoppers.animation.play('bop', true);
+						bottomBoppers.animation.play('bop', true);
+						santa.animation.play('idle', true);
+					}
+
+				case 'limo':
+					if (FlxG.save.data.distractions)
+					{
+						grpLimoDancers.forEach(function(dancer:BackgroundDancer)
+						{
+							dancer.dance();
+						});
+
+						if (FlxG.random.bool(10) && fastCarCanDrive)
+							fastCarDrive();
+					}
+				case "philly":
+					if (FlxG.save.data.distractions)
+					{
+						if (!trainMoving)
+							trainCooldown += 1;
+
+						if (curBeat % 4 == 0)
+						{
+							phillyCityLights.forEach(function(light:FlxSprite)
+							{
+								light.visible = false;
+							});
+
+							curLight = FlxG.random.int(0, phillyCityLights.length - 1);
+
+							phillyCityLights.members[curLight].visible = true;
+							// phillyCityLights.members[curLight].alpha = 1;
+						}
+					}
+
+					if (curBeat % 8 == 4 && FlxG.random.bool(30) && !trainMoving && trainCooldown > 8)
+					{
+						if (FlxG.save.data.distractions)
+						{
+							trainCooldown = FlxG.random.int(-4, 0);
+							trainStart();
+						}
+					}
+			}
+
+			if (isHalloween && FlxG.random.bool(10) && curBeat > lightningStrikeBeat + lightningOffset)
 			{
-				lightningStrikeShit();
+				if (FlxG.save.data.distractions)
+				{
+					lightningStrikeShit();
+				}
 			}
 		}
 	}
