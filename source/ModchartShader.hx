@@ -52,7 +52,7 @@ class ModchartShader extends FlxShader
 			gl_FragColor = color * openfl_Alphav;
 		}';
 
-    public function new(frag:String,?vert:String = '')
+    public function new(frag:String, ?vert:String = '')
     {
         if (vert != '')
             glVertexSource = vert;

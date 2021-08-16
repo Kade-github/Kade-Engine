@@ -29,7 +29,7 @@ class GitarooPause extends MusicBeatState
 		bfGitaroo.frames = Paths.getSparrowAtlas('pauseAlt/bfLol');
 		bfGitaroo.animation.addByPrefix('lol', 'funnyThing', 13);
 		bfGitaroo.animation.play('lol');
-  	bfGitaroo.antialiasing = FlxG.save.data.antialiasing;
+  		bfGitaroo.antialiasing = FlxG.save.data.antialiasing;
 		add(bfGitaroo);
 		bfGitaroo.screenCenter(X);
 

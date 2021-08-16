@@ -14,19 +14,19 @@ class Waveform extends FlxSprite
     public var buffer:AudioBuffer;
     public var data:Bytes;
 
-    public function new(x:Int,y:Int, audioPath:String, height:Int)
+    public function new(x:Int, y:Int, audioPath:String, height:Int)
     {
-        super(x,y);
+        super(x, y);
 
-        var path = StringTools.replace(audioPath, "songs:","");
+        var path = StringTools.replace(audioPath, 'songs:', '');
 
-        trace("loading " + path);
+        trace('loading ' + path);
 
         buffer = AudioBuffer.fromFile(path);
 
-        trace("BPS: " + buffer.bitsPerSample + " - Channels: " + buffer.channels);
+        trace('BPS: ' + buffer.bitsPerSample + ' - Channels: ' + buffer.channels);
 
-        makeGraphic(height,350,FlxColor.TRANSPARENT);
+        makeGraphic(height, 350, FlxColor.TRANSPARENT);
 
         angle = 90;
 
@@ -64,7 +64,7 @@ class Waveform extends FlxSprite
 
                 if ((index % samplesPerCollumn) == 0)
 				{
-					// trace("min: " + min + ", max: " + max);
+					// trace('min: ' + min + ', max: ' + max);
 
 					if (drawIndex > 350)
 					{

@@ -21,8 +21,8 @@ class SectionRender extends FlxSprite
 		if (Math.floor(h) != h)
 			h = GRID_SIZE;
 
-		if (FlxG.save.data.editor)
-			FlxGridOverlay.overlay(this, GRID_SIZE, Std.int(h), GRID_SIZE * 8, GRID_SIZE * Height);
+        if (FlxG.save.data.editorBG)
+            FlxGridOverlay.overlay(this, GRID_SIZE, Std.int(h), GRID_SIZE * 8, GRID_SIZE * Height);
     }
 
         

@@ -104,8 +104,8 @@ class LoadReplayState extends MusicBeatState
 	}
 
 	function sortByDate(a:String, b:String) {
-		var aTime = Std.parseFloat(a.split("time")[1])/1000;
-		var bTime = Std.parseFloat(b.split("time")[1])/1000;
+		var aTime = Std.parseFloat(a.split('time')[1])/1000;
+		var bTime = Std.parseFloat(b.split('time')[1])/1000;
 
 		return Std.int(bTime - aTime); // Newest first
 	}

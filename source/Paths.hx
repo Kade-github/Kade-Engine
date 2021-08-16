@@ -1,8 +1,6 @@
 package;
 
-import openfl.utils.Assets;
 import flixel.graphics.FlxGraphic;
-import flixel.system.FlxAssets.FlxGraphicAsset;
 import flixel.FlxG;
 import flixel.graphics.frames.FlxAtlasFrames;
 import openfl.utils.AssetType;
@@ -170,6 +168,6 @@ class Paths
 				#end
 			else
 				return FlxAtlasFrames.fromSpriteSheetPacker(image('characters/$key'), file('images/characters/$key.txt', library));
-		return FlxAtlasFrames.fromSpriteSheetPacker(image(key, library), file('images/characters/$key.txt', library));
+		return FlxAtlasFrames.fromSpriteSheetPacker(image(key, library), file('images/$key.txt', library));
 	}
 }

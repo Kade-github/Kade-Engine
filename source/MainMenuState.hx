@@ -39,7 +39,8 @@ class MainMenuState extends MusicBeatState
 	public static var firstStart:Bool = true;
 
 	public static var nightly:String = '';
-	public static var kadeEngineVer:String = '1.6.1' + nightly;
+
+	public static var kadeEngineVer:String = '1.6.2' + nightly;
 	public static var gameVer:String = '0.2.7.1';
 
 	var magenta:FlxSprite;
@@ -48,6 +49,7 @@ class MainMenuState extends MusicBeatState
 
 	override function create()
 	{
+		clean();
 		#if windows
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence('In the Menus', null);

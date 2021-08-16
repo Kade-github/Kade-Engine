@@ -179,7 +179,7 @@ class Character extends FlxSprite
 				tex = Paths.getSparrowAtlas('Pico_FNF_assetss', 'shared', true);
 				frames = tex;
 
-				animation.addByPrefix('idle', "Pico Idle Dance", 24, false);
+				animation.addByPrefix('idle', 'Pico Idle Dance', 24, false);
 				animation.addByPrefix('singUP', 'pico Up note0', 24, false);
 				animation.addByPrefix('singDOWN', 'Pico Down Note0', 24, false);
 				if (isPlayer)
@@ -452,7 +452,7 @@ class Character extends FlxSprite
 	/**
 	 * FOR GF DANCING SHIT
 	 */
-	public function dance(forced:Bool = false)
+	public function dance(forced:Bool = false, altAnim:Bool = false)
 	{
 		if (!debugMode)
 		{
@@ -476,13 +476,25 @@ class Character extends FlxSprite
 					else
 						playAnim('danceLeft');
 				default:
-					playAnim('idle', forced);
+					if (altAnim && animation.getByName('idle-alt') != null)
+						playAnim('idle-alt', forced);
+					else
+						playAnim('idle', forced);
 			}
 		}
 	}
 
 	public function playAnim(AnimName:String, Force:Bool = false, Reversed:Bool = false, Frame:Int = 0):Void
 	{
+
+		if (AnimName.endsWith('alt') && animation.getByName(AnimName) == null)
+		{
+			#if debug
+			FlxG.log.warn(['Such alt animation doesnt exist: ' + AnimName]);
+			#end
+			AnimName = AnimName.split('-')[0];
+		}
+
 		animation.play(AnimName, Force, Reversed, Frame);
 
 		var daOffset = animOffsets.get(AnimName);

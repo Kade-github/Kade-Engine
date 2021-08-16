@@ -16,7 +16,7 @@ class ShaderShader extends FlxShader
     }
     
     vec3 rgb(float r, float g, float b) {
-        return vec3(r/255.0,g/255.0,b/255.0);
+        return vec3(r/255.0, g/255.0, b/255.0);
     }
     
     void main()
@@ -27,9 +27,9 @@ class ShaderShader extends FlxShader
         float bright=floor(luma(col+0.4)*4.0)/4.0;
         
         vec3 newcol;
-        if (bright<0.3) newcol = 	  rgb(54.0,87.0,53.0);
-        else if (bright<0.6) newcol = rgb(128.0,128.0,0.0);
-        else newcol = 				  rgb(157.0,187.0,97.0);
+        if (bright<0.3) newcol = 	  rgb(54.0, 87.0, 53.0);
+        else if (bright<0.6) newcol = rgb(128.0, 128.0, 0.0);
+        else newcol = 				  rgb(157.0, 187.0, 97.0);
         gl_FragColor = vec4( newcol*(fade)+col*(1.0-fade), 1.0 ) * color;
     }
     ')

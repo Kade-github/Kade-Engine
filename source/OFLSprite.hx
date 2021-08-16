@@ -10,11 +10,11 @@ class OFLSprite extends FlxSprite
 {
     public var flSprite:Sprite;
 
-    public function new(x,y,width,height,Sprite:Sprite)
+    public function new(x, y, width, height, Sprite:Sprite)
     {
-        super(x,y);
+        super(x, y);
 
-        makeGraphic(width,height,FlxColor.TRANSPARENT);
+        makeGraphic(width, height, FlxColor.TRANSPARENT);
 
         flSprite = Sprite;
 

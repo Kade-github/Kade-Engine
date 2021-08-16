@@ -83,7 +83,12 @@ class ResultsScreen extends FlxSubState
             text.text = 'Week Cleared!';
         }
 
-        comboText = new FlxText(20, -75, 0, 'Judgements:\nSicks - ${PlayState.sicks}\nGoods - ${PlayState.goods}\nBads - ${PlayState.bads}\n\nCombo Breaks: ${(PlayState.isStoryMode ? PlayState.campaignMisses : PlayState.misses)}\nHighest Combo: ${PlayState.highestCombo + 1}\nScore: ${PlayState.instance.songScore}\nAccuracy: ${HelperFunctions.truncateFloat(PlayState.instance.accuracy, 2)}%\n\n${Ratings.GenerateLetterRank(PlayState.instance.accuracy)}\n\n${!PlayState.loadRep ? 'F1 - View replay\nF2 - Replay song' : ''}
+        var sicks = PlayState.isStoryMode ? PlayState.campaignSicks : PlayState.sicks;
+        var goods = PlayState.isStoryMode ? PlayState.campaignGoods : PlayState.goods;
+        var bads = PlayState.isStoryMode ? PlayState.campaignBads : PlayState.bads;
+        var shits = PlayState.isStoryMode ? PlayState.campaignShits : PlayState.shits;
+
+        comboText = new FlxText(20, -75, 0, 'Judgements:\nSicks - ${sicks}\nGoods - ${goods}\nBads - ${bads}\n\nCombo Breaks: ${(PlayState.isStoryMode ? PlayState.campaignMisses : PlayState.misses)}\nHighest Combo: ${PlayState.highestCombo + 1}\nScore: ${PlayState.instance.songScore}\nAccuracy: ${HelperFunctions.truncateFloat(PlayState.instance.accuracy, 2)}%\n\n${Ratings.GenerateLetterRank(PlayState.instance.accuracy)}\n\n${!PlayState.loadRep ? 'F1 - View replay\nF2 - Replay song' : ''}
         ');
         comboText.size = 28;
         comboText.setBorderStyle(FlxTextBorderStyle.OUTLINE, FlxColor.BLACK, 4, 1);
@@ -154,7 +159,7 @@ class ResultsScreen extends FlxSubState
 
         mean = HelperFunctions.truncateFloat(mean / PlayState.rep.replay.songNotes.length, 2);
 
-        settingsText = new FlxText(20, FlxG.height + 50,0, 'SF: ${PlayState.rep.replay.sf} | Ratio (SA/GA): ${Math.round(sicks)}:1 ${Math.round(goods)}:1 | Mean: ${mean}ms | Played on ${PlayState.SONG.song} ${CoolUtil.difficultyFromInt(PlayState.storyDifficulty).toUpperCase()}');
+        settingsText = new FlxText(20, FlxG.height + 50, 0, 'SF: ${PlayState.rep.replay.sf} | Ratio (SA/GA): ${Math.round(sicks)}:1 ${Math.round(goods)}:1 | Mean: ${mean}ms | Played on ${PlayState.SONG.song} ${CoolUtil.difficultyFromInt(PlayState.storyDifficulty).toUpperCase()}');
         settingsText.size = 16;
         settingsText.setBorderStyle(FlxTextBorderStyle.OUTLINE, FlxColor.BLACK, 2, 1);
         settingsText.color = FlxColor.WHITE;
@@ -202,7 +207,7 @@ class ResultsScreen extends FlxSubState
 
 			#if !switch
 			Highscore.saveScore(songHighscore, Math.round(PlayState.instance.songScore), PlayState.storyDifficulty);
-			Highscore.saveCombo(songHighscore, Ratings.GenerateLetterRank(PlayState.instance.accuracy),PlayState.storyDifficulty);
+			Highscore.saveCombo(songHighscore, Ratings.GenerateLetterRank(PlayState.instance.accuracy), PlayState.storyDifficulty);
 			#end
 
             if (PlayState.isStoryMode)
@@ -213,6 +218,7 @@ class ResultsScreen extends FlxSubState
             }
             else
                 FlxG.switchState(new FreeplayState());
+            PlayState.instance.clean();
         }
 
         if (FlxG.keys.justPressed.F1 && !PlayState.loadRep)
@@ -277,12 +283,13 @@ class ResultsScreen extends FlxSubState
             music.fadeOut(0.3);
 
             if (PlayState.isSM)
-                PlayState.SONG = Song.loadFromJsonRAW(poop);
+                PlayState.SONG = Song.conversionChecks(Song.loadFromJsonRAW(poop));
             else
-                PlayState.SONG = Song.loadFromJson(poop, PlayState.rep.replay.songName);
+                PlayState.SONG = Song.conversionChecks(Song.loadFromJson(poop, PlayState.rep.replay.songName));
             PlayState.isStoryMode = false;
             PlayState.storyDifficulty = PlayState.rep.replay.songDiff;
             LoadingState.loadAndSwitchState(new PlayState());
+            PlayState.instance.clean();
         }
 
         if (FlxG.keys.justPressed.F2  && !PlayState.loadRep)
@@ -319,6 +326,7 @@ class ResultsScreen extends FlxSubState
             PlayState.isStoryMode = false;
             PlayState.storyDifficulty = PlayState.storyDifficulty;
             LoadingState.loadAndSwitchState(new PlayState());
+            PlayState.instance.clean();
         }
 
 		super.update(elapsed);
