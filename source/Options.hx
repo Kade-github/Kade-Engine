@@ -278,7 +278,7 @@ class Astraphobia extends Option
 	{
 		FlxG.save.data.astraphobia = !FlxG.save.astraphobia;
 		display = updateDisplay();
-		return true:
+		return true;
 	}
 
 	private override function updateDisplay():String
