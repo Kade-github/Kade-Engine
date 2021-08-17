@@ -396,6 +396,7 @@ class ModchartState
 				setVar("downscroll", FlxG.save.data.downscroll);
 				setVar("flashing", FlxG.save.data.flashing);
 				setVar("distractions", FlxG.save.data.distractions);
+	    			setVar("astraphobia", FlxG.save.data.astraphobia);
 	
 				setVar("curStep", 0);
 				setVar("curBeat", 0);
