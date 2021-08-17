@@ -953,6 +953,7 @@ class ResetSettings extends Option
 		FlxG.save.data.watermark = null;
 		FlxG.save.data.ghost = null;
 		FlxG.save.data.distractions = null;
+		FlxG.save.data.astraphobia = null;
 		FlxG.save.data.stepMania = null;
 		FlxG.save.data.flashing = null;
 		FlxG.save.data.resetButton = null;
