@@ -285,6 +285,7 @@ class Astraphobia extends Option
 	{
 		return "Astraphobia Triggers " + (!FlxG.save.data.astraphobia ? "off" : "on");
 	}
+}
 
 class StepManiaOption extends Option
 {
