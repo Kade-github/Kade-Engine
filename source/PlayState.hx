@@ -4503,14 +4503,17 @@ class PlayState extends MusicBeatState
 
 	function lightningStrikeShit():Void
 	{
-		FlxG.sound.play(Paths.soundRandom('thunder_', 1, 2));
-		halloweenBG.animation.play('lightning');
+		if(FlxG.save.data.astraphobia) 
+		{
+			FlxG.sound.play(Paths.soundRandom('thunder_', 1, 2));
+			halloweenBG.animation.play('lightning');
 
-		lightningStrikeBeat = curBeat;
-		lightningOffset = FlxG.random.int(8, 24);
+			lightningStrikeBeat = curBeat;
+			lightningOffset = FlxG.random.int(8, 24);
 
-		boyfriend.playAnim('scared', true);
-		gf.playAnim('scared', true);
+			boyfriend.playAnim('scared', true);
+			gf.playAnim('scared', true);
+		}
 	}
 
 	var danced:Bool = false;
