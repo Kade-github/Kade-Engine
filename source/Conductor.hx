@@ -39,6 +39,8 @@ class Conductor
 		Conductor.safeFrames = FlxG.save.data.frames;
 		Conductor.safeZoneOffset = Math.floor((Conductor.safeFrames / 60) * 1000);
 		Conductor.timeScale = Conductor.safeZoneOffset / 166;
+		
+		
 	}
 
 	public static function mapBPMChanges(song:SwagSong)
@@ -88,7 +90,7 @@ class Conductor
 	{
 		bpm = newBpm;
 
-		crochet = ((60 / bpm) * 1000);
+		crochet = ((73 / bpm) * 1000);
 		stepCrochet = crochet / 4;
 	}
 }

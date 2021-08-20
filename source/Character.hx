@@ -96,6 +96,7 @@ class Character extends FlxSprite
 				updateHitbox();
 				antialiasing = false;
 
+			
 			case 'dad':
 				// DAD ANIMATION LOADING CODE
 				tex = Paths.getSparrowAtlas('DADDY_DEAREST','shared',true);
@@ -374,6 +375,20 @@ class Character extends FlxSprite
 				animation.addByPrefix('singDOWN-alt', 'Parent Down Note Mom', 24, false);
 				animation.addByPrefix('singLEFT-alt', 'Parent Left Note Mom', 24, false);
 				animation.addByPrefix('singRIGHT-alt', 'Parent Right Note Mom', 24, false);
+
+				loadOffsetFile(curCharacter);
+
+				playAnim('idle');
+
+			case 'nonsense':
+				
+				tex = Paths.getSparrowAtlas('Nonsense','shared',true);
+				frames = tex;
+				animation.addByPrefix('idle', 'Idle', 24);
+				animation.addByPrefix('singUP', 'NoteUp', 24);
+				animation.addByPrefix('singRIGHT', 'NoteRight', 24);
+				animation.addByPrefix('singDOWN', 'NoteDown', 24);
+				animation.addByPrefix('singLEFT', 'NoteLeft', 24);
 
 				loadOffsetFile(curCharacter);
 
