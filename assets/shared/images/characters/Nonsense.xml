@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Nonsense.png">
+	<!-- Created with Adobe Animate version 19.1.0.349 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Bruh0000" x="2754" y="1333" width="263" height="653"/>
+	<SubTexture name="Bruh0001" x="2754" y="1333" width="263" height="653"/>
+	<SubTexture name="Bruh0002" x="3017" y="1333" width="263" height="653"/>
+	<SubTexture name="Bruh0003" x="3280" y="1333" width="263" height="653"/>
+	<SubTexture name="Bruh0004" x="3543" y="1333" width="263" height="653"/>
+	<SubTexture name="Bruh0005" x="3543" y="1333" width="263" height="653"/>
+	<SubTexture name="Bruh0006" x="3543" y="1333" width="263" height="653"/>
+	<SubTexture name="Bruh0007" x="3806" y="1333" width="263" height="653"/>
+	<SubTexture name="Bruh0008" x="3806" y="1333" width="263" height="653"/>
+	<SubTexture name="Bruh0009" x="3806" y="1333" width="263" height="653"/>
+	<SubTexture name="Bruh0010" x="3806" y="1333" width="263" height="653"/>
+	<SubTexture name="Bruh0011" x="3806" y="1333" width="263" height="653"/>
+	<SubTexture name="Bruh0012" x="3806" y="1333" width="263" height="653"/>
+	<SubTexture name="Bruh0013" x="3806" y="1333" width="263" height="653"/>
+	<SubTexture name="Bruh0014" x="3806" y="1333" width="263" height="653"/>
+	<SubTexture name="Bruh0015" x="3806" y="1333" width="263" height="653"/>
+	<SubTexture name="Idle0000" x="0" y="0" width="293" height="658"/>
+	<SubTexture name="Idle0001" x="0" y="0" width="293" height="658"/>
+	<SubTexture name="Idle0002" x="293" y="0" width="293" height="658"/>
+	<SubTexture name="Idle0003" x="293" y="0" width="293" height="658"/>
+	<SubTexture name="Idle0004" x="586" y="0" width="293" height="658"/>
+	<SubTexture name="Idle0005" x="586" y="0" width="293" height="658"/>
+	<SubTexture name="Idle0006" x="879" y="0" width="293" height="658"/>
+	<SubTexture name="Idle0007" x="879" y="0" width="293" height="658"/>
+	<SubTexture name="Idle0008" x="879" y="0" width="293" height="658"/>
+	<SubTexture name="Idle0009" x="879" y="0" width="293" height="658"/>
+	<SubTexture name="Idle0010" x="879" y="0" width="293" height="658"/>
+	<SubTexture name="Idle0011" x="1172" y="0" width="293" height="658"/>
+	<SubTexture name="Idle0012" x="1172" y="0" width="293" height="658"/>
+	<SubTexture name="Idle0013" x="1465" y="0" width="293" height="658"/>
+	<SubTexture name="Idle0014" x="0" y="0" width="293" height="658"/>
+	<SubTexture name="Idle0015" x="0" y="0" width="293" height="658"/>
+	<SubTexture name="Idle0016" x="1758" y="0" width="293" height="658"/>
+	<SubTexture name="Idle0017" x="1758" y="0" width="293" height="658"/>
+	<SubTexture name="Idle0018" x="2051" y="0" width="293" height="658"/>
+	<SubTexture name="Idle0019" x="2051" y="0" width="293" height="658"/>
+	<SubTexture name="Idle0020" x="2344" y="0" width="293" height="658"/>
+	<SubTexture name="Idle0021" x="2344" y="0" width="293" height="658"/>
+	<SubTexture name="Idle0022" x="2344" y="0" width="293" height="658"/>
+	<SubTexture name="Idle0023" x="2344" y="0" width="293" height="658"/>
+	<SubTexture name="Idle0024" x="2344" y="0" width="293" height="658"/>
+	<SubTexture name="Idle0025" x="2637" y="0" width="293" height="658"/>
+	<SubTexture name="Idle0026" x="2637" y="0" width="293" height="658"/>
+	<SubTexture name="Idle0027" x="2930" y="0" width="293" height="658"/>
+	<SubTexture name="Idle Tired0000" x="0" y="2008" width="293" height="658"/>
+	<SubTexture name="Idle Tired0001" x="0" y="2008" width="293" height="658"/>
+	<SubTexture name="Idle Tired0002" x="293" y="2008" width="293" height="658"/>
+	<SubTexture name="Idle Tired0003" x="293" y="2008" width="293" height="658"/>
+	<SubTexture name="Idle Tired0004" x="586" y="2008" width="293" height="658"/>
+	<SubTexture name="Idle Tired0005" x="586" y="2008" width="293" height="658"/>
+	<SubTexture name="Idle Tired0006" x="879" y="2008" width="293" height="658"/>
+	<SubTexture name="Idle Tired0007" x="879" y="2008" width="293" height="658"/>
+	<SubTexture name="Idle Tired0008" x="879" y="2008" width="293" height="658"/>
+	<SubTexture name="Idle Tired0009" x="879" y="2008" width="293" height="658"/>
+	<SubTexture name="Idle Tired0010" x="879" y="2008" width="293" height="658"/>
+	<SubTexture name="Idle Tired0011" x="1172" y="2008" width="293" height="658"/>
+	<SubTexture name="Idle Tired0012" x="1172" y="2008" width="293" height="658"/>
+	<SubTexture name="Idle Tired0013" x="1465" y="2008" width="293" height="658"/>
+	<SubTexture name="Idle Tired0014" x="0" y="2008" width="293" height="658"/>
+	<SubTexture name="Idle Tired0015" x="0" y="2008" width="293" height="658"/>
+	<SubTexture name="Idle Tired0016" x="1758" y="2008" width="293" height="658"/>
+	<SubTexture name="Idle Tired0017" x="1758" y="2008" width="293" height="658"/>
+	<SubTexture name="Idle Tired0018" x="2051" y="2008" width="293" height="658"/>
+	<SubTexture name="Idle Tired0019" x="2051" y="2008" width="293" height="658"/>
+	<SubTexture name="Idle Tired0020" x="2344" y="2008" width="293" height="658"/>
+	<SubTexture name="Idle Tired0021" x="2344" y="2008" width="293" height="658"/>
+	<SubTexture name="Idle Tired0022" x="2344" y="2008" width="293" height="658"/>
+	<SubTexture name="Idle Tired0023" x="2344" y="2008" width="293" height="658"/>
+	<SubTexture name="Idle Tired0024" x="2344" y="2008" width="293" height="658"/>
+	<SubTexture name="Idle Tired0025" x="2637" y="2008" width="293" height="658"/>
+	<SubTexture name="Idle Tired0026" x="2637" y="2008" width="293" height="658"/>
+	<SubTexture name="Idle Tired0027" x="2930" y="2008" width="293" height="658"/>
+	<SubTexture name="Left Tired0000" x="3223" y="2008" width="347" height="648"/>
+	<SubTexture name="Left Tired0001" x="3223" y="2008" width="347" height="648"/>
+	<SubTexture name="Left Tired0002" x="3570" y="2008" width="347" height="648"/>
+	<SubTexture name="Left Tired0003" x="3570" y="2008" width="347" height="648"/>
+	<SubTexture name="Left Tired0004" x="0" y="2666" width="347" height="648"/>
+	<SubTexture name="Left Tired0005" x="0" y="2666" width="347" height="648"/>
+	<SubTexture name="Left Tired0006" x="347" y="2666" width="347" height="648"/>
+	<SubTexture name="Left Tired0007" x="347" y="2666" width="347" height="648"/>
+	<SubTexture name="Left Tired0008" x="347" y="2666" width="347" height="648"/>
+	<SubTexture name="Left Tired0009" x="347" y="2666" width="347" height="648"/>
+	<SubTexture name="Left Tired0010" x="347" y="2666" width="347" height="648"/>
+	<SubTexture name="Left Tired0011" x="347" y="2666" width="347" height="648"/>
+	<SubTexture name="Left Tired0012" x="347" y="2666" width="347" height="648"/>
+	<SubTexture name="Left Tired0013" x="347" y="2666" width="347" height="648"/>
+	<SubTexture name="Left Tired0014" x="347" y="2666" width="347" height="648"/>
+	<SubTexture name="Left Tired0015" x="347" y="2666" width="347" height="648"/>
+	<SubTexture name="Left Tired0016" x="347" y="2666" width="347" height="648"/>
+	<SubTexture name="Left Tired0017" x="347" y="2666" width="347" height="648"/>
+	<SubTexture name="Left Tired0018" x="347" y="2666" width="347" height="648"/>
+	<SubTexture name="Left Tired0019" x="347" y="2666" width="347" height="648"/>
+	<SubTexture name="Left Tired0020" x="347" y="2666" width="347" height="648"/>
+	<SubTexture name="Left Tired0021" x="347" y="2666" width="347" height="648"/>
+	<SubTexture name="Left Tired0022" x="347" y="2666" width="347" height="648"/>
+	<SubTexture name="Left Tired0023" x="347" y="2666" width="347" height="648"/>
+	<SubTexture name="Left Tired0024" x="347" y="2666" width="347" height="648"/>
+	<SubTexture name="Left Tired0025" x="347" y="2666" width="347" height="648"/>
+	<SubTexture name="Left Tired0026" x="347" y="2666" width="347" height="648"/>
+	<SubTexture name="Left Tired0027" x="347" y="2666" width="347" height="648"/>
+	<SubTexture name="NoteDown0000" x="3223" y="0" width="309" height="605"/>
+	<SubTexture name="NoteDown0001" x="3223" y="0" width="309" height="605"/>
+	<SubTexture name="NoteDown0002" x="3532" y="0" width="309" height="605"/>
+	<SubTexture name="NoteDown0003" x="3532" y="0" width="309" height="605"/>
+	<SubTexture name="NoteDown0004" x="0" y="658" width="309" height="605"/>
+	<SubTexture name="NoteDown0005" x="0" y="658" width="309" height="605"/>
+	<SubTexture name="NoteDown0006" x="309" y="658" width="309" height="605"/>
+	<SubTexture name="NoteDown0007" x="309" y="658" width="309" height="605"/>
+	<SubTexture name="NoteDown0008" x="309" y="658" width="309" height="605"/>
+	<SubTexture name="NoteDown0009" x="309" y="658" width="309" height="605"/>
+	<SubTexture name="NoteDown0010" x="309" y="658" width="309" height="605"/>
+	<SubTexture name="NoteDown0011" x="309" y="658" width="309" height="605"/>
+	<SubTexture name="NoteDown0012" x="309" y="658" width="309" height="605"/>
+	<SubTexture name="NoteDown0013" x="309" y="658" width="309" height="605"/>
+	<SubTexture name="NoteDown0014" x="309" y="658" width="309" height="605"/>
+	<SubTexture name="NoteDown0015" x="309" y="658" width="309" height="605"/>
+	<SubTexture name="NoteDown0016" x="309" y="658" width="309" height="605"/>
+	<SubTexture name="NoteDown0017" x="309" y="658" width="309" height="605"/>
+	<SubTexture name="NoteDown0018" x="309" y="658" width="309" height="605"/>
+	<SubTexture name="NoteDown0019" x="309" y="658" width="309" height="605"/>
+	<SubTexture name="NoteDown0020" x="309" y="658" width="309" height="605"/>
+	<SubTexture name="NoteDown0021" x="309" y="658" width="309" height="605"/>
+	<SubTexture name="NoteLeft0000" x="618" y="658" width="295" height="640"/>
+	<SubTexture name="NoteLeft0001" x="618" y="658" width="295" height="640"/>
+	<SubTexture name="NoteLeft0002" x="913" y="658" width="295" height="640"/>
+	<SubTexture name="NoteLeft0003" x="913" y="658" width="295" height="640"/>
+	<SubTexture name="NoteLeft0004" x="1208" y="658" width="295" height="640"/>
+	<SubTexture name="NoteLeft0005" x="1208" y="658" width="295" height="640"/>
+	<SubTexture name="NoteLeft0006" x="1503" y="658" width="295" height="640"/>
+	<SubTexture name="NoteLeft0007" x="1503" y="658" width="295" height="640"/>
+	<SubTexture name="NoteLeft0008" x="1503" y="658" width="295" height="640"/>
+	<SubTexture name="NoteLeft0009" x="1503" y="658" width="295" height="640"/>
+	<SubTexture name="NoteLeft0010" x="1503" y="658" width="295" height="640"/>
+	<SubTexture name="NoteLeft0011" x="1503" y="658" width="295" height="640"/>
+	<SubTexture name="NoteLeft0012" x="1503" y="658" width="295" height="640"/>
+	<SubTexture name="NoteLeft0013" x="1503" y="658" width="295" height="640"/>
+	<SubTexture name="NoteLeft0014" x="1503" y="658" width="295" height="640"/>
+	<SubTexture name="NoteLeft0015" x="1503" y="658" width="295" height="640"/>
+	<SubTexture name="NoteLeft0016" x="1503" y="658" width="295" height="640"/>
+	<SubTexture name="NoteLeft0017" x="1503" y="658" width="295" height="640"/>
+	<SubTexture name="NoteLeft0018" x="1503" y="658" width="295" height="640"/>
+	<SubTexture name="NoteLeft0019" x="1503" y="658" width="295" height="640"/>
+	<SubTexture name="NoteLeft0020" x="1503" y="658" width="295" height="640"/>
+	<SubTexture name="NoteLeft0021" x="1503" y="658" width="295" height="640"/>
+	<SubTexture name="NoteLeft0022" x="1503" y="658" width="295" height="640"/>
+	<SubTexture name="NoteRight0000" x="1798" y="658" width="347" height="648"/>
+	<SubTexture name="NoteRight0001" x="1798" y="658" width="347" height="648"/>
+	<SubTexture name="NoteRight0002" x="2145" y="658" width="347" height="648"/>
+	<SubTexture name="NoteRight0003" x="2145" y="658" width="347" height="648"/>
+	<SubTexture name="NoteRight0004" x="2492" y="658" width="347" height="648"/>
+	<SubTexture name="NoteRight0005" x="2492" y="658" width="347" height="648"/>
+	<SubTexture name="NoteRight0006" x="2839" y="658" width="347" height="648"/>
+	<SubTexture name="NoteRight0007" x="2839" y="658" width="347" height="648"/>
+	<SubTexture name="NoteRight0008" x="2839" y="658" width="347" height="648"/>
+	<SubTexture name="NoteRight0009" x="2839" y="658" width="347" height="648"/>
+	<SubTexture name="NoteRight0010" x="2839" y="658" width="347" height="648"/>
+	<SubTexture name="NoteRight0011" x="2839" y="658" width="347" height="648"/>
+	<SubTexture name="NoteRight0012" x="2839" y="658" width="347" height="648"/>
+	<SubTexture name="NoteRight0013" x="2839" y="658" width="347" height="648"/>
+	<SubTexture name="NoteRight0014" x="2839" y="658" width="347" height="648"/>
+	<SubTexture name="NoteRight0015" x="2839" y="658" width="347" height="648"/>
+	<SubTexture name="NoteRight0016" x="2839" y="658" width="347" height="648"/>
+	<SubTexture name="NoteRight0017" x="2839" y="658" width="347" height="648"/>
+	<SubTexture name="NoteRight0018" x="2839" y="658" width="347" height="648"/>
+	<SubTexture name="NoteRight0019" x="2839" y="658" width="347" height="648"/>
+	<SubTexture name="NoteRight0020" x="2839" y="658" width="347" height="648"/>
+	<SubTexture name="NoteRight0021" x="2839" y="658" width="347" height="648"/>
+	<SubTexture name="NoteRight0022" x="2839" y="658" width="347" height="648"/>
+	<SubTexture name="NoteRight0023" x="2839" y="658" width="347" height="648"/>
+	<SubTexture name="NoteRight0024" x="2839" y="658" width="347" height="648"/>
+	<SubTexture name="NoteRight0025" x="2839" y="658" width="347" height="648"/>
+	<SubTexture name="NoteRight0026" x="2839" y="658" width="347" height="648"/>
+	<SubTexture name="NoteRight0027" x="2839" y="658" width="347" height="648"/>
+	<SubTexture name="NoteUp0000" x="3186" y="658" width="325" height="675"/>
+	<SubTexture name="NoteUp0001" x="3186" y="658" width="325" height="675"/>
+	<SubTexture name="NoteUp0002" x="3511" y="658" width="325" height="675"/>
+	<SubTexture name="NoteUp0003" x="3511" y="658" width="325" height="675"/>
+	<SubTexture name="NoteUp0004" x="0" y="1333" width="325" height="675"/>
+	<SubTexture name="NoteUp0005" x="0" y="1333" width="325" height="675"/>
+	<SubTexture name="NoteUp0006" x="325" y="1333" width="325" height="675"/>
+	<SubTexture name="NoteUp0007" x="325" y="1333" width="325" height="675"/>
+	<SubTexture name="NoteUp0008" x="325" y="1333" width="325" height="675"/>
+	<SubTexture name="NoteUp0009" x="325" y="1333" width="325" height="675"/>
+	<SubTexture name="NoteUp0010" x="325" y="1333" width="325" height="675"/>
+	<SubTexture name="NoteUp0011" x="325" y="1333" width="325" height="675"/>
+	<SubTexture name="NoteUp0012" x="325" y="1333" width="325" height="675"/>
+	<SubTexture name="NoteUp0013" x="325" y="1333" width="325" height="675"/>
+	<SubTexture name="NoteUp0014" x="325" y="1333" width="325" height="675"/>
+	<SubTexture name="NoteUp0015" x="325" y="1333" width="325" height="675"/>
+	<SubTexture name="NoteUp0016" x="325" y="1333" width="325" height="675"/>
+	<SubTexture name="NoteUp0017" x="325" y="1333" width="325" height="675"/>
+	<SubTexture name="NoteUp0018" x="325" y="1333" width="325" height="675"/>
+	<SubTexture name="NoteUp0019" x="325" y="1333" width="325" height="675"/>
+	<SubTexture name="NoteUp0020" x="325" y="1333" width="325" height="675"/>
+	<SubTexture name="Right Tired0000" x="694" y="2666" width="295" height="640"/>
+	<SubTexture name="Right Tired0001" x="694" y="2666" width="295" height="640"/>
+	<SubTexture name="Right Tired0002" x="989" y="2666" width="295" height="640"/>
+	<SubTexture name="Right Tired0003" x="989" y="2666" width="295" height="640"/>
+	<SubTexture name="Right Tired0004" x="1284" y="2666" width="295" height="640"/>
+	<SubTexture name="Right Tired0005" x="1284" y="2666" width="295" height="640"/>
+	<SubTexture name="Right Tired0006" x="1579" y="2666" width="295" height="640"/>
+	<SubTexture name="Right Tired0007" x="1579" y="2666" width="295" height="640"/>
+	<SubTexture name="Right Tired0008" x="1579" y="2666" width="295" height="640"/>
+	<SubTexture name="Right Tired0009" x="1579" y="2666" width="295" height="640"/>
+	<SubTexture name="Right Tired0010" x="1579" y="2666" width="295" height="640"/>
+	<SubTexture name="Right Tired0011" x="1579" y="2666" width="295" height="640"/>
+	<SubTexture name="Right Tired0012" x="1579" y="2666" width="295" height="640"/>
+	<SubTexture name="Right Tired0013" x="1579" y="2666" width="295" height="640"/>
+	<SubTexture name="Right Tired0014" x="1579" y="2666" width="295" height="640"/>
+	<SubTexture name="Right Tired0015" x="1579" y="2666" width="295" height="640"/>
+	<SubTexture name="Right Tired0016" x="1579" y="2666" width="295" height="640"/>
+	<SubTexture name="Right Tired0017" x="1579" y="2666" width="295" height="640"/>
+	<SubTexture name="Right Tired0018" x="1579" y="2666" width="295" height="640"/>
+	<SubTexture name="Right Tired0019" x="1579" y="2666" width="295" height="640"/>
+	<SubTexture name="Right Tired0020" x="1579" y="2666" width="295" height="640"/>
+	<SubTexture name="Right Tired0021" x="1579" y="2666" width="295" height="640"/>
+	<SubTexture name="Right Tired0022" x="1579" y="2666" width="295" height="640"/>
+	<SubTexture name="Up tired0000" x="1874" y="2666" width="325" height="675"/>
+	<SubTexture name="Up tired0001" x="1874" y="2666" width="325" height="675"/>
+	<SubTexture name="Up tired0002" x="2199" y="2666" width="325" height="675"/>
+	<SubTexture name="Up tired0003" x="2199" y="2666" width="325" height="675"/>
+	<SubTexture name="Up tired0004" x="2524" y="2666" width="325" height="675"/>
+	<SubTexture name="Up tired0005" x="2524" y="2666" width="325" height="675"/>
+	<SubTexture name="Up tired0006" x="2849" y="2666" width="325" height="675"/>
+	<SubTexture name="Up tired0007" x="2849" y="2666" width="325" height="675"/>
+	<SubTexture name="Up tired0008" x="2849" y="2666" width="325" height="675"/>
+	<SubTexture name="Up tired0009" x="2849" y="2666" width="325" height="675"/>
+	<SubTexture name="Up tired0010" x="2849" y="2666" width="325" height="675"/>
+	<SubTexture name="Up tired0011" x="2849" y="2666" width="325" height="675"/>
+	<SubTexture name="Up tired0012" x="2849" y="2666" width="325" height="675"/>
+	<SubTexture name="Up tired0013" x="2849" y="2666" width="325" height="675"/>
+	<SubTexture name="Up tired0014" x="2849" y="2666" width="325" height="675"/>
+	<SubTexture name="Up tired0015" x="2849" y="2666" width="325" height="675"/>
+	<SubTexture name="Up tired0016" x="2849" y="2666" width="325" height="675"/>
+	<SubTexture name="Up tired0017" x="2849" y="2666" width="325" height="675"/>
+	<SubTexture name="Up tired0018" x="2849" y="2666" width="325" height="675"/>
+	<SubTexture name="Up tired0019" x="2849" y="2666" width="325" height="675"/>
+	<SubTexture name="Up tired0020" x="2849" y="2666" width="325" height="675"/>
+	<SubTexture name="down tired0000" x="3174" y="2666" width="309" height="605"/>
+	<SubTexture name="down tired0001" x="3174" y="2666" width="309" height="605"/>
+	<SubTexture name="down tired0002" x="3483" y="2666" width="309" height="605"/>
+	<SubTexture name="down tired0003" x="3483" y="2666" width="309" height="605"/>
+	<SubTexture name="down tired0004" x="0" y="3341" width="309" height="605"/>
+	<SubTexture name="down tired0005" x="0" y="3341" width="309" height="605"/>
+	<SubTexture name="down tired0006" x="309" y="3341" width="309" height="605"/>
+	<SubTexture name="down tired0007" x="309" y="3341" width="309" height="605"/>
+	<SubTexture name="down tired0008" x="309" y="3341" width="309" height="605"/>
+	<SubTexture name="down tired0009" x="309" y="3341" width="309" height="605"/>
+	<SubTexture name="down tired0010" x="309" y="3341" width="309" height="605"/>
+	<SubTexture name="down tired0011" x="309" y="3341" width="309" height="605"/>
+	<SubTexture name="down tired0012" x="309" y="3341" width="309" height="605"/>
+	<SubTexture name="down tired0013" x="309" y="3341" width="309" height="605"/>
+	<SubTexture name="down tired0014" x="309" y="3341" width="309" height="605"/>
+	<SubTexture name="down tired0015" x="309" y="3341" width="309" height="605"/>
+	<SubTexture name="down tired0016" x="309" y="3341" width="309" height="605"/>
+	<SubTexture name="down tired0017" x="309" y="3341" width="309" height="605"/>
+	<SubTexture name="down tired0018" x="309" y="3341" width="309" height="605"/>
+	<SubTexture name="down tired0019" x="309" y="3341" width="309" height="605"/>
+	<SubTexture name="down tired0020" x="309" y="3341" width="309" height="605"/>
+	<SubTexture name="down tired0021" x="309" y="3341" width="309" height="605"/>
+	<SubTexture name="oh no0000" x="650" y="1333" width="263" height="654"/>
+	<SubTexture name="oh no0001" x="650" y="1333" width="263" height="654"/>
+	<SubTexture name="oh no0002" x="913" y="1333" width="263" height="654"/>
+	<SubTexture name="oh no0003" x="1176" y="1333" width="263" height="654"/>
+	<SubTexture name="oh no0004" x="1439" y="1333" width="263" height="654"/>
+	<SubTexture name="oh no0005" x="1439" y="1333" width="263" height="654"/>
+	<SubTexture name="oh no0006" x="1702" y="1333" width="263" height="654"/>
+	<SubTexture name="oh no0007" x="1702" y="1333" width="263" height="654"/>
+	<SubTexture name="oh no0008" x="1439" y="1333" width="263" height="654"/>
+	<SubTexture name="oh no0009" x="1439" y="1333" width="263" height="654"/>
+	<SubTexture name="oh no0010" x="1965" y="1333" width="263" height="654"/>
+	<SubTexture name="oh no0011" x="1965" y="1333" width="263" height="654"/>
+	<SubTexture name="oh no0012" x="2228" y="1333" width="263" height="654"/>
+	<SubTexture name="oh no0013" x="2228" y="1333" width="263" height="654"/>
+	<SubTexture name="oh no0014" x="2228" y="1333" width="263" height="654"/>
+	<SubTexture name="oh no0015" x="2491" y="1333" width="263" height="654"/>
+	<SubTexture name="oh no0016" x="2491" y="1333" width="263" height="654"/>
+	<SubTexture name="oh no0017" x="2491" y="1333" width="263" height="654"/>
+	<SubTexture name="oh no0018" x="2491" y="1333" width="263" height="654"/>
+	<SubTexture name="oh no0019" x="2491" y="1333" width="263" height="654"/>
+	<SubTexture name="oh no0020" x="2491" y="1333" width="263" height="654"/>
+	<SubTexture name="oh no0021" x="2491" y="1333" width="263" height="654"/>
+	<SubTexture name="oh no0022" x="2491" y="1333" width="263" height="654"/>
+	<SubTexture name="oh no0023" x="2491" y="1333" width="263" height="654"/>
+	<SubTexture name="oh no0024" x="2491" y="1333" width="263" height="654"/>
+	<SubTexture name="oh no0025" x="2491" y="1333" width="263" height="654"/>
+	<SubTexture name="oh no0026" x="2491" y="1333" width="263" height="654"/>
+	<SubTexture name="oh no0027" x="2491" y="1333" width="263" height="654"/>
+	<SubTexture name="oh no0028" x="2491" y="1333" width="263" height="654"/>
+</TextureAtlas>
