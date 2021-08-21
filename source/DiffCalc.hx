@@ -37,10 +37,12 @@ class DiffCalc
         {
             for (ii in i.sectionNotes) // notes
             {
-			      	if (ii[1] > 3 && !i.mustHitSection)
-					      cleanedNotes.push(new SmallNote(ii[0], Math.floor(Math.abs(ii[1]))));
-              else if (ii[1] < 4 && i.mustHitSection)
-                cleanedNotes.push(new SmallNote(ii[0], Math.floor(Math.abs(ii[1]))));
+                var gottaHitNote:Bool = i.mustHitSection;
+
+				        if (ii[1] >= 3 && gottaHitNote)
+					        cleanedNotes.push(new SmallNote(ii[0] / FreeplayState.rate, Math.floor(Math.abs(ii[1]))));
+                if (ii[1] <= 4 && !gottaHitNote) 
+                    cleanedNotes.push(new SmallNote(ii[0] / FreeplayState.rate, Math.floor(Math.abs(ii[1]))));
             }
         }
 
