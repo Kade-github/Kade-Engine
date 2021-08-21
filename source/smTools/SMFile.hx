@@ -133,7 +133,7 @@ class SMFile
             stage: 'stage',
             speed: 1.0,
             validScore: false,
-            chartVersion: "",
+            chartVersion: '',
         };
 
         // lets check if the sm loading was valid

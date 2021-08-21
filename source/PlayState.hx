@@ -443,7 +443,7 @@ class PlayState extends MusicBeatState
         
 		TimingStruct.clearTimings();
 
-		Ratings.ratingsPerTap = "";
+		Ratings.ratingsPerTap = '';
 
 		var currentIndex = 0;
 		for (i in SONG.eventObjects)
@@ -456,7 +456,7 @@ class PlayState extends MusicBeatState
 
         				var bpm = i.value;
 
-                TimingStruct.addTiming(beat,bpm,endBeat, 0); // offset in this case = start time since we don't have a offset
+                TimingStruct.addTiming(beat, bpm, endBeat, 0); // offset in this case = start time since we don't have a offset
 				
                 if (currentIndex != 0)
                 {
@@ -1073,7 +1073,7 @@ class PlayState extends MusicBeatState
 
 		#if cpp
 		// pre lowercasing the song name (startCountdown)
-		var songLowercase = StringTools.replace(PlayState.SONG.song, " ", "-").toLowerCase();
+		var songLowercase = StringTools.replace(PlayState.SONG.song, ' ', '-').toLowerCase();
 		switch (songLowercase)
 		{
 			case 'dad-battle':
@@ -1644,7 +1644,7 @@ class PlayState extends MusicBeatState
 			if (i.noteData == data)
 				dataNotes.push(i);
 
-		trace("notes able to hit for " + key.toString() + " " + dataNotes.length);
+		trace('notes able to hit for ' + key.toString() + ' ' + dataNotes.length);
 
 		if (dataNotes.length != 0)
 		{
@@ -1730,7 +1730,7 @@ class PlayState extends MusicBeatState
 			GlobalVideo.get().resume();
 
 		if (executeModchart)
-			luaModchart.executeState("songStart",[null]);
+			luaModchart.executeState('songStart', [null]);
 
 		#if windows
 		// Updating Discord Rich Presence (with Time Left)
@@ -1761,7 +1761,7 @@ class PlayState extends MusicBeatState
 		{
 			var aux = AL.createAux();
 			var fx = AL.createEffect();
-			AL.effectf(fx,AL.PITCH,songMultiplier);
+			AL.effectf(fx, AL.PITCH, songMultiplier);
 			AL.auxi(aux, AL.EFFECTSLOT_EFFECT, fx);
 			var instSource = FlxG.sound.music._channel.__source;
 
@@ -1776,7 +1776,7 @@ class PlayState extends MusicBeatState
 				AL.source3i(backend.handle, AL.AUXILIARY_SEND_FILTER, aux, 1, AL.FILTER_NULL);
 			}
 
-			trace("pitched to " + songMultiplier);
+			trace('pitched to ' + songMultiplier);
 		}*/
 
 		#if cpp
@@ -1787,7 +1787,7 @@ class PlayState extends MusicBeatState
 				lime.media.openal.AL.sourcef(vocals._channel.__source.__backend.handle, lime.media.openal.AL.PITCH, songMultiplier);
 
 		}
-		trace("pitched inst and vocals to " + songMultiplier);
+		trace('pitched inst and vocals to ' + songMultiplier);
 		#end
 
 		for(i in 0...unspawnNotes.length)
@@ -1968,7 +1968,7 @@ class PlayState extends MusicBeatState
 				else
 					oldNote = null;
 
-				var swagNote:Note = new Note(daStrumTime, daNoteData, oldNote,false,false,false,songNotes[4]);
+				var swagNote:Note = new Note(daStrumTime, daNoteData, oldNote, false, false, false, songNotes[4]);
 
 				if (!gottaHitNote && PlayStateChangeables.Optimize)
 					continue;
@@ -2379,7 +2379,7 @@ class PlayState extends MusicBeatState
 		
 					if (timingSegBpm != Conductor.bpm)
 					{
-						trace("BPM CHANGE to " + timingSegBpm);
+						trace('BPM CHANGE to ' + timingSegBpm);
 						Conductor.changeBPM(timingSegBpm, false);
 						Conductor.crochet = ((60 / (timingSegBpm) * 1000)) / songMultiplier;
 						Conductor.stepCrochet = Conductor.crochet / 4;
@@ -2435,7 +2435,7 @@ class PlayState extends MusicBeatState
 				value.update(elapsed);
 			}
 
-			PlayStateChangeables.useDownscroll = luaModchart.getVar("downscroll","bool");
+			PlayStateChangeables.useDownscroll = luaModchart.getVar('downscroll', 'bool');
 
 			/*for (i in 0...strumLineNotes.length) {
 				var member   = strumLineNotes.members[i];
@@ -2873,7 +2873,7 @@ class PlayState extends MusicBeatState
 				}
 			}
 
-			if (currentSection.mustHitSection && camFollow.x != boyfriend.getMidpoint().x - 100)
+			if (currentSection.mustHitSection && camFollow.x != player.getMidpoint().x - 100)
 			{
 				var offsetX = 0;
 				var offsetY = 0;
@@ -3470,7 +3470,7 @@ class PlayState extends MusicBeatState
 		function recalculateAllSectionTimes()
 			{
 		
-					trace("RECALCULATING SECTION TIMES");
+					trace('RECALCULATING SECTION TIMES');
 		
 					for (i in 0...SONG.notes.length) // loops through sections
 					{
@@ -4833,20 +4833,20 @@ class PlayState extends MusicBeatState
 		}
 		if (Conductor.bpm < 340)
 		{
-			iconP1.setGraphicSize(Std.int(iconP1.width + 30));
-			iconP2.setGraphicSize(Std.int(iconP2.width + 30));
+			iconPlayer.setGraphicSize(Std.int(iconPlayer.width + 30));
+			iconOpponent.setGraphicSize(Std.int(iconOpponent.width + 30));
 
-			iconP1.updateHitbox();
-			iconP2.updateHitbox();
+			iconPlayer.updateHitbox();
+			iconOpponent.updateHitbox();
 		}
 		else
 		{
 	
-			iconP1.setGraphicSize(Std.int(iconP1.width + 4));
-			iconP2.setGraphicSize(Std.int(iconP2.width + 4));
+			iconPlayer.setGraphicSize(Std.int(iconPlayer.width + 4));
+			iconOpponent.setGraphicSize(Std.int(iconOpponent.width + 4));
 	
-			iconP1.updateHitbox();
-			iconP2.updateHitbox();
+			iconPlayer.updateHitbox();
+			iconOpponent.updateHitbox();
 		}
 
 		if (!endingSong && currentSection != null)
@@ -4856,12 +4856,12 @@ class PlayState extends MusicBeatState
 				gf.dance();
 			}
 
-			if (!player.animation.curAnim.name.startsWith("sing") && (curBeat % idleBeat == 0 || !idleToBeat))
+			if (!player.animation.curAnim.name.startsWith('sing') && (curBeat % idleBeat == 0 || !idleToBeat))
 			{
 				player.playAnim('idle' + ((currentSection.p2AltAnim && player.animation.getByName('idle-alt') != null) ? '-alt' : ''), idleToBeat);
 			}
 
-			/*if (!opponent.animation.curAnim.name.startsWith("sing"))
+			/*if (!opponent.animation.curAnim.name.startsWith('sing'))
 			{
 				opponent.dance();
 			}*/
@@ -4904,7 +4904,7 @@ class PlayState extends MusicBeatState
 						if (FlxG.random.bool(10) && fastCarCanDrive)
 							fastCarDrive();
 					}
-				case "philly":
+				case 'philly':
 					if (FlxG.save.data.distractions)
 					{
 						if (!trainMoving)
@@ -5001,7 +5001,7 @@ class PlayState extends MusicBeatState
 		
 
 
-				trace("FUCK YOU BITCH FUCKER CUCK SUCK BITCH " + cleanedSong.notes.length);
+				trace('FUCK YOU BITCH FUCKER CUCK SUCK BITCH ' + cleanedSong.notes.length);
 
 
 				SONG = cleanedSong;
@@ -5056,7 +5056,7 @@ class PlayState extends MusicBeatState
 		
 
 
-				trace("FUCK YOU BITCH FUCKER CUCK SUCK BITCH " + cleanedSong.notes.length);
+				trace('FUCK YOU BITCH FUCKER CUCK SUCK BITCH ' + cleanedSong.notes.length);
 
 
 				SONG = cleanedSong;

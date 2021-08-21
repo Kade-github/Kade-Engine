@@ -113,7 +113,7 @@ class Ratings
         return rating;
     }
 
-    public static var ratingsPerTap = "";
+    public static var ratingsPerTap = '';
 
     public static function checkRating(ms:Float, ts:Float)
     {
@@ -133,7 +133,7 @@ class Ratings
         if (ms > (-166 * ts) * PlayState.songMultiplier && ms <= (-135 * ts) * PlayState.songMultiplier)
             rating = 'shit';
 
-        ratingsPerTap += Conductor.songPosition / 1000 + "s - DIFFERENCE - " + ms + " - RATING - " + rating + "\n";
+        ratingsPerTap += Conductor.songPosition / 1000 + 's - DIFFERENCE - ' + ms + ' - RATING - ' + rating + '\n';
 
         return rating;
     }

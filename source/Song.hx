@@ -43,7 +43,7 @@ typedef SwagSong =
 
 class Song
 {
-	public static var latestChart:String = "KE1";
+	public static var latestChart:String = 'KE1';
 	public var chartVersion:String;
 	public var song:String;
 	public var notes:Array<SwagSection>;
@@ -146,13 +146,13 @@ class Song
 		var currentIndex = 0;
 		for (i in song.eventObjects)
 		{
-			if (i.type == "BPM Change")
+			if (i.type == 'BPM Change')
 			{
 				var beat:Float = i.position;
 
 				var endBeat:Float = Math.POSITIVE_INFINITY;
 
-				TimingStruct.addTiming(beat,i.value,endBeat, 0); // offset in this case = start time since we don't have a offset
+				TimingStruct.addTiming(beat, i.value, endBeat, 0); // offset in this case = start time since we don't have a offset
 				
 				if (currentIndex != 0)
 				{

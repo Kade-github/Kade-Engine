@@ -95,10 +95,10 @@ class ResultsScreen extends FlxSubState
                                               Combo Breaks: ${(PlayState.isStoryMode ? PlayState.campaignMisses : PlayState.misses)}\n
                                               Highest Combo: ${PlayState.highestCombo + 1}\n
                                               Score: ${PlayState.instance.songScore}\n
-                                              Accuracy: ${HelperFunctions.truncateFloat(PlayState.instance.accuracy,2)}%\n\n
+                                              Accuracy: ${HelperFunctions.truncateFloat(PlayState.instance.accuracy, 2)}%\n\n
                                               ${Ratings.GenerateLetterRank(PlayState.instance.accuracy)}\n
                                               Rate: ${PlayState.songMultiplier}x\n\n
-                                              ${!PlayState.loadRep ? "\nF1 - Replay song" : ""}');
+                                              ${!PlayState.loadRep ? '\nF1 - Replay song' : ''}');
         comboText.size = 28;
         comboText.setBorderStyle(FlxTextBorderStyle.OUTLINE, FlxColor.BLACK, 4, 1);
         comboText.color = FlxColor.WHITE;
@@ -204,7 +204,7 @@ class ResultsScreen extends FlxSubState
         if (FlxG.keys.justPressed.E)
         {
             #if sys
-            File.saveContent("keyData-debug.txt",Ratings.ratingsPerTap);
+            File.saveContent('keyData-debug.txt', Ratings.ratingsPerTap);
             #end
         }
 

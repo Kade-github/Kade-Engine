@@ -137,7 +137,7 @@ class FreeplayState extends MusicBeatState
 				for (file in FileSystem.readDirectory('assets/sm/' + i))
 				{
 					if (file.contains(' '))
-						FileSystem.rename('assets/sm/' + i + '/' + file, 'assets/sm/' + i + '/' + file.replace(" ","_"));
+						FileSystem.rename('assets/sm/' + i + '/' + file, 'assets/sm/' + i + '/' + file.replace(' ', '_'));
 					if (file.endsWith('.sm') && !FileSystem.exists('assets/sm/' + i + '/converted.json'))
 					{
 						trace('reading ' + file);
@@ -149,17 +149,17 @@ class FreeplayState extends MusicBeatState
 						var song = Song.loadFromJsonRAW(data);
 						songData.set(file.header.TITLE, [song, song, song]);
 					}
-					else if (FileSystem.exists("assets/sm/" + i + "/converted.json") && file.endsWith(".sm"))
+					else if (FileSystem.exists('assets/sm/' + i + '/converted.json') && file.endsWith('.sm'))
 					{
-						trace("reading " + file);
-						var file:SMFile = SMFile.loadFile("assets/sm/" + i + "/" + file.replace(" ","_"));
-						trace("Converting " + file.header.TITLE);
-						var data = file.convertToFNF("assets/sm/" + i + "/converted.json");
-						var meta = new SongMetadata(file.header.TITLE, 0, "sm",file,"assets/sm/" + i);
+						trace('reading ' + file);
+						var file:SMFile = SMFile.loadFile('assets/sm/' + i + '/' + file.replace(' ', '_'));
+						trace('Converting ' + file.header.TITLE);
+						var data = file.convertToFNF('assets/sm/' + i + '/converted.json');
+						var meta = new SongMetadata(file.header.TITLE, 0, 'sm', file, 'assets/sm/' + i);
 						songs.push(meta);
-						var song = Song.loadFromJsonRAW(File.getContent("assets/sm/" + i + "/converted.json"));
-						trace("got content lol");
-						songData.set(file.header.TITLE, [song,song,song]);
+						var song = Song.loadFromJsonRAW(File.getContent('assets/sm/' + i + '/converted.json'));
+						trace('got content lol');
+						songData.set(file.header.TITLE, [song, song, song]);
 					}
 				}
 			}
@@ -387,7 +387,7 @@ class FreeplayState extends MusicBeatState
 				diffCalcText.text = 'RATING: ${DiffCalc.CalculateDiff(songData.get(songs[curSelected].songName)[curDifficulty])}';
 			}
 
-			previewtext.text = "Rate: " + rate + "x";
+			previewtext.text = 'Rate: ' + rate + 'x';
 		}
 		else
 		{

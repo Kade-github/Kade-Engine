@@ -19,19 +19,19 @@ import haxe.DynamicAccess;
 
 typedef LuaProperty = {
     var defaultValue:Any;
-    var getter:(State,Any)->Int;
+    var getter:(State, Any)->Int;
     var setter:State->Int;
 }
 
 class LuaStorage {
-  public static var objectProperties:Map<String,Map<String,LuaProperty>> = [];
-  public static var objects:Map<String,LuaClass> = [];
+  public static var objectProperties:Map<String, Map<String, LuaProperty>> = [];
+  public static var objects:Map<String, LuaClass> = [];
 }
 
 class LuaClass {
-  public var properties:Map<String,LuaProperty> = [];
-  public var methods:Map<String,cpp.Callable<StatePointer->Int> > = [];
-  public var className:String = "BaseClass";
+  public var properties:Map<String, LuaProperty> = [];
+  public var methods:Map<String, cpp.Callable<StatePointer->Int> > = [];
+  public var className:String = 'BaseClass';
   private static var state:State;
   public var addToGlobal:Bool=true;
   public function Register(l:State){
@@ -40,57 +40,57 @@ class LuaClass {
     LuaStorage.objectProperties[className]=this.properties;
 
     var classIdx = Lua.gettop(l);
-    Lua.pushvalue(l,classIdx);
+    Lua.pushvalue(l, classIdx);
     if(addToGlobal)
-      Lua.setglobal(l,className);
+      Lua.setglobal(l, className);
 
     for (k in methods.keys()){
-      Lua.pushcfunction(l,methods[k]);
-      Lua.setfield(l,classIdx,k);
+      Lua.pushcfunction(l, methods[k]);
+      Lua.setfield(l, classIdx, k);
     }
 
-    LuaL.newmetatable(l,className + "Metatable");
+    LuaL.newmetatable(l, className + 'Metatable');
     var mtIdx = Lua.gettop(l);
-    Lua.pushstring(l, "__index");
-		Lua.pushcfunction(l,cpp.Callable.fromStaticFunction(index));
+    Lua.pushstring(l, '__index');
+		Lua.pushcfunction(l, cpp.Callable.fromStaticFunction(index));
 		Lua.settable(l, mtIdx);
 
-    Lua.pushstring(l, "__newindex");
-		Lua.pushcfunction(l,cpp.Callable.fromStaticFunction(newindex));
+    Lua.pushstring(l, '__newindex');
+		Lua.pushcfunction(l, cpp.Callable.fromStaticFunction(newindex));
 		Lua.settable(l, mtIdx);
     
     for (k in properties.keys()){
-      Lua.pushstring(l,k + "PropertyData");
-      Convert.toLua(l,properties[k].defaultValue);
-      Lua.settable(l,mtIdx);
+      Lua.pushstring(l, k + 'PropertyData');
+      Convert.toLua(l, properties[k].defaultValue);
+      Lua.settable(l, mtIdx);
     }
-    Lua.pushstring(l,"_CLASSNAME");
-    Lua.pushstring(l,className);
-    Lua.settable(l,mtIdx);
+    Lua.pushstring(l, '_CLASSNAME');
+    Lua.pushstring(l, className);
+    Lua.settable(l, mtIdx);
 
-    Lua.pushstring(l,"__metatable");
-    Lua.pushstring(l,"This metatable is locked.");
-    Lua.settable(l,mtIdx);
+    Lua.pushstring(l, '__metatable');
+    Lua.pushstring(l, 'This metatable is locked.');
+    Lua.settable(l, mtIdx);
 
-    Lua.setmetatable(l,classIdx);
+    Lua.setmetatable(l, classIdx);
 
   };
 
 
   private static function index(l:StatePointer):Int{
     var l = state;
-    var index = Lua.tostring(l,-1);
-    if(Lua.getmetatable(l,-2)!=0){
+    var index = Lua.tostring(l, -1);
+    if(Lua.getmetatable(l, -2)!=0){
       var mtIdx = Lua.gettop(l);
-      Lua.pushstring(l,index + "PropertyData");
-      Lua.rawget(l,mtIdx);
-      var data:Any = Convert.fromLua(l,-1);
+      Lua.pushstring(l, index + 'PropertyData');
+      Lua.rawget(l, mtIdx);
+      var data:Any = Convert.fromLua(l, -1);
       if(data!=null){
-        Lua.pushstring(l,"_CLASSNAME");
-        Lua.rawget(l,mtIdx);
-        var clName = Lua.tostring(l,-1);
+        Lua.pushstring(l, '_CLASSNAME');
+        Lua.rawget(l, mtIdx);
+        var clName = Lua.tostring(l, -1);
         if(LuaStorage.objectProperties[clName]!=null && LuaStorage.objectProperties[clName][index]!=null){
-          return LuaStorage.objectProperties[clName][index].getter(l,data);
+          return LuaStorage.objectProperties[clName][index].getter(l, data);
         }
       };
     }else{
@@ -101,18 +101,18 @@ class LuaClass {
 
   private static function newindex(l:StatePointer):Int{
     var l = state;
-    var index = Lua.tostring(l,2);
-    if(Lua.getmetatable(l,1)!=0){
+    var index = Lua.tostring(l, 2);
+    if(Lua.getmetatable(l, 1)!=0){
       var mtIdx = Lua.gettop(l);
-      Lua.pushstring(l,index + "PropertyData");
-      Lua.rawget(l,mtIdx);
-      var data:Any = Convert.fromLua(l,-1);
+      Lua.pushstring(l, index + 'PropertyData');
+      Lua.rawget(l, mtIdx);
+      var data:Any = Convert.fromLua(l, -1);
       if(data!=null){
-        Lua.pushstring(l,"_CLASSNAME");
-        Lua.rawget(l,mtIdx);
-        var clName = Lua.tostring(l,-1);
+        Lua.pushstring(l, '_CLASSNAME');
+        Lua.rawget(l, mtIdx);
+        var clName = Lua.tostring(l, -1);
         if(LuaStorage.objectProperties[clName]!=null && LuaStorage.objectProperties[clName][index]!=null){
-          Lua.pop(l,2);
+          Lua.pop(l, 2);
           return LuaStorage.objectProperties[clName][index].setter(l);
         }
       };
@@ -122,22 +122,22 @@ class LuaClass {
     return 0;
   }
 
-  public static function SetProperty(l:State,tableIndex:Int,key:String,value:Any){
-    Lua.pushstring(l,key + "PropertyData");
-    Convert.toLua(l,value);
-    Lua.settable(l,tableIndex  );
+  public static function SetProperty(l:State, tableIndex:Int, key:String, value:Any){
+    Lua.pushstring(l, key + 'PropertyData');
+    Convert.toLua(l, value);
+    Lua.settable(l, tableIndex  );
 
-    Lua.pop(l,2);
+    Lua.pop(l, 2);
   }
 
   public static function DefaultSetter(l:State){
-    var key = Lua.tostring(l,2);
+    var key = Lua.tostring(l, 2);
 
-    Lua.pushstring(l,key + "PropertyData");
-    Lua.pushvalue(l,3);
-    Lua.settable(l,4);
+    Lua.pushstring(l, key + 'PropertyData');
+    Lua.pushvalue(l, 3);
+    Lua.settable(l, 4);
 
-    Lua.pop(l,2);
+    Lua.pop(l, 2);
   };
   public function new(){}
 }
@@ -147,24 +147,24 @@ class LuaNote extends LuaClass { // again, stolen from andromeda but improved a 
     public var note:Note;
     public function new(connectedNote:Note, index:Int){ 
       super();
-      className= "note_" + index;
+      className= 'note_' + index;
 
       note = connectedNote;
 
       properties=[
-        "alpha"=>{
+        'alpha'=>{
           defaultValue: 1 ,
-          getter: function(l:State,data:Any):Int{
-            Lua.pushnumber(l,connectedNote.alpha);
+          getter: function(l:State, data:Any):Int{
+            Lua.pushnumber(l, connectedNote.alpha);
             return 1;
           },
           setter: SetNumProperty
         },
         
-        "angle"=>{
+        'angle'=>{
           defaultValue: 1 ,
-          getter: function(l:State,data:Any):Int{
-            Lua.pushnumber(l,connectedNote.angle);
+          getter: function(l:State, data:Any):Int{
+            Lua.pushnumber(l, connectedNote.angle);
             return 1;
           },
           setter: function(l:State):Int{
@@ -172,12 +172,12 @@ class LuaNote extends LuaClass { // again, stolen from andromeda but improved a 
             // 2 = key
             // 3 = value
             // 4 = metatable
-            if(Lua.type(l,3)!=Lua.LUA_TNUMBER){
-              LuaL.error(l,"invalid argument #3 (number expected, got " + Lua.typename(l,Lua.type(l,3)) + ")");
+            if(Lua.type(l, 3)!=Lua.LUA_TNUMBER){
+              LuaL.error(l, 'invalid argument #3 (number expected, got ' + Lua.typename(l, Lua.type(l, 3)) + ')');
               return 0;
             }
   
-            var angle = Lua.tonumber(l,3);
+            var angle = Lua.tonumber(l, 3);
             connectedNote.modAngle = angle;
   
             LuaClass.DefaultSetter(l);
@@ -185,10 +185,10 @@ class LuaNote extends LuaClass { // again, stolen from andromeda but improved a 
           }
         },
 
-        "strumTime"=>{
+        'strumTime'=>{
             defaultValue: 1 ,
-            getter: function(l:State,data:Any):Int{
-              Lua.pushnumber(l,connectedNote.strumTime);
+            getter: function(l:State, data:Any):Int{
+              Lua.pushnumber(l, connectedNote.strumTime);
               return 1;
             },
             setter: function(l:State):Int{
@@ -201,92 +201,92 @@ class LuaNote extends LuaClass { // again, stolen from andromeda but improved a 
             }
           },
 
-        "data"=>{
+        'data'=>{
             defaultValue: 1 ,
-            getter: function(l:State,data:Any):Int{
-              Lua.pushnumber(l,connectedNote.noteData);
+            getter: function(l:State, data:Any):Int{
+              Lua.pushnumber(l, connectedNote.noteData);
               return 1;
             },
             setter: SetNumProperty
           },
 
-        "mustPress"=>{
+        'mustPress'=>{
             defaultValue: 1 ,
-            getter: function(l:State,data:Any):Int{
-              Lua.pushboolean(l,connectedNote.mustPress);
+            getter: function(l:State, data:Any):Int{
+              Lua.pushboolean(l, connectedNote.mustPress);
               return 1;
             },
             setter: SetNumProperty
           },
 
-        "beat"=>{
+        'beat'=>{
             defaultValue: 1 ,
-            getter: function(l:State,data:Any):Int{
-              Lua.pushnumber(l,connectedNote.beat);
+            getter: function(l:State, data:Any):Int{
+              Lua.pushnumber(l, connectedNote.beat);
               return 1;
             },
             setter: SetNumProperty
           },
 
-        "isSustain"=>{
+        'isSustain'=>{
             defaultValue: 1 ,
-            getter: function(l:State,data:Any):Int{
-              Lua.pushnumber(l,connectedNote.rawNoteData);
+            getter: function(l:State, data:Any):Int{
+              Lua.pushnumber(l, connectedNote.rawNoteData);
               return 1;
             },
             setter: SetNumProperty
           },
 
-        "x"=> {
+        'x'=> {
           defaultValue: connectedNote.x,
-          getter: function(l:State,data:Any):Int{
-            Lua.pushnumber(l,connectedNote.x);
+          getter: function(l:State, data:Any):Int{
+            Lua.pushnumber(l, connectedNote.x);
             return 1;
           },
           setter: SetNumProperty
         },
 
-        "tweenPos"=>{
+        'tweenPos'=>{
           defaultValue:0,
-          getter:function(l:State,data:Any){
-            Lua.pushcfunction(l,tweenPosC);
+          getter:function(l:State, data:Any){
+            Lua.pushcfunction(l, tweenPosC);
             return 1;
           },
           setter:function(l:State){
-            LuaL.error(l,"tweenPos is read-only.");
+            LuaL.error(l, 'tweenPos is read-only.');
             return 0;
           }
         },
 
-        "tweenAlpha"=>{
+        'tweenAlpha'=>{
           defaultValue:0,
-          getter:function(l:State,data:Any){
-            Lua.pushcfunction(l,tweenAlphaC);
+          getter:function(l:State, data:Any){
+            Lua.pushcfunction(l, tweenAlphaC);
             return 1;
           },
           setter:function(l:State){
-            LuaL.error(l,"tweenAlpha is read-only.");
+            LuaL.error(l, 'tweenAlpha is read-only.');
             return 0;
           }
         },
 
-        "tweenAngle"=>{
+        'tweenAngle'=>{
           defaultValue:0,
-          getter:function(l:State,data:Any){
-            Lua.pushcfunction(l,tweenAngleC);
+          getter:function(l:State, data:Any){
+            Lua.pushcfunction(l, tweenAngleC);
             return 1;
           },
           setter:function(l:State){
-            LuaL.error(l,"tweenAngle is read-only.");
+            LuaL.error(l, 'tweenAngle is read-only.');
             return 0;
           }
         },
         
         
-        "y"=> {
+        'y'=> {
           defaultValue: connectedNote.y,
-          getter: function(l:State,data:Any):Int{
-            Lua.pushnumber(l,connectedNote.y);
+          getter: function(l:State, data:Any):Int{
+            Lua.pushnumber(l, connectedNote.y);
             return 1;
           },
           setter: SetNumProperty
@@ -296,7 +296,7 @@ class LuaNote extends LuaClass { // again, stolen from andromeda but improved a 
     }
 
 
-    private static function findNote(time:Float,data:Int)
+    private static function findNote(time:Float, data:Int)
       {
   
         for(i in PlayState.instance.notes)
@@ -314,26 +314,26 @@ class LuaNote extends LuaClass { // again, stolen from andromeda but improved a 
         // 2 = x
         // 3 = y
         // 4 = time
-        var xp = LuaL.checknumber(state,2);
-        var yp = LuaL.checknumber(state,3);
-        var time = LuaL.checknumber(state,4);
+        var xp = LuaL.checknumber(state, 2);
+        var yp = LuaL.checknumber(state, 3);
+        var time = LuaL.checknumber(state, 4);
   
-        Lua.getfield(state,1,"strumTime");
-        var time = Lua.tonumber(state,-1);
-        Lua.getfield(state,1,"data");
-        var data = Lua.tonumber(state,-1);
+        Lua.getfield(state, 1, 'strumTime');
+        var time = Lua.tonumber(state, -1);
+        Lua.getfield(state, 1, 'data');
+        var data = Lua.tonumber(state, -1);
   
-        var note = findNote(time,Math.floor(data));
+        var note = findNote(time, Math.floor(data));
   
         if (note == null)
         {
-          if(Lua.type(state,3)!=Lua.LUA_TNUMBER){
-            LuaL.error(state,"Failure to tween (couldn't find note " + time + ")");
+          if(Lua.type(state, 3)!=Lua.LUA_TNUMBER){
+            LuaL.error(state, 'Failure to tween (couldn\'t find note ' + time + ')');
             return 0;
           }
         }
   
-        FlxTween.tween(note,{x: xp,y:yp},time);
+        FlxTween.tween(note, {x: xp, y:yp}, time);
   
         return 0;
       }
@@ -342,25 +342,25 @@ class LuaNote extends LuaClass { // again, stolen from andromeda but improved a 
         // 1 = self
         // 2 = angle
         // 3 = time
-        var nangle = LuaL.checknumber(state,2);
-        var time = LuaL.checknumber(state,3);
+        var nangle = LuaL.checknumber(state, 2);
+        var time = LuaL.checknumber(state, 3);
   
-        Lua.getfield(state,1,"strumTime");
-        var time = Lua.tonumber(state,-1);
-        Lua.getfield(state,1,"data");
-        var data = Lua.tonumber(state,-1);
+        Lua.getfield(state, 1, 'strumTime');
+        var time = Lua.tonumber(state, -1);
+        Lua.getfield(state, 1, 'data');
+        var data = Lua.tonumber(state, -1);
   
-        var note = findNote(time,Math.floor(data));
+        var note = findNote(time, Math.floor(data));
   
         if (note == null)
         {
-          if(Lua.type(state,3)!=Lua.LUA_TNUMBER){
-            LuaL.error(state,"Failure to tween (couldn't find note " + time + ")");
+          if(Lua.type(state, 3)!=Lua.LUA_TNUMBER){
+            LuaL.error(state, 'Failure to tween (couldn\'t find note ' + time + ')');
             return 0;
           }
         }
   
-        FlxTween.tween(note,{modAngle: nangle},time);
+        FlxTween.tween(note, {modAngle: nangle}, time);
   
         return 0;
       }
@@ -369,25 +369,25 @@ class LuaNote extends LuaClass { // again, stolen from andromeda but improved a 
         // 1 = self
         // 2 = alpha
         // 3 = time
-        var nalpha = LuaL.checknumber(state,2);
-        var time = LuaL.checknumber(state,3);
+        var nalpha = LuaL.checknumber(state, 2);
+        var time = LuaL.checknumber(state, 3);
   
-        Lua.getfield(state,1,"strumTime");
-        var time = Lua.tonumber(state,-1);
-        Lua.getfield(state,1,"data");
-        var data = Lua.tonumber(state,-1);
+        Lua.getfield(state, 1, 'strumTime');
+        var time = Lua.tonumber(state, -1);
+        Lua.getfield(state, 1, 'data');
+        var data = Lua.tonumber(state, -1);
   
-        var note = findNote(time,Math.floor(data));
+        var note = findNote(time, Math.floor(data));
   
         if (note == null)
         {
-          if(Lua.type(state,3)!=Lua.LUA_TNUMBER){
-            LuaL.error(state,"Failure to tween (couldn't find note " + time + ")");
+          if(Lua.type(state, 3)!=Lua.LUA_TNUMBER){
+            LuaL.error(state, 'Failure to tween (couldn\'t find note ' + time + ')');
             return 0;
           }
         }
   
-        FlxTween.tween(note,{alpha: nalpha},time);
+        FlxTween.tween(note, {alpha: nalpha}, time);
   
         return 0;
       }
@@ -401,12 +401,12 @@ class LuaNote extends LuaClass { // again, stolen from andromeda but improved a 
       // 2 = key
       // 3 = value
       // 4 = metatable
-      if(Lua.type(l,3)!=Lua.LUA_TNUMBER){
-        LuaL.error(l,"invalid argument #3 (number expected, got " + Lua.typename(l,Lua.type(l,3)) + ")");
+      if(Lua.type(l, 3)!=Lua.LUA_TNUMBER){
+        LuaL.error(l, 'invalid argument #3 (number expected, got ' + Lua.typename(l, Lua.type(l, 3)) + ')');
         return 0;
       }
       note.modifiedByLua = true;
-      Reflect.setProperty(note,Lua.tostring(l,2),Lua.tonumber(l,3));
+      Reflect.setProperty(note, Lua.tostring(l, 2), Lua.tonumber(l, 3));
       return 0;
     }
 
@@ -430,28 +430,28 @@ class LuaNote extends LuaClass { // again, stolen from andromeda but improved a 
       className= name;
 
       properties=[
-        "alpha"=>{
+        'alpha'=>{
           defaultValue: 1 ,
-          getter: function(l:State,data:Any):Int{
-            Lua.pushnumber(l,connectedSprite.alpha);
+          getter: function(l:State, data:Any):Int{
+            Lua.pushnumber(l, connectedSprite.alpha);
             return 1;
           },
           setter: SetNumProperty
         },
         
-        "id"=>{
+        'id'=>{
           defaultValue: name ,
-          getter: function(l:State,data:Any):Int{
-            Lua.pushstring(l,name);
+          getter: function(l:State, data:Any):Int{
+            Lua.pushstring(l, name);
             return 1;
           },
           setter: SetNumProperty
         },
 
-        "angle"=>{
+        'angle'=>{
           defaultValue: 0 ,
-          getter: function(l:State,data:Any):Int{
-            Lua.pushnumber(l,connectedSprite.angle);
+          getter: function(l:State, data:Any):Int{
+            Lua.pushnumber(l, connectedSprite.angle);
             return 1;
           },
           setter: function(l:State):Int{
@@ -459,12 +459,12 @@ class LuaNote extends LuaClass { // again, stolen from andromeda but improved a 
             // 2 = key
             // 3 = value
             // 4 = metatable
-            if(Lua.type(l,3)!=Lua.LUA_TNUMBER){
-              LuaL.error(l,"invalid argument #3 (number expected, got " + Lua.typename(l,Lua.type(l,3)) + ")");
+            if(Lua.type(l, 3)!=Lua.LUA_TNUMBER){
+              LuaL.error(l, 'invalid argument #3 (number expected, got ' + Lua.typename(l, Lua.type(l, 3)) + ')');
               return 0;
             }
   
-            var angle = Lua.tonumber(l,3);
+            var angle = Lua.tonumber(l, 3);
             connectedSprite.modAngle = angle;
   
             LuaClass.DefaultSetter(l);
@@ -472,38 +472,38 @@ class LuaNote extends LuaClass { // again, stolen from andromeda but improved a 
           }
         },
 
-        "x"=> {
+        'x'=> {
           defaultValue: connectedSprite.x,
-          getter: function(l:State,data:Any):Int{
-            Lua.pushnumber(l,connectedSprite.x);
+          getter: function(l:State, data:Any):Int{
+            Lua.pushnumber(l, connectedSprite.x);
             return 1;
           },
           setter: SetNumProperty
         },
 
         
-        "y"=> {
+        'y'=> {
           defaultValue: connectedSprite.y,
-          getter: function(l:State,data:Any):Int{
-            Lua.pushnumber(l,connectedSprite.y);
+          getter: function(l:State, data:Any):Int{
+            Lua.pushnumber(l, connectedSprite.y);
             return 1;
           },
           setter: SetNumProperty
         },
 
-        "defaultAngle"=>{
+        'defaultAngle'=>{
           defaultValue: defaultAngle ,
-          getter: function(l:State,data:Any):Int{
-            Lua.pushnumber(l,defaultAngle);
+          getter: function(l:State, data:Any):Int{
+            Lua.pushnumber(l, defaultAngle);
             return 1;
           },
           setter: SetNumProperty
         },
 
-        "defaultX"=> {
+        'defaultX'=> {
           defaultValue: defaultX,
-          getter: function(l:State,data:Any):Int{
-            Lua.pushnumber(l,defaultX);
+          getter: function(l:State, data:Any):Int{
+            Lua.pushnumber(l, defaultX);
             return 1;
           },
           setter: SetNumProperty
@@ -511,47 +511,47 @@ class LuaNote extends LuaClass { // again, stolen from andromeda but improved a 
 
         
 
-        "tweenPos"=>{
+        'tweenPos'=>{
           defaultValue:0,
-          getter:function(l:State,data:Any){
-            Lua.pushcfunction(l,tweenPosC);
+          getter:function(l:State, data:Any){
+            Lua.pushcfunction(l, tweenPosC);
             return 1;
           },
           setter:function(l:State){
-            LuaL.error(l,"tweenPos is read-only.");
+            LuaL.error(l, 'tweenPos is read-only.');
             return 0;
           }
         },
 
-        "tweenAlpha"=>{
+        'tweenAlpha'=>{
           defaultValue:0,
-          getter:function(l:State,data:Any){
-            Lua.pushcfunction(l,tweenAlphaC);
+          getter:function(l:State, data:Any){
+            Lua.pushcfunction(l, tweenAlphaC);
             return 1;
           },
           setter:function(l:State){
-            LuaL.error(l,"tweenAlpha is read-only.");
+            LuaL.error(l, 'tweenAlpha is read-only.');
             return 0;
           }
         },
 
-        "tweenAngle"=>{
+        'tweenAngle'=>{
           defaultValue:0,
-          getter:function(l:State,data:Any){
-            Lua.pushcfunction(l,tweenAngleC);
+          getter:function(l:State, data:Any){
+            Lua.pushcfunction(l, tweenAngleC);
             return 1;
           },
           setter:function(l:State){
-            LuaL.error(l,"tweenAngle is read-only.");
+            LuaL.error(l, 'tweenAngle is read-only.');
             return 0;
           }
         },
 
 
-        "defaultY"=> {
+        'defaultY'=> {
           defaultValue: defaultY,
-          getter: function(l:State,data:Any):Int{
-            Lua.pushnumber(l,defaultY);
+          getter: function(l:State, data:Any):Int{
+            Lua.pushnumber(l, defaultY);
             return 1;
           },
           setter: function(l:State):Int{
@@ -583,24 +583,24 @@ class LuaNote extends LuaClass { // again, stolen from andromeda but improved a 
       // 2 = x
       // 3 = y
       // 4 = time
-      var xp = LuaL.checknumber(state,2);
-      var yp = LuaL.checknumber(state,3);
-      var time = LuaL.checknumber(state,4);
+      var xp = LuaL.checknumber(state, 2);
+      var yp = LuaL.checknumber(state, 3);
+      var time = LuaL.checknumber(state, 4);
 
-      Lua.getfield(state,1,"id");
-      var index = Std.parseInt(Lua.tostring(state,-1).split('_')[1]);
+      Lua.getfield(state, 1, 'id');
+      var index = Std.parseInt(Lua.tostring(state, -1).split('_')[1]);
 
       var receptor = findReceptor(index);
 
       if (receptor == null)
       {
-        if(Lua.type(state,3)!=Lua.LUA_TNUMBER){
-          LuaL.error(state,"Failure to tween (couldn't find receptor " + index + ")");
+        if(Lua.type(state, 3)!=Lua.LUA_TNUMBER){
+          LuaL.error(state, 'Failure to tween (couldn\'t find receptor ' + index + ')');
           return 0;
         }
       }
 
-      FlxTween.tween(receptor,{x: xp,y:yp},time);
+      FlxTween.tween(receptor, {x: xp, y:yp}, time);
 
       return 0;
     }
@@ -609,23 +609,23 @@ class LuaNote extends LuaClass { // again, stolen from andromeda but improved a 
       // 1 = self
       // 2 = angle
       // 3 = time
-      var nangle = LuaL.checknumber(state,2);
-      var time = LuaL.checknumber(state,3);
+      var nangle = LuaL.checknumber(state, 2);
+      var time = LuaL.checknumber(state, 3);
 
-      Lua.getfield(state,1,"id");
-      var index = Std.parseInt(Lua.tostring(state,-1).split('_')[1]);
+      Lua.getfield(state, 1, 'id');
+      var index = Std.parseInt(Lua.tostring(state, -1).split('_')[1]);
 
       var receptor = findReceptor(index);
 
       if (receptor == null)
       {
-        if(Lua.type(state,3)!=Lua.LUA_TNUMBER){
-          LuaL.error(state,"Failure to tween (couldn't find receptor " + index + ")");
+        if(Lua.type(state, 3)!=Lua.LUA_TNUMBER){
+          LuaL.error(state, 'Failure to tween (couldn\'t find receptor ' + index + ')');
           return 0;
         }
       }
 
-      FlxTween.tween(receptor,{modAngle: nangle},time);
+      FlxTween.tween(receptor, {modAngle: nangle}, time);
 
       return 0;
     }
@@ -634,23 +634,23 @@ class LuaNote extends LuaClass { // again, stolen from andromeda but improved a 
       // 1 = self
       // 2 = alpha
       // 3 = time
-      var nalpha = LuaL.checknumber(state,2);
-      var time = LuaL.checknumber(state,3);
+      var nalpha = LuaL.checknumber(state, 2);
+      var time = LuaL.checknumber(state, 3);
 
-      Lua.getfield(state,1,"id");
-      var index = Std.parseInt(Lua.tostring(state,-1).split('_')[1]);
+      Lua.getfield(state, 1, 'id');
+      var index = Std.parseInt(Lua.tostring(state, -1).split('_')[1]);
 
       var receptor = findReceptor(index);
 
       if (receptor == null)
       {
-        if(Lua.type(state,3)!=Lua.LUA_TNUMBER){
-          LuaL.error(state,"Failure to tween (couldn't find receptor " + index + ")");
+        if(Lua.type(state, 3)!=Lua.LUA_TNUMBER){
+          LuaL.error(state, 'Failure to tween (couldn\'t find receptor ' + index + ')');
           return 0;
         }
       }
 
-      FlxTween.tween(receptor,{alpha: nalpha},time);
+      FlxTween.tween(receptor, {alpha: nalpha}, time);
 
       return 0;
     }
@@ -664,21 +664,21 @@ class LuaNote extends LuaClass { // again, stolen from andromeda but improved a 
       // 2 = key
       // 3 = value
       // 4 = metatable
-      if(Lua.type(l,3)!=Lua.LUA_TNUMBER){
-        LuaL.error(l,"invalid argument #3 (number expected, got " + Lua.typename(l,Lua.type(l,3)) + ")");
+      if(Lua.type(l, 3)!=Lua.LUA_TNUMBER){
+        LuaL.error(l, 'invalid argument #3 (number expected, got ' + Lua.typename(l, Lua.type(l, 3)) + ')');
         return 0;
       }
 
       sprite.modifiedByLua = true;
 
-      Reflect.setProperty(sprite,Lua.tostring(l,2),Lua.tonumber(l,3));
+      Reflect.setProperty(sprite, Lua.tostring(l, 2), Lua.tonumber(l, 3));
       return 0;
     }
 
     override function Register(l:State){
       state=l;
       super.Register(l);
-      trace("Registered " + className);
+      trace('Registered ' + className);
     }
   }
 
@@ -692,38 +692,38 @@ class LuaNote extends LuaClass { // again, stolen from andromeda but improved a 
       className= name;
 
       properties=[
-        "alpha"=>{
+        'alpha'=>{
           defaultValue: 1 ,
-          getter: function(l:State,data:Any):Int{
-            Lua.pushnumber(l,connectedCamera.alpha);
+          getter: function(l:State, data:Any):Int{
+            Lua.pushnumber(l, connectedCamera.alpha);
             return 1;
           },
           setter: SetNumProperty
         },
         
-        "angle"=>{
+        'angle'=>{
           defaultValue: 0 ,
-          getter: function(l:State,data:Any):Int{
-            Lua.pushnumber(l,connectedCamera.angle);
+          getter: function(l:State, data:Any):Int{
+            Lua.pushnumber(l, connectedCamera.angle);
             return 1;
           },
           setter: SetNumProperty
         },
 
-        "x"=> {
+        'x'=> {
           defaultValue: connectedCamera.x,
-          getter: function(l:State,data:Any):Int{
-            Lua.pushnumber(l,connectedCamera.x);
+          getter: function(l:State, data:Any):Int{
+            Lua.pushnumber(l, connectedCamera.x);
             return 1;
           },
           setter: SetNumProperty
         },
 
         
-        "y"=> {
+        'y'=> {
           defaultValue: connectedCamera.y,
-          getter: function(l:State,data:Any):Int{
-            Lua.pushnumber(l,connectedCamera.y);
+          getter: function(l:State, data:Any):Int{
+            Lua.pushnumber(l, connectedCamera.y);
             return 1;
           },
           setter: SetNumProperty
@@ -736,18 +736,18 @@ class LuaNote extends LuaClass { // again, stolen from andromeda but improved a 
       // 2 = key
       // 3 = value
       // 4 = metatable
-      if(Lua.type(l,3)!=Lua.LUA_TNUMBER){
-        LuaL.error(l,"invalid argument #3 (number expected, got " + Lua.typename(l,Lua.type(l,3)) + ")");
+      if(Lua.type(l, 3)!=Lua.LUA_TNUMBER){
+        LuaL.error(l, 'invalid argument #3 (number expected, got ' + Lua.typename(l, Lua.type(l, 3)) + ')');
         return 0;
       }
-      Reflect.setProperty(cam,Lua.tostring(l,2),Lua.tonumber(l,3));
+      Reflect.setProperty(cam, Lua.tostring(l, 2), Lua.tonumber(l, 3));
       return 0;
     }
 
     override function Register(l:State){
       state=l;
       super.Register(l);
-      trace("Registered " + className);
+      trace('Registered ' + className);
     }
 
   }

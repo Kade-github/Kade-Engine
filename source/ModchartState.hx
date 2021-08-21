@@ -43,7 +43,7 @@ class ModchartState
 		var p = Lua.tostring(lua, result);
 		var e = getLuaErrorMessage(lua);
 
-		Lua.tostring(lua,-1);
+		Lua.tostring(lua, -1);
 
 		if (e != null)
 		{
@@ -635,9 +635,9 @@ class ModchartState
 					new LuaReceptor(member, 'receptor_' + i).Register(lua);
 				}
 
-				new LuaCamera(PlayState.instance.camHUD,"camHUD").Register(lua);
-				new LuaCamera(PlayState.instance.camNotes,"camNotes").Register(lua);
-				new LuaCamera(PlayState.instance.camSustains,"camSustains").Register(lua);
+				new LuaCamera(PlayState.instance.camHUD, 'camHUD').Register(lua);
+				new LuaCamera(PlayState.instance.camNotes, 'camNotes').Register(lua);
+				new LuaCamera(PlayState.instance.camSustains, 'camSustains').Register(lua);
     }
 
     public function executeState(name, args:Array<Dynamic>)

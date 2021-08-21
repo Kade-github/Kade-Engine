@@ -11,7 +11,7 @@ function update(elapsed)
 
 
         local currentBeat = (songPos / 1000)*(bpm/60)
-		for i=0,7,1 do
+		for i=0, 7, 1 do
             local receptor = _G['receptor_'..i]
             receptor.angle = (spinLength / 7) * -math.sin((currentBeat + i*0.25) * math.pi)
 			receptor.x = receptor.defaultX + spinLength * math.sin((currentBeat + i*0.25) * math.pi)
@@ -29,9 +29,9 @@ function stepHit(step) -- do nothing
 end
 
 function playerTwoTurn()
-    tweenCameraZoom(1.3,(crochet * 4) / 1000)
+    tweenCameraZoom(1.3, (crochet * 4) / 1000)
 end
 
 function playerOneTurn()
-    tweenCameraZoom(1,(crochet * 4) / 1000)
+    tweenCameraZoom(1, (crochet * 4) / 1000)
 end

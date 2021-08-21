@@ -168,10 +168,10 @@ class ChartingState extends MusicBeatState
 		if (PlayState.SONG != null)
 		{
 			if (PlayState.isSM)
-				_song = Song.conversionChecks(Song.loadFromJsonRAW(File.getContent(PlayState.pathToSm + "/converted.json")));
+				_song = Song.conversionChecks(Song.loadFromJsonRAW(File.getContent(PlayState.pathToSm + '/converted.json')));
 			else
 			{
-				var songFormat = StringTools.replace(PlayState.SONG.song, " ", "-");
+				var songFormat = StringTools.replace(PlayState.SONG.song, ' ', '-');
 				switch (songFormat) {
 					case 'Dad-Battle': songFormat = 'Dadbattle';
 					case 'Philly-Nice': songFormat = 'Philly';
@@ -1479,10 +1479,10 @@ class ChartingState extends MusicBeatState
 		#end
 
 		if (PlayState.isSM)
-			_song = Song.conversionChecks(Song.loadFromJsonRAW(File.getContent(PlayState.pathToSm + "/converted.json")));
+			_song = Song.conversionChecks(Song.loadFromJsonRAW(File.getContent(PlayState.pathToSm + '/converted.json')));
 		else
 		{
-			var songFormat = StringTools.replace(PlayState.SONG.song, " ", "-");
+			var songFormat = StringTools.replace(PlayState.SONG.song, ' ', '-');
 			switch (songFormat) {
 				case 'Dad-Battle': songFormat = 'Dadbattle';
 				case 'Philly-Nice': songFormat = 'Philly';
@@ -1586,19 +1586,19 @@ class ChartingState extends MusicBeatState
 					var currentIndex = 0;
 					for (i in _song.eventObjects)
 						{
-							var name = Reflect.field(i,"name");
-							var type = Reflect.field(i,"type");
-							var pos = Reflect.field(i,"position");
-							var value = Reflect.field(i,"value");
+							var name = Reflect.field(i, 'name');
+							var type = Reflect.field(i, 'type');
+							var pos = Reflect.field(i, 'position');
+							var value = Reflect.field(i, 'value');
 	
 							trace(i.type);
-							if (type == "BPM Change")
+							if (type == 'BPM Change')
 							{
 								var beat:Float = pos;
 	
 								var endBeat:Float = Math.POSITIVE_INFINITY;
 	
-								TimingStruct.addTiming(beat,value,endBeat, 0); // offset in this case = start time since we don't have a offset
+								TimingStruct.addTiming(beat, value, endBeat, 0); // offset in this case = start time since we don't have a offset
 								
 								if (currentIndex != 0)
 								{
@@ -1613,10 +1613,10 @@ class ChartingState extends MusicBeatState
 								currentIndex++;
 							}
 						}
-					trace("BPM CHANGES:");
+					trace('BPM CHANGES:');
 	
 					for (i in TimingStruct.AllTimings)
-						trace(i.bpm + " - START: " + i.startBeat + " - END: " + i.endBeat + " - START-TIME: " + i.startTime);
+						trace(i.bpm + ' - START: ' + i.startBeat + ' - END: ' + i.endBeat + ' - START-TIME: ' + i.startTime);
 	
 					recalculateAllSectionTimes();
 	
@@ -1729,12 +1729,12 @@ class ChartingState extends MusicBeatState
 			if (i.noteCharterObject != null)
 			{
 				i.noteCharterObject.y = i.y + 40;
-				i.noteCharterObject.makeGraphic(8,Math.floor((getYfromStrum(i.strumTime + i.sustainLength) * zoomFactor) - i.y),FlxColor.WHITE);
+				i.noteCharterObject.makeGraphic(8, Math.floor((getYfromStrum(i.strumTime + i.sustainLength) * zoomFactor) - i.y), FlxColor.WHITE);
 			}
 			
 		}
 
-		trace("FUCK YOU BITCH FUCKER CUCK SUCK BITCH " + _song.notes.length);
+		trace('FUCK YOU BITCH FUCKER CUCK SUCK BITCH ' + _song.notes.length);
 	}
 
 
@@ -1820,7 +1820,7 @@ class ChartingState extends MusicBeatState
 						}
 						catch(e)
 						{
-							// trace("failed to pitch vocals (probably cuz they don't exist)");
+							// trace('failed to pitch vocals (probably cuz they don't exist)');
 						}
 			
 					}	
@@ -1828,23 +1828,23 @@ class ChartingState extends MusicBeatState
 			}
 
 			for(note in curRenderedNotes)
+			{
+				if (note.noteCharterObject != null)
 				{
-					if (note.noteCharterObject != null)
 					if (note.noteCharterObject.y != note.y + GRID_SIZE)
 					{
 						note.noteCharterObject.y = note.y + GRID_SIZE;
 						note.noteCharterObject.makeGraphic(8, Math.floor((getYfromStrum(note.strumTime + note.sustainLength) * zoomFactor) - note.y), FlxColor.WHITE);
 					}
+					note.active = true;
+					note.visible = true;
 				}
-				note.active = true;
-				note.visible = true;
-			}
-			else
-			{
-				note.active = false;
-				note.visible = false;
-			}
-		}	
+				else
+				{
+					note.active = false;
+					note.visible = false;
+				}
+			}	
 
 		for(ii in selectedBoxes.members)
 		{
@@ -2268,9 +2268,9 @@ class ChartingState extends MusicBeatState
 		+ '\nCurStep: '
 		+ curStep
 		+ '\nZoom: '
-		+ HelperFunctions.truncateFloat(zoomFactor, 2);
-    + '\nSpeed: '
-    + speed;
+		+ HelperFunctions.truncateFloat(zoomFactor, 2)
+    	+ '\nSpeed: '
+    	+ speed;
 
 		var left = FlxG.keys.justPressed.ONE;
 		var down = FlxG.keys.justPressed.TWO;
@@ -3020,7 +3020,7 @@ class ChartingState extends MusicBeatState
 
 	function recalculateAllSectionTimes()
 	{
-			trace("RECALCULATING SECTION TIMES");
+			trace('RECALCULATING SECTION TIMES');
 
 			var savedNotes:Array<Dynamic> = [];
 
