@@ -72,6 +72,9 @@ class KadeEngineData
 
 		if (FlxG.save.data.distractions == null)
 			FlxG.save.data.distractions = true;
+
+	    	if (FlxG.save.data.astraphobia == null)
+			FlxG.save.data.astraphobia = true;
 		
 		if (FlxG.save.data.stepMania == null)
 			FlxG.save.data.stepMania = false;

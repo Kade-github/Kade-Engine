@@ -43,6 +43,7 @@ class OptionsMenu extends MusicBeatState
 		new OptionCategory("Appearance", [
 			new EditorRes("Not showing the editor grid will greatly increase editor performance"),
 			new DistractionsAndEffectsOption("Toggle stage distractions that can hinder your gameplay."),
+			new Astraphobia("Toggle Week 2's thunder sounds and screen animations"),
 			new CamZoomOption("Toggle the camera zoom in-game."),
 			new StepManiaOption("Sets the colors of the arrows depending on quantization instead of direction."),
 			new AccuracyOption("Display accuracy information on the info bar."),
