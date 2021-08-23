@@ -537,7 +537,7 @@ class PlayState extends MusicBeatState
 			#if debug
 			FlxG.log.warn(["Couldn't load gf: " + gfCheck + ". Loading default gf"]);
 			#end
-			gf = new Character(770, 450, 'gf');
+			gf = new Character(400, 130, 'gf');
 		}
 
 		boyfriend = new Boyfriend(770, 450, SONG.player1);
