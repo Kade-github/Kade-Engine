@@ -399,14 +399,14 @@ class Stage
 					{
 						camZoom = 0.9;
 						curStage = 'stage';
-						var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('stageback'));
+						var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('stageback', 'shared'));
 						bg.antialiasing = FlxG.save.data.antialiasing;
 						bg.scrollFactor.set(0.9, 0.9);
 						bg.active = false;
 						swagBacks['bg'] = bg;
                         toAdd.push(bg);
 
-						var stageFront:FlxSprite = new FlxSprite(-650, 600).loadGraphic(Paths.image('stagefront'));
+						var stageFront:FlxSprite = new FlxSprite(-650, 600).loadGraphic(Paths.image('stagefront', 'shared'));
 						stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
 						stageFront.updateHitbox();
 						stageFront.antialiasing = FlxG.save.data.antialiasing;
@@ -415,7 +415,7 @@ class Stage
 						swagBacks['stageFront'] = stageFront;
                         toAdd.push(stageFront);
 
-						var stageCurtains:FlxSprite = new FlxSprite(-500, -300).loadGraphic(Paths.image('stagecurtains'));
+						var stageCurtains:FlxSprite = new FlxSprite(-500, -300).loadGraphic(Paths.image('stagecurtains', 'shared'));
 						stageCurtains.setGraphicSize(Std.int(stageCurtains.width * 0.9));
 						stageCurtains.updateHitbox();
 						stageCurtains.antialiasing = FlxG.save.data.antialiasing;
