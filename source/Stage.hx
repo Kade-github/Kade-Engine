@@ -134,8 +134,11 @@ class Stage
 								grpLimoDancers.add(dancer);
 							}
 
-                            swagBacks['fastCar'] = fastCar;
-                            layInFront[2].push(fastCar);
+                            if (!GameplayCustomizeState.isCustomizeState)
+							{
+								swagBacks['fastCar'] = fastCar;
+								layInFront[2].push(fastCar);
+							}
 						}
 
 						var overlayShit:FlxSprite = new FlxSprite(-500, -600).loadGraphic(Paths.image('limo/limoOverlay', 'week4'));
@@ -321,7 +324,7 @@ class Stage
 						var bgGirls = new BackgroundGirls(-100, 190);
 						bgGirls.scrollFactor.set(0.9, 0.9);
 
-						if (PlayState.SONG.song.toLowerCase() == 'roses')
+						if (!GameplayCustomizeState.isCustomizeState && PlayState.SONG.song.toLowerCase() == 'roses')
 						{
 							if (FlxG.save.data.distractions)
 							{

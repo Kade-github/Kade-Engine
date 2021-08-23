@@ -3347,6 +3347,10 @@ class PlayState extends MusicBeatState
 					{
 						FlxG.sound.playMusic(Paths.music('freakyMenu'));
 						Conductor.changeBPM(102);
+						GameplayCustomizeState.freeplayBf = 'bf';
+						GameplayCustomizeState.freeplayDad = 'dad';
+						GameplayCustomizeState.freeplayGf = 'gf';
+						GameplayCustomizeState.freeplayStage = 'stage';
 						FlxG.switchState(new StoryMenuState());
 						clean();
 					}
