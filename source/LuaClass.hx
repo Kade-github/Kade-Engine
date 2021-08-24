@@ -7,9 +7,11 @@ import flixel.util.FlxAxes;
 import flixel.FlxSprite;
 import lime.app.Application;
 import openfl.Lib;
+#if cpp
 import sys.io.File;
-import flash.display.BitmapData;
 import sys.FileSystem;
+#end
+import flash.display.BitmapData;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.FlxCamera;
 import flixel.tweens.FlxEase;
