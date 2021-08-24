@@ -182,6 +182,8 @@ class GameplayCustomizeState extends MusicBeatState
 		FlxG.camera.zoom = Stage.camZoom;
 		FlxG.camera.focusOn(camFollow.getPosition());
 
+		FlxG.worldBounds.set(0, 0, FlxG.width, FlxG.height);
+
 		strumLine = new FlxSprite(0, FlxG.save.data.strumline).makeGraphic(FlxG.width, 14);
 		strumLine.scrollFactor.set();
 		strumLine.alpha = 0.4;
@@ -246,7 +248,7 @@ class GameplayCustomizeState extends MusicBeatState
 		if (FlxG.save.data.zoom > 1.2)
 			FlxG.save.data.zoom = 1.2;
 
-		FlxG.camera.zoom = FlxMath.lerp(0.9, FlxG.camera.zoom, 0.95);
+		FlxG.camera.zoom = FlxMath.lerp(Stage.camZoom, FlxG.camera.zoom, 0.95);
 		camHUD.zoom = FlxMath.lerp(FlxG.save.data.zoom, camHUD.zoom, 0.95);
 
 		if (FlxG.mouse.overlaps(sick) && FlxG.mouse.pressed)
