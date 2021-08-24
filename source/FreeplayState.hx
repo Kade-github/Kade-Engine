@@ -563,6 +563,7 @@ class FreeplayState extends MusicBeatState
 					GameplayCustomizeState.freeplayDad = hmm.player2;
 					GameplayCustomizeState.freeplayGf = hmm.gfVersion;
 					GameplayCustomizeState.freeplayStage = hmm.stage;
+					GameplayCustomizeState.freeplaySong = hmm.song;
 				}
 			}
 			catch(ex)

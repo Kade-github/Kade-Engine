@@ -4407,6 +4407,7 @@ class PlayState extends MusicBeatState
 			fastCar.x = -12600;
 			fastCar.y = FlxG.random.int(140, 250);
 			fastCar.velocity.x = 0;
+			fastCar.visible = false;
 			fastCarCanDrive = true;
 		}
 	}
@@ -4417,6 +4418,7 @@ class PlayState extends MusicBeatState
 		{
 			FlxG.sound.play(Paths.soundRandom('carPass', 0, 1), 0.7);
 
+			Stage.swagBacks['fastCar'].visible = true;
 			Stage.swagBacks['fastCar'].velocity.x = (FlxG.random.int(170, 220) / FlxG.elapsed) * 3;
 			fastCarCanDrive = false;
 			new FlxTimer().start(2, function(tmr:FlxTimer)

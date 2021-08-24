@@ -40,14 +40,12 @@ class GameplayCustomizeState extends MusicBeatState
 	public static var freeplayDad:String = 'dad';
 	public static var freeplayGf:String = 'gf';
 	public static var freeplayStage:String = 'stage';
+	public static var freeplaySong:String = 'Bopeebo';
 
 	public static var Stage:Stage;
 
-	public static var isCustomizeState:Bool = false;
-    
 	public override function create()
 	{
-		isCustomizeState = true;
 		#if desktop
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("Customizing Gameplay Modules", null);
@@ -294,7 +292,6 @@ class GameplayCustomizeState extends MusicBeatState
 
 		if (controls.BACK)
 		{
-			isCustomizeState = false;
 			FlxG.mouse.visible = false;
 			FlxG.sound.play(Paths.sound('cancelMenu'));
 			FlxG.switchState(new OptionsMenu());
@@ -313,6 +310,31 @@ class GameplayCustomizeState extends MusicBeatState
 		{
 			FlxG.camera.zoom += 0.015;
 			camHUD.zoom += 0.010;
+		}
+
+		switch (Stage.curStage)
+		{
+			case 'school':
+				if (FlxG.save.data.distractions && Stage.swagBacks['bgGirls'] != null)
+				{
+					Stage.swagBacks['bgGirls'].dance();
+				}
+
+			case 'mall':
+				if (FlxG.save.data.distractions)
+				{
+					for (bg in Stage.animatedBacks)
+						bg.animation.play('idle');
+				}
+
+			case 'limo':
+				if (FlxG.save.data.distractions)
+				{
+					Stage.swagGroup['grpLimoDancers'].forEach(function(dancer:BackgroundDancer)
+					{
+						dancer.dance();
+					});
+				}
 		}
 
 		// trace('beat');
