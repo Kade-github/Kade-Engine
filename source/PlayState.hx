@@ -225,7 +225,8 @@ class PlayState extends MusicBeatState
 	var replayTxt:FlxText;
 
 	public static var campaignScore:Int = 0;
-
+    public static var p2color:FlxColor;
+	public static var p1color:FlxColor;
 	public static var daPixelZoom:Float = 6;
 
 	public static var theFunne:Bool = true;
@@ -293,7 +294,7 @@ class PlayState extends MusicBeatState
 			previousRate = 1;
 
 		if (FlxG.save.data.fpsCap > 290)
-			(cast(Lib.current.getChildAt(0), Main)).setFPSCap(800);
+			(cast(Lib.current.getChildAt(0), Main)).setFPSCap(290);
 
 		if (FlxG.sound.music != null)
 			FlxG.sound.music.stop();
@@ -858,23 +859,66 @@ class PlayState extends MusicBeatState
 		healthBar.scrollFactor.set();
 		if(FlxG.save.data.colour)
         {
-         switch (SONG.player2)
-           {
-             case 'gf':
-             healthBar.createFilledBar(0xFFFF0000, 0xFF0097C4);
-             case 'dad' | 'mom-car' | 'parents-christmas':
-             healthBar.createFilledBar(0xFF5A07F5, 0xFF0097C4);
-             case 'spooky':
-              healthBar.createFilledBar(0xFFF57E07, 0xFF0097C4);
-             case 'monster-christmas' | 'monster':
-              healthBar.createFilledBar(0xFFF5DD07, 0xFF0097C4);
-             case 'pico':
-              healthBar.createFilledBar(0xFF52B514, 0xFF0097C4);
-             case 'senpai' | 'senpai-angry':
-              healthBar.createFilledBar(0xFFF76D6D, 0xFF0097C4);
-             case 'spirit':
-              healthBar.createFilledBar(0xFFAD0505, 0xFF0097C4);
-            }
+			switch (dad.curCharacter)
+			{
+				case 'bf' | 'bf-car' | 'bf-christmas' | 'bf-pixel':
+					p2color = 0xFF31B0D1;
+				case 'gf':
+					p2color = 0xFFA5004D;
+				case 'dad':
+					p2color = 0xFFAF66CE;
+				case 'spooky':
+					if (FlxG.random.bool(50))
+				    p2color = 0xFFB4B4B4;
+					else
+					p2color = 0xFFD57E00;	
+				case 'monster' | 'monster-christmas':
+					p2color = 0xFFF3FF6E;
+				case 'pico':
+					p2color = 0xFFB7D855;
+				case 'mom' | 'mom-car':
+					p2color = 0xFFD8558E;
+				case 'parents-christmas':
+					if (FlxG.random.bool(50))
+					p2color = 0xFFAF66CE;
+					else
+					p2color = 0xFFD8558E;
+				case 'senpai' | 'senpai-angry':
+					p2color = 0xFFFFAA6F;
+				case 'spirit':
+					p2color = 0xFFFF3C6E;
+			}
+			switch (boyfriend.curCharacter)
+			{
+				case 'bf' | 'bf-car' | 'bf-christmas' | 'bf-pixel':
+					p1color = 0xFF31B0D1;
+				case 'gf':
+					p1color = 0xFFA5004D;
+				case 'dad':
+					p1color = 0xFFAF66CE;
+				case 'spooky':
+					if (FlxG.random.bool(50))
+				    p1color = 0xFFB4B4B4;
+					else
+					p1color = 0xFFD57E00;	
+				case 'monster' | 'monster-christmas':
+					p1color = 0xFFF3FF6E;
+				case 'pico':
+					p1color = 0xFFB7D855;
+				case 'mom' | 'mom-car':
+					p1color = 0xFFD8558E;
+				case 'parents-christmas':
+					if (FlxG.random.bool(50))
+					p1color = 0xFFAF66CE;
+					else
+					p1color = 0xFFD8558E;
+				case 'senpai' | 'senpai-angry':
+					p1color = 0xFFFFAA6F;
+				case 'spirit':
+					p1color = 0xFFFF3C6E;
+			}
+	
+		 healthBar.createFilledBar(p2color,  p1color);
         }
         else
          healthBar.createFilledBar(0xFFFF0000, 0xFF66FF33);
