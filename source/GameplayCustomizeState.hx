@@ -6,7 +6,7 @@ import flixel.math.FlxMath;
 import flixel.FlxCamera;
 import flixel.math.FlxPoint;
 import flixel.FlxObject;
-#if windows
+#if desktop
 import Discord.DiscordClient;
 import sys.thread.Thread;
 #end
@@ -44,11 +44,11 @@ class GameplayCustomizeState extends MusicBeatState
 	public static var Stage:Stage;
 
 	public static var isCustomizeState:Bool = false;
-
+    
 	public override function create()
 	{
 		isCustomizeState = true;
-		#if windows
+		#if desktop
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("Customizing Gameplay Modules", null);
 		#end
