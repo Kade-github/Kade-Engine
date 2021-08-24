@@ -70,7 +70,7 @@ class GameplayCustomizeState extends MusicBeatState
 
 		gf = new Character(400, 130, freeplayGf);
 
-		if (gf.frames == null)
+		if (gf.frames == null || freeplayGf == null)
 		{
 			#if debug
 			FlxG.log.warn(["Couldn't load gf: " + freeplayGf + ". Loading default gf"]);
@@ -80,7 +80,7 @@ class GameplayCustomizeState extends MusicBeatState
 
 		boyfriend = new Boyfriend(770, 450, freeplayBf);
 
-		if (boyfriend.frames == null)
+		if (boyfriend.frames == null || freeplayBf == null)
 		{
 			#if debug
 			FlxG.log.warn(["Couldn't load boyfriend: " + freeplayBf + ". Loading default boyfriend"]);
@@ -90,7 +90,7 @@ class GameplayCustomizeState extends MusicBeatState
 
 		dad = new Character(100, 100, freeplayDad);
 
-		if (dad.frames == null)
+		if (dad.frames == null || freeplayDad == null)
 		{
 			#if debug
 			FlxG.log.warn(["Couldn't load opponent: " + freeplayDad + ". Loading default opponent"]);
