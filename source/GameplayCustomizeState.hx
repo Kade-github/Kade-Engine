@@ -302,7 +302,7 @@ class GameplayCustomizeState extends MusicBeatState
 	{
 		super.beatHit();
 
-        if (curBeat % 2 == 0)
+		if (curBeat % 2 == 0)
 		{
 			boyfriend.dance(true);
 			dad.dance(true);
