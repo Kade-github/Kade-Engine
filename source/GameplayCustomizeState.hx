@@ -302,8 +302,14 @@ class GameplayCustomizeState extends MusicBeatState
 	{
 		super.beatHit();
 
-		boyfriend.dance(true);
-		dad.dance(true);
+        if (curBeat % 2 == 0)
+		{
+			boyfriend.dance(true);
+			dad.dance(true);
+		}
+		else if (dad.curCharacter == 'spooky' || dad.curCharacter == 'gf')
+			dad.dance(true);
+
 		gf.dance();
 
 		if (FlxG.save.data.camzoom)
