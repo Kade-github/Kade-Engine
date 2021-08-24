@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="hhgregg.png"><SubTexture name="hhgregg idle0000" x="0" y="0" width="512" height="870" frameX="0" frameY="0" frameWidth="512" frameHeight="870" />
+<SubTexture name="hhgregg idle0001" x="512" y="0" width="512" height="870" frameX="0" frameY="0" frameWidth="512" frameHeight="870" />
+<SubTexture name="hhgregg idle0002" x="1024" y="0" width="512" height="870" frameX="0" frameY="0" frameWidth="512" frameHeight="870" />
+<SubTexture name="hhgregg idle0003" x="1536" y="0" width="512" height="870" frameX="0" frameY="0" frameWidth="512" frameHeight="870" />
+<SubTexture name="hhgregg idle0004" x="0" y="870" width="512" height="870" frameX="0" frameY="0" frameWidth="512" frameHeight="870" />
+<SubTexture name="hhgregg sing down0000" x="512" y="870" width="512" height="870" frameX="0" frameY="0" frameWidth="512" frameHeight="870" />
+<SubTexture name="hhgregg sing down0001" x="1024" y="870" width="512" height="870" frameX="0" frameY="0" frameWidth="512" frameHeight="870" />
+<SubTexture name="hhgregg sing left0000" x="1536" y="870" width="512" height="870" frameX="0" frameY="0" frameWidth="512" frameHeight="870" />
+<SubTexture name="hhgregg sing left0001" x="0" y="1740" width="512" height="870" frameX="0" frameY="0" frameWidth="512" frameHeight="870" />
+<SubTexture name="hhgregg sing right0000" x="512" y="1740" width="512" height="870" frameX="0" frameY="0" frameWidth="512" frameHeight="870" />
+<SubTexture name="hhgregg sing right0001" x="1024" y="1740" width="512" height="870" frameX="0" frameY="0" frameWidth="512" frameHeight="870" />
+<SubTexture name="hhgregg sing up0000" x="1536" y="1740" width="512" height="870" frameX="0" frameY="0" frameWidth="512" frameHeight="870" />
+<SubTexture name="hhgregg sing up0001" x="0" y="2610" width="512" height="870" frameX="0" frameY="0" frameWidth="512" frameHeight="870" />
+</TextureAtlas>

@@ -30,6 +30,18 @@ class Stage
 
         switch(daStage)
         {
+			case 'bgHhgregg':
+					{
+						//defaultCamZoom = 0.9;
+						curStage = 'bgHhgregg';
+
+						var bg:FlxSprite = new FlxSprite(-850, -500).loadGraphic(Paths.image('bgHhgregg'));
+						bg.antialiasing = true;
+						bg.scrollFactor.set(0.9,0.9);
+						bg.scale.set(0.7,0.7);
+						bg.active = false;
+						toAdd.push(bg);
+					}
             case 'halloween':
 					{
 						halloweenLevel = true;

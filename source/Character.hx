@@ -109,6 +109,46 @@ class Character extends FlxSprite
 				loadOffsetFile(curCharacter);
 
 				playAnim('idle');
+			case 'hhgregg':
+				// HHGREGG ANIMATION LOADING CODE
+				tex = Paths.getSparrowAtlas('hhgregg','shared',true);
+				frames = tex;
+				animation.addByPrefix('idle', 'hhgregg idle', 24, false);
+				animation.addByPrefix('singUP', 'hhgregg sing up', 24, false);
+				animation.addByPrefix('singRIGHT', 'hhgregg sing right', 24, false);
+				animation.addByPrefix('singDOWN', 'hhgregg sing down', 24, false);
+				animation.addByPrefix('singLEFT', 'hhgregg sing left', 24, false);
+
+				var _xoff = 0;
+				var _yoff = 0;
+				addOffset('idle',_xoff,_yoff);
+				addOffset('singUP', 39+_xoff, 2+_yoff);
+				addOffset('singRIGHT', _xoff, _yoff);
+				addOffset('singDOWN', _xoff, 4+_yoff);
+				addOffset('singLEFT', 53+_xoff, -15+_yoff);
+				//loadOffsetFile(curCharacter);
+
+				playAnim('idle');
+			case 'redface':
+				// HHGREGG ANIMATION LOADING CODE
+				tex = Paths.getSparrowAtlas('redface','shared',true);
+				frames = tex;
+				animation.addByPrefix('idle', 'redface idle', 24, false);
+				animation.addByPrefix('singUP', 'redface sing up', 24, false);
+				animation.addByPrefix('singRIGHT', 'redface sing right', 24, false);
+				animation.addByPrefix('singDOWN', 'redface sing down', 24, false);
+				animation.addByPrefix('singLEFT', 'redface sing left', 24, false);
+
+				var _xoff = 0;
+				var _yoff = 0;
+				addOffset('idle',_xoff,_yoff);
+				addOffset('singUP', 39+_xoff, 2+_yoff);
+				addOffset('singRIGHT', _xoff, _yoff);
+				addOffset('singDOWN', _xoff, 4+_yoff);
+				addOffset('singLEFT', 53+_xoff, -15+_yoff);
+				//loadOffsetFile(curCharacter);
+
+				playAnim('idle');
 			case 'spooky':
 				tex = Paths.getSparrowAtlas('spooky_kids_assets','shared',true);
 				frames = tex;

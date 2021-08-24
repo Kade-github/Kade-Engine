@@ -604,7 +604,8 @@ class PlayState extends MusicBeatState
 					camPos.x += 600;
 					tweenCamIn();
 				}
-
+			case "hhgregg":
+				dad.y -= 70;
 			case "spooky":
 				dad.y += 200;
 			case "monster":
@@ -649,6 +650,8 @@ class PlayState extends MusicBeatState
 		if (!PlayStateChangeables.Optimize)
 		switch (Stage.curStage)
 		{
+			case 'bgHhgregg':
+				boyfriend.y += 20;
 			case 'limo':
 				boyfriend.y -= 220;
 				boyfriend.x += 260;
@@ -4632,6 +4635,11 @@ class PlayState extends MusicBeatState
 			{
 				dad.dance();
 			}*/
+			
+			if (curBeat % 8 == 7 && (curBeat == 15 || curBeat == 31 || curBeat == 63 || curBeat == 95) && curSong == 'Bomb Sniffing Bopeebo')
+			{
+				boyfriend.playAnim('hey', true);
+			}
 
 			if (curBeat % 8 == 7 && curSong == 'Bopeebo')
 			{
