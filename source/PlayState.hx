@@ -321,7 +321,7 @@ class PlayState extends MusicBeatState
 		PlayStateChangeables.zoom = FlxG.save.data.zoom;
 
 		// pre lowercasing the song name (create)
-		var songLowercase = SONG.song.toLowerCase();
+		var songLowercase = StringTools.replace(PlayState.SONG.song, " ", "-").toLowerCase();
 		switch (songLowercase)
 		{
 			case 'dad-battle':
@@ -797,7 +797,7 @@ class PlayState extends MusicBeatState
 
 		#if cpp
 		// pre lowercasing the song name (startCountdown)
-		var songLowercase = SONG.song.toLowerCase();
+		var songLowercase = StringTools.replace(PlayState.SONG.song, " ", "-").toLowerCase();
 		switch (songLowercase)
 		{
 			case 'dad-battle':
@@ -1029,7 +1029,7 @@ class PlayState extends MusicBeatState
 
 		if (isStoryMode)
 		{
-			switch (SONG.song.toLowerCase())
+			switch (StringTools.replace(curSong, " ", "-").toLowerCase())
 			{
 				case "winter-horrorland":
 					var blackScreen:FlxSprite = new FlxSprite(0, 0).makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.BLACK);
@@ -1104,8 +1104,7 @@ class PlayState extends MusicBeatState
 		senpaiEvil.updateHitbox();
 		senpaiEvil.screenCenter();
 
-		if (SONG.song.toLowerCase() == 'roses')
-			|| SONG.song.toLowerCase() == 'thorns')
+		if (SONG.song.toLowerCase() == 'roses' || SONG.song.toLowerCase() == 'thorns')
 		{
 			remove(black);
 
@@ -1674,7 +1673,7 @@ class PlayState extends MusicBeatState
 		// Per song offset check
 		#if cpp
 		// pre lowercasing the song name (generateSong)
-		var songLowercase = SONG.song.toLowerCase();
+		var songLowercase = StringTools.replace(PlayState.SONG.song, " ", "-").toLowerCase();
 		switch (songLowercase)
 		{
 			case 'dad-battle':
@@ -3475,7 +3474,7 @@ class PlayState extends MusicBeatState
 					trace('LOADING NEXT SONG');
 					trace(poop);
 
-					if (SONG.song.toLowerCase() == 'eggnog')
+					if (StringTools.replace(PlayState.storyPlaylist[0], " ", "-").toLowerCase() == 'eggnog')
 					{
 						var blackShit:FlxSprite = new FlxSprite(-FlxG.width * FlxG.camera.zoom,
 							-FlxG.height * FlxG.camera.zoom).makeGraphic(FlxG.width * 3, FlxG.height * 3, FlxColor.BLACK);
