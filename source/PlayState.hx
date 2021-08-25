@@ -321,7 +321,7 @@ class PlayState extends MusicBeatState
 		PlayStateChangeables.zoom = FlxG.save.data.zoom;
 
 		// pre lowercasing the song name (create)
-		var songLowercase = StringTools.replace(PlayState.SONG.song, " ", "-").toLowerCase();
+		var songLowercase = SONG.song.toLowerCase();
 		switch (songLowercase)
 		{
 			case 'dad-battle':
@@ -797,7 +797,7 @@ class PlayState extends MusicBeatState
 
 		#if cpp
 		// pre lowercasing the song name (startCountdown)
-		var songLowercase = StringTools.replace(PlayState.SONG.song, " ", "-").toLowerCase();
+		var songLowercase = SONG.song.toLowerCase();
 		switch (songLowercase)
 		{
 			case 'dad-battle':
@@ -1029,7 +1029,7 @@ class PlayState extends MusicBeatState
 
 		if (isStoryMode)
 		{
-			switch (StringTools.replace(curSong, " ", "-").toLowerCase())
+			switch (SONG.song.toLowerCase())
 			{
 				case "winter-horrorland":
 					var blackScreen:FlxSprite = new FlxSprite(0, 0).makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.BLACK);
@@ -1104,12 +1104,12 @@ class PlayState extends MusicBeatState
 		senpaiEvil.updateHitbox();
 		senpaiEvil.screenCenter();
 
-		if (StringTools.replace(PlayState.SONG.song, " ", "-").toLowerCase() == 'roses'
-			|| StringTools.replace(PlayState.SONG.song, " ", "-").toLowerCase() == 'thorns')
+		if (SONG.song.toLowerCase() == 'roses')
+			|| SONG.song.toLowerCase() == 'thorns')
 		{
 			remove(black);
 
-			if (StringTools.replace(PlayState.SONG.song, " ", "-").toLowerCase() == 'thorns')
+			if (SONG.song.toLowerCase() == 'thorns')
 			{
 				add(red);
 			}
@@ -1129,7 +1129,7 @@ class PlayState extends MusicBeatState
 				{
 					inCutscene = true;
 
-					if (StringTools.replace(PlayState.SONG.song, " ", "-").toLowerCase() == 'thorns')
+					if (SONG.song.toLowerCase() == 'thorns')
 					{
 						add(senpaiEvil);
 						senpaiEvil.alpha = 0;
@@ -1674,7 +1674,7 @@ class PlayState extends MusicBeatState
 		// Per song offset check
 		#if cpp
 		// pre lowercasing the song name (generateSong)
-		var songLowercase = StringTools.replace(PlayState.SONG.song, " ", "-").toLowerCase();
+		var songLowercase = SONG.song.toLowerCase();
 		switch (songLowercase)
 		{
 			case 'dad-battle':
@@ -3475,7 +3475,7 @@ class PlayState extends MusicBeatState
 					trace('LOADING NEXT SONG');
 					trace(poop);
 
-					if (StringTools.replace(PlayState.storyPlaylist[0], " ", "-").toLowerCase() == 'eggnog')
+					if (SONG.song.toLowerCase() == 'eggnog')
 					{
 						var blackShit:FlxSprite = new FlxSprite(-FlxG.width * FlxG.camera.zoom,
 							-FlxG.height * FlxG.camera.zoom).makeGraphic(FlxG.width * 3, FlxG.height * 3, FlxColor.BLACK);
