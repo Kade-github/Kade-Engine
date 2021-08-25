@@ -3550,8 +3550,6 @@ class PlayState extends MusicBeatState
 	}
 
 
-	var timeShown = 0;
-	var currentTimingShown:FlxText = null;
 
 	private function popUpScore(daNote:Note):Void
 	{
@@ -3657,58 +3655,6 @@ class PlayState extends MusicBeatState
 			rating.velocity.y -= FlxG.random.int(140, 175);
 			rating.velocity.x -= FlxG.random.int(0, 10);
 
-			var msTiming = HelperFunctions.truncateFloat(noteDiff / songMultiplier, 3);
-			if (PlayStateChangeables.botPlay && !loadRep)
-				msTiming = 0;
-
-			if (loadRep)
-				msTiming = HelperFunctions.truncateFloat(findByTime(daNote.strumTime)[3], 3);
-
-			if (currentTimingShown != null)
-				remove(currentTimingShown);
-
-			currentTimingShown = new FlxText(0, 0, 0, "0ms");
-			timeShown = 0;
-			switch (daRating)
-			{
-				case 'shit' | 'bad':
-					currentTimingShown.color = FlxColor.RED;
-				case 'good':
-					currentTimingShown.color = FlxColor.GREEN;
-				case 'sick':
-					currentTimingShown.color = FlxColor.CYAN;
-			}
-			currentTimingShown.borderStyle = OUTLINE;
-			currentTimingShown.borderSize = 1;
-			currentTimingShown.borderColor = FlxColor.BLACK;
-			currentTimingShown.text = msTiming + "ms";
-			currentTimingShown.size = 20;
-
-			if (msTiming >= 0.03 && offsetTesting)
-			{
-				// Remove Outliers
-				hits.shift();
-				hits.shift();
-				hits.shift();
-				hits.pop();
-				hits.pop();
-				hits.pop();
-				hits.push(msTiming);
-
-				var total = 0.0;
-
-				for (i in hits)
-					total += i;
-
-				offsetTest = HelperFunctions.truncateFloat(total / hits.length, 2);
-			}
-
-			if (currentTimingShown.alpha != 1)
-				currentTimingShown.alpha = 1;
-
-			if (!PlayStateChangeables.botPlay || loadRep)
-				add(currentTimingShown);
-
 			var comboSpr:FlxSprite = new FlxSprite().loadGraphic(Paths.image(pixelShitPart1 + 'combo' + pixelShitPart2, pixelShitPart3));
 			comboSpr.screenCenter();
 			comboSpr.x = rating.x;
@@ -3716,14 +3662,7 @@ class PlayState extends MusicBeatState
 			comboSpr.acceleration.y = 600;
 			comboSpr.velocity.y -= 150;
 
-			currentTimingShown.screenCenter();
-			currentTimingShown.x = comboSpr.x + 100;
-			currentTimingShown.y = rating.y + 100;
-			currentTimingShown.acceleration.y = 600;
-			currentTimingShown.velocity.y -= 150;
-
 			comboSpr.velocity.x += FlxG.random.int(1, 10);
-			currentTimingShown.velocity.x += comboSpr.velocity.x;
 			if (!PlayStateChangeables.botPlay || loadRep)
 				add(rating);
 
@@ -3740,11 +3679,9 @@ class PlayState extends MusicBeatState
 				comboSpr.setGraphicSize(Std.int(comboSpr.width * daPixelZoom * 0.7));
 			}
 
-			currentTimingShown.updateHitbox();
 			comboSpr.updateHitbox();
 			rating.updateHitbox();
 
-			currentTimingShown.cameras = [camHUD];
 			comboSpr.cameras = [camHUD];
 			rating.cameras = [camHUD];
 
@@ -3836,11 +3773,6 @@ class PlayState extends MusicBeatState
 			FlxTween.tween(rating, {alpha: 0}, 0.2, {
 				startDelay: Conductor.crochet * 0.001,
 				onUpdate: function(tween:FlxTween)
-				{
-					if (currentTimingShown != null)
-						currentTimingShown.alpha -= 0.02;
-					timeShown++;
-				}
 			});
 
 			FlxTween.tween(comboSpr, {alpha: 0}, 0.2, {
@@ -3848,11 +3780,6 @@ class PlayState extends MusicBeatState
 				{
 					coolText.destroy();
 					comboSpr.destroy();
-					if (currentTimingShown != null && timeShown >= 20)
-					{
-						remove(currentTimingShown);
-						currentTimingShown = null;
-					}
 					rating.destroy();
 				},
 				startDelay: Conductor.crochet * 0.001
