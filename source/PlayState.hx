@@ -3243,17 +3243,6 @@ class PlayState extends MusicBeatState
 					spr.centerOffsets();
 				}
 			});
-			if (PlayStateChangeables.botPlay)
-			{
-				playerStrums.forEach(function(spr:StaticArrow)
-					{
-						if (spr.animation.finished)
-						{
-							spr.playAnim('static');
-							//spr.centerOffsets();
-						}
-					});
-			}
 		}
 
 		if (!inCutscene && songStarted)
@@ -4040,46 +4029,12 @@ class PlayState extends MusicBeatState
 						{
 							goodNoteHit(daNote);
 							boyfriend.holdTimer = 0;
-							if (FlxG.save.data.cpuStrums)
-							{
-								playerStrums.forEach(function(spr:StaticArrow)
-								{
-									pressArrow(spr, spr.ID, daNote);
-									/*
-									if (spr.animation.curAnim.name == 'confirm' && SONG.noteStyle != 'pixel')
-									{
-										spr.centerOffsets();
-										spr.offset.x -= 13;
-										spr.offset.y -= 13;
-									}
-									else
-										spr.centerOffsets();
-								*/
-								});
-							}
 						}
 					}
 					else
 					{
 						goodNoteHit(daNote);
 						boyfriend.holdTimer = 0;
-						if (FlxG.save.data.cpuStrums)
-							{
-								playerStrums.forEach(function(spr:StaticArrow)
-								{
-									pressArrow(spr, spr.ID, daNote);
-									/*
-									if (spr.animation.curAnim.name == 'confirm' && SONG.noteStyle != 'pixel')
-									{
-										spr.centerOffsets();
-										spr.offset.x -= 13;
-										spr.offset.y -= 13;
-									}
-									else
-										spr.centerOffsets();
-								*/
-								});
-							}
 					}
 			}
 		});
@@ -4090,16 +4045,22 @@ class PlayState extends MusicBeatState
 				boyfriend.playAnim('idle');
 		}
 
-		if (!PlayStateChangeables.botPlay)
+		playerStrums.forEach(function(spr:StaticArrow)
 		{
-			playerStrums.forEach(function(spr:StaticArrow)
-			{
+			if (!PlayStateChangeables.botPlay) {
 				if (keys[spr.ID] && spr.animation.curAnim.name != 'confirm' && spr.animation.curAnim.name != 'pressed' && !spr.animation.curAnim.name.startsWith('dirCon'))
 					spr.playAnim('pressed', false);
 				if (!keys[spr.ID])
 					spr.playAnim('static', false);
-			});
-		}
+			}
+			else if (FlxG.save.data.cpuStrums) {
+				if (spr.animation.finished)
+				{
+					spr.playAnim('static');
+					//spr.centerOffsets();
+				}
+			}
+		});
 	}
 
 	public function findByTime(time:Float):Array<Dynamic>
@@ -4445,7 +4406,7 @@ class PlayState extends MusicBeatState
 				saveJudge.push(note.rating);
 			}
 
-			if (!PlayStateChangeables.botPlay)
+			if (!PlayStateChangeables.botPlay || PlayStateChangeables.botPlay && FlxG.save.data.cpuStrums)
 			{
 				playerStrums.forEach(function(spr:StaticArrow)
 				{
