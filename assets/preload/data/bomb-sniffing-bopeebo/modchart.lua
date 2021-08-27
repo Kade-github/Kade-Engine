@@ -4,6 +4,7 @@ wiggleAmp = 0
 susWiggleAmp = 0
 wiggleOffset = 0.05
 wiggleToOffset = 0.05
+arrowAngles = 0
 
 
 function start (song)
@@ -31,15 +32,20 @@ function update (elapsed)
     end
 
     wiggleOffset = lerp(wiggleOffset, wiggleToOffset, 0.0125)
+    arrowAngles = lerp(arrowAngles, 0, 0.0325)
 
     local currentBeat = (songPos / 1000)*(bpm/60)
 	for i=0,3 do
-		--setActorX(_G['defaultStrum'..i..'X'] + 32 * math.sin((currentBeat + i*0.25) * math.pi), i)
-		setActorY(_G['receptor'..i..'Y'] + 8 * math.cos((currentBeat + i*wiggleOffset) * math.pi), i)
+		local receptor = _G['receptor_'..i]
+		receptor.y = receptor.defaultY + 8 * math.cos((currentBeat + i*wiggleOffset) * math.pi)
+        receptor.angle = arrowAngles
+        if i % 2 == 0 then receptor.angle = -arrowAngles end
 	end
     for i=4,7 do
-		--setActorX(_G['defaultStrum'..i..'X'] + 32 * math.sin((currentBeat + i*0.25) * math.pi), i)
-		setActorY(_G['receptor'..i..'Y'] + 8 * -math.cos((currentBeat + i*wiggleOffset) * math.pi), i)
+		local receptor = _G['receptor_'..i]
+		receptor.y = receptor.defaultY + 8 * -math.cos((currentBeat + i*wiggleOffset) * math.pi)
+        receptor.angle = arrowAngles
+        if i % 2 == 0 then receptor.angle = -arrowAngles end
 	end
 end
 
@@ -52,6 +58,9 @@ function beatHit (beat)
         if beat % 2 == 0 then
             wiggleAmp = 0.05
         end
+    end
+    if beat % 16 == 15 then
+        arrowAngles = 360
     end
 end
 
