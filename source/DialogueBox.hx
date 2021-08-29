@@ -247,7 +247,7 @@ class DialogueBox extends FlxSpriteGroup
 					portraitLeft.visible = true;
 					portraitLeft.animation.play('enter');
 				}
-			case 'bf':
+			case 'player':
 				portraitLeft.visible = false;
 				if (!portraitRight.visible)
 				{

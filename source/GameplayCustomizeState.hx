@@ -89,7 +89,7 @@ class GameplayCustomizeState extends MusicBeatState
 		camFollow.setPosition(camPos.x, camPos.y);
 
         add(gf);
-        add(bf);
+        add(player);
         add(dad);
 
         add(sick);
@@ -228,7 +228,7 @@ class GameplayCustomizeState extends MusicBeatState
 
 		if (curBeat % 2 == 0)
 		{
-			bf.dance();
+			player.dance();
 			dad.dance();
 		}
 		else if (dad.curCharacter == 'spooky' || dad.curCharacter == 'gf')

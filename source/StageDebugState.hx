@@ -17,7 +17,7 @@ using StringTools;
 class StageDebugState extends FlxState
 {
 	public var daStage:String;
-	public var daBf:String;
+	public var daPlayer:String;
 	public var daGf:String;
 	public var opponent:String;
 
@@ -41,12 +41,12 @@ class StageDebugState extends FlxState
 	var charMode:Bool = true;
 	var usedObjects:Array<FlxSprite> = [];
 
-	public function new(daStage:String = 'stage', daGf:String = 'gf', daBf:String = 'bf', opponent:String = 'dad')
+	public function new(daStage:String = 'stage', daGf:String = 'gf', daPlayer:String = 'bf', opponent:String = 'dad')
 	{
 		super();
 		this.daStage = daStage;
 		this.daGf = daGf;
-		this.daBf = daBf;
+		this.daPlayer = daPlayer;
 		this.opponent = opponent;
 		curCharString = daGf;
 	}
@@ -266,7 +266,7 @@ class StageDebugState extends FlxState
 			case 0:
 				curCharString = daGf;
 			case 1:
-				curCharString = daBf;
+				curCharString = daPlayer;
 			case 2:
 				curCharString = opponent;
 		}
@@ -290,7 +290,7 @@ class StageDebugState extends FlxState
 				case 0:
 					char = daGf;
 				case 1:
-					char = daBf;
+					char = daPlayer;
 				case 2:
 					char = opponent;
 			}
