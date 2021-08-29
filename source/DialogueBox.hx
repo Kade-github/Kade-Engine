@@ -240,7 +240,7 @@ class DialogueBox extends FlxSpriteGroup
 
 		switch (curCharacter)
 		{
-			case 'dad':
+			case 'opponent':
 				portraitRight.visible = false;
 				if (!portraitLeft.visible)
 				{

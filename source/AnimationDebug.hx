@@ -22,13 +22,13 @@ class AnimationDebug extends FlxState
 {
 	var _file:FileReference;
 	var player:Player;
-	var dad:Character;
+	var opponent:Character;
 	var char:Character;
 	var textAnim:FlxText;
 	var dumbTexts:FlxTypedGroup<FlxText>;
 	var animList:Array<String> = [];
 	var curAnim:Int = 0;
-	var isDad:Bool = true;
+	var isOpponent:Bool = true;
 	var daAnim:String = 'spooky';
 	var camFollow:FlxObject;
 
@@ -47,17 +47,17 @@ class AnimationDebug extends FlxState
 		add(gridBG);
 
 		if (daAnim == 'bf')
-			isDad = false;
+			isOpponent = false;
 
-		if (isDad)
+		if (isOpponent)
 		{
-			dad = new Character(0, 0, daAnim);
-			dad.screenCenter();
-			dad.debugMode = true;
-			add(dad);
+			opponent = new Character(0, 0, daAnim);
+			opponent.screenCenter();
+			opponent.debugMode = true;
+			add(opponent);
 
-			char = dad;
-			dad.flipX = false;
+			char = opponent;
+			opponent.flipX = false;
 		}
 		else
 		{

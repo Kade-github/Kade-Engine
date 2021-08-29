@@ -1265,11 +1265,11 @@ class LuaNote extends LuaClass { // again, stolen from andromeda but improved a 
 
         PlayState.instance.remove(char);
 
-        PlayState.dad = new Character(x,y,newName,char.isPlayer);
+        PlayState.opponent = new Character(x,y,newName,char.isPlayer);
 
-        property.char = PlayState.dad;
+        property.char = PlayState.opponent;
 
-        PlayState.instance.add(PlayState.dad);
+        PlayState.instance.add(PlayState.opponent);
 
         return 0;
       }

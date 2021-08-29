@@ -135,7 +135,7 @@ class PlayState extends MusicBeatState
 
 	public var originalX:Float;
 
-	public static var dad:Character;
+	public static var opponent:Character;
 	public static var gf:Character;
 	public static var player:Player;
 
@@ -201,13 +201,13 @@ class PlayState extends MusicBeatState
 
 	var notesHitArray:Array<Date> = [];
 	var currentFrames:Int = 0;
-	var idleToBeat:Bool = true; // change if player and dad would idle to the beat of the song
-	var idleBeat:Int = 2; // how frequently player and dad would play their idle animation(1 - every beat, 2 - every 2 beats and so on)
-	var forcedToIdle:Bool = false; // change if player and dad are forced to idle to every (idleBeat) beats of the song
+	var idleToBeat:Bool = true; // change if player and opponent would idle to the beat of the song
+	var idleBeat:Int = 2; // how frequently player and opponnet would play their idle animation(1 - every beat, 2 - every 2 beats and so on)
+	var forcedToIdle:Bool = false; // change if player and opponent are forced to idle to every (idleBeat) beats of the song
 	var allowedToHeadbang:Bool = true; // Will decide if gf is allowed to headbang depending on the song
 	var allowedToCheer:Bool = false; // Will decide if gf is allowed to cheer depending on the song
 
-	public var dialogue:Array<String> = ['dad:blah blah blah', 'player:coolswag'];
+	public var dialogue:Array<String> = ['opponent:blah blah blah', 'player:coolswag'];
 
 	public static var trainSound:FlxSound;
 
@@ -557,14 +557,14 @@ class PlayState extends MusicBeatState
 				player = new Player(770, 450, 'bf');
 			}
 
-			dad = new Character(100, 100, SONG.player2);
+			opponent = new Character(100, 100, SONG.player2);
 
-			if (dad.frames == null)
+			if (opponent.frames == null)
 			{
 				#if debug
 				FlxG.log.warn(["Couldn't load opponent: " + SONG.player2 + ". Loading default opponent"]);
 				#end
-				dad = new Character(100, 100, 'dad');
+				opponent = new Character(100, 100, 'dad');
 			}
 
 			Stage = new Stage(SONG.stage);
@@ -584,7 +584,7 @@ class PlayState extends MusicBeatState
 							for (bg in array)
 								add(bg);
 						case 1:
-							add(dad);
+							add(opponent);
 							for (bg in array)
 								add(bg);
 						case 2:
@@ -594,12 +594,12 @@ class PlayState extends MusicBeatState
 					}
 				}
 
-			camPos = new FlxPoint(dad.getGraphicMidpoint().x, dad.getGraphicMidpoint().y);
+			camPos = new FlxPoint(opponent.getGraphicMidpoint().x, opponent.getGraphicMidpoint().y);
 
-			switch (dad.curCharacter)
+			switch (opponent.curCharacter)
 			{
 				case 'gf':
-					dad.setPosition(gf.x, gf.y);
+					opponent.setPosition(gf.x, gf.y);
 					gf.visible = false;
 					if (isStoryMode)
 					{
@@ -608,33 +608,33 @@ class PlayState extends MusicBeatState
 					}
 
 				case "spooky":
-					dad.y += 200;
+					opponent.y += 200;
 				case "monster":
-					dad.y += 100;
+					opponent.y += 100;
 				case 'monster-christmas':
-					dad.y += 130;
+					opponent.y += 130;
 				case 'dad':
 					camPos.x += 400;
 				case 'pico':
 					camPos.x += 600;
-					dad.y += 300;
+					opponent.y += 300;
 				case 'parents-christmas':
-					dad.x -= 500;
+					opponent.x -= 500;
 				case 'senpai':
-					dad.x += 150;
-					dad.y += 360;
-					camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+					opponent.x += 150;
+					opponent.y += 360;
+					camPos.set(opponent.getGraphicMidpoint().x + 300, opponent.getGraphicMidpoint().y);
 				case 'senpai-angry':
-					dad.x += 150;
-					dad.y += 360;
-					camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+					opponent.x += 150;
+					opponent.y += 360;
+					camPos.set(opponent.getGraphicMidpoint().x + 300, opponent.getGraphicMidpoint().y);
 				case 'spirit':
 					if (FlxG.save.data.distractions)
 					{
 						// trailArea.scrollFactor.set();
 						if (!PlayStateChangeables.Optimize)
 						{
-							var evilTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069);
+							var evilTrail = new FlxTrail(opponent, null, 4, 24, 0.3, 0.069);
 							// evilTrail.changeValuesEnabled(false, false, false, false);
 							// evilTrail.changeGraphic()
 							add(evilTrail);
@@ -642,9 +642,9 @@ class PlayState extends MusicBeatState
 						// evilTrail.scrollFactor.set(1.1, 1.1);
 					}
 
-					dad.x -= 150;
-					dad.y += 100;
-					camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+					opponent.x -= 150;
+					opponent.y += 100;
+					camPos.set(opponent.getGraphicMidpoint().x + 300, opponent.getGraphicMidpoint().y);
 			}
 
 			// REPOSITIONING PER STAGE
@@ -664,7 +664,7 @@ class PlayState extends MusicBeatState
 
 					case 'mallEvil':
 						player.x += 320;
-						dad.y -= 80;
+						opponent.y -= 80;
 					case 'school':
 						player.x += 200;
 						player.y += 220;
@@ -692,7 +692,7 @@ class PlayState extends MusicBeatState
 						for (bg in array)
 							add(bg);
 					case 1:
-						add(dad);
+						add(opponent);
 						for (bg in array)
 							add(bg);
 					case 2:
@@ -702,12 +702,12 @@ class PlayState extends MusicBeatState
 				}
 			}
 
-			camPos = new FlxPoint(dad.getGraphicMidpoint().x, dad.getGraphicMidpoint().y);
+			camPos = new FlxPoint(opponent.getGraphicMidpoint().x, opponent.getGraphicMidpoint().y);
 
-			switch (dad.curCharacter)
+			switch (opponent.curCharacter)
 			{
 				case 'gf':
-					dad.setPosition(gf.x, gf.y);
+					opponent.setPosition(gf.x, gf.y);
 					gf.visible = false;
 					if (isStoryMode)
 					{
@@ -719,23 +719,23 @@ class PlayState extends MusicBeatState
 				case 'pico':
 					camPos.x += 600;
 				case 'senpai':
-					camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+					camPos.set(opponent.getGraphicMidpoint().x + 300, opponent.getGraphicMidpoint().y);
 				case 'senpai-angry':
-					camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+					camPos.set(opponent.getGraphicMidpoint().x + 300, opponent.getGraphicMidpoint().y);
 				case 'spirit':
 					if (FlxG.save.data.distractions)
 					{
 						// trailArea.scrollFactor.set();
 						if (!PlayStateChangeables.Optimize)
 						{
-							var evilTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069);
+							var evilTrail = new FlxTrail(opponent, null, 4, 24, 0.3, 0.069);
 							// evilTrail.changeValuesEnabled(false, false, false, false);
 							// evilTrail.changeGraphic()
 							add(evilTrail);
 						}
 						// evilTrail.scrollFactor.set(1.1, 1.1);
 					}
-					camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+					camPos.set(opponent.getGraphicMidpoint().x + 300, opponent.getGraphicMidpoint().y);
 			}
 		}
 
@@ -815,7 +815,7 @@ class PlayState extends MusicBeatState
 				new LuaCamera(camHUD,"camHUD").Register(ModchartState.lua);
 				new LuaCamera(camSustains,"camSustains").Register(ModchartState.lua);
 				new LuaCamera(camSustains,"camNotes").Register(ModchartState.lua);
-				new LuaCharacter(dad,"dad").Register(ModchartState.lua);
+				new LuaCharacter(opponent,"opponent").Register(ModchartState.lua);
 				new LuaCharacter(gf,"gf").Register(ModchartState.lua);
 				new LuaCharacter(player,"player").Register(ModchartState.lua);
 			}
@@ -996,7 +996,7 @@ class PlayState extends MusicBeatState
 		iconP1.y = healthBar.y - (iconP1.height / 2);
 		add(iconP1);
 
-		iconP2 = new HealthIcon(dad.curCharacter, false);
+		iconP2 = new HealthIcon(opponent.curCharacter, false);
 		iconP2.y = healthBar.y - (iconP2.height / 2);
 		add(iconP2);
 
@@ -1206,11 +1206,11 @@ class PlayState extends MusicBeatState
 			{
 				if (idleToBeat && !player.animation.curAnim.name.startsWith("sing"))
 					player.dance(forcedToIdle);
-				if (idleToBeat && !dad.animation.curAnim.name.startsWith("sing"))
-					dad.dance(forcedToIdle);
+				if (idleToBeat && !opponent.animation.curAnim.name.startsWith("sing"))
+					opponent.dance(forcedToIdle);
 			}
-			else if ((dad.curCharacter == 'spooky' || dad.curCharacter == 'gf') && !dad.animation.curAnim.name.startsWith("sing"))
-				dad.dance(forcedToIdle);
+			else if ((opponent.curCharacter == 'spooky' || opponent.curCharacter == 'gf') && !opponent.animation.curAnim.name.startsWith("sing"))
+				opponent.dance(forcedToIdle);
 
 			var introAssets:Map<String, Array<String>> = new Map<String, Array<String>>();
 			introAssets.set('default', ['ready', "set", "go"]);
@@ -1494,8 +1494,8 @@ class PlayState extends MusicBeatState
 			gf.dance();
 		if (idleToBeat && !player.animation.curAnim.name.startsWith("sing"))
 			player.dance(forcedToIdle);
-		if (idleToBeat && !dad.animation.curAnim.name.startsWith("sing"))
-			dad.dance(forcedToIdle);
+		if (idleToBeat && !opponent.animation.curAnim.name.startsWith("sing"))
+			opponent.dance(forcedToIdle);
 
 		// Song check real quick
 		switch (curSong)
@@ -2416,7 +2416,7 @@ class PlayState extends MusicBeatState
 				removedVideo = true;
 			}
 
-			FlxG.switchState(new AnimationDebug(dad.curCharacter));
+			FlxG.switchState(new AnimationDebug(opponent.curCharacter));
 			clean();
 			PlayState.stageTesting = false;
 			FlxG.stage.removeEventListener(KeyboardEvent.KEY_DOWN, handleInput);
@@ -2458,10 +2458,10 @@ class PlayState extends MusicBeatState
 						remove(group);
 					}
 					remove(player);
-					remove(dad);
+					remove(opponent);
 					remove(gf);
 				});
-				FlxG.switchState(new StageDebugState(Stage.curStage, gf.curCharacter, player.curCharacter, dad.curCharacter));
+				FlxG.switchState(new StageDebugState(Stage.curStage, gf.curCharacter, player.curCharacter, opponent.curCharacter));
 				clean();
 				FlxG.stage.removeEventListener(KeyboardEvent.KEY_DOWN, handleInput);
 				FlxG.stage.removeEventListener(KeyboardEvent.KEY_UP, releaseInput);
@@ -2680,7 +2680,7 @@ class PlayState extends MusicBeatState
 				luaModchart.setVar("mustHit", currentSection.mustHitSection);
 			#end
 
-			if (camFollow.x != dad.getMidpoint().x + 150 && !currentSection.mustHitSection)
+			if (camFollow.x != opponent.getMidpoint().x + 150 && !currentSection.mustHitSection)
 			{
 				var offsetX = 0;
 				var offsetY = 0;
@@ -2691,20 +2691,20 @@ class PlayState extends MusicBeatState
 					offsetY = luaModchart.getVar("followYOffset", "float");
 				}
 				#end
-				camFollow.setPosition(dad.getMidpoint().x + 150 + offsetX, dad.getMidpoint().y - 100 + offsetY);
+				camFollow.setPosition(opponent.getMidpoint().x + 150 + offsetX, opponent.getMidpoint().y - 100 + offsetY);
 				#if cpp
 				if (luaModchart != null)
 					luaModchart.executeState('playerTwoTurn', []);
 				#end
 				// camFollow.setPosition(lucky.getMidpoint().x - 120, lucky.getMidpoint().y + 210);
 
-				switch (dad.curCharacter)
+				switch (opponent.curCharacter)
 				{
 					case 'mom' | 'mom-car':
-						camFollow.y = dad.getMidpoint().y;
+						camFollow.y = opponent.getMidpoint().y;
 					case 'senpai' | 'senpai-angry':
-						camFollow.y = dad.getMidpoint().y - 430;
-						camFollow.x = dad.getMidpoint().x - 100;
+						camFollow.y = opponent.getMidpoint().y - 430;
+						camFollow.x = opponent.getMidpoint().x - 100;
 				}
 			}
 
@@ -3002,7 +3002,7 @@ class PlayState extends MusicBeatState
 						if (daNote.spotInLine != daNote.parent.children.length - 1)
 						{
 							var singData:Int = Std.int(Math.abs(daNote.noteData));
-							dad.playAnim('sing' + dataSuffix[singData] + altAnim, true);
+							opponent.playAnim('sing' + dataSuffix[singData] + altAnim, true);
 
 							if (FlxG.save.data.cpuStrums)
 							{
@@ -3027,7 +3027,7 @@ class PlayState extends MusicBeatState
 								luaModchart.executeState('playerTwoSing', [Math.abs(daNote.noteData), Conductor.songPosition]);
 							#end
 
-							dad.holdTimer = 0;
+							opponent.holdTimer = 0;
 
 							if (SONG.needsVoices)
 								vocals.volume = 1;
@@ -3036,7 +3036,7 @@ class PlayState extends MusicBeatState
 					else
 					{
 						var singData:Int = Std.int(Math.abs(daNote.noteData));
-						dad.playAnim('sing' + dataSuffix[singData] + altAnim, true);
+						opponent.playAnim('sing' + dataSuffix[singData] + altAnim, true);
 
 						if (FlxG.save.data.cpuStrums)
 						{
@@ -3061,7 +3061,7 @@ class PlayState extends MusicBeatState
 							luaModchart.executeState('playerTwoSing', [Math.abs(daNote.noteData), Conductor.songPosition]);
 						#end
 
-						dad.holdTimer = 0;
+						opponent.holdTimer = 0;
 
 						if (SONG.needsVoices)
 							vocals.volume = 1;
@@ -3394,7 +3394,7 @@ class PlayState extends MusicBeatState
 						remove(bg);
 				}
 				remove(player);
-				remove(dad);
+				remove(opponent);
 				remove(gf);
 			});
 			FlxG.switchState(new StageDebugState(Stage.curStage));
@@ -4199,11 +4199,11 @@ class PlayState extends MusicBeatState
 
 		remove(gf);
 		remove(player);
-		remove(dad);
+		remove(opponent);
 		add(videoSprite);
 		add(gf);
 		add(player);
-		add(dad);
+		add(opponent);
 
 		trace('poggers');
 
@@ -4665,13 +4665,13 @@ class PlayState extends MusicBeatState
 		{
 			if (curBeat % idleBeat == 0)
 			{
-				if (idleToBeat && !dad.animation.curAnim.name.startsWith('sing'))
-					dad.dance(forcedToIdle, currentSection.CPUAltAnim);
+				if (idleToBeat && !opponent.animation.curAnim.name.startsWith('sing'))
+					opponent.dance(forcedToIdle, currentSection.CPUAltAnim);
 				if (idleToBeat && !player.animation.curAnim.name.startsWith('sing'))
 					player.dance(forcedToIdle);
 			}
-			else if (dad.curCharacter == 'spooky' || dad.curCharacter == 'gf')
-				dad.dance(forcedToIdle, currentSection.CPUAltAnim);
+			else if (opponent.curCharacter == 'spooky' || opponent.curCharacter == 'gf')
+				opponent.dance(forcedToIdle, currentSection.CPUAltAnim);
 		}
 		// FlxG.log.add('change bpm' + SONG.notes[Std.int(curStep / 16)].changeBPM);
 		wiggleShit.update(Conductor.crochet);
@@ -4721,10 +4721,10 @@ class PlayState extends MusicBeatState
 				player.playAnim('hey', true);
 			}
 
-			if (curBeat % 16 == 15 && SONG.song == 'Tutorial' && dad.curCharacter == 'gf' && curBeat > 16 && curBeat < 48)
+			if (curBeat % 16 == 15 && SONG.song == 'Tutorial' && opponent.curCharacter == 'gf' && curBeat > 16 && curBeat < 48)
 			{
 				player.playAnim('hey', true);
-				dad.playAnim('cheer', true);
+				opponent.playAnim('cheer', true);
 			}
 
 			if (!PlayStateChangeables.Optimize)

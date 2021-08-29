@@ -220,7 +220,7 @@ class ModchartState
 				return PlayState.gf;
 			case 'dad':
                 @:privateAccess
-				return PlayState.dad;
+				return PlayState.opponent;
 		}
 		// lua objects or what ever
 		if (luaSprites.get(id) == null)
@@ -239,12 +239,12 @@ class ModchartState
 
 	public static var luaSprites:Map<String,FlxSprite> = [];
 
-	function changeDadCharacter(id:String)
-	{				var olddadx = PlayState.dad.x;
-					var olddady = PlayState.dad.y;
-					PlayState.instance.removeObject(PlayState.dad);
-					PlayState.dad = new Character(olddadx, olddady, id);
-					PlayState.instance.addObject(PlayState.dad);
+	function changeOpponentCharacter(id:String)
+	{				var oldopponentx = PlayState.opponent.x;
+					var oldopponenty = PlayState.opponent.y;
+					PlayState.instance.removeObject(PlayState.opponent);
+					PlayState.opponent = new Character(oldopponentx, oldopponenty, id);
+					PlayState.instance.addObject(PlayState.opponent);
 					PlayState.instance.iconP2.changeIcon(id);
 	}
 
@@ -336,14 +336,14 @@ class ModchartState
             {
                 PlayState.instance.removeObject(PlayState.gf);
                 PlayState.instance.removeObject(PlayState.player);
-                PlayState.instance.removeObject(PlayState.dad);
+                PlayState.instance.removeObject(PlayState.opponent);
             }
             PlayState.instance.addObject(sprite);
             if (drawBehind)
             {
                 PlayState.instance.addObject(PlayState.gf);
                 PlayState.instance.addObject(PlayState.player);
-                PlayState.instance.addObject(PlayState.dad);
+                PlayState.instance.addObject(PlayState.opponent);
             }
         }
 		#end

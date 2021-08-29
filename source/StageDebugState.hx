@@ -19,13 +19,13 @@ class StageDebugState extends FlxState
 	public var daStage:String;
 	public var daPlayer:String;
 	public var daGf:String;
-	public var opponent:String;
+	public var daOpponent:String;
 
 	var _file:FileReference;
 
 	var gf:Character;
 	var player:Player;
-	var dad:Character;
+	var opponent:Character;
 	var Stage:Stage;
 	var camFollow:FlxObject;
 	var posText:FlxText;
@@ -41,13 +41,13 @@ class StageDebugState extends FlxState
 	var charMode:Bool = true;
 	var usedObjects:Array<FlxSprite> = [];
 
-	public function new(daStage:String = 'stage', daGf:String = 'gf', daPlayer:String = 'bf', opponent:String = 'dad')
+	public function new(daStage:String = 'stage', daGf:String = 'gf', daPlayer:String = 'bf', daOpponent:String = 'dad')
 	{
 		super();
 		this.daStage = daStage;
 		this.daGf = daGf;
 		this.daPlayer = daPlayer;
-		this.opponent = opponent;
+		this.daOpponent = daOpponent;
 		curCharString = daGf;
 	}
 
@@ -60,8 +60,8 @@ class StageDebugState extends FlxState
 
 		gf = PlayState.gf;
 		player = PlayState.player;
-		dad = PlayState.dad;
-		curChars = [gf, player, dad];
+		opponent = PlayState.opponent;
+		curChars = [gf, player, opponent];
 		curChar = curChars[curCharIndex];
 
 		for (i in Stage.toAdd)
@@ -78,7 +78,7 @@ class StageDebugState extends FlxState
 					for (bg in array)
 						add(bg);
 				case 1:
-					add(dad);
+					add(opponent);
 					for (bg in array)
 						add(bg);
 				case 2:
@@ -212,7 +212,7 @@ class StageDebugState extends FlxState
 						for (bg in array)
 							remove(bg);
 					case 1:
-						remove(dad);
+						remove(opponent);
 						for (bg in array)
 							remove(bg);
 					case 2:
@@ -268,7 +268,7 @@ class StageDebugState extends FlxState
 			case 1:
 				curCharString = daPlayer;
 			case 2:
-				curCharString = opponent;
+				curCharString = daOpponent;
 		}
 	}
 
@@ -292,7 +292,7 @@ class StageDebugState extends FlxState
 				case 1:
 					char = daPlayer;
 				case 2:
-					char = opponent;
+					char = daOpponent;
 			}
 			result += char + ' X: ' + curChars[curCharIndex].x + " Y: " + curChars[curCharIndex].y + " Rotation: " + curChars[curCharIndex].angle + "\n";
 			++curCharIndex;
