@@ -119,7 +119,7 @@ class ChartingState extends MusicBeatState
 	var vocals:FlxSound;
 
 	var player2:Character = new Character(0,0, "dad");
-	var player1:Boyfriend = new Boyfriend(0,0, "bf");
+	var player1:Player = new Player(0,0, "bf");
 
 	public static var leftIcon:HealthIcon;
 
@@ -1387,7 +1387,7 @@ class ChartingState extends MusicBeatState
 		UI_box.addGroup(tab_group_note);
 
 		/*player2 = new Character(0,0, _song.player2);
-		player1 = new Boyfriend(player2.width * 0.2,0 + player2.height, _song.player1);
+		player1 = new Player(player2.width * 0.2,0 + player2.height, _song.player1);
 
 		player1.y = player1.y - player1.height;
 

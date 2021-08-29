@@ -9,7 +9,7 @@ import flixel.util.FlxTimer;
 
 class GameOverSubstate extends MusicBeatSubstate
 {
-	var bf:Boyfriend;
+	var player:Player;
 	var camFollow:FlxObject;
 
 	var stageSuffix:String = "";
@@ -17,22 +17,22 @@ class GameOverSubstate extends MusicBeatSubstate
 	public function new(x:Float, y:Float)
 	{
 		var daStage = PlayState.Stage.curStage;
-		var daBf:String = '';
-		switch (PlayState.boyfriend.curCharacter)
+		var daPlayer:String = '';
+		switch (PlayState.player.curCharacter)
 		{
 			case 'bf-pixel':
 				stageSuffix = '-pixel';
-				daBf = 'bf-pixel-dead';
+				daPlayer = 'bf-pixel-dead';
 			default:
-				daBf = 'bf';
+				daPlayer = 'bf';
 		}
 
 		super();
 
 		Conductor.songPosition = 0;
 
-		bf = new Boyfriend(x, y, daBf);
-		add(bf);
+		player = new Player(x, y, daPlayer);
+		add(player);
 
 		camFollow = new FlxObject(bf.getGraphicMidpoint().x, bf.getGraphicMidpoint().y, 1, 1);
 		add(camFollow);

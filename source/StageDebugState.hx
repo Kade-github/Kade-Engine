@@ -24,7 +24,7 @@ class StageDebugState extends FlxState
 	var _file:FileReference;
 
 	var gf:Character;
-	var boyfriend:Boyfriend;
+	var player:Player;
 	var dad:Character;
 	var Stage:Stage;
 	var camFollow:FlxObject;
@@ -59,9 +59,9 @@ class StageDebugState extends FlxState
 		Stage = PlayState.Stage;
 
 		gf = PlayState.gf;
-		boyfriend = PlayState.boyfriend;
+		player = PlayState.player;
 		dad = PlayState.dad;
-		curChars = [gf, boyfriend, dad];
+		curChars = [gf, player, dad];
 		curChar = curChars[curCharIndex];
 
 		for (i in Stage.toAdd)
@@ -82,7 +82,7 @@ class StageDebugState extends FlxState
 					for (bg in array)
 						add(bg);
 				case 2:
-					add(boyfriend);
+					add(player);
 					for (bg in array)
 						add(bg);
 			}
@@ -216,7 +216,7 @@ class StageDebugState extends FlxState
 						for (bg in array)
 							remove(bg);
 					case 2:
-						remove(boyfriend);
+						remove(player);
 						for (bg in array)
 							remove(bg);
 				}

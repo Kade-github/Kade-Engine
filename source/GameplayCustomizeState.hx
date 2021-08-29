@@ -31,7 +31,7 @@ class GameplayCustomizeState extends MusicBeatState
     var text:FlxText;
     var blackBorder:FlxSprite;
 
-    var bf:Boyfriend;
+    var player:Player;
     var dad:Character;
     var gf:Character;
 
@@ -79,7 +79,7 @@ class GameplayCustomizeState extends MusicBeatState
 
 		dad = new Character(100, 100, 'dad');
 
-        bf = new Boyfriend(770, 450, 'bf');
+        player = new Player(770, 450, 'bf');
 
         gf = new Character(400, 130, 'gf');
 		gf.scrollFactor.set(0.95, 0.95);

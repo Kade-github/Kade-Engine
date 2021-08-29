@@ -7,7 +7,7 @@ import flixel.util.FlxTimer;
 
 using StringTools;
 
-class Boyfriend extends Character
+class Player extends Character
 {
 	public var stunned:Bool = false;
 

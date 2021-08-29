@@ -21,7 +21,7 @@ using StringTools;
 class AnimationDebug extends FlxState
 {
 	var _file:FileReference;
-	var bf:Boyfriend;
+	var player:Player;
 	var dad:Character;
 	var char:Character;
 	var textAnim:FlxText;
@@ -61,13 +61,13 @@ class AnimationDebug extends FlxState
 		}
 		else
 		{
-			bf = new Boyfriend(0, 0);
-			bf.screenCenter();
-			bf.debugMode = true;
-			add(bf);
+			player = new Player(0, 0);
+			player.screenCenter();
+			player.debugMode = true;
+			add(player);
 
-			char = bf;
-			bf.flipX = false;
+			char = player;
+			player.flipX = false;
 		}
 
 		dumbTexts = new FlxTypedGroup<FlxText>();

@@ -212,9 +212,9 @@ class ModchartState
 		// pre defined names
 		switch(id)
 		{
-			case 'boyfriend':
+			case 'player':
                 @:privateAccess
-				return PlayState.boyfriend;
+				return PlayState.player;
 			case 'girlfriend':
                 @:privateAccess
 				return PlayState.gf;
@@ -248,12 +248,12 @@ class ModchartState
 					PlayState.instance.iconP2.changeIcon(id);
 	}
 
-	function changeBoyfriendCharacter(id:String)
-	{				var oldboyfriendx = PlayState.boyfriend.x;
-					var oldboyfriendy = PlayState.boyfriend.y;
-					PlayState.instance.removeObject(PlayState.boyfriend);
-					PlayState.boyfriend = new Boyfriend(oldboyfriendx, oldboyfriendy, id);
-					PlayState.instance.addObject(PlayState.boyfriend);
+	function changePlayerCharacter(id:String)
+	{				var oldplayerx = PlayState.player.x;
+					var oldplayery = PlayState.player.y;
+					PlayState.instance.removeObject(PlayState.player);
+					PlayState.player = new Player(oldplayerx, oldplayery, id);
+					PlayState.instance.addObject(PlayState.player);
 					PlayState.instance.iconP1.changeIcon(id);
 	}
 
@@ -335,14 +335,14 @@ class ModchartState
             if (drawBehind)
             {
                 PlayState.instance.removeObject(PlayState.gf);
-                PlayState.instance.removeObject(PlayState.boyfriend);
+                PlayState.instance.removeObject(PlayState.player);
                 PlayState.instance.removeObject(PlayState.dad);
             }
             PlayState.instance.addObject(sprite);
             if (drawBehind)
             {
                 PlayState.instance.addObject(PlayState.gf);
-                PlayState.instance.addObject(PlayState.boyfriend);
+                PlayState.instance.addObject(PlayState.player);
                 PlayState.instance.addObject(PlayState.dad);
             }
         }
