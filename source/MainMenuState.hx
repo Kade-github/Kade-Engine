@@ -16,7 +16,7 @@ import flixel.util.FlxTimer;
 import io.newgrounds.NG;
 import lime.app.Application;
 
-#if windows
+#if desktop
 import Discord.DiscordClient;
 #end
 
@@ -49,8 +49,9 @@ class MainMenuState extends MusicBeatState
 
 	override function create()
 	{
+		trace(0 / 2);
 		clean();
-		#if windows
+		#if desktop
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Menus", null);
 		#end
@@ -274,6 +275,8 @@ class MainMenuState extends MusicBeatState
 				spr.animation.play('selected');
 				camFollow.setPosition(spr.getGraphicMidpoint().x, spr.getGraphicMidpoint().y);
 			}
+
+			spr.animation.curAnim.frameRate = 24 * (60 / FlxG.save.data.fpsCap);
 
 			spr.updateHitbox();
 		});

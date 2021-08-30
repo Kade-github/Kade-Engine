@@ -4,6 +4,7 @@ import openfl.system.System;
 import lime.app.Application;
 #if sys
 import sys.io.File;
+import sys.FileSystem;
 #end
 import flixel.addons.ui.FlxUIButton;
 import flixel.addons.ui.StrNameLabel;
@@ -44,7 +45,7 @@ import openfl.events.IOErrorEvent;
 import openfl.media.Sound;
 import openfl.net.FileReference;
 import openfl.utils.ByteArray;
-#if windows
+#if desktop
 import Discord.DiscordClient;
 #end
 
@@ -142,6 +143,10 @@ class ChartingState extends MusicBeatState
 
 	override function create()
 	{
+		#if desktop
+		DiscordClient.changePresence("Chart Editor", null, null, true);
+		#end
+		
 		curSection = lastSection;
 
 		trace(1 > Math.POSITIVE_INFINITY);
@@ -178,6 +183,7 @@ class ChartingState extends MusicBeatState
 				switch (songFormat) {
 					case 'Dad-Battle': songFormat = 'Dadbattle';
 					case 'Philly-Nice': songFormat = 'Philly';
+					case 'M.I.L.F': songFormat = 'Milf';
 				}
 	
 				var poop:String = Highscore.formatSong(songFormat, PlayState.storyDifficulty);
@@ -1480,6 +1486,7 @@ class ChartingState extends MusicBeatState
 			switch (songFormat) {
 				case 'Dad-Battle': songFormat = 'Dadbattle';
 				case 'Philly-Nice': songFormat = 'Philly';
+				case 'M.I.L.F': songFormat = 'Milf';
 			}
 
 			var poop:String = Highscore.formatSong(songFormat, PlayState.storyDifficulty);
@@ -1794,10 +1801,6 @@ class ChartingState extends MusicBeatState
 			FlxG.sound.music.time = FlxG.sound.music.length;
 		
 		updateHeads();
-		
-		#if windows
-		DiscordClient.changePresence("Chart Editor", null, null, true);
-		#end
 
 		for(i in sectionRenderes)
 			{
@@ -1825,7 +1828,12 @@ class ChartingState extends MusicBeatState
 						lime.media.openal.AL.sourcef(FlxG.sound.music._channel.__source.__backend.handle, lime.media.openal.AL.PITCH, speed);
 						try
 						{
-							lime.media.openal.AL.sourcef(vocals._channel.__source.__backend.handle, lime.media.openal.AL.PITCH, speed);
+							// We need to make CERTAIN vocals exist and are non-empty
+							// before we try to play them. Otherwise the game crashes.  
+							if (vocals != null && vocals.length > 0)
+							{
+								lime.media.openal.AL.sourcef(vocals._channel.__source.__backend.handle, lime.media.openal.AL.PITCH, speed);
+							}
 						}
 						catch(e)
 						{
@@ -2769,16 +2777,45 @@ class ChartingState extends MusicBeatState
 
 	function updateHeads():Void
 	{
-		if (check_mustHitSection.checked)
+		var mustHit = check_mustHitSection.checked;
+		#if sys
+		var head = (mustHit ? _song.player1 : _song.player2);
+		var i = sectionRenderes.members[curSection];
+
+		function iconUpdate(failsafe:Bool = false):Void
 		{
-			leftIcon.animation.play(_song.player1);
-			rightIcon.animation.play(_song.player2);
+			var sect = _song.notes[curSection];
+			var cachedY = i.icon.y;
+			remove(i.icon);
+			var sectionicon = new HealthIcon(failsafe ? (mustHit ? 'bf' : 'face') : head).clone();
+			sectionicon.x = -95;
+			sectionicon.y = cachedY;
+			sectionicon.setGraphicSize(0, 45);
+	
+			i.icon = sectionicon;
+			i.lastUpdated = sect.mustHitSection;
+		
+			add(sectionicon);
 		}
-		else
+
+		// fail-safe
+		if (!FileSystem.exists(Paths.image('icons/icon-' + head.split("-")[0]))	&& !FileSystem.exists(Paths.image('icons/icon-' + head))) 
 		{
-			leftIcon.animation.play(_song.player2);
-			rightIcon.animation.play(_song.player1);
+			if (i.icon.animation.curAnim == null)
+				iconUpdate(true);
 		}
+		//
+		else if (i.icon.animation.curAnim.name != head && i.icon.animation.curAnim.name != head.split("-")[0] || head == 'bf-pixel' && i.icon.animation.curAnim.name != 'bf-pixel')
+		{
+			if (i.icon.animation.getByName(head) != null)
+				i.icon.animation.play(head);
+			else
+				iconUpdate();
+		}
+		#else
+		leftIcon.animation.play(mustHit ? _song.player1 : _song.player2);
+		rightIcon.animation.play(mustHit ? _song.player2 : _song.player1);
+		#end
 	}
 
 	function updateNoteUI():Void
@@ -3309,6 +3346,7 @@ class ChartingState extends MusicBeatState
 		switch (format) {
 			case 'Dad-Battle': format = 'Dadbattle';
 			case 'Philly-Nice': format = 'Philly';
+			case 'M.I.L.F': format = 'Milf';
 		}
 		PlayState.SONG = Song.loadFromJson(format + difficultyArray[PlayState.storyDifficulty], format);
 		LoadingState.loadAndSwitchState(new ChartingState());
