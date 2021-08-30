@@ -49,6 +49,7 @@ class MainMenuState extends MusicBeatState
 
 	override function create()
 	{
+		trace(0 / 2);
 		clean();
 		#if desktop
 		// Updating Discord Rich Presence
@@ -274,6 +275,8 @@ class MainMenuState extends MusicBeatState
 				spr.animation.play('selected');
 				camFollow.setPosition(spr.getGraphicMidpoint().x, spr.getGraphicMidpoint().y);
 			}
+
+			spr.animation.curAnim.frameRate = 24 * (60 / FlxG.save.data.fpsCap);
 
 			spr.updateHitbox();
 		});

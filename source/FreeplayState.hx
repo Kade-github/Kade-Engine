@@ -86,6 +86,7 @@ class FreeplayState extends MusicBeatState
 			switch (format) {
 				case 'Dad-Battle': format = 'Dadbattle';
 				case 'Philly-Nice': format = 'Philly';
+				case 'M.I.L.F': format = 'Milf';
 			}
 
 			var diffs = [];
@@ -237,7 +238,7 @@ class FreeplayState extends MusicBeatState
 		diffCalcText.font = scoreText.font;
 		add(diffCalcText);
 
-		previewtext = new FlxText(scoreText.x, scoreText.y + 94, 0, "Rate: " + rate + "x", 24);
+		previewtext = new FlxText(scoreText.x, scoreText.y + 94, 0, "Rate: " + FlxMath.roundDecimal(rate, 2) + "x", 24);
 		previewtext.font = scoreText.font;
 		add(previewtext);
 
@@ -388,7 +389,7 @@ class FreeplayState extends MusicBeatState
 				diffCalcText.text = 'RATING: ${DiffCalc.CalculateDiff(songData.get(songs[curSelected].songName)[curDifficulty])}';
 			}
 
-			previewtext.text = "Rate: " + rate + "x";
+			previewtext.text = "Rate: " + FlxMath.roundDecimal(rate, 2) + "x";
 		}
 		else
 		{
@@ -419,6 +420,7 @@ class FreeplayState extends MusicBeatState
 			switch (songFormat) {
 				case 'Dad-Battle': songFormat = 'Dadbattle';
 				case 'Philly-Nice': songFormat = 'Philly';
+				case 'M.I.L.F': songFormat = 'Milf';
 			}
 			var hmm;
 			try
@@ -478,6 +480,7 @@ class FreeplayState extends MusicBeatState
 		switch (songHighscore) {
 			case 'Dad-Battle': songHighscore = 'Dadbattle';
 			case 'Philly-Nice': songHighscore = 'Philly';
+			case 'M.I.L.F': songHighscore = 'Milf';
 		}
 		
 		#if !switch
@@ -527,6 +530,7 @@ class FreeplayState extends MusicBeatState
 		switch (songHighscore) {
 			case 'Dad-Battle': songHighscore = 'Dadbattle';
 			case 'Philly-Nice': songHighscore = 'Philly';
+			case 'M.I.L.F': songHighscore = 'Milf';
 		}
 
 		#if !switch
