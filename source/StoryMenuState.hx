@@ -31,7 +31,7 @@ class StoryMenuState extends MusicBeatState
 			['Bopeebo', 'Fresh', 'Dad Battle'],
 			['Spookeez', 'South', "Monster"],
 			['Pico', 'Philly Nice', "Blammed"],
-			['Satin Panties', "High", "Milf"],
+			['Satin Panties', "High", "M.I.L.F"],
 			['Cocoa', 'Eggnog', 'Winter Horrorland'],
 			['Senpai', 'Roses', 'Thorns']
 		];
@@ -361,6 +361,7 @@ class StoryMenuState extends MusicBeatState
 			switch (songFormat) {
 				case 'Dad-Battle': songFormat = 'Dadbattle';
 				case 'Philly-Nice': songFormat = 'Philly';
+				case 'M.I.L.F': songFormat = 'Milf';
 			}
 
 			var poop:String = Highscore.formatSong(songFormat, curDifficulty);
@@ -471,7 +472,7 @@ class StoryMenuState extends MusicBeatState
 
 	public static function unlockNextWeek(week:Int):Void
 	{
-		if(week <= weekData().length - 1 && FlxG.save.data.weekUnlocked == week)
+		if(week <= weekData().length - 1 /*&& FlxG.save.data.weekUnlocked == week*/) // fuck you, unlocks all weeks
 		{
 			weekUnlocked.push(true);
 			trace('Week ' + week + ' beat (Week ' + (week + 1) + ' unlocked)');

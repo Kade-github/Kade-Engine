@@ -330,6 +330,8 @@ class PlayState extends MusicBeatState
 				songLowercase = 'dadbattle';
 			case 'philly-nice':
 				songLowercase = 'philly';
+			case 'm.i.l.f':
+				songLowercase = 'milf';
 		}
 
 		removedVideo = false;
@@ -801,6 +803,8 @@ class PlayState extends MusicBeatState
 				songLowercase = 'dadbattle';
 			case 'philly-nice':
 				songLowercase = 'philly';
+			case 'm.i.l.f':
+				songLowercase = 'milf';
 		}
 		if (executeModchart)
 		{
@@ -1210,7 +1214,7 @@ class PlayState extends MusicBeatState
 					opponent.dance(forcedToIdle);
 			}
 			else if ((opponent.curCharacter == 'spooky' || opponent.curCharacter == 'gf') && !opponent.animation.curAnim.name.startsWith("sing"))
-				opponent.dance(forcedToIdle);
+				opponent.dance();
 
 			var introAssets:Map<String, Array<String>> = new Map<String, Array<String>>();
 			introAssets.set('default', ['ready', "set", "go"]);
@@ -1414,7 +1418,7 @@ class PlayState extends MusicBeatState
 
 		var dataNotes = [];
 		for(i in closestNotes)
-			if (i.noteData == data)
+			if (i.noteData == data && !i.isSustainNote)
 				dataNotes.push(i);
 
 		trace("notes able to hit for " + key.toString() + " " + dataNotes.length);
@@ -1424,15 +1428,9 @@ class PlayState extends MusicBeatState
 			var coolNote = null;
 
 			for (i in dataNotes)
-				if (!i.isSustainNote)
-				{
-					coolNote = i;
-					break;
-				}
-
-			if (coolNote == null) // Note is null, which means it's probably a sustain note. Update will handle this (HOPEFULLY???)
 			{
-				return;
+				coolNote = i;
+				break;
 			}
 
 			if (dataNotes.length > 1) // stacked notes or really close ones
@@ -1444,7 +1442,7 @@ class PlayState extends MusicBeatState
 
 					var note = dataNotes[i];
 
-					if (!note.isSustainNote && (note.strumTime - coolNote.strumTime ) < 2)
+					if (!note.isSustainNote && ((note.strumTime - coolNote.strumTime ) < 2) && note.noteData == data)
 					{
 						trace('found a stacked/really close note ' + (note.strumTime  - coolNote.strumTime ));
 						// just fuckin remove it since it's a stacked note and shouldn't be there
@@ -1455,6 +1453,7 @@ class PlayState extends MusicBeatState
 				}
 			}
 
+			player.holdTimer = 0;
 			goodNoteHit(coolNote);
 			var noteDiff:Float = -(coolNote.strumTime - Conductor.songPosition);
 			ana.hit = true;
@@ -1692,6 +1691,8 @@ class PlayState extends MusicBeatState
 				songLowercase = 'dadbattle';
 			case 'philly-nice':
 				songLowercase = 'philly';
+			case 'm.i.l.f':
+				songLowercase = 'milf';
 		}
 
 		var songPath = 'assets/data/' + songLowercase + '/';
@@ -1938,10 +1939,12 @@ class PlayState extends MusicBeatState
 	{
 		if (paused)
 		{
-			if (FlxG.sound.music != null)
+			if (FlxG.sound.music.playing)
 			{
 				FlxG.sound.music.pause();
-				vocals.pause();
+				if (vocals != null)
+					if (vocals.playing)
+						vocals.pause();
 			}
 
 			#if desktop
@@ -2119,9 +2122,12 @@ class PlayState extends MusicBeatState
 					// Song ends abruptly on slow rate even with second condition being deleted, 
 					// and if it's deleted on songs like cocoa then it would end without finishing instrumental fully,
 					// so no reason to delete it at all
-					if (unspawnNotes.length == 0 && FlxG.sound.music.length - Conductor.songPosition <= 100)
+					if (unspawnNotes.length == 0 && notes.length == 0)
 					{
-						endSong();
+						endingSong = true;
+						new FlxTimer().start(2, function(timer) {
+							endSong();
+						});
 					}
 				}
 			}
@@ -2536,7 +2542,7 @@ class PlayState extends MusicBeatState
 		else
 		{
 			// Conductor.songPosition = FlxG.sound.music.time;
-			Conductor.songPosition += FlxG.elapsed * 1000;
+			Conductor.songPosition += FlxG.elapsed * (1000 * songMultiplier);
 			Conductor.rawPosition = FlxG.sound.music.time;
 			/*@:privateAccess
 				{
@@ -2900,14 +2906,14 @@ class PlayState extends MusicBeatState
 						if (daNote.mustPress)
 						{
 							daNote.y = (playerStrums.members[Math.floor(Math.abs(daNote.noteData))].y
-								+ 0.45 * ((Conductor.rawPosition - daNote.strumTime) / songMultiplier) * 
+								+ 0.45 * ((Conductor.songPosition - daNote.strumTime) / songMultiplier) * 
 								(FlxMath.roundDecimal(PlayStateChangeables.scrollSpeed == 1 ? SONG.speed : PlayStateChangeables.scrollSpeed,
 									2) )) 
 								- daNote.noteYOff;
 						}
 						else
 							daNote.y = (strumLineNotes.members[Math.floor(Math.abs(daNote.noteData))].y
-								+ 0.45 * ((Conductor.rawPosition - daNote.strumTime) / songMultiplier) * (FlxMath.roundDecimal(PlayStateChangeables.scrollSpeed == 1 ? SONG.speed : PlayStateChangeables.scrollSpeed,
+								+ 0.45 * ((Conductor.songPosition - daNote.strumTime) / songMultiplier) * (FlxMath.roundDecimal(PlayStateChangeables.scrollSpeed == 1 ? SONG.speed : PlayStateChangeables.scrollSpeed,
 									2))) - daNote.noteYOff;
 						if (daNote.isSustainNote)
 						{
@@ -2946,11 +2952,11 @@ class PlayState extends MusicBeatState
 					{
 						if (daNote.mustPress)
 							daNote.y = (playerStrums.members[Math.floor(Math.abs(daNote.noteData))].y
-								- 0.45 * ((Conductor.rawPosition - daNote.strumTime) / songMultiplier) * (FlxMath.roundDecimal(PlayStateChangeables.scrollSpeed == 1 ? SONG.speed : PlayStateChangeables.scrollSpeed,
+								- 0.45 * ((Conductor.songPosition - daNote.strumTime) / songMultiplier) * (FlxMath.roundDecimal(PlayStateChangeables.scrollSpeed == 1 ? SONG.speed : PlayStateChangeables.scrollSpeed,
 									2))) + daNote.noteYOff;
 						else
 							daNote.y = (strumLineNotes.members[Math.floor(Math.abs(daNote.noteData))].y
-								- 0.45 * ((Conductor.rawPosition - daNote.strumTime) / songMultiplier) * (FlxMath.roundDecimal(PlayStateChangeables.scrollSpeed == 1 ? SONG.speed : PlayStateChangeables.scrollSpeed,
+								- 0.45 * ((Conductor.songPosition - daNote.strumTime) / songMultiplier) * (FlxMath.roundDecimal(PlayStateChangeables.scrollSpeed == 1 ? SONG.speed : PlayStateChangeables.scrollSpeed,
 									2))) + daNote.noteYOff;
 						if (daNote.isSustainNote)
 						{
@@ -3351,8 +3357,8 @@ class PlayState extends MusicBeatState
 		canPause = false;
 		FlxG.sound.music.volume = 0;
 		vocals.volume = 0;
-		FlxG.sound.music.pause();
-		vocals.pause();
+		FlxG.sound.music.stop();
+		vocals.stop();
 		if (SONG.validScore)
 		{
 			// adjusting the highscore song name to be compatible
@@ -3364,6 +3370,8 @@ class PlayState extends MusicBeatState
 					songHighscore = 'Dadbattle';
 				case 'Philly-Nice':
 					songHighscore = 'Philly';
+				case 'M.I.L.F':
+					songHighscore = 'Milf';
 			}
 
 			#if !switch
@@ -3463,6 +3471,8 @@ class PlayState extends MusicBeatState
 							songFormat = 'Dadbattle';
 						case 'Philly-Nice':
 							songFormat = 'Philly';
+						case 'M.I.L.F':
+							songFormat = 'Milf';
 					}
 
 					var poop:String = Highscore.formatSong(songFormat, storyDifficulty);
@@ -4007,7 +4017,7 @@ class PlayState extends MusicBeatState
 				
 				if (player.holdTimer > Conductor.stepCrochet * 4 * 0.001 && (!holdArray.contains(true) || PlayStateChangeables.botPlay))
 				{
-					if (player.animation.curAnim.name.startsWith('sing') && !player.animation.curAnim.name.endsWith('miss') && (player.animation.curAnim.curFrame >= 10 || player.animation.curAnim.finished))
+					if (player.animation.curAnim.name.startsWith('sing') && !player.animation.curAnim.name.endsWith('miss'))
 						player.dance();
 				}
 				else if (!FlxG.save.data.ghost)
@@ -4676,10 +4686,21 @@ class PlayState extends MusicBeatState
 		// FlxG.log.add('change bpm' + SONG.notes[Std.int(curStep / 16)].changeBPM);
 		wiggleShit.update(Conductor.crochet);
 
+		var songLowercase = StringTools.replace(PlayState.SONG.song, " ", "-").toLowerCase();
+		switch (songLowercase)
+		{
+			case 'dad-battle':
+				songLowercase = 'dadbattle';
+			case 'philly-nice':
+				songLowercase = 'philly';
+			case 'm.i.l.f':
+				songLowercase = 'milf';
+		}
+
 		if (FlxG.save.data.camzoom && Conductor.bpm < 340)
 		{
 			// HARDCODING FOR MILF ZOOMS!
-			if (curSong.toLowerCase() == 'milf' && curBeat >= 168 && curBeat < 200 && camZooming && FlxG.camera.zoom < 1.35)
+			if (songLowercase == 'milf' && curBeat >= 168 && curBeat < 200 && camZooming && FlxG.camera.zoom < 1.35)
 			{
 				FlxG.camera.zoom += 0.015 / songMultiplier;
 				camHUD.zoom += 0.03 / songMultiplier;
