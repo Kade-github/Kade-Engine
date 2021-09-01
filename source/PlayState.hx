@@ -87,6 +87,8 @@ using StringTools;
 class PlayState extends MusicBeatState
 {
 	public static var instance:PlayState = null;
+	public var colorOne:Int;
+	public var colorTwo:Int;
 
 	public static var SONG:SwagSong;
 	public static var isStoryMode:Bool = false;
@@ -858,27 +860,51 @@ class PlayState extends MusicBeatState
 		healthBar.scrollFactor.set();
 		if(FlxG.save.data.colour)
         {
-         switch (SONG.player2)
+         switch (SONG.player1)
            {
-             case 'gf':
-             healthBar.createFilledBar(0xFFFF0000, 0xFF0097C4);
-             case 'dad' | 'mom-car' | 'parents-christmas':
-             healthBar.createFilledBar(0xFF5A07F5, 0xFF0097C4);
-             case 'spooky':
-              healthBar.createFilledBar(0xFFF57E07, 0xFF0097C4);
-             case 'monster-christmas' | 'monster':
-              healthBar.createFilledBar(0xFFF5DD07, 0xFF0097C4);
-             case 'pico':
-              healthBar.createFilledBar(0xFF52B514, 0xFF0097C4);
-             case 'senpai' | 'senpai-angry':
-              healthBar.createFilledBar(0xFFF76D6D, 0xFF0097C4);
-             case 'spirit':
-              healthBar.createFilledBar(0xFFAD0505, 0xFF0097C4);
-            }
-        }
-        else
-         healthBar.createFilledBar(0xFFFF0000, 0xFF66FF33);
-        // healthBar
+			case 'bf' | 'bf-pixel' | 'bf-car' | 'bf-christmas':
+			colorOne = 0xFF31b0d1;
+            case 'gf':
+			colorOne = 0xFFa5004d;
+            case 'dad' | 'parents-christmas':
+			colorOne = 0xFFaf66ce;
+			case 'mom' | 'mom-car':
+			colorOne = 0xFFd8558e;
+            case 'spooky':
+			colorOne = 0xFFd57e00;
+            case 'monster-christmas' | 'monster':
+			colorOne = 0xFFf3ff6e;
+            case 'pico':
+			colorOne = 0xFFb7d855;
+            case 'senpai' | 'senpai-angry':
+			colorOne = 0xFFffaa6f;
+            case 'spirit':
+			colorOne = 0xFFff3c6e;
+            };
+		
+		switch (SONG.player2)
+           {
+			case 'bf' | 'bf-pixel' | 'bf-car' | 'bf-christmas':
+			colorTwo = 0xFF31b0d1;
+            case 'gf':
+			colorTwo = 0xFFa5004d;
+            case 'dad' | 'parents-christmas':
+			colorOne = 0xFFaf66ce;
+			case 'mom' | 'mom-car':
+			colorOne = 0xFFd8558e;
+            case 'spooky':
+			colorTwo = 0xFFd57e00;
+            case 'monster-christmas' | 'monster':
+			colorTwo = 0xFFf3ff6e;
+            case 'pico':
+			colorTwo = 0xFFb7d855;
+            case 'senpai' | 'senpai-angry':
+			colorTwo = 0xFFffaa6f;
+            case 'spirit':
+			colorTwo = 0xFFff3c6e;
+            };
+		// healthBar
+		healthBar.createFilledBar(colorTwo, colorOne);
 		add(healthBar);
 
 		// Add Kade Engine watermark
