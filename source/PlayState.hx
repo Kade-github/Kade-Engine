@@ -181,7 +181,7 @@ class PlayState extends MusicBeatState
 	private var totalPlayed:Int = 0;
 	private var ss:Bool = false;
 
-	private var healthBarBG:FlxSprite;
+	private var BG:FlxSprite;
 	private var healthBar:FlxBar;
 	private var songPositionBar:Float = 0;
 
@@ -889,9 +889,9 @@ class PlayState extends MusicBeatState
             case 'gf':
 			colorTwo = 0xFFa5004d;
             case 'dad' | 'parents-christmas':
-			colorOne = 0xFFaf66ce;
+			colorTwo = 0xFFaf66ce;
 			case 'mom' | 'mom-car':
-			colorOne = 0xFFd8558e;
+			colorTwo = 0xFFd8558e;
             case 'spooky':
 			colorTwo = 0xFFd57e00;
             case 'monster-christmas' | 'monster':
