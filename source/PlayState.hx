@@ -2914,25 +2914,12 @@ class PlayState extends MusicBeatState
 							daNote.y -= daNote.height - stepHeight;
 
 							// If not in botplay, only clip sustain notes when properly hit, botplay gets to clip it everytime
-							if (!PlayStateChangeables.botPlay)
+							if ((PlayStateChangeables.botPlay || !daNote.mustPress || daNote.wasGoodHit || holdArray[Math.floor(Math.abs(daNote.noteData))])
+								&& daNote.y - daNote.offset.y * daNote.scale.y + daNote.height >= (strumLine.y + Note.swagWidth / 2))
 							{
-								if ((!daNote.mustPress || daNote.wasGoodHit || holdArray[Math.floor(Math.abs(daNote.noteData))])
-									&& daNote.y - daNote.offset.y * daNote.scale.y + daNote.height >= (strumLine.y + Note.swagWidth / 2))
-								{
-									// Clip to strumline
-									var swagRect = new FlxRect(0, 0, daNote.frameWidth * 2, daNote.frameHeight * 2);
-									swagRect.height = (strumLineNotes.members[Math.floor(Math.abs(daNote.noteData))].y
-										+ Note.swagWidth / 2
-										- daNote.y) / daNote.scale.y;
-									swagRect.y = daNote.frameHeight - swagRect.height;
-
-									daNote.clipRect = swagRect;
-								}
-							}
-							else
-							{
+								// Clip to strumline
 								var swagRect = new FlxRect(0, 0, daNote.frameWidth * 2, daNote.frameHeight * 2);
-								swagRect.height = (strumLineNotes.members[Math.floor(Math.abs(daNote.noteData))].y
+								swagRect.height = (!daNote.mustPress ? strumLineNotes.members[Math.floor(Math.abs(daNote.noteData))].y : playerStrums.members[Math.floor(Math.abs(daNote.noteData))].y
 									+ Note.swagWidth / 2
 									- daNote.y) / daNote.scale.y;
 								swagRect.y = daNote.frameHeight - swagRect.height;
@@ -2953,25 +2940,12 @@ class PlayState extends MusicBeatState
 									2))) + daNote.noteYOff;
 						if (daNote.isSustainNote)
 						{
-							if (!PlayStateChangeables.botPlay)
+							if ((PlayStateChangeables.botPlay || !daNote.mustPress || daNote.wasGoodHit || holdArray[Math.floor(Math.abs(daNote.noteData))])
+								&& daNote.y + daNote.offset.y * daNote.scale.y <= (strumLine.y + Note.swagWidth / 2))
 							{
-								if ((!daNote.mustPress || daNote.wasGoodHit || holdArray[Math.floor(Math.abs(daNote.noteData))])
-									&& daNote.y + daNote.offset.y * daNote.scale.y <= (strumLine.y + Note.swagWidth / 2))
-								{
-									// Clip to strumline
-									var swagRect = new FlxRect(0, 0, daNote.width / daNote.scale.x, daNote.height / daNote.scale.y);
-									swagRect.y = (strumLineNotes.members[Math.floor(Math.abs(daNote.noteData))].y
-										+ Note.swagWidth / 2
-										- daNote.y) / daNote.scale.y;
-									swagRect.height -= swagRect.y;
-
-									daNote.clipRect = swagRect;
-								}
-							}
-							else
-							{
+								// Clip to strumline
 								var swagRect = new FlxRect(0, 0, daNote.width / daNote.scale.x, daNote.height / daNote.scale.y);
-								swagRect.y = (strumLineNotes.members[Math.floor(Math.abs(daNote.noteData))].y
+								swagRect.y = (!daNote.mustPress ? strumLineNotes.members[Math.floor(Math.abs(daNote.noteData))].y : playerStrums.members[Math.floor(Math.abs(daNote.noteData))].y
 									+ Note.swagWidth / 2
 									- daNote.y) / daNote.scale.y;
 								swagRect.height -= swagRect.y;
