@@ -85,6 +85,7 @@ class Song
 		switch (folderLowercase) {
 			case 'dad-battle': folderLowercase = 'dadbattle';
 			case 'philly-nice': folderLowercase = 'philly';
+			case 'm.i.l.f': folderLowercase = 'milf';
 		}
 		
 		trace('loading ' + folderLowercase + '/' + jsonInput.toLowerCase());
@@ -227,6 +228,6 @@ class Song
 				section.CPUAltAnim = section.altAnim;
 		}
 
-		return swagShit;
+		return Song.conversionChecks(swagShit);
 	}
 }
