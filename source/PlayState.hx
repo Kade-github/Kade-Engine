@@ -874,13 +874,73 @@ class PlayState extends MusicBeatState
 		healthBar = new FlxBar(healthBarBG.x + 4, healthBarBG.y + 4, RIGHT_TO_LEFT, Std.int(healthBarBG.width - 8), Std.int(healthBarBG.height - 8), this,
 			'health', 0, 2);
 		healthBar.scrollFactor.set();
-		if(FlxG.save.data.colour)
-			healthBar.createFilledBar(dad.barColor, boyfriend.barColor);
+if (FlxG.save.data.colour)
+        {
+			switch (dad.curCharacter)
+			{
+				case 'bf' | 'bf-car' | 'bf-christmas' | 'bf-pixel':
+					p2color = 0xFF31B0D1;
+				case 'gf':
+					p2color = 0xFFA5004D;
+				case 'dad':
+					p2color = 0xFFAF66CE;
+				case 'spooky':
+					if (FlxG.random.bool(50))
+				    p2color = 0xFFB4B4B4;
+					else
+					p2color = 0xFFD57E00;	
+				case 'monster' | 'monster-christmas':
+					p2color = 0xFFF3FF6E;
+				case 'pico':
+					p2color = 0xFFB7D855;
+				case 'mom' | 'mom-car':
+					p2color = 0xFFD8558E;
+				case 'parents-christmas':
+					if (FlxG.random.bool(50))
+					p2color = 0xFFAF66CE;
+					else
+					p2color = 0xFFD8558E;
+				case 'senpai' | 'senpai-angry':
+					p2color = 0xFFFFAA6F;
+				case 'spirit':
+					p2color = 0xFFFF3C6E;
+			}
+			switch (boyfriend.curCharacter)
+			{
+				case 'bf' | 'bf-car' | 'bf-christmas' | 'bf-pixel':
+					p1color = 0xFF31B0D1;
+				case 'gf':
+					p1color = 0xFFA5004D;
+				case 'dad':
+					p1color = 0xFFAF66CE;
+				case 'spooky':
+					if (FlxG.random.bool(50))
+				    p1color = 0xFFB4B4B4;
+					else
+					p1color = 0xFFD57E00;	
+				case 'monster' | 'monster-christmas':
+					p1color = 0xFFF3FF6E;
+				case 'pico':
+					p1color = 0xFFB7D855;
+				case 'mom' | 'mom-car':
+					p1color = 0xFFD8558E;
+				case 'parents-christmas':
+					if (FlxG.random.bool(50))
+					p1color = 0xFFAF66CE;
+					else
+					p1color = 0xFFD8558E;
+				case 'senpai' | 'senpai-angry':
+					p1color = 0xFFFFAA6F;
+				case 'spirit':
+					p1color = 0xFFFF3C6E;
+			}
+	
+		 healthBar.createFilledBar(p2color,  p1color);
+        }
         else
-         	healthBar.createFilledBar(0xFFFF0000, 0xFF66FF33);
+         healthBar.createFilledBar(0xFFFF0000, 0xFF66FF33);
         // healthBar
 		add(healthBar);
-
 		// Add Kade Engine watermark
 		kadeEngineWatermark = new FlxText(4, healthBarBG.y
 			+ 50, 0,
