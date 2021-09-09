@@ -4002,11 +4002,17 @@ class PlayState extends MusicBeatState
 				var diff = -(daNote.strumTime - Conductor.songPosition);
 				daNote.rating = Ratings.judgeNote(diff);
 				diff /= songMultiplier;
-				if (daNote.mustPress && daNote.rating == "sick" || (diff > 0 && daNote.mustPress))
+
+				// Determine when botPlay should hit the note here.
+				var noteReady = daNote.mustPress && daNote.rating == "sick" && diff > -8;
+				// Force good note hit regardless if it's too late to hit it or not as a fail safe
+				var noteAhead = (diff > 0 && daNote.mustPress);
+				if (noteReady || noteAhead)
 				{
-					// Force good note hit regardless if it's too late to hit it or not as a fail safe
+
 					if (loadRep)
 					{
+						// Check when and whether the note should be hit in replay.
 						// trace('ReplayNote ' + tmpRepNote.strumtime + ' | ' + tmpRepNote.direction);
 						var n = findByTime(daNote.strumTime);
 						trace(n);
