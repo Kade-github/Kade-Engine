@@ -92,7 +92,6 @@ class Ratings
 		return ranking;
 	}
 
-	// this looks stupid but it works
 	public static var timingWindows = [166.0, 135.0, 90.0, 45.0];
 
 	public static function judgeNote(noteDiff:Float)
