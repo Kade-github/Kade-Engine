@@ -93,7 +93,7 @@ class Ratings
 	}
 
 	// this looks stupid but it works
-	public static var timingWindows = [HelperFunctions.truncateFloat(166.0 * Conductor.timeScale, 0), HelperFunctions.truncateFloat(135.0 * Conductor.timeScale, 0), HelperFunctions.truncateFloat(90.0 * Conductor.timeScale, 0), HelperFunctions.truncateFloat(45.0 * Conductor.timeScale, 0)];
+	public static var timingWindows = [166.0, 135.0, 90.0, 45.0];
 
 	public static function judgeNote(noteDiff:Float)
 	{
