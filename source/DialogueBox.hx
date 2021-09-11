@@ -10,7 +10,7 @@ import flixel.input.FlxKeyManager;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
-
+//if u tryna add dialogue move the folder containing the stuff to assets/shared/images to prevent lag
 using StringTools;
 
 class DialogueBox extends FlxSpriteGroup
