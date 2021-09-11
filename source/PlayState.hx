@@ -1069,6 +1069,8 @@ class PlayState extends MusicBeatState
 			songPosBar.cameras = [camHUD];
 		}
 		kadeEngineWatermark.cameras = [camHUD];
+		if (PlayStateChangeables.botPlay && !loadRep)
+			botPlayState.cameras = [camHUD];
 		if (loadRep)
 			replayTxt.cameras = [camHUD];
 
