@@ -861,23 +861,23 @@ class PlayState extends MusicBeatState
          switch (SONG.player2)
            {
              case 'gf':
-             healthBar.createFilledBar(0xFFFF0000, 0xFF0097C4);
+             healthBar.createFilledBar(0xFFFF0000, 0xFF0091FF);
              case 'dad' | 'mom-car' | 'parents-christmas':
-             healthBar.createFilledBar(0xFF5A07F5, 0xFF0097C4);
+             healthBar.createFilledBar(0xFFFF0000, 0xFF0091FF);
              case 'spooky':
-              healthBar.createFilledBar(0xFFF57E07, 0xFF0097C4);
+              healthBar.createFilledBar(0xFFFF0000, 0xFF0091FF);
              case 'monster-christmas' | 'monster':
-              healthBar.createFilledBar(0xFFF5DD07, 0xFF0097C4);
+              healthBar.createFilledBar(0xFFFF0000, 0xFF0091FF);
              case 'pico':
-              healthBar.createFilledBar(0xFF52B514, 0xFF0097C4);
+              healthBar.createFilledBar(0xFFFF0000, 0xFF0091FF);
              case 'senpai' | 'senpai-angry':
-              healthBar.createFilledBar(0xFFF76D6D, 0xFF0097C4);
+              healthBar.createFilledBar(0xFFFF0000, 0xFF0091FF);
              case 'spirit':
-              healthBar.createFilledBar(0xFFAD0505, 0xFF0097C4);
+              healthBar.createFilledBar(0xFFFF0000, 0xFF0091FF);
             }
         }
         else
-         healthBar.createFilledBar(0xFFFF0000, 0xFF66FF33);
+         healthBar.createFilledBar(0xFFFF0000, 0xFF0091FF);
         // healthBar
 		add(healthBar);
 
