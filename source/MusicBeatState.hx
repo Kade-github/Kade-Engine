@@ -1,7 +1,7 @@
 package;
 
 import flixel.FlxBasic;
-#if desktop
+#if FEATURE_DISCORD
 import Discord.DiscordClient;
 #end
 import flixel.util.FlxColor;
@@ -168,7 +168,7 @@ class MusicBeatState extends FlxUIState
 		else
 			skippedFrames++;
 
-		if ((cast(Lib.current.getChildAt(0), Main)).getFPSCap != FlxG.save.data.fpsCap && FlxG.save.data.fpsCap <= 290)
+		if ((cast(Lib.current.getChildAt(0), Main)).getFPSCap != FlxG.save.data.fpsCap && FlxG.save.data.fpsCap <= 340)
 			(cast(Lib.current.getChildAt(0), Main)).setFPSCap(FlxG.save.data.fpsCap);
 
 		super.update(elapsed);

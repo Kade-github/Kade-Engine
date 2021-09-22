@@ -1,8 +1,8 @@
-#if sys
+#if FEATURE_FILESYSTEM
 package;
 
 import lime.app.Application;
-#if desktop
+#if FEATURE_DISCORD
 import Discord.DiscordClient;
 #end
 import openfl.display.BitmapData;
@@ -11,7 +11,7 @@ import flixel.ui.FlxBar;
 import haxe.Exception;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
-#if cpp
+#if FEATURE_FILESYSTEM
 import sys.FileSystem;
 import sys.io.File;
 #end
@@ -80,10 +80,10 @@ class Caching extends MusicBeatState
 
 		FlxGraphic.defaultPersist = FlxG.save.data.cacheImages;
 
-		#if cpp
+		#if FEATURE_FILESYSTEM
 		if (FlxG.save.data.cacheImages)
 		{
-			trace("caching images...");
+			Debug.logInfo("caching images...");
 
 			for (i in FileSystem.readDirectory(FileSystem.absolutePath("assets/shared/images/characters")))
 			{
@@ -93,7 +93,7 @@ class Caching extends MusicBeatState
 			}
 		}
 
-		trace("caching music...");
+		Debug.logInfo("caching music...");
 
 		for (i in FileSystem.readDirectory(FileSystem.absolutePath("assets/songs")))
 		{
@@ -111,9 +111,9 @@ class Caching extends MusicBeatState
 		add(kadeLogo);
 		add(text);
 
-		trace('starting caching..');
+		Debug.logInfo('starting caching..');
 
-		#if cpp
+		#if FEATURE_MULTITHREADING
 		// update thread
 
 		sys.thread.Thread.create(() ->
@@ -150,14 +150,14 @@ class Caching extends MusicBeatState
 
 	function cache()
 	{
-		#if !linux
-		trace("LOADING: " + toBeDone + " OBJECTS.");
+		#if FEATURE_FILESYSTEM
+		Debug.logInfo("LOADING: " + toBeDone + " OBJECTS.");
 
 		for (i in images)
 		{
 			var replaced = i.replace(".png", "");
 			var data:BitmapData = BitmapData.fromFile("assets/shared/images/characters/" + i);
-			trace('id ' + replaced + ' file - assets/shared/images/characters/' + i + ' ${data.width}');
+			Debug.logInfo('id ' + replaced + ' file - assets/shared/images/characters/' + i + ' ${data.width}');
 			var graph = FlxGraphic.fromBitmapData(data);
 			graph.persist = true;
 			graph.destroyOnNoUse = false;
@@ -167,17 +167,23 @@ class Caching extends MusicBeatState
 
 		for (i in music)
 		{
-			FlxG.sound.cache(Paths.inst(i));
-			FlxG.sound.cache(Paths.voices(i));
-			trace("cached " + i);
+			var inst = Paths.inst(i);
+			if (Paths.doesSoundAssetExist(inst))
+				FlxG.sound.cache(inst);
+
+			var voices = Paths.voices(i);
+			if (Paths.doesSoundAssetExist(voices))
+				FlxG.sound.cache(voices);
+
+			Debug.logInfo("cached " + i);
 			done++;
 		}
 
-		trace("Finished caching...");
+		Debug.logInfo("Finished caching...");
 
 		loaded = true;
 
-		trace(Assets.cache.hasBitmapData('GF_assets'));
+		Debug.logInfo(Assets.cache.hasBitmapData('GF_assets'));
 		#end
 		FlxG.switchState(new TitleState());
 	}
