@@ -151,7 +151,7 @@ class Caching extends MusicBeatState
 	function cache()
 	{
 		#if FEATURE_FILESYSTEM
-		Debug.logInfo("LOADING: " + toBeDone + " OBJECTS.");
+		trace("LOADING: " + toBeDone + " OBJECTS.");
 
 		for (i in images)
 		{
@@ -175,7 +175,7 @@ class Caching extends MusicBeatState
 			if (Paths.doesSoundAssetExist(voices))
 				FlxG.sound.cache(voices);
 
-			Debug.logInfo("cached " + i);
+			trace("cached " + i);
 			done++;
 		}
 

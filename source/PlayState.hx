@@ -2310,6 +2310,33 @@ class PlayState extends MusicBeatState
 			#end
 		}
 
+		if (FlxG.keys.justPressed.FIVE && songStarted)
+		{
+			songMultiplier = 1;
+			if (useVideo)
+			{
+				GlobalVideo.get().stop();
+				remove(videoSprite);
+				FlxG.stage.window.onFocusOut.remove(focusOut);
+				FlxG.stage.window.onFocusIn.remove(focusIn);
+				removedVideo = true;
+			}
+			cannotDie = true;
+
+			FlxG.switchState(new WaveformTestState());
+			clean();
+			PlayState.stageTesting = false;
+			FlxG.stage.removeEventListener(KeyboardEvent.KEY_DOWN, handleInput);
+			FlxG.stage.removeEventListener(KeyboardEvent.KEY_UP, releaseInput);
+			#if FEATURE_LUAMODCHART
+			if (luaModchart != null)
+			{
+				luaModchart.die();
+				luaModchart = null;
+			}
+			#end
+		}
+
 		if (FlxG.keys.justPressed.SEVEN && songStarted)
 		{
 			songMultiplier = 1;
@@ -4578,12 +4605,6 @@ class PlayState extends MusicBeatState
 			if (curBeat % 8 == 7 && curSong == 'Bopeebo')
 			{
 				player.playAnim('hey', true);
-			}
-
-			if (curBeat % 16 == 15 && SONG.song == 'Tutorial' && opponent.curCharacter == 'gf' && curBeat > 16 && curBeat < 48)
-			{
-				player.playAnim('hey', true);
-				opponent.playAnim('cheer', true);
 			}
 
 			if (PlayStateChangeables.Optimize)
