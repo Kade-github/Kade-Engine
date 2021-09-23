@@ -1,0 +1,13 @@
+; Das. Koi' custom controls
+SetTitleMatchMode, 3
+#IfWinActive Friday Nigt Funkin'
+#MaxHotKeysPerInterval 2000
+D::Left
+S::Down
+W::Up
+A::Right
+; Frets on Fire Style
+F1::Left
+F2::Down
+F3::Up
+F4::Right
