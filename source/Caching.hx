@@ -151,7 +151,7 @@ class Caching extends MusicBeatState
 	function cache()
 	{
 		#if FEATURE_FILESYSTEM
-		trace("LOADING: " + toBeDone + " OBJECTS.");
+		Debug.logInfo("LOADING: " + toBeDone + " OBJECTS.");
 
 		for (i in images)
 		{
