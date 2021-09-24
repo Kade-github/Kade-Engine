@@ -435,6 +435,7 @@ class DiffOverview extends FlxSubState
 					oldNote = null;
 
 				var swagNote:Note = new Note(daStrumTime, daNoteData, oldNote, false, true);
+				swagNote.beat = TimingStruct.getBeatFromTime(daStrumTime);
 
 				if (!gottaHitNote)
 					continue;

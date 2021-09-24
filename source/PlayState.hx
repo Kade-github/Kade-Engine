@@ -895,7 +895,7 @@ class PlayState extends MusicBeatState
 		replayTxt.borderSize = 4;
 		replayTxt.borderQuality = 2;
 		replayTxt.scrollFactor.set();
-    replayTxt.cameras = [camHUD];
+		replayTxt.cameras = [camHUD];
 		if (loadRep)
 		{
 			add(replayTxt);
@@ -907,7 +907,7 @@ class PlayState extends MusicBeatState
 		botPlayState.scrollFactor.set();
 		botPlayState.borderSize = 4;
 		botPlayState.borderQuality = 2;
-    botPlayState.cameras = [camHUD];
+		botPlayState.cameras = [camHUD];
 		if (PlayStateChangeables.botPlay && !loadRep)
 			add(botPlayState);
 
@@ -1624,7 +1624,9 @@ class PlayState extends MusicBeatState
 				else
 					oldNote = null;
 
-				var swagNote:Note = new Note(daStrumTime, daNoteData, oldNote, false, false, false, songNotes[4]);
+				var swagNote:Note = new Note(daStrumTime, daNoteData, oldNote, false, false);
+				swagNote.isAlt = false;
+				swagNote.beat = TimingStruct.getBeatFromTime(daStrumTime);
 
 				if (!gottaHitNote && PlayStateChangeables.Optimize)
 					continue;
@@ -2830,7 +2832,10 @@ class PlayState extends MusicBeatState
 							daNote.y -= daNote.height - stepHeight;
 
 							// If not in botplay, only clip sustain notes when properly hit, botplay gets to clip it everytime
-							if ((PlayStateChangeables.botPlay || !daNote.mustPress || daNote.wasGoodHit || holdArray[Math.floor(Math.abs(daNote.noteData))])
+							if ((PlayStateChangeables.botPlay
+								|| !daNote.mustPress
+								|| daNote.wasGoodHit
+								|| holdArray[Math.floor(Math.abs(daNote.noteData))])
 								&& daNote.y - daNote.offset.y * daNote.scale.y + daNote.height >= (strumLine.y + Note.swagWidth / 2))
 							{
 								// Clip to strumline
@@ -2858,7 +2863,10 @@ class PlayState extends MusicBeatState
 								+ daNote.noteYOff;
 						if (daNote.isSustainNote)
 						{
-							if ((PlayStateChangeables.botPlay || !daNote.mustPress || daNote.wasGoodHit || holdArray[Math.floor(Math.abs(daNote.noteData))])
+							if ((PlayStateChangeables.botPlay
+								|| !daNote.mustPress
+								|| daNote.wasGoodHit
+								|| holdArray[Math.floor(Math.abs(daNote.noteData))])
 								&& daNote.y + daNote.offset.y * daNote.scale.y <= (strumLine.y + Note.swagWidth / 2))
 							{
 								// Clip to strumline
@@ -3923,7 +3931,7 @@ class PlayState extends MusicBeatState
 			{
 				if (spr.animation.finished)
 					spr.playAnim('static');
-			}	
+			}
 		});
 	}
 

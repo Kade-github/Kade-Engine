@@ -70,16 +70,12 @@ class Note extends FlxSprite
 
 	public var children:Array<Note> = [];
 
-	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false, ?inCharter:Bool = false, ?isAlt:Bool = false, ?bet:Float = 0)
+	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false, ?inCharter:Bool = false)
 	{
 		super();
 
 		if (prevNote == null)
 			prevNote = this;
-
-		beat = bet;
-
-		this.isAlt = isAlt;
 
 		this.prevNote = prevNote;
 		isSustainNote = sustainNote;
