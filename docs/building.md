@@ -10,7 +10,8 @@
  1. [Install Haxe 4.1.5](https://haxe.org/download/version/4.1.5/). You should use 4.1.5 instead of the latest version because the latest version has some problems with Friday Night Funkin': Kade Engine.
  2. After installing Haxe, [Install HaxeFlixel](https://haxeflixel.com/documentation/install-haxeflixel/).
  3. Install `git`.
-	 - Windows: install from the [git-scm](https://git-scm.com/downloads) website. or install this [batch](https://drive.google.com/uc?export=download&id=1an4dtkb9VeihjhWYeGjy1HuaP64nBuVW) file	 - Linux: install the `git` package: `sudo apt install git` (ubuntu), `sudo pacman -S git` (arch), etc... (you probably already have it)
+	 - Windows: install from the [git-scm](https://git-scm.com/downloads) website. or install this [batch](https://drive.google.com/uc?export=download&id=1an4dtkb9VeihjhWYeGjy1HuaP64nBuVW) file	 
+- Linux: install the `git` package: `sudo apt install git` (ubuntu), `sudo pacman -S git` (arch), etc... (you probably already have it)
  4. Install and set up the necessary libraries:
 	 - `haxelib install lime 7.9.0`
 	 - `haxelib install openfl`
