@@ -29,6 +29,7 @@ class PauseSubState extends MusicBeatSubstate
 	var perSongOffset:FlxText;
 	
 	var offsetChanged:Bool = false;
+	var startOffset:Float = PlayState.songOffset;
 
 	public function new(x:Float, y:Float)
 	{
@@ -171,6 +172,23 @@ class PauseSubState extends MusicBeatSubstate
 					cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
 					offsetChanged = true;
 				}
+				else if (PlayState.songOffset == startOffset)
+				{
+					grpMenuShit.clear();
+					menuItems = ['Resume', 'Restart Song', 'Exit to menu'];
+					for (i in 0...menuItems.length)
+					{
+						var songText:Alphabet = new Alphabet(0, (70 * i) + 30, menuItems[i], true, false);
+						songText.isMenuItem = true;
+						songText.targetY = i;
+						grpMenuShit.add(songText);
+					}
+
+					changeSelection();
+
+					cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
+					offsetChanged = false;
+				}
 			} 
 			else if (controls.RIGHT_P || rightPcontroller)
 			{
@@ -196,6 +214,23 @@ class PauseSubState extends MusicBeatSubstate
 
 					cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
 					offsetChanged = true;
+				}
+				else if (PlayState.songOffset == startOffset)
+				{
+					grpMenuShit.clear();
+					menuItems = ['Resume', 'Restart Song', 'Exit to menu'];
+					for (i in 0...menuItems.length)
+					{
+						var songText:Alphabet = new Alphabet(0, (70 * i) + 30, menuItems[i], true, false);
+						songText.isMenuItem = true;
+						songText.targetY = i;
+						grpMenuShit.add(songText);
+					}
+
+					changeSelection();
+
+					cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
+					offsetChanged = false;
 				}
 			}
 		#end
