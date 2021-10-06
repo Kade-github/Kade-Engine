@@ -473,6 +473,8 @@ class ModchartState
 		setVar("mustHit", false);
 
 		setVar("strumLineY", PlayState.instance.strumLine.y);
+				
+		setVar("strumLineX", PlayState.instance.strumLine.x);
 
 		// callbacks
 
@@ -520,6 +522,11 @@ class ModchartState
 		Lua_helper.add_callback(lua, "setStrumlineY", function(y:Float)
 		{
 			PlayState.instance.strumLine.y = y;
+		});
+				
+		Lua_helper.add_callback(lua, "setStrumlineX", function(x:Float)
+	        {
+			PlayState.instance.strumLine.x = x;
 		});
 
 		Lua_helper.add_callback(lua, "getNumberOfNotes", function(y:Float)
