@@ -719,19 +719,15 @@ class PlayState extends MusicBeatState
 		if (PlayStateChangeables.useDownscroll)
 			strumLine.y = FlxG.height - 165;
 
-		laneunderlayOpponent = new FlxSprite(0, 0).makeGraphic(500, FlxG.height * 2);
+		laneunderlayOpponent = new FlxSprite(0, 0).makeGraphic(500, FlxG.height * 3, FlxColor.BLACK);
 		laneunderlayOpponent.x += 95;
-		laneunderlayOpponent.x += ((FlxG.width / 2) * 0);
 		laneunderlayOpponent.alpha = 1 - FlxG.save.data.laneTransparency;
-		laneunderlayOpponent.color = FlxColor.BLACK;
 		laneunderlayOpponent.scrollFactor.set();
 		laneunderlayOpponent.screenCenter(Y);
 
-		laneunderlay = new FlxSprite(0, 0).makeGraphic(500, FlxG.height * 2);
-		laneunderlay.x += 75;
-		laneunderlay.x += ((FlxG.width / 2) * 1);
+		laneunderlay = new FlxSprite(0, 0).makeGraphic(500, FlxG.height * 3, FlxColor.BLACK);
+		laneunderlay.x += 75 + (FlxG.width / 2);
 		laneunderlay.alpha = 1 - FlxG.save.data.laneTransparency;
-		laneunderlay.color = FlxColor.BLACK;
 		laneunderlay.scrollFactor.set();
 		laneunderlay.screenCenter(Y);
 
@@ -753,7 +749,7 @@ class PlayState extends MusicBeatState
 		if (FlxG.save.data.middleScroll)
 		{
 			laneunderlayOpponent.alpha = 0;
-			laneunderlay.x = playerStrums.members[0].x - 25;
+			laneunderlay.screenCenter(X);
 		}
 
 		// startCountdown();
