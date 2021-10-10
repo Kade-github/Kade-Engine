@@ -250,7 +250,7 @@ class GameplayCustomizeState extends MusicBeatState
 
 			var seperatedScore:Array<Int> = [];
 
-			var comboSplit:Array<String> = (FlxG.random.int(0, 420) + "").split('');
+			var comboSplit:Array<String> = (FlxG.random.int(10, 420) + "").split('');
 
 			// make sure we have 3 digits to display (looks weird otherwise lol)
 			if (comboSplit.length == 1)
