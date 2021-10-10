@@ -116,7 +116,7 @@ class GameplayCustomizeState extends MusicBeatState
 			strumLine.y = FlxG.height - 165;
 
 		laneunderlayOpponent = new FlxSprite(0, 0).makeGraphic(500, FlxG.height * 2);
-		laneunderlayOpponent.x += 85;
+		laneunderlayOpponent.x += 95;
 		laneunderlayOpponent.x += ((FlxG.width / 2) * 0);
 		laneunderlayOpponent.alpha = 1 - FlxG.save.data.laneTransparency;
 		laneunderlayOpponent.color = FlxColor.BLACK;
@@ -125,7 +125,7 @@ class GameplayCustomizeState extends MusicBeatState
 		laneunderlayOpponent.cameras = [camHUD];
 
 		laneunderlay = new FlxSprite(0, 0).makeGraphic(500, FlxG.height * 2);
-		laneunderlay.x += 85;
+		laneunderlay.x += 75;
 		laneunderlay.x += ((FlxG.width / 2) * 1);
 		laneunderlay.alpha = 1 - FlxG.save.data.laneTransparency;
 		laneunderlay.color = FlxColor.BLACK;
