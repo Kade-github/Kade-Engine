@@ -32,11 +32,19 @@ class GameplayCustomizeState extends MusicBeatState
 	var dad:Character;
 	var gf:Character;
 
+	public var laneunderlay:FlxSprite;
+	public var laneunderlayOpponent:FlxSprite;
+
 	var strumLine:FlxSprite;
 	var strumLineNotes:FlxTypedGroup<FlxSprite>;
 	var playerStrums:FlxTypedGroup<FlxSprite>;
+	var cpuStrums:FlxTypedGroup<StaticArrow>;
+
 	private var camHUD:FlxCamera;
 	private var camGame:FlxCamera;
+
+	private var dataSuffix:Array<String> = ['LEFT', 'DOWN', 'UP', 'RIGHT'];
+	private var dataColor:Array<String> = ['purple', 'blue', 'green', 'red'];
 
 	public override function create()
 	{
@@ -107,10 +115,35 @@ class GameplayCustomizeState extends MusicBeatState
 		if (FlxG.save.data.downscroll)
 			strumLine.y = FlxG.height - 165;
 
+		laneunderlayOpponent = new FlxSprite(0, 0).makeGraphic(500, FlxG.height * 2);
+		laneunderlayOpponent.x += 85;
+		laneunderlayOpponent.x += ((FlxG.width / 2) * 0);
+		laneunderlayOpponent.alpha = 1 - FlxG.save.data.laneTransparency;
+		laneunderlayOpponent.color = FlxColor.BLACK;
+		laneunderlayOpponent.scrollFactor.set();
+		laneunderlayOpponent.screenCenter(Y);
+		laneunderlayOpponent.cameras = [camHUD];
+
+		laneunderlay = new FlxSprite(0, 0).makeGraphic(500, FlxG.height * 2);
+		laneunderlay.x += 85;
+		laneunderlay.x += ((FlxG.width / 2) * 1);
+		laneunderlay.alpha = 1 - FlxG.save.data.laneTransparency;
+		laneunderlay.color = FlxColor.BLACK;
+		laneunderlay.scrollFactor.set();
+		laneunderlay.screenCenter(Y);
+		laneunderlay.cameras = [camHUD];
+
+		if (FlxG.save.data.laneUnderlay)
+		{
+			add(laneunderlayOpponent);
+			add(laneunderlay);
+		}
+
 		strumLineNotes = new FlxTypedGroup<FlxSprite>();
 		add(strumLineNotes);
 
 		playerStrums = new FlxTypedGroup<FlxSprite>();
+		cpuStrums = new FlxTypedGroup<StaticArrow>();
 
 		sick = new FlxSprite().loadGraphic(Paths.loadImage('sick', 'shared'));
 		sick.setGraphicSize(Std.int(sick.width * 0.7));
@@ -125,6 +158,12 @@ class GameplayCustomizeState extends MusicBeatState
 
 		generateStaticArrows(0);
 		generateStaticArrows(1);
+
+		if (FlxG.save.data.middleScroll)
+		{
+			laneunderlayOpponent.alpha = 0;
+			laneunderlay.x = playerStrums.members[0].x - 25;
+		}
 
 		text = new FlxText(5, FlxG.height + 40, 0,
 			"Click and drag around gameplay elements to customize their positions. Press R to reset. Q/E to change zoom. C to show combo. Escape to exit.",
@@ -319,55 +358,58 @@ class GameplayCustomizeState extends MusicBeatState
 		trace('beat');
 	}
 
-	// ripped from play state cuz im lazy
-
+	// ripped from playstate cuz lol
 	private function generateStaticArrows(player:Int):Void
 	{
 		for (i in 0...4)
 		{
-			// FlxG.log.add(i);
-			var babyArrow:FlxSprite = new FlxSprite(0, strumLine.y);
+			var babyArrow:StaticArrow = new StaticArrow(-10, strumLine.y);
+
 			babyArrow.frames = Paths.getSparrowAtlas('NOTE_assets', 'shared');
-			babyArrow.animation.addByPrefix('green', 'arrowUP');
-			babyArrow.animation.addByPrefix('blue', 'arrowDOWN');
-			babyArrow.animation.addByPrefix('purple', 'arrowLEFT');
-			babyArrow.animation.addByPrefix('red', 'arrowRIGHT');
+			for (j in 0...4)
+			{
+				babyArrow.animation.addByPrefix(dataColor[j], 'arrow' + dataSuffix[j]);
+				babyArrow.animation.addByPrefix('dirCon' + j, dataSuffix[j].toLowerCase() + ' confirm', 24, false);
+			}
+
+			var lowerDir:String = dataSuffix[i].toLowerCase();
+
+			babyArrow.animation.addByPrefix('static', 'arrow' + dataSuffix[i]);
+			babyArrow.animation.addByPrefix('pressed', lowerDir + ' press', 24, false);
+			babyArrow.animation.addByPrefix('confirm', lowerDir + ' confirm', 24, false);
+
+			babyArrow.x += Note.swagWidth * i;
+
 			babyArrow.antialiasing = FlxG.save.data.antialiasing;
 			babyArrow.setGraphicSize(Std.int(babyArrow.width * 0.7));
-			switch (Math.abs(i))
-			{
-				case 0:
-					babyArrow.x += Note.swagWidth * 0;
-					babyArrow.animation.addByPrefix('static', 'arrowLEFT');
-					babyArrow.animation.addByPrefix('pressed', 'left press', 24, false);
-					babyArrow.animation.addByPrefix('confirm', 'left confirm', 24, false);
-				case 1:
-					babyArrow.x += Note.swagWidth * 1;
-					babyArrow.animation.addByPrefix('static', 'arrowDOWN');
-					babyArrow.animation.addByPrefix('pressed', 'down press', 24, false);
-					babyArrow.animation.addByPrefix('confirm', 'down confirm', 24, false);
-				case 2:
-					babyArrow.x += Note.swagWidth * 2;
-					babyArrow.animation.addByPrefix('static', 'arrowUP');
-					babyArrow.animation.addByPrefix('pressed', 'up press', 24, false);
-					babyArrow.animation.addByPrefix('confirm', 'up confirm', 24, false);
-				case 3:
-					babyArrow.x += Note.swagWidth * 3;
-					babyArrow.animation.addByPrefix('static', 'arrowRIGHT');
-					babyArrow.animation.addByPrefix('pressed', 'right press', 24, false);
-					babyArrow.animation.addByPrefix('confirm', 'right confirm', 24, false);
-			}
+
 			babyArrow.updateHitbox();
 			babyArrow.scrollFactor.set();
 
 			babyArrow.ID = i;
 
-			if (player == 1)
-				playerStrums.add(babyArrow);
+			switch (player)
+			{
+				case 0:
+					if (FlxG.save.data.middleScroll)
+						babyArrow.visible = false;
+					babyArrow.x += 20;
+					cpuStrums.add(babyArrow);
+				case 1:
+					playerStrums.add(babyArrow);
+			}
 
-			babyArrow.animation.play('static');
-			babyArrow.x += 50;
+			babyArrow.playAnim('static');
+			babyArrow.x += 110;
 			babyArrow.x += ((FlxG.width / 2) * player);
+
+			if (FlxG.save.data.middleScroll)
+				babyArrow.x -= 320;
+
+			cpuStrums.forEach(function(spr:FlxSprite)
+			{
+				spr.centerOffsets(); // CPU arrows start out slightly off-center
+			});
 
 			strumLineNotes.add(babyArrow);
 		}
