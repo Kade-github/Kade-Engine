@@ -4,6 +4,10 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.animation.FlxBaseAnimation;
 import flixel.graphics.frames.FlxAtlasFrames;
+#if cpp
+import Sys;
+import sys.FileSystem;
+#end
 
 using StringTools;
 
@@ -388,11 +392,13 @@ class Character extends FlxSprite
 				animation.addByPrefix('singRIGHT', 'singRIGHT', 24, false);
 				animation.addByPrefix('singDOWN', 'singDOWN', 24, false);
 				animation.addByPrefix('singLEFT', 'singLEFT', 24, false);
-				
+				#if cpp
 				if (FileSystem.exists(CoolUtil.coolTextFile(Paths.txt('images/characters/' + curCharacter + "Offsets", library)))
 					loadOffsetFile(curCharacter);
 				else
 					loadOffsetFile("dad");
+				#else
+				loadOffsetFile("dad");
 
 				playAnim('idle');
 		}
