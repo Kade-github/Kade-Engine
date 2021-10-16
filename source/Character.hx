@@ -378,6 +378,20 @@ class Character extends FlxSprite
 				loadOffsetFile(curCharacter);
 
 				playAnim('idle');
+				
+			default:
+				// CODE FOR LOADING CUSTOM CHARACTERS THAT ARE NOT HARCODED
+				tex = Paths.getSparrowAtlas('characters/' + curCharacter,'shared',true);
+				frames = tex;
+				animation.addByPrefix('idle', 'idle', 24, false);
+				animation.addByPrefix('singUP', 'singUP', 24, false);
+				animation.addByPrefix('singRIGHT', 'singRIGHT', 24, false);
+				animation.addByPrefix('singDOWN', 'singDOWN', 24, false);
+				animation.addByPrefix('singLEFT', 'singLEFT', 24, false);
+
+				loadOffsetFile("dad");
+
+				playAnim('idle');
 		}
 
 		dance();
