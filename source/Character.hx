@@ -388,8 +388,11 @@ class Character extends FlxSprite
 				animation.addByPrefix('singRIGHT', 'singRIGHT', 24, false);
 				animation.addByPrefix('singDOWN', 'singDOWN', 24, false);
 				animation.addByPrefix('singLEFT', 'singLEFT', 24, false);
-
-				loadOffsetFile("dad");
+				
+				if (FileSystem.exists(CoolUtil.coolTextFile(Paths.txt('images/characters/' + curCharacter + "Offsets", library)))
+					loadOffsetFile(curCharacter);
+				else
+					loadOffsetFile("dad");
 
 				playAnim('idle');
 		}
