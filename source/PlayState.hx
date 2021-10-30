@@ -122,7 +122,7 @@ class PlayState extends MusicBeatState
 	public static var noteBools:Array<Bool> = [false, false, false, false];
 
 	var songLength:Float = 0;
-	var kadeEngineWatermark:FlxText;
+	var kadeEngineWatermark:Watermark;
 
 	#if FEATURE_DISCORD
 	// Discord RPC variables
@@ -874,15 +874,7 @@ class PlayState extends MusicBeatState
 		// healthBar
 
 		// Add Kade Engine watermark
-		kadeEngineWatermark = new FlxText(4, healthBarBG.y
-			+ 50, 0,
-			SONG.songName
-			+ (FlxMath.roundDecimal(songMultiplier, 2) != 1.00 ? " (" + FlxMath.roundDecimal(songMultiplier, 2) + "x)" : "")
-			+ " - "
-			+ CoolUtil.difficultyFromInt(storyDifficulty),
-			16);
-		kadeEngineWatermark.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		kadeEngineWatermark.scrollFactor.set();
+		kadeEngineWatermark = new Watermark(4, healthBarBG.y + 50, 0);
 		add(kadeEngineWatermark);
 
 		if (PlayStateChangeables.useDownscroll)
