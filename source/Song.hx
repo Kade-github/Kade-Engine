@@ -66,11 +66,6 @@ class Song
 
 	public static function loadFromJsonRAW(rawJson:String)
 	{
-		while (!rawJson.endsWith("}"))
-		{
-			rawJson = rawJson.substr(0, rawJson.length - 1);
-			// LOL GOING THROUGH THE BULLSHIT TO CLEAN IDK WHATS STRANGE
-		}
 		var jsonData = Json.parse(rawJson);
 
 		return parseJSONshit("rawsong", jsonData, ["name" => jsonData.name]);
