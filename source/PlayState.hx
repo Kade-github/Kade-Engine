@@ -3609,13 +3609,16 @@ class PlayState extends MusicBeatState
 			rating.loadGraphic(Paths.loadImage(pixelShitPart1 + daRating + pixelShitPart2, pixelShitPart3));
 			rating.screenCenter();
 			rating.y -= 50;
-			rating.x = coolText.x - 125;
+   
+			if(!FlxG.save.data.middleScroll) rating.x = (coolText.x - 125)
+			else rating.x = (coolText.x + 200);
 
 			if (FlxG.save.data.changedHit)
 			{
 				rating.x = FlxG.save.data.changedHitX;
 				rating.y = FlxG.save.data.changedHitY;
 			}
+			
 			rating.acceleration.y = 550;
 			rating.velocity.y -= FlxG.random.int(140, 175);
 			rating.velocity.x -= FlxG.random.int(0, 10);
@@ -3680,7 +3683,13 @@ class PlayState extends MusicBeatState
 			comboSpr.velocity.y -= 150;
 
 			currentTimingShown.screenCenter();
-			currentTimingShown.x = comboSpr.x + 100;
+   
+			if(!FlxG.save.data.middleScroll) currentTimingShown.x = comboSpr.x + 100;
+			else {
+				currentTimingShown.x = rating.x + 30;
+				currentTimingShown.alignment = FlxTextAlign.RIGHT; // is this even doing anything
+			}
+			
 			currentTimingShown.y = rating.y + 100;
 			currentTimingShown.acceleration.y = 600;
 			currentTimingShown.velocity.y -= 150;
@@ -3738,7 +3747,10 @@ class PlayState extends MusicBeatState
 			{
 				var numScore:FlxSprite = new FlxSprite().loadGraphic(Paths.loadImage(pixelShitPart1 + 'num' + Std.int(i) + pixelShitPart2, pixelShitPart3));
 				numScore.screenCenter();
-				numScore.x = rating.x + (43 * daLoop) - 50;
+	
+				if(!FlxG.save.data.middleScroll) numScore.x = rating.x + (43 * daLoop) - 50;
+				else numScore.x = rating.x + (43 * daLoop) + 150;
+				
 				numScore.y = rating.y + 100;
 				numScore.cameras = [camHUD];
 
