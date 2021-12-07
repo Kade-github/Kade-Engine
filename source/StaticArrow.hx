@@ -43,6 +43,7 @@ class StaticArrow extends FlxSprite
 		{
 			localAngle = 0;
 		}
+		centerOrigin();
 		updateHitbox();
 		offset.set(frameWidth / 2, frameHeight / 2);
 
