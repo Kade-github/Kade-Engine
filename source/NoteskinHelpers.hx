@@ -1,7 +1,6 @@
-#if FEATURE_FILESYSTEM
+
 import sys.FileSystem;
 import sys.io.File;
-#end
 import openfl.display.BitmapData;
 import flixel.FlxSprite;
 import flixel.graphics.FlxGraphic;
@@ -19,7 +18,6 @@ class NoteskinHelpers
 	{
 		noteskinArray = [];
 		xmlData = [];
-		#if FEATURE_FILESYSTEM
 		var count:Int = 0;
 		for (i in FileSystem.readDirectory(FileSystem.absolutePath("assets/shared/images/noteskins")))
 		{
@@ -35,9 +33,9 @@ class NoteskinHelpers
 				continue;
 			noteskinArray.push(i.replace(".png", ""));
 		}
-		#else
+		
 		noteskinArray = ["Arrows", "Circles"];
-		#end
+		
 
 		return noteskinArray;
 	}
@@ -54,7 +52,7 @@ class NoteskinHelpers
 
 	static public function generateNoteskinSprite(id:Int)
 	{
-		#if FEATURE_FILESYSTEM
+		
 		// TODO: Make this use OpenFlAssets.
 
 		Debug.logTrace("bruh momento");
@@ -65,14 +63,14 @@ class NoteskinHelpers
 		return FlxAtlasFrames.fromSparrow(FlxGraphic.fromBitmapData(data), xmlData[id]);
 
 		// return Paths.getSparrowAtlas('noteskins/' + NoteskinHelpers.getNoteskinByID(FlxG.save.data.noteskin), "shared");
-		#else
+		
 		return Paths.getSparrowAtlas('noteskins/Arrows', "shared");
-		#end
+		
 	}
 
 	static public function generatePixelSprite(id:Int, ends:Bool = false)
 	{
-		#if FEATURE_FILESYSTEM
+		
 		// TODO: Make this use OpenFlAssets.
 
 		Debug.logTrace("bruh momento");
@@ -86,8 +84,7 @@ class NoteskinHelpers
 		return BitmapData.fromFile(path + ".png");
 
 		// return Paths.getSparrowAtlas('noteskins/' + NoteskinHelpers.getNoteskinByID(FlxG.save.data.noteskin), "shared");
-		#else
 		return BitmapData.fromFile(Paths.image('noteskins/Arrows-pixel', "shared"));
-		#end
+	
 	}
 }
