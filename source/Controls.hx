@@ -11,6 +11,9 @@ import flixel.input.actions.FlxActionSet;
 import flixel.input.gamepad.FlxGamepadButton;
 import flixel.input.gamepad.FlxGamepadInputID;
 import flixel.input.keyboard.FlxKey;
+import ui.Hitbox;
+import ui.FlxVirtualPad;
+import flixel.ui.FlxButton;
 
 #if (haxe >= "4.0.0")
 enum abstract Action(String) to String from String
@@ -32,6 +35,9 @@ enum abstract Action(String) to String from String
 	var PAUSE = "pause";
 	var RESET = "reset";
 	var CHEAT = "cheat";
+	var SIX = "six";
+	var ONE = "one";
+	var SEVEN = "seven";
 }
 #else
 @:enum
@@ -54,6 +60,9 @@ abstract Action(String) to String from String
 	var PAUSE = "pause";
 	var RESET = "reset";
 	var CHEAT = "cheat";
+	var SIX = "six";
+	var ONE = "one";
+	var SEVEN = "seven";
 }
 #end
 
@@ -79,6 +88,9 @@ enum Control
 	BACK;
 	PAUSE;
 	CHEAT;
+	SIX;
+	ONE;
+	SEVEN;
 }
 
 enum KeyboardScheme
@@ -112,6 +124,9 @@ class Controls extends FlxActionSet
 	var _pause = new FlxActionDigital(Action.PAUSE);
 	var _reset = new FlxActionDigital(Action.RESET);
 	var _cheat = new FlxActionDigital(Action.CHEAT);
+	var _six = new FlxActionDigital(Action.SIX);
+	var _one = new FlxActionDigital(Action.ONE);
+	var _seven = new FlxActionDigital(Action.SEVEN);
 
 	#if (haxe >= "4.0.0")
 	var byName:Map<String, FlxActionDigital> = [];
@@ -207,6 +222,23 @@ class Controls extends FlxActionSet
 	inline function get_CHEAT()
 		return _cheat.check();
 
+	public var SIX(get, never):Bool;
+
+	inline function get_SIX()
+		return _six.check();
+
+	public var ONE(get, never):Bool;
+
+	inline function get_ONE()
+		return _one.check();
+
+	public var SEVEN(get, never):Bool;
+
+	inline function get_SEVEN()
+		return _seven.check();
+
+
+
 	#if (haxe >= "4.0.0")
 	public function new(name, scheme = None)
 	{
@@ -229,6 +261,9 @@ class Controls extends FlxActionSet
 		add(_pause);
 		add(_reset);
 		add(_cheat);
+		add(_six);
+		add(_one);
+		add(_seven);
 
 		for (action in digitalActions)
 			byName[action.name] = action;
@@ -257,6 +292,9 @@ class Controls extends FlxActionSet
 		add(_pause);
 		add(_reset);
 		add(_cheat);
+		add(_six);
+		add(_one);
+		add(_seven);
 
 		for (action in digitalActions)
 			byName[action.name] = action;
@@ -264,6 +302,122 @@ class Controls extends FlxActionSet
 		if (scheme == null)
 			scheme = None;
 		setKeyboardScheme(scheme, false);
+	}
+	#end
+
+	public var trackedinputs:Array<FlxActionInput> = [];
+
+	public function addbutton(action:FlxActionDigital, button:FlxButton, state:FlxInputState) {
+		var input = new FlxActionInputDigitalIFlxInput(button, state);
+		trackedinputs.push(input);
+
+		action.add(input);
+		//action.addInput(button, state);
+	}
+
+	public function setHitBox(hitbox:Hitbox) 
+	{
+		inline forEachBound(Control.UP, (action, state) -> addbutton(action, hitbox.buttonUp, state));
+		inline forEachBound(Control.DOWN, (action, state) -> addbutton(action, hitbox.buttonDown, state));
+		inline forEachBound(Control.LEFT, (action, state) -> addbutton(action, hitbox.buttonLeft, state));
+		inline forEachBound(Control.RIGHT, (action, state) -> addbutton(action, hitbox.buttonRight, state));	
+	}
+
+
+	public function setVirtualPad(virtualPad:FlxVirtualPad, ?DPad:FlxDPadMode, ?Action:FlxActionMode) {
+		if (DPad == null)
+			DPad = NONE;
+		if (Action == null)
+			Action = NONE;
+
+		switch (DPad)
+		{
+			case UP_DOWN:
+				inline forEachBound(Control.UP, (action, state) -> addbutton(action, virtualPad.buttonUp, state));
+				inline forEachBound(Control.DOWN, (action, state) -> addbutton(action, virtualPad.buttonDown, state));
+			case LEFT_RIGHT:
+				inline forEachBound(Control.LEFT, (action, state) -> addbutton(action, virtualPad.buttonLeft, state));
+				inline forEachBound(Control.RIGHT, (action, state) -> addbutton(action, virtualPad.buttonRight, state));
+			case UP_LEFT_RIGHT:
+				inline forEachBound(Control.UP, (action, state) -> addbutton(action, virtualPad.buttonUp, state));
+				inline forEachBound(Control.LEFT, (action, state) -> addbutton(action, virtualPad.buttonLeft, state));
+				inline forEachBound(Control.RIGHT, (action, state) -> addbutton(action, virtualPad.buttonRight, state));
+			case FULL | RIGHT_FULL:
+				inline forEachBound(Control.UP, (action, state) -> addbutton(action, virtualPad.buttonUp, state));
+				inline forEachBound(Control.DOWN, (action, state) -> addbutton(action, virtualPad.buttonDown, state));
+				inline forEachBound(Control.LEFT, (action, state) -> addbutton(action, virtualPad.buttonLeft, state));
+				inline forEachBound(Control.RIGHT, (action, state) -> addbutton(action, virtualPad.buttonRight, state));
+			case ANIMATION:
+			case NONE:
+		}
+
+		switch (Action)
+		{
+			case A:
+				inline forEachBound(Control.ACCEPT, (action, state) -> addbutton(action, virtualPad.buttonA, state));
+			case A_B:
+				inline forEachBound(Control.ACCEPT, (action, state) -> addbutton(action, virtualPad.buttonA, state));
+				inline forEachBound(Control.BACK, (action, state) -> addbutton(action, virtualPad.buttonB, state));
+			case STAGE:
+			case SONGD:
+			case ANIMATION:		
+			case A_B_6:
+				inline forEachBound(Control.ACCEPT, (action, state) -> addbutton(action, virtualPad.buttonA, state));
+				inline forEachBound(Control.BACK, (action, state) -> addbutton(action, virtualPad.buttonB, state));	
+				inline forEachBound(Control.SIX, (action, state) -> addbutton(action, virtualPad.button6, state));
+			case A_B_6_1:
+				inline forEachBound(Control.ACCEPT, (action, state) -> addbutton(action, virtualPad.buttonA, state));
+				inline forEachBound(Control.BACK, (action, state) -> addbutton(action, virtualPad.buttonB, state));	
+				inline forEachBound(Control.SIX, (action, state) -> addbutton(action, virtualPad.button6, state));	
+				inline forEachBound(Control.ONE, (action, state) -> addbutton(action, virtualPad.button1, state));
+			case A_B_6_1_7:
+				inline forEachBound(Control.ACCEPT, (action, state) -> addbutton(action, virtualPad.buttonA, state));
+				inline forEachBound(Control.BACK, (action, state) -> addbutton(action, virtualPad.buttonB, state));	
+				inline forEachBound(Control.SIX, (action, state) -> addbutton(action, virtualPad.button6, state));	
+				inline forEachBound(Control.ONE, (action, state) -> addbutton(action, virtualPad.button1, state));
+				inline forEachBound(Control.SEVEN, (action, state) -> addbutton(action, virtualPad.button7, state));																		
+			case A_B_C:
+				inline forEachBound(Control.ACCEPT, (action, state) -> addbutton(action, virtualPad.buttonA, state));
+				inline forEachBound(Control.BACK, (action, state) -> addbutton(action, virtualPad.buttonB, state));
+			case A_B_X_Y:
+				inline forEachBound(Control.ACCEPT, (action, state) -> addbutton(action, virtualPad.buttonA, state));
+				inline forEachBound(Control.BACK, (action, state) -> addbutton(action, virtualPad.buttonB, state));
+			case NONE:
+		}
+	}
+
+
+	public function removeFlxInput(Tinputs) {
+		for (action in this.digitalActions)
+		{
+			var i = action.inputs.length;
+
+			while (i-- > 0)
+			{
+				var input = action.inputs[i];
+				/*if (input.device == IFLXINPUT_OBJECT)
+					action.remove(input);*/
+
+				var x = Tinputs.length;
+				while (x-- > 0)
+					if (Tinputs[x] == input)
+						action.remove(input);
+			}
+		}
+	}
+
+
+
+	#if android
+	public function addAndroidBack() {
+		// fix this later
+
+		/*
+		var BACK = #if (openfl >= "8.0.0") 0x4000010E #else 27 #end;
+		_back.addKey(BACK, JUST_RELEASED);
+		_back.addKey(BACK, JUST_PRESSED);
+		_back.addKey(BACK, PRESSED);
+		*/
 	}
 	#end
 
@@ -311,6 +465,9 @@ class Controls extends FlxActionSet
 			case PAUSE: _pause;
 			case RESET: _reset;
 			case CHEAT: _cheat;
+			case SIX: _six;
+			case ONE: _one;
+			case SEVEN: _seven;
 		}
 	}
 
@@ -356,6 +513,12 @@ class Controls extends FlxActionSet
 				func(_reset, JUST_PRESSED);
 			case CHEAT:
 				func(_cheat, JUST_PRESSED);
+			case SIX:
+				func(_six, JUST_PRESSED);	
+			case ONE:
+				func(_one, JUST_PRESSED);	
+			case SEVEN:
+				func(_seven, JUST_PRESSED);									
 		}
 	}
 

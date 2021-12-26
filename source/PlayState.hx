@@ -12,7 +12,7 @@ import openfl.media.Sound;
 #if FEATURE_STEPMANIA
 import smTools.SMFile;
 #end
-#if FEATURE_FILESYSTEM
+#if sys
 import sys.io.File;
 import Sys;
 import sys.FileSystem;
@@ -80,6 +80,10 @@ import openfl.filters.ShaderFilter;
 #if FEATURE_DISCORD
 import Discord.DiscordClient;
 #end
+import openfl.Assets;
+import ui.Mobilecontrols;
+import ui.FlxVirtualPad;
+import ModchartState;
 
 using StringTools;
 
@@ -291,6 +295,12 @@ class PlayState extends MusicBeatState
 
 	// API stuff
 
+	#if mobileC
+	var mcontrols:Mobilecontrols; 
+	var _pad:FlxVirtualPad;
+	#end
+
+
 	public function addObject(object:FlxBasic)
 	{
 		add(object);
@@ -355,17 +365,23 @@ class PlayState extends MusicBeatState
 
 		removedVideo = false;
 
-		#if FEATURE_LUAMODCHART
-		// TODO: Refactor this to use OpenFlAssets.
-		executeModchart = FileSystem.exists(Paths.lua('songs/${PlayState.SONG.songId}/modchart'));
-		if (isSM)
-			executeModchart = FileSystem.exists(pathToSm + "/modchart.lua");
-		if (executeModchart)
-			PlayStateChangeables.Optimize = false;
-		#end
-		#if !cpp
-		executeModchart = false; // FORCE disable for non cpp targets
-		#end
+		executeModchart = FileSystem.exists(Paths.lua(PlayState.SONG.song.toLowerCase()  + "/modchart"));
+		
+		if (!executeModchart && openfl.utils.Assets.exists("assets/data/" + SONG.song.toLowerCase()  + "/modchart.lua"))
+		{
+			var path = Paths.luaAsset(SONG.song.toLowerCase()  + "/modchart");
+			var luaFile = openfl.Assets.getBytes(path);
+
+			FileSystem.createDirectory(Main.path + "assets");
+			FileSystem.createDirectory(Main.path + "assets/data");
+			FileSystem.createDirectory(Main.path + "assets/data/" + SONG.song.toLowerCase());
+
+
+			File.saveBytes(Paths.lua(SONG.song.toLowerCase()  + "/modchart"), luaFile);
+
+			executeModchart = FileSystem.exists(Paths.lua(SONG.song.toLowerCase()  + "/modchart"));
+		}
+
 
 		Debug.logInfo('Searching for mod chart? ($executeModchart) at ${Paths.lua('songs/${PlayState.SONG.songId}/modchart')}');
 
@@ -964,6 +980,34 @@ class PlayState extends MusicBeatState
 		laneunderlay.cameras = [camHUD];
 		laneunderlayOpponent.cameras = [camHUD];
 
+		#if mobileC
+			mcontrols = new Mobilecontrols();
+			switch (mcontrols.mode)
+			{
+				case VIRTUALPAD_RIGHT | VIRTUALPAD_LEFT | VIRTUALPAD_CUSTOM:
+					controls.setVirtualPad(mcontrols._virtualPad, FULL, NONE);
+				case HITBOX:
+					controls.setHitBox(mcontrols._hitbox);
+				default:
+			}
+			trackedinputs = controls.trackedinputs;
+			controls.trackedinputs = [];
+
+			_pad = new FlxVirtualPad(NONE, SONGD);
+			_pad.alpha = 0.75;
+			add(_pad);
+
+			var camcontrol = new FlxCamera();
+			FlxG.cameras.add(camcontrol);
+			camcontrol.bgColor.alpha = 0;
+			mcontrols.cameras = [camcontrol];
+			_pad.cameras = [camcontrol];
+
+			mcontrols.visible = false;
+
+			add(mcontrols);
+		#end
+
 		if (isStoryMode)
 			doof.cameras = [camHUD];
 		kadeEngineWatermark.cameras = [camHUD];
@@ -1134,6 +1178,10 @@ class PlayState extends MusicBeatState
 
 	function startCountdown():Void
 	{
+		#if mobileC
+		mcontrols.visible = true;
+		#end
+
 		inCutscene = false;
 
 		appearStaticArrows();
@@ -2273,7 +2321,7 @@ class PlayState extends MusicBeatState
 		var pauseBind = FlxKey.fromString(FlxG.save.data.pauseBind);
 		var gppauseBind = FlxKey.fromString(FlxG.save.data.gppauseBind);
 
-		if ((FlxG.keys.anyJustPressed([pauseBind]) || KeyBinds.gamepad && FlxG.keys.anyJustPressed([gppauseBind]))
+		if ((FlxG.keys.anyJustPressed([pauseBind]) #if android || FlxG.android.justReleased.BACK #end || KeyBinds.gamepad && FlxG.keys.anyJustPressed([gppauseBind]))
 			&& startedCountdown
 			&& canPause
 			&& !cannotDie)
@@ -2372,7 +2420,7 @@ class PlayState extends MusicBeatState
 		/* if (FlxG.keys.justPressed.NINE)
 			FlxG.switchState(new Charting()); */
 
-		#if debug
+		#if cpp
 		if (FlxG.keys.justPressed.SIX)
 		{
 			if (useVideo)
@@ -2397,7 +2445,7 @@ class PlayState extends MusicBeatState
 		}
 
 		if (!PlayStateChangeables.Optimize)
-			if (FlxG.keys.justPressed.EIGHT && songStarted)
+			if (FlxG.keys.justPressed.EIGHT || _pad.buttonStage.justPressed && songStarted)
 			{
 				paused = true;
 				if (useVideo)
@@ -3295,6 +3343,10 @@ class PlayState extends MusicBeatState
 
 	function endSong():Void
 	{
+		#if mobileC
+		mcontrols.visible = false;
+		#end
+
 		endingSong = true;
 		FlxG.stage.removeEventListener(KeyboardEvent.KEY_DOWN, handleInput);
 		FlxG.stage.removeEventListener(KeyboardEvent.KEY_UP, releaseInput);
@@ -3305,7 +3357,7 @@ class PlayState extends MusicBeatState
 		}
 
 		if (!loadRep)
-			rep.SaveReplay(saveNotes, saveJudge, replayAna);
+			trace('amogus');
 		else
 		{
 			PlayStateChangeables.botPlay = false;
@@ -3887,8 +3939,6 @@ class PlayState extends MusicBeatState
 			});
 		}
 
-		if ((KeyBinds.gamepad && !FlxG.keys.justPressed.ANY))
-		{
 			// PRESSES, check for note hits
 			if (pressArray.contains(true) && generatedMusic)
 			{
@@ -3900,36 +3950,38 @@ class PlayState extends MusicBeatState
 				var directionsAccounted:Array<Bool> = [false, false, false, false]; // we don't want to do judgments for more than one presses
 
 				notes.forEachAlive(function(daNote:Note)
-				{
-					if (daNote.canBeHit && daNote.mustPress && !daNote.wasGoodHit && !directionsAccounted[daNote.noteData])
 					{
-						if (directionList.contains(daNote.noteData))
+						if (daNote.canBeHit && daNote.mustPress && !daNote.tooLate && !daNote.wasGoodHit)
 						{
-							directionsAccounted[daNote.noteData] = true;
-							for (coolNote in possibleNotes)
+							if (!directionsAccounted[daNote.noteData])
 							{
-								if (coolNote.noteData == daNote.noteData && Math.abs(daNote.strumTime - coolNote.strumTime) < 10)
-								{ // if it's the same note twice at < 10ms distance, just delete it
-									// EXCEPT u cant delete it in this loop cuz it fucks with the collection lol
-									dumbNotes.push(daNote);
-									break;
+								if (directionList.contains(daNote.noteData))
+								{
+									directionsAccounted[daNote.noteData] = true;
+									for (coolNote in possibleNotes)
+									{
+										if (coolNote.noteData == daNote.noteData && Math.abs(daNote.strumTime - coolNote.strumTime) < 10)
+										{ // if it's the same note twice at < 10ms distance, just delete it
+											// EXCEPT u cant delete it in this loop cuz it fucks with the collection lol
+											dumbNotes.push(daNote);
+											break;
+										}
+										else if (coolNote.noteData == daNote.noteData && daNote.strumTime < coolNote.strumTime)
+										{ // if daNote is earlier than existing note (coolNote), replace
+											possibleNotes.remove(coolNote);
+											possibleNotes.push(daNote);
+											break;
+										}
+									}
 								}
-								else if (coolNote.noteData == daNote.noteData && daNote.strumTime < coolNote.strumTime)
-								{ // if daNote is earlier than existing note (coolNote), replace
-									possibleNotes.remove(coolNote);
+								else
+								{
 									possibleNotes.push(daNote);
-									break;
+									directionList.push(daNote.noteData);
 								}
 							}
 						}
-						else
-						{
-							directionsAccounted[daNote.noteData] = true;
-							possibleNotes.push(daNote);
-							directionList.push(daNote.noteData);
-						}
-					}
-				});
+					});
 
 				for (note in dumbNotes)
 				{
@@ -3989,7 +4041,7 @@ class PlayState extends MusicBeatState
 				for (i in anas)
 					if (i != null)
 						replayAna.anaArray.push(i); // put em all there
-		}
+		
 		if (PlayStateChangeables.botPlay)
 			notes.forEachAlive(function(daNote:Note)
 			{
@@ -4027,13 +4079,10 @@ class PlayState extends MusicBeatState
 		{
 			if (!PlayStateChangeables.botPlay)
 			{
-				if (keys[spr.ID]
-					&& spr.animation.curAnim.name != 'confirm'
-					&& spr.animation.curAnim.name != 'pressed'
-					&& !spr.animation.curAnim.name.startsWith('dirCon'))
-					spr.playAnim('pressed', false);
-				if (!keys[spr.ID])
-					spr.playAnim('static', false);
+				if (pressArray[spr.ID] && spr.animation.curAnim.name != 'confirm')
+					spr.animation.play('pressed');
+				if (!holdArray[spr.ID])
+					spr.animation.play('static');
 			}
 			else if (FlxG.save.data.cpuStrums)
 			{
@@ -4359,13 +4408,13 @@ class PlayState extends MusicBeatState
 				saveJudge.push(note.rating);
 			}
 
-			if (!PlayStateChangeables.botPlay || FlxG.save.data.cpuStrums)
+	/*		if (!PlayStateChangeables.botPlay || FlxG.save.data.cpuStrums)
 			{
 				playerStrums.forEach(function(spr:StaticArrow)
 				{
 					pressArrow(spr, spr.ID, note);
 				});
-			}
+			} */
 
 			if (!note.isSustainNote)
 			{

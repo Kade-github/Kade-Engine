@@ -16,7 +16,7 @@ import flixel.input.keyboard.FlxKey;
 import flixel.math.FlxMath;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
-#if FEATURE_FILESYSTEM
+#if sys
 import sys.FileSystem;
 import sys.io.File;
 #end

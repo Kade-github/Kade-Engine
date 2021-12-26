@@ -12,6 +12,7 @@ import flixel.util.FlxCollision;
 import openfl.events.Event;
 import openfl.events.IOErrorEvent;
 import openfl.net.FileReference;
+import ui.FlxVirtualPad;
 
 using StringTools;
 
@@ -41,7 +42,8 @@ class StageDebugState extends FlxState
 	var camGame:FlxCamera;
 	var charMode:Bool = true;
 	var usedObjects:Array<FlxSprite> = [];
-
+	var _pad:FlxVirtualPad;
+	
 	public function new(daStage:String = 'stage', daGf:String = 'gf', daBf:String = 'bf', opponent:String = 'dad')
 	{
 		super();
@@ -105,18 +107,28 @@ class StageDebugState extends FlxState
 		FlxG.camera = camGame;
 		camGame.follow(camFollow);
 
+		_pad = new FlxVirtualPad(FULL, STAGE);
+		_pad.alpha = 75;
+		add(_pad);
+
+		var camcontrol = new FlxCamera();
+		FlxG.cameras.add(camcontrol);
+		camcontrol.bgColor.alpha = 0;
+		_pad.cameras = [camcontrol];
+
 		posText = new FlxText(0, 0);
 		posText.size = 26;
 		posText.scrollFactor.set();
 		posText.cameras = [camHUD];
 		add(posText);
 
+
     addHelpText();
 	}
 
   var helpText:FlxText;
   function addHelpText():Void {
-    var helpTextValue = "Help:\nQ/E : Zoom in and out\nI/J/K/L : Pan Camera\nSpace : Cycle Object\nShift : Switch Mode (Char/Stage)\nClick and Drag : Move Active Object\nZ/X : Rotate Object\nR : Reset Rotation\nCTRL-S : Save Offsets to File\nESC : Return to Stage\nPress F1 to hide/show this!\n";
+    var helpTextValue = "Help:\nIN/OUT : Zoom in and out\nUP/DOWN/LEFT/RIGHT : Pan Camera\nA : Cycle Object\nC : Switch Mode (Char/Stage)\nClick and Drag : Move Active Object\nL/R : Rotate Object\nR : Reset Rotation\nSAVE : Save Offsets to ClipBoard\nB : Return to Stage\nPress F1 to hide/show this!\n";
     helpText = new FlxText(940, 0, 0, helpTextValue, 15);
     helpText.scrollFactor.set();
 		helpText.cameras = [camHUD];
@@ -127,16 +139,16 @@ class StageDebugState extends FlxState
 
 	override public function update(elapsed:Float)
 	{
-		if (FlxG.keys.justPressed.E)
+		if (FlxG.keys.justPressed.E || _pad.buttonIn.justPressed)
 			camGame.zoom += 0.1;
-		if (FlxG.keys.justPressed.Q)
+		if (FlxG.keys.justPressed.Q || _pad.buttonOut.justPressed)
 		{
 			if (camGame.zoom > 0.11) // me when floating point error
 				camGame.zoom -= 0.1;
 		}
 		FlxG.watch.addQuick('Camera Zoom', camGame.zoom);
 
-		if (FlxG.keys.justPressed.SHIFT)
+		if (_pad.buttonC.justPressed)
 		{
 			charMode = !charMode;
 			dragging = false;
@@ -146,18 +158,18 @@ class StageDebugState extends FlxState
 				getNextObject();
 		}
 
-		if (FlxG.keys.pressed.I || FlxG.keys.pressed.J || FlxG.keys.pressed.K || FlxG.keys.pressed.L)
+		if (_pad.buttonUp.pressed || _pad.buttonDown.pressed || _pad.buttonLeft.pressed ||_pad.buttonRight.pressed)
 		{
-			if (FlxG.keys.pressed.I)
+			if (_pad.buttonUp.pressed)
 				camFollow.velocity.y = -90;
-			else if (FlxG.keys.pressed.K)
+			else if (_pad.buttonDown.pressed)
 				camFollow.velocity.y = 90;
 			else
 				camFollow.velocity.y = 0;
 
-			if (FlxG.keys.pressed.J)
+			if (_pad.buttonLeft.pressed)
 				camFollow.velocity.x = -90;
-			else if (FlxG.keys.pressed.L)
+			else if (_pad.buttonRight.pressed)
 				camFollow.velocity.x = 90;
 			else
 				camFollow.velocity.x = 0;
@@ -167,7 +179,7 @@ class StageDebugState extends FlxState
 			camFollow.velocity.set();
 		}
 
-		if (FlxG.keys.justPressed.SPACE)
+		if (_pad.buttonA.justPressed)
 		{
 			if (charMode)
 			{
@@ -196,16 +208,16 @@ class StageDebugState extends FlxState
 		if (dragging && FlxG.mouse.justReleased || FlxG.keys.justPressed.TAB)
 			dragging = false;
 
-		if (FlxG.keys.pressed.Z)
+		if (_pad.buttonL.pressed)
 			curChar.angle -= 1 * Math.ceil(elapsed);
-		else if (FlxG.keys.pressed.X)
+		else if (_pad.buttonR.pressed)
 			curChar.angle += 1 * Math.ceil(elapsed);
-		else if (FlxG.keys.pressed.R)
+		else if (_pad.buttonR2.justPressed)
 			curChar.angle = 0;
 
 		posText.text = (curCharString + " X: " + curChar.x + " Y: " + curChar.y + " Rotation: " + curChar.angle);
 
-		if (FlxG.keys.justPressed.ESCAPE)
+		if (_pad.buttonB.justPressed)
 		{
 			FlxG.switchState(new PlayState());
 			PlayState.stageTesting = true;
@@ -239,7 +251,7 @@ class StageDebugState extends FlxState
 			}
 		}
 
-		if (FlxG.keys.pressed.CONTROL && FlxG.keys.justPressed.S)
+		if (_pad.buttonSave.justPressed)
 			saveBoyPos();
 
     if (FlxG.keys.justPressed.F1)
@@ -318,6 +330,8 @@ class StageDebugState extends FlxState
 			result += char + ' X: ' + curChars[curCharIndex].x + " Y: " + curChars[curCharIndex].y + " Rotation: " + curChars[curCharIndex].angle + "\n";
 			++curCharIndex;
 		}
+
+		openfl.system.System.setClipboard(result.trim());
 
 		if ((result != null) && (result.length > 0))
 		{

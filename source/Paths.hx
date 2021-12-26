@@ -121,12 +121,17 @@ class Paths
 
 	inline static public function lua(key:String, ?library:String)
 	{
-		return getPath('data/$key.lua', TEXT, library);
+		return Main.path + getPath('data/$key.lua', TEXT, library);
 	}
+
+	inline static public function luaAsset(key:String,?library:String)
+	{
+		return getPath('data/$key.lua', TEXT, library);
+	}	
 
 	inline static public function luaImage(key:String, ?library:String)
 	{
-		return getPath('data/$key.png', IMAGE, library);
+		return Main.path + getPath('data/$key.png', IMAGE, library);
 	}
 
 	inline static public function txt(key:String, ?library:String)

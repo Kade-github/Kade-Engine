@@ -6,7 +6,7 @@ import flixel.system.FlxSound;
 #if FEATURE_STEPMANIA
 import smTools.SMFile;
 #end
-#if FEATURE_FILESYSTEM
+#if sys
 import sys.FileSystem;
 import sys.io.File;
 #end
@@ -85,7 +85,7 @@ class FreeplayState extends MusicBeatState
 
 		#if !FEATURE_STEPMANIA
 		trace("FEATURE_STEPMANIA was not specified during build, sm file loading is disabled.");
-		#elseif FEATURE_STEPMANIA
+		#elseif windows
 		// TODO: Refactor this to use OpenFlAssets.
 		trace("tryin to load sm files");
 		for (i in FileSystem.readDirectory("assets/sm/"))
@@ -133,9 +133,9 @@ class FreeplayState extends MusicBeatState
 
 		var isDebug:Bool = false;
 
-		#if debug
+	//	#if debug
 		isDebug = true;
-		#end
+		//#end
 
 		persistentUpdate = true;
 
@@ -208,6 +208,10 @@ class FreeplayState extends MusicBeatState
 		// add(selector);
 
 		var swag:Alphabet = new Alphabet(1, 0, "swag");
+
+		#if mobileC
+		addVirtualPad(FULL, A_B_6_1_7);
+		#end
 
 		super.create();
 	}
@@ -318,12 +322,12 @@ class FreeplayState extends MusicBeatState
 			FlxG.sound.music.volume -= 0.5 * FlxG.elapsed;
 		}
 
-		var upP = FlxG.keys.justPressed.UP;
-		var downP = FlxG.keys.justPressed.DOWN;
-		var accepted = FlxG.keys.justPressed.ENTER;
-		var dadDebug = FlxG.keys.justPressed.SIX;
-		var charting = FlxG.keys.justPressed.SEVEN;
-		var bfDebug = FlxG.keys.justPressed.ZERO;
+		var upP = controls.UP_P;
+		var downP = controls.DOWN_P;
+		var accepted = controls.ACCEPT;
+		var dadDebug = controls.SIX;
+		var charting = controls.SEVEN;
+		var bfDebug = controls.ONE;
 
 		var gamepad:FlxGamepad = FlxG.gamepads.lastActive;
 
@@ -396,9 +400,9 @@ class FreeplayState extends MusicBeatState
 		}
 		else
 		{
-			if (FlxG.keys.justPressed.LEFT)
+			if (controls.LEFT_P)
 				changeDiff(-1);
-			if (FlxG.keys.justPressed.RIGHT)
+			if (controls.RIGHT_P)
 				changeDiff(1);
 		}
 
@@ -421,7 +425,7 @@ class FreeplayState extends MusicBeatState
 			loadSong(true);
 
 		// AnimationDebug and StageDebug are only enabled in debug builds.
-		#if debug
+	//	#if debug
 		if (dadDebug)
 		{
 			loadAnimDebug(true);
@@ -430,7 +434,7 @@ class FreeplayState extends MusicBeatState
 		{
 			loadAnimDebug(false);
 		}
-		#end
+	//	#end
 	}
 
 	function loadAnimDebug(dad:Bool = true)
@@ -594,7 +598,7 @@ class FreeplayState extends MusicBeatState
 		diffCalcText.text = 'RATING: ${DiffCalc.CalculateDiff(songData.get(songs[curSelected].songName)[curDifficulty])}';
 		diffText.text = CoolUtil.difficultyFromInt(curDifficulty).toUpperCase();
 
-		#if PRELOAD_ALL
+		#if windows
 		if (songs[curSelected].songCharacter == "sm")
 		{
 			var data = songs[curSelected];

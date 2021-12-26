@@ -21,7 +21,7 @@ import flixel.addons.ui.FlxUIInputText;
 import flixel.addons.ui.FlxUINumericStepper;
 import flixel.addons.ui.FlxUITabMenu;
 import flixel.addons.ui.FlxUITooltip.FlxUITooltipStyle;
-
+import ui.FlxVirtualPad;
 /**
 	*DEBUG MODE
  */
@@ -51,6 +51,8 @@ class AnimationDebug extends MusicBeatState
 	var offsetY:FlxUINumericStepper;
 
 	var characters:Array<String>;
+
+	var _pad:FlxVirtualPad;
 
 	public function new(daAnim:String = 'bf')
 	{
@@ -143,6 +145,10 @@ class AnimationDebug extends MusicBeatState
 
 		FlxG.camera.follow(camFollow);
 
+		_pad = new FlxVirtualPad(ANIMATION, ANIMATION);
+		_pad.alpha = 0.75;
+		add(_pad);
+
 		super.create();
 	}
 
@@ -227,6 +233,8 @@ class AnimationDebug extends MusicBeatState
 			result += text + "\n";
 		}
 
+		openfl.system.System.setClipboard(result.trim());
+
 		if ((result != null) && (result.length > 0))
 		{
 			_file = new FileReference();
@@ -288,7 +296,7 @@ class AnimationDebug extends MusicBeatState
 
 	function addHelpText():Void
 	{
-		var helpTextValue = "Help:\nQ/E : Zoom in and out\nF : Flip\nI/J/K/L : Pan Camera\nW/S : Cycle Animation\nArrows : Offset Animation\nShift-Arrows : Offset Animation x10\nSpace : Replay Animation\nCTRL-S : Save Offsets to File\nEnter/ESC : Exit\nPress F1 to hide/show this!\n";
+		var helpTextValue = "Help:\nIN/OUT : Zoom in and out\nUP/DOWN : Cycle Animation\nDrag : Offset Animation\nA : Replay Animation\nSAVE : Save Offsets to ClipBoard\nB : Exit";
 		helpText = new FlxText(940, 20, 0, helpTextValue, 15);
 		helpText.scrollFactor.set();
 		helpText.y = FlxG.height - helpText.height - 20;
@@ -336,32 +344,32 @@ class AnimationDebug extends MusicBeatState
 			// TO MOUSE MOVEMENT?????????
 		}
 
-		if (FlxG.keys.justPressed.ESCAPE)
+		if (_pad.buttonB.justPressed)
 		{
 			FlxG.mouse.visible = false;
 			FlxG.switchState(new PlayState());
 		}
 
-		if (FlxG.keys.justPressed.E)
+		if (_pad.buttonIn.justPressed)
 			FlxG.camera.zoom += 0.25;
-		if (FlxG.keys.justPressed.Q)
+		if (_pad.buttonOut.justPressed)
 			FlxG.camera.zoom -= 0.25;
 
 		if (FlxG.keys.justPressed.F)
 			char.flipX = !char.flipX;
 
-		if (FlxG.keys.pressed.I || FlxG.keys.pressed.J || FlxG.keys.pressed.K || FlxG.keys.pressed.L)
+		if (_pad.buttonUp.pressed || _pad.buttonDown.pressed || _pad.buttonLeft.pressed || _pad.buttonRight.pressed)
 		{
-			if (FlxG.keys.pressed.I)
+			if (_pad.buttonUp.pressed)
 				camFollow.velocity.y = -90;
-			else if (FlxG.keys.pressed.K)
+			else if (_pad.buttonDown.pressed)
 				camFollow.velocity.y = 90;
 			else
 				camFollow.velocity.y = 0;
 
-			if (FlxG.keys.pressed.J)
+			if (_pad.buttonLeft.pressed)
 				camFollow.velocity.x = -90;
-			else if (FlxG.keys.pressed.L)
+			else if (_pad.buttonRight.pressed)
 				camFollow.velocity.x = 90;
 			else
 				camFollow.velocity.x = 0;
@@ -369,14 +377,14 @@ class AnimationDebug extends MusicBeatState
 		else
 		{
 			camFollow.velocity.set();
-		}
+		} 
 
-		if (FlxG.keys.justPressed.W)
+		if (_pad.buttonUp2.justPressed)
 		{
 			curAnim -= 1;
 		}
 
-		if (FlxG.keys.justPressed.S)
+		if (_pad.buttonDown2.justPressed)
 		{
 			curAnim += 1;
 		}
@@ -387,7 +395,7 @@ class AnimationDebug extends MusicBeatState
 		if (curAnim >= animList.length)
 			curAnim = 0;
 
-		if (FlxG.keys.justPressed.S || FlxG.keys.justPressed.W || FlxG.keys.justPressed.SPACE)
+		if (_pad.buttonDown2.justPressed || _pad.buttonUp2.justPressed || _pad.buttonA.justPressed)
 		{
 			char.playAnim(animList[curAnim]);
 
@@ -422,7 +430,7 @@ class AnimationDebug extends MusicBeatState
 			char.playAnim(animList[curAnim]);
 		}
 
-		if (FlxG.keys.pressed.CONTROL && FlxG.keys.justPressed.S)
+		if (_pad.buttonSave.justPressed)
 			saveBoyOffsets();
 
 		if (FlxG.keys.justPressed.F1)

@@ -17,6 +17,7 @@ import flixel.input.keyboard.FlxKey;
 import flixel.math.FlxMath;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
+import ui.FlxVirtualPad;
 
 class OptionCata extends FlxSprite
 {
@@ -114,10 +115,13 @@ class OptionsMenu extends FlxSubState
 	public var descText:FlxText;
 	public var descBack:FlxSprite;
 
+	var _pad:FlxVirtualPad;
+
 	override function create()
 	{
 		options = [
 			new OptionCata(50, 40, "Gameplay", [
+				new MobileControls("edit a control"),
 				new ScrollSpeedOption("Change your scroll speed. (1 = Chart dependent)"),
 				new OffsetThing("Change the note audio offset (how many milliseconds a note is offset in a chart)"),
 				new AccuracyDOption("Change how accuracy is calculated. (Accurate = Simple, Complex = Milisecond Based)"),
@@ -237,6 +241,10 @@ class OptionsMenu extends FlxSubState
 
 		selectedOption = selectedCat.options[0];
 
+		_pad = new FlxVirtualPad(FULL, A_B);
+		_pad.alpha = 0.75;
+		add(_pad);
+
 		super.create();
 	}
 
@@ -350,14 +358,14 @@ class OptionsMenu extends FlxSubState
 		var any = false;
 		var escape = false;
 
-		accept = FlxG.keys.justPressed.ENTER || (gamepad != null ? gamepad.justPressed.A : false);
-		right = FlxG.keys.justPressed.RIGHT || (gamepad != null ? gamepad.justPressed.DPAD_RIGHT : false);
-		left = FlxG.keys.justPressed.LEFT || (gamepad != null ? gamepad.justPressed.DPAD_LEFT : false);
-		up = FlxG.keys.justPressed.UP || (gamepad != null ? gamepad.justPressed.DPAD_UP : false);
-		down = FlxG.keys.justPressed.DOWN || (gamepad != null ? gamepad.justPressed.DPAD_DOWN : false);
+		accept = FlxG.keys.justPressed.ENTER || _pad.buttonA.justPressed|| (gamepad != null ? gamepad.justPressed.A : false);
+		right = FlxG.keys.justPressed.RIGHT || _pad.buttonRight.justPressed || (gamepad != null ? gamepad.justPressed.DPAD_RIGHT : false);
+		left = FlxG.keys.justPressed.LEFT || _pad.buttonLeft.justPressed || (gamepad != null ? gamepad.justPressed.DPAD_LEFT : false);
+		up = FlxG.keys.justPressed.UP || _pad.buttonUp.justPressed || (gamepad != null ? gamepad.justPressed.DPAD_UP : false);
+		down = FlxG.keys.justPressed.DOWN || _pad.buttonDown.justPressed || (gamepad != null ? gamepad.justPressed.DPAD_DOWN : false);
 
 		any = FlxG.keys.justPressed.ANY || (gamepad != null ? gamepad.justPressed.ANY : false);
-		escape = FlxG.keys.justPressed.ESCAPE || (gamepad != null ? gamepad.justPressed.B : false);
+		escape = FlxG.keys.justPressed.ESCAPE || _pad.buttonB.justPressed || (gamepad != null ? gamepad.justPressed.B : false);
 
 		if (selectedCat != null && !isInCat)
 		{

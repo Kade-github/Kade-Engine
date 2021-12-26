@@ -3,7 +3,7 @@ package;
 import Song.SongMeta;
 import openfl.system.System;
 import lime.app.Application;
-#if FEATURE_FILESYSTEM
+#if sys
 import sys.io.File;
 import sys.FileSystem;
 #end
@@ -48,6 +48,7 @@ import openfl.utils.ByteArray;
 #if FEATURE_DISCORD
 import Discord.DiscordClient;
 #end
+import ui.FlxVirtualPad;
 
 using StringTools;
 
@@ -58,6 +59,12 @@ class ChartingState extends MusicBeatState
 	var _file:FileReference;
 
 	public var playClaps:Bool = false;
+
+	var _pad:FlxVirtualPad;
+	//add buttons
+	var key_space:FlxButton;
+	var key_shift:FlxButton;
+
 
 	public var snap:Int = 16;
 
@@ -445,6 +452,21 @@ class ChartingState extends MusicBeatState
 		Debug.logTrace("bruh");
 
 		Debug.logTrace("create");
+
+		_pad = new FlxVirtualPad(FULL, NONE);
+		_pad.alpha = 0.75;
+		add(_pad);
+
+		// add buttons
+		key_space = new FlxButton(60, 60, "");
+        key_space.loadGraphic(Paths.image("key_space")); //"assets/images/key_space.png"
+        key_space.alpha = 0.75;
+        add(key_space);
+
+        key_shift = new FlxButton(60, 200, "");
+        key_shift.loadGraphic(Paths.image("key_shift")); //"assets/images/key_shift.png"
+        key_shift.alpha = 0.75;
+        add(key_shift);
 
 		super.create();
 	}
@@ -2086,11 +2108,11 @@ class ChartingState extends MusicBeatState
 					}
 				}
 
-				if (FlxG.keys.pressed.SHIFT)
+				if (FlxG.keys.pressed.SHIFT || key_shift.pressed)
 				{
-					if (FlxG.keys.justPressed.RIGHT)
+					if (FlxG.keys.justPressed.RIGHT || FlxG.keys.justPressed.D || _pad.buttonRight.justPressed)
 						speed += 0.1;
-					else if (FlxG.keys.justPressed.LEFT)
+					else if (FlxG.keys.justPressed.LEFT || FlxG.keys.justPressed.A || _pad.buttonLeft.justPressed)
 						speed -= 0.1;
 
 					if (speed > 3)
@@ -2613,8 +2635,14 @@ class ChartingState extends MusicBeatState
 
 			if (doInput)
 			{
-				if (FlxG.keys.justPressed.ENTER)
+				#if android
+				var androidback = FlxG.android.justReleased.BACK;
+				#else
+				var androidback = false;
+				#end				
+				if (FlxG.keys.justPressed.ENTER || androidback)
 				{
+					FlxG.mouse.visible = false;
 					lastSection = curSection;
 
 					PlayState.SONG = _song;
@@ -2717,7 +2745,7 @@ class ChartingState extends MusicBeatState
 					var shiftThing:Int = 1;
 					if (FlxG.keys.pressed.SHIFT)
 						shiftThing = 4;
-					if (FlxG.keys.justPressed.SPACE)
+					if (FlxG.keys.justPressed.SPACE || key_space.justPressed)
 					{
 						if (FlxG.sound.music.playing)
 						{
@@ -2737,9 +2765,9 @@ class ChartingState extends MusicBeatState
 					if (FlxG.sound.music.time < 0 || curDecimalBeat < 0)
 						FlxG.sound.music.time = 0;
 
-					if (!FlxG.keys.pressed.SHIFT)
+					if (!FlxG.keys.pressed.SHIFT || !key_shift.pressed)
 					{
-						if (FlxG.keys.pressed.W || FlxG.keys.pressed.S)
+						if (FlxG.keys.pressed.W || FlxG.keys.pressed.S || _pad.buttonUp.pressed || _pad.buttonDown.pressed)
 						{
 							FlxG.sound.music.pause();
 							if (!PlayState.isSM)
@@ -2748,7 +2776,7 @@ class ChartingState extends MusicBeatState
 
 							var daTime:Float = 700 * FlxG.elapsed;
 
-							if (FlxG.keys.pressed.W)
+							if (FlxG.keys.pressed.W || _pad.buttonUp.pressed)
 							{
 								FlxG.sound.music.time -= daTime;
 							}
@@ -2761,7 +2789,7 @@ class ChartingState extends MusicBeatState
 					}
 					else
 					{
-						if (FlxG.keys.justPressed.W || FlxG.keys.justPressed.S)
+						if (FlxG.keys.justPressed.W || FlxG.keys.justPressed.S || _pad.buttonUp.pressed || _pad.buttonDown.pressed)
 						{
 							FlxG.sound.music.pause();
 							if (!PlayState.isSM)
@@ -2769,7 +2797,7 @@ class ChartingState extends MusicBeatState
 
 							var daTime:Float = Conductor.stepCrochet * 2;
 
-							if (FlxG.keys.justPressed.W)
+							if (FlxG.keys.justPressed.W || _pad.buttonUp.justPressed)
 							{
 								FlxG.sound.music.time -= daTime;
 							}
@@ -3599,6 +3627,8 @@ class ChartingState extends MusicBeatState
 		};
 
 		var data:String = Json.stringify(json, null, " ");
+
+		openfl.system.System.setClipboard(data.trim());
 
 		if ((data != null) && (data.length > 0))
 		{

@@ -383,7 +383,7 @@ class ModchartState
 		}
 		#end
 
-		new LuaSprite(sprite, toBeCalled).Register(lua);
+	//	new LuaSprite(sprite, toBeCalled).Register(lua);
 
 		return toBeCalled;
 	}

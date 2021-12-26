@@ -30,10 +30,11 @@ import lime.app.Application;
 import flixel.math.FlxMath;
 import flixel.text.FlxText;
 import flixel.input.FlxKeyManager;
+import flixel.FlxCamera;
 
 using StringTools;
 
-class ResultsScreen extends FlxSubState
+class ResultsScreen extends MusicBeatSubstate
 {
 	public var background:FlxSprite;
 	public var text:FlxText;
@@ -181,6 +182,11 @@ class ResultsScreen extends FlxSubState
 
 		cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
 
+		#if mobileC
+		addVirtualPad(NONE, A);
+		#end
+
+		
 		super.create();
 	}
 
@@ -194,7 +200,13 @@ class ResultsScreen extends FlxSubState
 
 		// keybinds
 
-		if (PlayerSettings.player1.controls.ACCEPT)
+		#if android
+		var androidback = FlxG.android.justReleased.BACK;
+		#else
+		var androidback = false;
+		#end				
+
+		if (controls.ACCEPT || androidback)
 		{
 			if (music != null)
 				music.fadeOut(0.3);
