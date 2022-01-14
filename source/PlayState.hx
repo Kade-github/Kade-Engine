@@ -80,6 +80,9 @@ import openfl.filters.ShaderFilter;
 #if FEATURE_DISCORD
 import Discord.DiscordClient;
 #end
+import hscript.Expr;
+import hscript.Parser;
+import hscript.Interp;
 
 using StringTools;
 
@@ -368,6 +371,15 @@ class PlayState extends MusicBeatState
 		#end
 
 		Debug.logInfo('Searching for mod chart? ($executeModchart) at ${Paths.lua('songs/${PlayState.SONG.songId}/modchart')}');
+		
+		if (FileSystem.exists(Sys.getCwd() + 'assets/data/${SONG.song.toLowerCase()}/haxeModchart.hx'))
+		{
+			var expr = Paths.getHaxeScript(SONG.song.toLowerCase());
+			var parser = new hscript.Parser();
+			var ast = parser.parseString(expr);
+			var interp = new hscript.Interp();
+			trace(interp.execute(ast));
+		}
 
 		if (executeModchart)
 			songMultiplier = 1;
