@@ -57,13 +57,13 @@ FNF characters for some reason sometimes have 2 idles,
 
 If you do in fact delete idleLoop just remember to change 
 ```
-"startingAnim": "idle"
+"startingAnim": "idleLoop"
 ```
 
 to
 
 ```
-"startingAnim": "idleLoop"
+"startingAnim": "idle"
 ```
 
 ---
