@@ -106,13 +106,13 @@ class Ratings
 				switch (index)
 				{
 					case 0: // shit
-						return "shit";
+						return "NOOB TRASH";
 					case 1: // bad
 						return "bad";
 					case 2: // good
-						return "good";
+						return "god";
 					case 3: // sick
-						return "sick";
+						return "mega cool";
 				}
 			}
 		}
