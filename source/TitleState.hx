@@ -380,7 +380,7 @@ class TitleState extends MusicBeatState
 			case 0:
 				deleteCoolText();
 			case 1:
-				createCoolText(['ninjamuffin99', 'phantomArcade', 'kawaisprite', 'evilsk8er']);
+				createCoolText(['SoftNimu', 'Jefferson13n', 'Franco', 'JeanPol']);
 			// credTextShit.visible = true;
 			case 3:
 				addMoreText('present');
@@ -398,7 +398,7 @@ class TitleState extends MusicBeatState
 					createCoolText(['In Partnership', 'with']);
 			case 7:
 				if (Main.watermarks)
-					addMoreText('KadeDeveloper');
+					addMoreText('SoftNimu');
 				else
 				{
 					addMoreText('Newgrounds');
@@ -410,27 +410,27 @@ class TitleState extends MusicBeatState
 				ngSpr.visible = false;
 			// credTextShit.visible = false;
 
-			// credTextShit.text = 'Shoutouts Tom Fulp';
+			// credTextShit.text = 'Se me corto la luz';
 			// credTextShit.screenCenter();
 			case 9:
 				createCoolText([curWacky[0]]);
 			// credTextShit.visible = true;
 			case 11:
 				addMoreText(curWacky[1]);
-			// credTextShit.text += '\nlmao';
+			// credTextShit.text += '\nNOOOOOO';
 			case 12:
 				deleteCoolText();
 			// credTextShit.visible = false;
-			// credTextShit.text = "Friday";
+			// credTextShit.text = "Vs";
 			// credTextShit.screenCenter();
 			case 13:
-				addMoreText('Friday');
+				addMoreText('Vs');
 			// credTextShit.visible = true;
 			case 14:
-				addMoreText('Night');
-			// credTextShit.text += '\nNight';
+				addMoreText('Soft Mod');
+			// credTextShit.text += '\nSoft Mod';
 			case 15:
-				addMoreText('Funkin'); // credTextShit.text += '\nFunkin';
+				addMoreText('Vs Jefferson13n'); // credTextShit.text += '\nVs Jefferson13';
 
 			case 16:
 				skipIntro();
